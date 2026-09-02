@@ -30,31 +30,40 @@ Alternativas consideradas:
 
 ### Marcos Vinícius Forecchi Accioly (Marquito)
 
-**Versão 4 linhas:**
+**Versão completa (para o programa):**
 
-> **Marcos Vinícius Forecchi Accioly (Marquito).** Servidor da Coordenadoria-Geral de Tecnologias Educacionais (CGTE) do Cefor/Ifes, em Vitória. Trabalha com inteligência artificial aplicada à educação e à pesquisa, agentes e metodologias de organização de contexto. Facilita, com Elton Vinícius Silva, diversas oficinas sobre IA, incluindo a oficina "IA além do chat" no VIII Concefor (2026). Currículo Lattes: http://lattes.cnpq.br/9600111548329939
+> **Marcos Vinícius Forecchi Accioly (Marquito).** Designer (Ufes) com pós em Design Instrucional e mestrado em Educação (Metodologias Ativas), programador desde 2001. Servidor da Coordenadoria-Geral de Tecnologias Educacionais (CGTE) do Cefor/Ifes, onde atua com tecnologia educacional em escala (base de conhecimento institucional, MOOCs e atendimento aos campi). Trabalha com IA aplicada à educação e à pesquisa — agentes, RAG e metodologias de organização de contexto (ICM) para fidelidade à fonte, com publicações nacionais e internacionais na área. Facilita, com Elton Vinícius Silva, o encontro semanal Papo com IA.IÁ, há mais de dois anos e 90 edições, e oficinas sobre IA, incluindo "IA além do chat" no VIII Concefor (2026). Currículo Lattes: http://lattes.cnpq.br/9600111548329939
 
-**Versão 2 linhas (se o formulário limitar):**
+**Versão curta (se o formulário limitar):**
 
-> **Marcos Vinícius Forecchi Accioly (Marquito).** Servidor da CGTE/Cefor/Ifes, trabalha com IA aplicada à educação e à pesquisa. Facilita, com Elton Vinícius Silva, diversas oficinas sobre IA, incluindo a oficina "IA além do chat" no VIII Concefor (2026). Lattes: http://lattes.cnpq.br/9600111548329939
-
-*Formação:* não consta neste repositório. Se o Secim pedir titulação, inserir depois do nome: "[titulação] em [área] pel[a/o] [instituição]".
+> **Marcos Vinícius Forecchi Accioly (Marquito).** Designer (Ufes), mestre em Educação, programador desde 2001. Servidor da CGTE/Cefor/Ifes, trabalha com IA aplicada à educação e à pesquisa — agentes, RAG e organização de contexto —, com publicações nacionais e internacionais. Facilita, com Elton Vinícius Silva, o Papo com IA.IÁ (mais de dois anos, 90 edições) e oficinas sobre IA, incluindo "IA além do chat" no VIII Concefor (2026). Lattes: http://lattes.cnpq.br/9600111548329939
 
 ### Elton Vinícius Silva
 
-Elton preenche a própria. Modelo, no mesmo formato:
+**Versão completa (para o programa):**
 
-> **Elton Vinícius Silva.** [Titulação e área, se for pedir.] Servidor da Coordenadoria-Geral de Tecnologias Educacionais (CGTE) do Cefor/Ifes, onde atua com [tecnologias educacionais, Moodle, IA aplicada à educação]. Docente convidado do curso de extensão "Inteligência de Contexto Pedagógica com IA" (2027). Coorganiza o Papo com IA.IÁ, encontro semanal aberto sobre IA na educação.
+> **Elton Vinícius Silva.** Mestre em Ingénierie des Médias pour l'Éducation (Engenharia de Mídias para a Educação) pela Université de Poitiers, França. Servidor da Coordenadoria-Geral de Tecnologias Educacionais (CGTE) do Cefor/Ifes, onde atua com tecnologias educacionais e formação. Trabalha com IA aplicada à educação e à pesquisa, com publicações nacionais e internacionais na área. Facilita, com Marcos Vinícius Forecchi Accioly, o encontro semanal Papo com IA.IÁ, há mais de dois anos e 90 edições, e oficinas sobre IA, incluindo "IA além do chat" no VIII Concefor (2026). Currículo Lattes: http://lattes.cnpq.br/4555589317846967
+
+**Versão curta (se o formulário limitar):**
+
+> **Elton Vinícius Silva.** Mestre em Ingénierie des Médias pour l'Éducation pela Université de Poitiers (França). Servidor da CGTE/Cefor/Ifes, trabalha com tecnologias educacionais e IA aplicada à educação e à pesquisa, com publicações nacionais e internacionais. Facilita, com Marcos Accioly, o Papo com IA.IÁ (mais de dois anos, 90 edições) e oficinas sobre IA, incluindo "IA além do chat" no VIII Concefor (2026). Lattes: http://lattes.cnpq.br/4555589317846967
+
+**Uma linha (card, crachá ou slide):**
+
+> **Elton Vinícius Silva** — Mestre pela Université de Poitiers (França). CGTE/Cefor/Ifes: tecnologias educacionais e IA aplicada à educação e à pesquisa.
+
+*Notas:* a grafia do encontro no material do Cefor é **Papo com IA.IÁ** (com ponto); as 31 ocorrências deste repositório seguem essa forma. Se for citar o curso de extensão de 2027, usar a forma cautelosa — a proposta foi submetida ao Edital 50/2026 e o resultado não está confirmado (ver `referencias/ata-curso-extensao-2027.md`): "integra a equipe docente da proposta do curso de extensão 'Inteligência de Contexto Pedagógica com IA' (Cefor/Ifes, 2027)".
 
 ## Foto
 
-Uma de cada, anexada ao envio. Especificação, para as duas ficarem coerentes no material do evento:
+**Prontas.** Anexar as duas, de `biblioteca/fotos/`:
 
-- Retrato real, recente, só a pessoa; cabeça e ombros, olhando para a câmera.
-- Fundo neutro e liso (parede clara), luz frontal (janela serve), sem contraluz.
-- Enquadramento quadrado (1:1) ou 4:5, no mínimo 1000 px no lado menor.
-- JPG ou PNG, até 5 MB; nome do arquivo `sobrenome-nome.jpg`.
-- Fontes possíveis: a foto do Currículo Lattes, a do crachá institucional ou uma foto nova.
+| Pessoa | Arquivo |
+|---|---|
+| Elton Vinícius Silva | `biblioteca/fotos/silva-elton.png` (1083 × 1452 px, 1,7 MB) |
+| Marcos Vinícius Forecchi Accioly | `biblioteca/fotos/accioly-marcos.jpg` (1086 × 1448 px, 68 KB) |
+
+As duas estão na mesma proporção (3:4) e acima de 1000 px no lado menor, dentro do que os formulários de evento costumam aceitar. Se o Secim exigir enquadramento quadrado, gerar o recorte em `oficinas/2026-09-17-secim/` e registrar em `biblioteca/fotos/CONTEXT.md`; não editar os originais.
 
 ## Necessidades para a atividade
 

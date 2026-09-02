@@ -25,7 +25,7 @@ A oficina anterior, "IA além do chat" (VIII Concefor, 20/08/2026), vive em outr
 
 **Secim, 17/09/2026.** Tudo em [`oficinas/2026-09-17-secim/`](oficinas/2026-09-17-secim/). Comece pelo [`CONTEXT.md`](oficinas/2026-09-17-secim/CONTEXT.md) da pasta, depois pelo [plano](oficinas/2026-09-17-secim/01-plano-da-oficina.md) e pela [análise](oficinas/2026-09-17-secim/02-analise-e-melhorias.md).
 
-Pendência urgente: enviar à organizadora título, descrição, minibios e foto (Elton prometeu "até amanhã" em 01/09). Texto pronto em [`03-divulgacao-para-a-organizacao.md`](oficinas/2026-09-17-secim/03-divulgacao-para-a-organizacao.md).
+Pendência urgente: enviar à organizadora título, descrição, minibios e fotos (Elton prometeu "até amanhã" em 01/09). Texto, minibios completas e fotos prontos em [`03-divulgacao-para-a-organizacao.md`](oficinas/2026-09-17-secim/03-divulgacao-para-a-organizacao.md).
 
 ## Como usar esta pasta
 
@@ -47,7 +47,7 @@ Pendência urgente: enviar à organizadora título, descrição, minibios e foto
 
 - Seis fontes recebidas, fichadas e arquivadas em `fontes/`. Inbox vazia.
 - Fichas escritas: ICM, Silvio Meira, Hugo Cristo, normas brasileiras sobre IA na pesquisa, recursos do Cefor, sala Moodle dos NTEs, oficina do Concefor, ata do curso de extensão.
-- Biblioteca: cinco conceitos, três prompts, um kit (Kit Pesquisa), um modelo de página.
+- Biblioteca: cinco conceitos, três prompts, um kit (Kit Pesquisa), um modelo de página e as fotos dos facilitadores (`biblioteca/fotos/`).
 - Secim: briefing, plano minuto a minuto, análise com insights e melhorias, divulgação, pré-oficina datada, roteiro da demonstração, pós-oficina, folha de tema, página de referências (HTML e Markdown) e **apresentação de 31 slides** na identidade do Cefor (`oficinas/2026-09-17-secim/slides/`).
 - Futuro: mapa do curso de extensão de 2027 e nota sobre o MOOC.
 - **Não testado:** o kit e os prompts. Testes previstos para 05/09 e 09/09.

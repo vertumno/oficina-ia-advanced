@@ -10,6 +10,7 @@ Blocos reutilizáveis para qualquer oficina, curso ou página sobre IA. Nada aqu
 | `prompts/` | Prompts prontos para demonstrar, copiar e colar, ou entregar; e o modelo de declaração de uso de IA | Um `.md` por prompt |
 | `kits/` | Pastas completas para o participante baixar e usar com sua IA no computador | Uma pasta por kit |
 | `paginas/` | Modelos de página "que fica com o participante" (HTML para Moodle) | `.html` |
+| `fotos/` | Retratos dos facilitadores para divulgação (programa de evento, páginas, cards) | `.png`, `.jpg` |
 
 ## Como usar
 
