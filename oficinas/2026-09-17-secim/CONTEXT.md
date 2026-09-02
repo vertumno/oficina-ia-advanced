@@ -17,6 +17,7 @@ Em preparação. Briefing, plano, análise, divulgação, pré e pós-oficina es
 | Fazer o que vem depois: envio, coleta, medição, lições aprendidas | `06-pos-oficina.md` |
 | Imprimir a folha que o participante preenche | `folha-tema.md` |
 | Ver ou editar a página que fica com os participantes | `referencias-secim.html` (para Moodle ou publicação) e `referencias-secim.md` (mesmo conteúdo, legível) |
+| Abrir, apresentar ou editar os slides | `slides/apresentacao-secim.html`; instruções em `slides/README.md` |
 
 Blocos reutilizáveis usados nesta oficina (não duplicar aqui; apontar):
 

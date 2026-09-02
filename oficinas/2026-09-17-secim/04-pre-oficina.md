@@ -17,7 +17,7 @@ Checklist datado. Hoje é 02/09 (D-15). Marcar conforme concluir. Donos são sug
 | 09/09 (qua) | -8 | Escolher três artigos de exemplo: acesso aberto (SciELO: Bolema, Ciência & Educação, Ensaio, Zetetiké), em português, curtos, sobre um tema comum (ex.: tecnologias digitais no ensino de matemática). Anotar links na pasta compartilhada. Não redistribuir PDFs com direitos; só links | Elton | [ ] |
 | 09/09 | -8 | Teste do kit com pessoa leiga (a organizadora ou outro mestrando): 30 minutos, sem ajuda, só com o README. Anotar onde travou | Marquito | [ ] |
 | 10/09 (qui) | -7 | Rodar as duas conversas "pedido versus processo" com os artigos escolhidos, em uma IA web. Salvar prints e textos para os slides | Marquito | [ ] |
-| 10/09 | -7 | Slides v1 (17 telas, lista no plano). Imagens: máquina de sorvete; caixa → caixa com bilhete → dez caixas; barra da janela de contexto | Marquito | [ ] |
+| 10/09 | -7 | **Slides: feito em 02/09** (31 telas, Versão B, em `slides/`). Falta trocar os três QR do slide 29 por imagens reais e revisar o texto | Marquito | [x] |
 | 11/09 (sex) | -6 | Pasta compartilhada no Drive: `kit-pesquisa.zip`, slides PDF, modelo de declaração, links dos artigos, prompt em `.txt`, subpasta "envie aqui" com permissão de upload | Elton | [ ] |
 | 11/09 | -6 | Publicar a página de referências (decidir onde) e criar link curto | Elton | [ ] |
 | 11/09 | -6 | Formulário de avaliação e formulário de 30 dias criados; QR codes gerados (avaliação, página, pasta) | Elton | [ ] |
@@ -67,7 +67,7 @@ Usar as respostas para: dimensionar a clínica (quantos vêm instalar), escolher
 ## Checklist de véspera (16/09)
 
 - [ ] Notebook do Marquito: bateria, carregador, adaptador HDMI e USB-C, `secim-demo/` vazia, `kit-pesquisa/` com artigo em `00-entrada/`, `kit-pesquisa-ensaio/` com saídas do ensaio, conversas web abertas, créditos do Claude Code conferidos, fonte grande, notificações desligadas, modo "não perturbe".
-- [ ] Notebook do Elton: Copilot logado com conta GitHub, Gemini CLI, slides PDF, vídeo de reserva.
+- [ ] Notebook do Elton: Copilot logado com conta GitHub, Gemini CLI, `slides/apresentacao-secim.html` (abre offline) e PDF via Ctrl+P, vídeo de reserva.
 - [ ] Hotspot 4G testado.
 - [ ] Pendrive: kit zipado, instaladores do VS Code (Windows e Mac), slides, vídeo.
 - [ ] Impressos na pasta: folha de tema, folha de sobrevivência, modelo de declaração, QR codes.

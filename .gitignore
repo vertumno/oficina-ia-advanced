@@ -7,3 +7,9 @@ fontes/2026-07-09-hugo-cristo-seminario-ia-compilado.pdf
 # Artefatos de execução do kit (saídas geradas em testes)
 biblioteca/kits/kit-pesquisa/*/saida/*
 !biblioteca/kits/kit-pesquisa/*/saida/.gitkeep
+
+# Slides: intermediários e temporários de render
+oficinas/*/slides/corpos.html
+oficinas/*/slides/_*.html
+oficinas/*/slides/.previas/
+__pycache__/

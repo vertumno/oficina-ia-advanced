@@ -14,7 +14,7 @@ Esta pasta é, ela mesma, um exemplo do que ensinamos: pastas com instruções c
 | `fontes/` | Originais já processados, renomeados com data e descrição. Não se edita. | Ao precisar do texto original de uma fonte. |
 | `referencias/` | Fichas curadas de cada fonte: o que diz, o que aproveitamos, links verificados. | Ao montar qualquer oficina, curso ou página. |
 | `biblioteca/` | Blocos reutilizáveis: conceitos, prompts, kits para participantes, modelos de página. | Ao construir o conteúdo de uma oficina. |
-| `oficinas/` | Uma pasta por evento: briefing, plano, análise, divulgação, pré, demonstração, pós, página. | Ao preparar e registrar uma oficina. |
+| `oficinas/` | Uma pasta por evento: briefing, plano, análise, divulgação, pré, demonstração, pós, página e slides. | Ao preparar e registrar uma oficina. |
 | `futuro/` | Notas para o curso de extensão de 2027 e o MOOC. Uso secundário. | Ao planejar formações longas. |
 
 Cada pasta tem um `CONTEXT.md` que explica o que ela contém, de onde vem, para que serve e o que uma IA pode fazer ali.
@@ -48,7 +48,7 @@ Pendência urgente: enviar à organizadora título, descrição, minibios e foto
 - Seis fontes recebidas, fichadas e arquivadas em `fontes/`. Inbox vazia.
 - Fichas escritas: ICM, Silvio Meira, Hugo Cristo, normas brasileiras sobre IA na pesquisa, recursos do Cefor, sala Moodle dos NTEs, oficina do Concefor, ata do curso de extensão.
 - Biblioteca: cinco conceitos, três prompts, um kit (Kit Pesquisa), um modelo de página.
-- Secim: briefing, plano minuto a minuto, análise com insights e melhorias, divulgação, pré-oficina datada, roteiro da demonstração, pós-oficina, folha de tema, página de referências (HTML e Markdown).
+- Secim: briefing, plano minuto a minuto, análise com insights e melhorias, divulgação, pré-oficina datada, roteiro da demonstração, pós-oficina, folha de tema, página de referências (HTML e Markdown) e **apresentação de 31 slides** na identidade do Cefor (`oficinas/2026-09-17-secim/slides/`).
 - Futuro: mapa do curso de extensão de 2027 e nota sobre o MOOC.
 - **Não testado:** o kit e os prompts. Testes previstos para 05/09 e 09/09.
 
