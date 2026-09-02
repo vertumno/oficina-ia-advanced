@@ -32,11 +32,11 @@ Alternativas consideradas:
 
 **Versão 4 linhas:**
 
-> **Marcos Vinícius Forecchi Accioly (Marquito).** Servidor da Coordenadoria-Geral de Tecnologias Educacionais (CGTE) do Cefor/Ifes, em Vitória. Trabalha com inteligência artificial aplicada à educação e à pesquisa, agentes e metodologias de organização de contexto. Coordena o curso de extensão "Inteligência de Contexto Pedagógica com IA" (2027) e facilitou, com Elton Vinícius Silva, a oficina "IA além do chat" no VIII Concefor (2026). Currículo Lattes: http://lattes.cnpq.br/9600111548329939
+> **Marcos Vinícius Forecchi Accioly (Marquito).** Servidor da Coordenadoria-Geral de Tecnologias Educacionais (CGTE) do Cefor/Ifes, em Vitória. Trabalha com inteligência artificial aplicada à educação e à pesquisa, agentes e metodologias de organização de contexto. Facilita, com Elton Vinícius Silva, diversas oficinas sobre IA, incluindo a oficina "IA além do chat" no VIII Concefor (2026). Currículo Lattes: http://lattes.cnpq.br/9600111548329939
 
 **Versão 2 linhas (se o formulário limitar):**
 
-> **Marcos Vinícius Forecchi Accioly (Marquito).** Servidor da CGTE/Cefor/Ifes, trabalha com IA aplicada à educação e à pesquisa. Coordena o curso de extensão "Inteligência de Contexto Pedagógica com IA" (2027) e facilitou a oficina "IA além do chat" no VIII Concefor (2026). Lattes: http://lattes.cnpq.br/9600111548329939
+> **Marcos Vinícius Forecchi Accioly (Marquito).** Servidor da CGTE/Cefor/Ifes, trabalha com IA aplicada à educação e à pesquisa. Facilita, com Elton Vinícius Silva, diversas oficinas sobre IA, incluindo a oficina "IA além do chat" no VIII Concefor (2026). Lattes: http://lattes.cnpq.br/9600111548329939
 
 *Formação:* não consta neste repositório. Se o Secim pedir titulação, inserir depois do nome: "[titulação] em [área] pel[a/o] [instituição]".
 
