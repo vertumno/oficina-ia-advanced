@@ -1,0 +1,138 @@
+link do artigo:https://silvio.meira.com/29-000-papers-o-fim-da-ciencia-sem-ia/
+
+
+
+TITULO: 29.000 papers: o fim da ciência SEM IA
+
+agosto 20, 2026
+ 
+ 
+
+
+Rupturas, atuais e futuras, na conferência científica
+
+ 
+
+Usando qualquer definição razoável de cientista,
+80 a 90% de todos os cientistas que já existiram
+estão vivos agora.
+
+Derek de Solla Price,
+Little Science, Big Science, 1963.
+
+Ainda assombra muita gente, e continua rodando nas redes, o que aconteceu na conferência AAAI2026, para a qual, segundo as versões online, teriam sido submetidos 40.000 papers. Mas não foi bem assim. Foram só 29.000.
+
+O número está no comunicado dos chairs da conferência [veja no link aaai.org/…/review-process-update]: quase 29.000 submissões na trilha técnica principal e, depois de retirar o que não cumpria as regras -PDF faltando, paper fora do tamanho, manuscrito não anonimizado, autor acima do teto de submissões- sobraram cerca de 23.000 papers em avaliação. Quase o dobro do AAAI-25, um ano antes. E tem mais: quase 20.000 das 29.000 submissões vieram da China; os três maiores temas foram visão computacional [perto de 10.000 papers], aprendizado de máquina [perto de 8.000] e processamento de linguagem natural [mais de 4.000]; para dar conta do serviço foram recrutados mais de 28.000 membros de comitê, quase o triplo do ano anterior; havia mais de 75.000 autores distintos e a organização chegou a receber 400 emails por dia, cinco vezes mais mensagens em poucos meses do que a edição anterior recebeu no ano inteiro. No fim, o AAAI-26 aceitou 17,6% dos papers.
+
+Então não foram 40.000. Mas quem se consola com isso não entendeu o problema. 29.000 não é um número menor que 40.000; é um número fora de escala para qualquer processo desenhado por, e para, humanos. E -este é o ponto que os próprios chairs escreveram, com todas as letras- o custo de revisar não cresce linearmente com o número de submissões. Em dezenas de milhares de papers, o que estoura não é só armazenamento, banda e computação. O que estoura é o único recurso que não se compra: tempo de gente qualificada para ler.
+
+O que quase ninguém leu
+E aí vem a parte da história que quase não circulou nas redes, que é de longe a mais importante e, para muita gente, a mais constrangedora.
+
+As 22.977 submissões que foram à revisão completa receberam, cada uma, uma revisão escrita por IA, claramente identificada como tal, produzidas por um sistema com modelos de fronteira, uso de ferramentas e salvaguardas, em um processo de múltiplos estágios… em menos de um dia [o relatório está no link arxiv.org/abs/2604.13940]. E a pesquisa em larga escala feita depois, com autores e membros do comitê de programa, mostrou que os participantes não só acharam as revisões de IA úteis como as preferiram às revisões humanas em dimensões-chave, entre elas acurácia técnica e sugestões de pesquisa.
+
+Leia de novo, devagar. Os autores -as vítimas, em tese, da máquina- preferiram ser avaliados pela máquina.
+
+E não é caso isolado, nem acidente. Na ICLR 2026, um relatório de detecção apontou que apenas 43% das revisões teriam sido escritas inteiramente por humanos [veja no link arxiv.org/pdf/2606.10159]. A ICML 2026 criou um regime de duas políticas -A, sem LLM; B, com LLM para entender o paper e polir o texto da revisão- em que os autores declaram sob qual política querem ser avaliados, os revisores declaram qual vão seguir, e o sistema faz o casamento entre os dois [veja no link icml.cc/…/LLM-Policy]. Depois, a mesma ICML fez desk reject de centenas de papers por violações no sistema de revisão recíproca [veja no link blog.icml.cc]. A ICLR passou a rejeitar sumariamente papers com uso extensivo e não declarado de LLM e proibiu explicitamente prompt injection, que é esconder texto dentro do paper para manipular o revisor-máquina [veja no link blog.iclr.cc].
+
+Sim. Chegamos ao ponto em que é preciso proibir, por escrito, que cientistas hackeiem o revisor.
+
+Quem olha para esse cenário e enxerga “a IA inundando a ciência de lixo” está vendo metade da tela. A outra metade, a que interessa, é que IA entrou dos dois lados da mesa, ao mesmo tempo. E, do lado da avaliação, ela já está indo melhor do que nós. Em menos de um dia.
+
+Antes de tudo, uma ressalva sobre causa
+É tentador explicar 29.000 papers com uma palavra: IA. Seria errado. Quase 20.000 das submissões vieram de um único país, e isso não é efeito de LLM: é efeito de estrutura de incentivos -exigência de publicação para titulação e promoção, expansão acelerada da pós-graduação, financiamento amarrado a contagem de artigos. IA é acelerante sobre uma pressão que já existia; não é a causa primeira. Ela derrubou o custo marginal de produzir um objeto-com-formato-de-artigo. O desejo de produzi-lo, esse já estava lá, e foi construído, com esmero, por décadas de política científica que mede o que é fácil de medir.
+
+IA não quebrou o sistema. IA revelou que o sistema já estava quebrado e que só se sustentava porque escrever era caro. Tirou-se o custo, caiu a fachada.
+
+O fim da escrita SEM IA
+ICML 2026 diz, no call for papers, que autores podem usar IA generativa para ajudar a escrever ou pesquisar, mas respondem integralmente por todo o conteúdo do paper [veja no link icml.cc/…/CallForPapers]. LLM não pode ser autor. Prompt injection é desk reject.
+
+Parece uma regra de meio-termo. Não é. É uma capitulação, e das boas. No momento em que uma conferência de primeira linha escreve “pode usar, você responde”, a proibição morreu e sobrou a responsabilização. E responsabilização é uma coisa completamente diferente: não pergunta como o texto foi feito, pergunta se ele se sustenta.
+
+Daí para a frente é aritmética. Em dois, três ciclos de submissão, não usar IA para escrever vira desvantagem competitiva pura: na cobertura da literatura, na clareza da exposição, no tempo de resposta ao rebuttal, na quantidade de ablações que dá tempo de rodar e descrever -e ablação, aqui, é o experimento em que se remove um pedaço do método, de propósito, só para medir quanto aquele pedaço estava realmente contribuindo para o resultado; é a prova de que o ganho veio da ideia, e não do acaso ou do ajuste fino. Escrever paper sem IA vai ser como fazer engenharia sem CAD ou contabilidade sem planilha. Ninguém proíbe. É só que ninguém compete.
+
+E há uma consequência mais profunda, que quase ninguém quer olhar de frente: o texto deixa de ser o artefato. Por 360 anos, desde as Philosophical Transactions, o paper era a ciência -o registro, a prova, a prioridade, o objeto de troca. Quando gerar prosa técnica bem-feita custa centavos, o texto vira interface: uma renderização, para humanos, de algo que está em outro lugar. E a pergunta “quem escreveu isso?” perde quase todo o seu poder de discriminar qualquer coisa.
+
+O fim da pesquisa SEM IA
+Escrever é a parte fácil, e a menos importante. IA já não está só na redação: está na geração de hipóteses, na varredura de literatura em escala que nenhum humano alcança, no código, na execução do experimento, na análise, na crítica dos próprios resultados.
+
+A prova de conceito já rodou. O Agents4Science, organizado por Stanford e Together AI, foi a primeira conferência em que autoria por IA não é apenas permitida: é obrigatória, com humanos como co-autores, e com agentes atuando também como revisores [veja no link agents4science.stanford.edu e o relato dos organizadores na Nature Biotechnology, no link nature.com/…/s41587-025-02963-8]. Foram cerca de 250 submissões e 48 aceites, dos quais 5 papers integralmente gerados por IA. E os organizadores tiveram que construir um detector de prompt injection nas submissões -e pegaram dois papers tentando manipular os revisores-máquina.
+
+Pense no que isso significa antes de rir ou de se assustar. Em 2025, uma conferência precisou de um sistema antifraude contra os autores-agentes que ela mesma convidou. Estamos, portanto, muito além da discussão sobre se “vale usar ChatGPT para melhorar o inglês do abstract”.
+
+O fim da cola científica
+Aqui está a ruptura mais silenciosa e, na minha leitura, a mais definitiva: plágio está deixando de ser uma categoria útil.
+
+Não porque parou de existir. Porque parou de ser, ao mesmo tempo, detectável e relevante.
+
+Copiar era um crime de procedência, e fazia todo o sentido num mundo em que texto era escasso e tinha dono. O parágrafo estava em algum lugar, alguém o escreveu, e comparar strings resolvia o caso. Agora o texto é gerado sob demanda: nada é copiado e tudo é derivado. Os detectores de “conteúdo de IA” têm taxas de falso positivo que os tornam inúteis como prova -a própria ICLR, que usa essas ferramentas, deixou escrito que só age quando um chair encontra evidência concreta independente. Ou seja: a ferramenta serve para triagem, nunca para condenação. O modelo policial acabou.
+
+O que entra no lugar? Não a detecção da origem, mas a verificação da alegação. Ninguém vai perguntar “quem escreveu isso?”. Vão perguntar “isso se sustenta?”. E note a diferença de natureza: plágio era detectável; fabricação é verificável. O pecado migra de copiar para inventar, e inventar, ao contrário de copiar, pode ser desmontado por reexecução, por replicação, por auditoria do artefato. É uma péssima notícia para quem colava e uma excelente notícia para a ciência.
+
+E a cola, coitada, também se modernizou: ela saiu do texto do autor e foi para o input do revisor. Prompt injection -a mensagem invisível escondida no PDF, dizendo ao modelo que aquele é um trabalho excelente- é a fraude nativa da era. A ICML proíbe. A ICLR proíbe. O Agents4Science teve que caçar. É a mesma velha cola, no lugar novo.
+
+O fim da ciência SEM IA
+Junte as três pontas. A escrita tem IA. A descoberta tem IA. A avaliação tem IA -e, no maior experimento de campo já feito, com 22.977 papers, a avaliação por IA foi considerada melhor pelos avaliados.
+
+“Ciência sem IA” passa a ser uma categoria histórica, como navegação sem instrumento ou farmacologia sem ensaio clínico. Não é impossível. É que deixou de ser competitiva e, em várias frentes, deixou de ser factível na fronteira. Quem quiser fazer ciência sem IA vai poder. Vai fazer devagar, com menos literatura, menos ablação, menos crítica, e vai chegar depois. Isso não é uma opinião sobre o que deveria ser: é uma descrição do que já é.
+
+A consequência séria não é essa. É a seguinte: o gargalo da ciência mudou de lugar.
+
+Não é mais a produção de resultados -essa despencou de preço. E está deixando de ser a avaliação de correção -essa a máquina faz mais rápido, mais barato e, pelo que se mediu, com mais acurácia técnica. O gargalo virou atenção, confiança e julgamento sobre o que importa. E nenhuma dessas três escala.
+
+Já escrevi por aqui, a propósito de ensino superior [no link silvio.meira.com/rupturas-atuais-e-futuras-no-ensino-superior], uma distinção que Abraham Flexner deixou pronta em 1939 e que agora fica central: importância é uma qualidade atribuída a algo por uma comunidade especialista que trata daquele algo; relevância é atribuída por observadores externos à comunidade. Pois bem. Correção vai para a máquina, e rápido. Importância e relevância não vão, porque não são fatos sobre o mundo: são decisões sobre valores, tomadas por comunidades que respondem por elas. É aí, e só aí, que sobra ciência humana. E é exatamente aí que o nosso sistema de avaliação nunca soube medir nada.
+
+
+
+Mas o que é, afinal, uma conferência?
+Para entender para onde isso vai, é preciso saber de onde veio. E vem de muito, muito mais longe do que a vasta maioria da comunidade científica imagina.
+
+Comece pelo cânone. O Primeiro Concílio Budista, em Rājagṛha, no século V a.C., é literalmente uma saṅgīti: “recitação conjunta”. Monges se reúnem, recitam em voz alta e negociam uma versão consensual do que o mestre disse. Traduzindo para hoje: um protocolo de consenso distribuído rodando em memória humana, sem escrita, com verificação por redundância. Mil e quinhentos anos antes, nas casas de tabuinhas da Mesopotâmia, as edubba, as listas lexicais padronizadas faziam trabalho parecido por cópia; no Egito, a per-ankh, a Casa da Vida, anexa ao templo, idem.
+
+Siga pela disputa. O śāstrārtha indiano, e os portões de debate de Nālandā, onde -conta a tradição- era preciso vencer um debate para entrar. A munāẓara e o majlis no mundo islâmico, e o sistema de ijāza, que é uma cadeia de certificação nominal: eu autorizo você a transmitir este texto porque fulano me autorizou, e assim por diante, até o autor. Um grafo de proveniência assinado, mil anos antes de blockchain. E a disputatio medieval de Paris e Bolonha, em especial a quodlibetal, duas vezes por ano, em que qualquer um da plateia podia perguntar qualquer coisa e o mestre tinha que responder ao vivo, publicando depois sua determinatio. Isso é sessão de perguntas e respostas, com anais.
+
+E os druidas? O senso comum coloca as assembleias druídicas na origem europeia da coisa: César descreve uma assembleia anual no território dos Carnutos, um currículo oral de vinte anos e a proibição de escrever. Mas convém desconfiar: praticamente tudo que sabemos vem de um romano, de fora, em plena campanha militar, com agenda. O ancestral europeu bem documentado é outro, e é melhor: o óenach irlandês e o eisteddfod galês -Cardigan, 1176- uma competição pública de poetas, com cadeira para o vencedor. O primeiro best paper award da história do ocidente tem 850 anos e era de poesia.
+
+Aí vem a invenção decisiva, no século XVII: testemunho. A Royal Society, a partir de 1660, fazia o experimento diante dos membros. O fato só virava fato tendo sido presenciado por testemunhas competentes. E as Philosophical Transactions, de 1665, nasceram como boletim da reunião: a publicação era subproduto do encontro. Guarde isso, porque essa relação foi invertida depois e é dela que vem toda a nossa confusão atual.
+
+Depois vem a padronização: Karlsruhe, 1860. Químicos se reúnem porque não conseguem concordar sobre pesos atômicos e resolvem a disputa na plenária. A conferência como órgão normativo, não como vitrine de currículo. E vem o formato moderno, itinerante, com sessões paralelas e imprensa: a Naturforscherversammlung de Lorenz Oken, em 1822, e a British Association, em 1831. E vem o salão: Solvay, 1911, trinta pessoas, sem chamada de trabalhos, por convite.
+
+Por fim, um dado que costuma derrubar o queixo de quem defende “a tradição”: revisão por pares é recentíssima. A Nature só passou a exigir revisão externa obrigatória em 1973; o Lancet, em 1976; e só em meados dos anos 1990 a prática virou lugar-comum [veja o trabalho de Melinda Baldwin, no link royalsocietypublishing.org/…/rsnr.2015.0029]. O Watson-Crick do DNA não passou por revisão externa. Ou seja: o sistema que estamos (nós, comunidade científica em geral) defendendo como sagrado é mais novo que o transistor, mais novo que o DNA, mais novo que quase todo mundo que o defende. Ele foi uma solução de escala para o pós-guerra. E agora, na escala de 29.000, ele simplesmente não fecha a conta.
+
+O pacote, e o que já se desfez dele
+O que chamamos de “conferência” é, na verdade, um pacote de seis funções que foram inventadas separadamente e só foram amarradas juntas no século XIX:
+
+1 sincronizar o cânone [Rājagṛha, Karlsruhe]; 2 credenciar e ranquear gente [Nālandā, eisteddfod, best paper]; 3 registrar prioridade e arquivar [Philosophical Transactions]; 4 fazer mercado de empregos, orientandos e colaborações [o século XX inteiro]; 5 testemunhar, ancorando confiança em presença [Royal Society]; e 6 ritualizar a tribo -a festa, o crachá, o “eu estava lá”.
+
+O arXiv já levou a função 3, e há tempos. IA está levando a parte de correção das funções 1 e 2, e rápido, como AAAI-26 mostrou. Sobra o quê, de estruturalmente escasso? Sobram 4, 5 e 6: mercado, testemunho e tribo. Tudo que exige corpo, presença e reputação em risco.
+
+E a computação tem um problema extra, que é só dela: é a única grande área do conhecimento em que a conferência é veículo terminal de publicação -herança da pressa da era ARPA, quando esperar 18 meses por um journal era perder a corrida. Esse arranjo funcionou por 50 anos e é exatamente ele que está desmoronando agora. Os chairs do AAAI-26 já falam, no comunicado, em continuidade de um ano para o outro, equipe profissional e um conselho editorial permanente. Traduzindo do diplomatês: uma conferência de computação está começando a virar… journal. Na verdade, todas.
+
+Cenários: para onde vai a conferência
+Cenário 1 · a banca, em tempo real. Você não apresenta paper nenhum: você senta e é examinado. O artefato roda no palco, agentes sondam o trabalho ao vivo, a plateia pergunta quodlibet, e a defesa é gravada e pública. A lógica é a mesma do antidoping: o que é barato falsificar offline fica caro falsificar na frente de todo mundo. É a Royal Society de 1660 com sandbox de execução. É, de longe, o cenário mais saudável, e o que separa as áreas que vão manter credibilidade das que não vão.
+
+Cenário 2 · revisão contínua, mediada por agentes. Some o deadline -e com ele a patologia de surto que produz 29.000 papers numa noite. O trabalho é submetido quando fica pronto, recebe avaliação de agentes em fluxo, e carrega um score vivo, que se move conforme chegam replicações, usos, refutações. A conferência deixa de ser filtro e vira curadoria: um recorte anual de um fluxo permanente, como um festival que seleciona do streaming. AAAI já fez, sem dizer o nome, o primeiro terço disso.
+
+Cenário 3 · o paper com prova acoplada. O objeto publicável deixa de ser prosa. Submete-se um artefato executável e um conjunto de alegações verificáveis por máquina -provas formais, harness de benchmark, dados e código que rodam. O texto é a renderização para humanos. E aí a conferência volta a ser Karlsruhe: seu trabalho passa a ser manter o padrão, e não ordenar 23.000 candidatos numa fila.
+
+Cenário 4 · a fuga para o salão. O prestígio abandona o mega-evento e migra para o formato Solvay: trinta pessoas (por aí, não muitas mais), por convite, sem chamada de trabalhos. Junto disso, uma refragmentação regional e linguística -20.000 submissões de um único país já é sinal de que o “venue global” pode virar dois ou três ecossistemas com pouca sobreposição, cada um com seus critérios, seus rankings e sua língua.
+
+Cenário 5 · a conferência de agentes, e a economia da aposta. o Agents4Science já é este cenário, rodando. Agentes submetem, agentes revisam, humanos assinam embaixo e respondem pelo resultado. O problema que ele expõe é o de sempre: se produzir o objeto custa quase zero, publicar deixa de sinalizar qualquer coisa. E aí a moeda muda: passa a valer o que é caro -reputação empenhada, computação gasta, consequência no mundo. Autor deposita caução; revisor aposta crédito; quem erra, paga. AAAI-26 já ensaiou a versão fraca disso, com revisores recíprocos indicados pelos coautores das submissões. A versão forte é stake, não boa vontade.
+
+Cenário 6 · a festa. o cenário mais chato e, sozinho ou combinado, o mais provável: a conferência sobrevive porque é feira de contratação, tribo, crachá, jantar e turismo -e a parte “científica” vira ornamento residual de um processo que já rodou inteiro em outro lugar, antes de todo mundo pegar o avião. Singapura, janeiro, 23.000 papers e a sensação de que ninguém leu nada.
+
+Minha leitura? 2, 5 e 6 já estão acontecendo, ao mesmo tempo, agora. 3 é o que a comunidade deveria estar construindo e mal começou. E 1 é o divisor de águas: a área que não conseguir defender seu trabalho ao vivo, na frente de gente e de máquina, vai perder a autoridade de dizer o que é verdade. E vai perder rápido.
+
+O que fica
+Em 1665, publicar era subproduto de se encontrar. Em 1973, encontrar-se virou subproduto de publicar. Em 2026, publicar deixou de ser caro e, portanto, deixou de significar. O que sobra, e só sobra isso, é o encontro -o lugar onde alguém coloca a cara, o nome e a reputação atrás de uma alegação, na frente de quem sabe perguntar.
+
+29.000 papers não são um acidente de percurso, nem uma onda que passa. São o sintoma, em alta resolução, de um sistema que mede quantidade de objeto produzido num mundo onde produzir objeto custa quase nada. Enquanto a métrica for essa, o número vai dobrar de novo. E de novo.
+
+A pergunta que AAAI-26 deixou não é se IA vai revisar os nossos papers. Ela já revisou. 22.977 deles, em menos de um dia, e os autores gostaram mais do que das revisões humanas. A pergunta é o que a gente vai fazer com o tempo que sobrou -e quem vai ter coragem de estar de pé, sem slide e sem prompt, quando alguém na plateia levantar a mão e perguntar a única coisa que máquina nenhuma responde por nós:
+
+E daí?… Por que isso importa?…
+
+
+* * *
+
+As referências principais deste texto: o comunicado dos chairs do AAAI-26 sobre escala, integridade e sustentabilidade da revisão está em aaai.org/conference/aaai/aaai-26/review-process-update; o relatório do piloto de revisão por IA, AI-Assisted Peer Review at Scale: The AAAI-26 AI Review Pilot, de Joydeep Biswas e outros 12 autores, está em arxiv.org/abs/2604.13940; as políticas de uso de LLM em revisão da ICML 2026 estão em icml.cc/Conferences/2026/LLM-Policy e a retrospectiva das violações em blog.icml.cc; a resposta da ICLR 2026 a papers e revisões geradas por LLM está em blog.iclr.cc; o Agents4Science está em agents4science.stanford.edu, com o relato dos organizadores em nature.com/articles/s41587-025-02963-8; sobre o efeito de revisões assistidas por IA nas notas e nas taxas de aceitação, na ICLR 2024, veja arxiv.org/pdf/2405.02150; e a história da revisão por pares, com a data de 1973 na Nature, está no trabalho de Melinda Baldwin, em royalsocietypublishing.org e em scholarlykitchen.sspnet.org.
