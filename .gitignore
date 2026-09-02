@@ -1,0 +1,9 @@
+# Repositório público. Estes arquivos ficam só na máquina local (ver fontes/CONTEXT.md).
+# Dados pessoais (SIAPE, telefone, e-mail):
+fontes/2026-05-14-ata-cgte-curso-extensao-edital-50-2026.md
+# Compilado derivado de slides protegidos por senha; autorização do autor pendente:
+fontes/2026-07-09-hugo-cristo-seminario-ia-compilado.pdf
+
+# Artefatos de execução do kit (saídas geradas em testes)
+biblioteca/kits/kit-pesquisa/*/saida/*
+!biblioteca/kits/kit-pesquisa/*/saida/.gitkeep
