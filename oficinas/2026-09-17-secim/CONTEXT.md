@@ -1,4 +1,4 @@
-# CONTEXT.md — Oficina "IA na pós-graduação: usar bem, organizar e declarar" (Secim, 17/09/2026)
+# CONTEXT.md — Oficina "IA além do chat: usar bem, organizar e declarar na pós-graduação" (Secim, 17/09/2026)
 
 ## Estado (02/09/2026)
 

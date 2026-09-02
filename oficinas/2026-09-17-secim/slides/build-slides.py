@@ -24,7 +24,7 @@ AQUI = Path(__file__).resolve().parent
 CEFOR_SLIDES = Path(
     os.environ.get("CEFOR_SLIDES", Path.home() / ".claude" / "skills" / "cefor-slides")
 )
-TITULO = "IA na pós-graduação: usar bem, organizar e declarar — Cefor/Ifes"
+TITULO = "IA além do chat: usar bem, organizar e declarar na pós-graduação — Cefor/Ifes"
 CORPOS = AQUI / "corpos.html"
 SAIDA = AQUI / "apresentacao-secim.html"
 
@@ -118,7 +118,7 @@ def capa(eyebrow: str, titulo: str, subtitulo: str) -> str:
     <svg width="420" height="8" style="position:absolute;left:190px;bottom:330px;" aria-hidden="true">
       <line x1="0" y1="4" x2="420" y2="4" stroke="rgba(255,255,255,.55)" stroke-width="3" stroke-dasharray="2 14" stroke-linecap="round"/>
     </svg>
-    <div style="position:absolute;left:190px;top:300px;right:520px;color:#fff;">
+    <div style="position:absolute;left:190px;top:296px;right:400px;color:#fff;">
       <div class="eyebrow reveal" style="color:rgba(255,255,255,.92);">{eyebrow}</div>
       <h1 class="t-capa reveal" style="color:#fff;margin-top:24px;text-shadow:0 2px 10px rgba(0,0,0,.22);">{titulo}</h1>
       <p class="corpo reveal" style="color:rgba(255,255,255,.94);font-size:30px;margin-top:30px;">{subtitulo}</p>
@@ -253,7 +253,7 @@ def encerramento(contatos: list[str]) -> str:
 DECK = [
     capa(
         eyebrow="Secim 2026 · Ifes campus Vitória",
-        titulo="IA na pós-graduação:<br>usar bem, organizar<br>e declarar",
+        titulo="IA além do chat:<br>usar bem, organizar e declarar<br>na pós-graduação",
         subtitulo="17 de setembro de 2026 · Elton Vinícius Silva e Marcos Accioly<br>Coordenadoria-Geral de Tecnologias Educacionais · Cefor/Ifes",
     ),
 

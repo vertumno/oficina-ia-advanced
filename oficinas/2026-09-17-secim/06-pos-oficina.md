@@ -13,7 +13,7 @@ O Concefor ensinou que o depois é onde a oficina funciona ou não. Este arquivo
 
 Um envio só, de preferência junto do certificado (combinar com a organizadora; se o certificado sair depois, mandar o nosso e pedir que o material vá de novo com o certificado). Conteúdo:
 
-> Obrigado pela participação na oficina **IA na pós-graduação: usar bem, organizar e declarar**. Segue tudo que mostramos:
+> Obrigado pela participação na oficina **IA além do chat: usar bem, organizar e declarar na pós-graduação**. Segue tudo que mostramos:
 >
 > - **Página de referências:** [link]. Tem a norma, o modelo de declaração, os prompts, o kit, o artigo do método e os links do Cefor.
 > - **Kit Pesquisa:** [link]. Em casa, o primeiro pedido é sempre: "Leia README.md e me explique o que esta pasta faz". A pasta responde; não precisa de nós.

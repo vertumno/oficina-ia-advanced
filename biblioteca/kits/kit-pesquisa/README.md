@@ -8,7 +8,7 @@ Ela faz três coisas, em ordem:
 2. **Correlaciona** as fichas com o seu tema de pesquisa (tabela, convergências, divergências, lacunas).
 3. **Relata o que fez e escreve o rascunho da sua declaração de uso de IA**, nos termos da Portaria CNPq 2.664/2026 (ferramenta, finalidade, fase).
 
-Feito pela CGTE/Cefor (Ifes) para a oficina "IA na pós-graduação" (Secim, 17/09/2026), com base na metodologia ICM de Jake Van Clief e David McDermott (2026). Licença MIT: use, altere, compartilhe.
+Feito pela CGTE/Cefor (Ifes) para a oficina "IA além do chat" (Secim, 17/09/2026), com base na metodologia ICM de Jake Van Clief e David McDermott (2026). Licença MIT: use, altere, compartilhe.
 
 ## O que você precisa
 

@@ -4,7 +4,7 @@ Prometido por Elton em 01/09 "até amanhã". Enviar em 02/09. Texto pronto para 
 
 ## Título
 
-**IA na pós-graduação: usar bem, organizar e declarar**
+**IA além do chat: usar bem, organizar e declarar na pós-graduação**
 
 Subtítulo (se o formulário aceitar): *do chat à pasta de pesquisa com rastro auditável*
 

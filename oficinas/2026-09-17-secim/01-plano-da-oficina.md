@@ -1,4 +1,4 @@
-# Plano da oficina: "IA na pós-graduação: usar bem, organizar e declarar"
+# Plano da oficina: "IA além do chat: usar bem, organizar e declarar na pós-graduação"
 
 Secim, Ifes campus Vitória, quinta-feira 17/09/2026, 16h às 17h30. Fonte canônica do roteiro. As razões estão em `02-analise-e-melhorias.md`; o que precisa acontecer antes, em `04-pre-oficina.md`; a demonstração, passo a passo, em `05-roteiro-demonstracao.md`.
 

@@ -6,7 +6,7 @@ Uma pasta por evento, nomeada `AAAA-MM-DD-nome`. Cada pasta é autossuficiente p
 
 | Pasta | Evento | Estado |
 |---|---|---|
-| `2026-09-17-secim/` | Oficina "IA na pós-graduação", Secim, Ifes campus Vitória, 17/09/2026, 16h às 17h30 | Em preparação |
+| `2026-09-17-secim/` | Oficina "IA além do chat", Secim, Ifes campus Vitória, 17/09/2026, 16h às 17h30 | Em preparação |
 
 Oficinas anteriores que vivem em outro repositório: "IA além do chat", VIII Concefor, 20/08/2026, em `C:\dev\oficina-concefor-icm\oficina\` (ficha em `referencias/oficina-concefor-2026-08-20.md`).
 

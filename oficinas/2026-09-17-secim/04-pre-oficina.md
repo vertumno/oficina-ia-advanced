@@ -30,9 +30,9 @@ Checklist datado. Hoje é 02/09 (D-15). Marcar conforme concluir. Donos são sug
 
 ## Mensagem aos inscritos (enviar 07/09)
 
-Assunto: Oficina "IA na pós-graduação" no Secim: o que trazer e como se preparar
+Assunto: Oficina "IA além do chat" no Secim: o que trazer e como se preparar
 
-> Olá! Você se inscreveu na oficina **IA na pós-graduação: usar bem, organizar e declarar**, quinta 17/09, das 16h às 17h30, com Elton e Marcos (CGTE/Cefor/Ifes).
+> Olá! Você se inscreveu na oficina **IA além do chat: usar bem, organizar e declarar na pós-graduação**, quinta 17/09, das 16h às 17h30, com Elton e Marcos (CGTE/Cefor/Ifes).
 >
 > A oficina funciona em três níveis, e você escolhe o seu:
 >

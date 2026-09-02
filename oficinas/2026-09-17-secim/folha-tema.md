@@ -4,7 +4,7 @@ Entregue na chegada, preenchida durante a oficina, **recolhida no fim**. Espelha
 
 ---
 
-**Oficina IA na pós-graduação · Secim · 17/09/2026**
+**Oficina IA além do chat · Secim · 17/09/2026**
 
 Nome: ____________________________ Programa e nível: ______________________
 

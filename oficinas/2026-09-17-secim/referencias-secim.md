@@ -1,4 +1,4 @@
-# IA na pós-graduação: usar bem, organizar e declarar — referências
+# IA além do chat: usar bem, organizar e declarar na pós-graduação — referências
 
 Página que fica com os participantes da oficina do Secim (17/09/2026). Versão legível; a versão para Moodle ou publicação é `referencias-secim.html`. Links verificados em 02/09/2026. Itens marcados **[a definir]** precisam ser preenchidos antes de publicar.
 
