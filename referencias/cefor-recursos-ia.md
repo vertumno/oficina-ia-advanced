@@ -38,3 +38,4 @@ O Cefor já tem um ecossistema de materiais, encontros e assistentes sobre IA na
 
 - Se a Base de Conhecimento aceita publicar o kit e a página de referências (quem publica, em que formato).
 - Situação do Papo com IA.IÁ em 17/09.
+- O manual traz uma sugestão de como declarar o uso de IA (Marquito, reunião de 14/09). Conferir se ela pede ferramenta, finalidade e fase, como a Portaria CNPq 2.664/2026 (06/03/2026). A atualização do manual (26/08/2026) é posterior à Portaria, mas não sabemos se incorporou a norma.

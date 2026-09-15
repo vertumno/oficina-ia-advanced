@@ -15,4 +15,4 @@ Caixa de entrada. Tudo que chega (transcrição, conversa, PDF, HTML, ata, artig
 
 - Nada aqui é editado. Se precisar de versão processada, ela nasce em `referencias/` ou `oficinas/`.
 - Um item não fica aqui mais de uma sessão de trabalho sem ao menos uma linha de registro em `fontes/CONTEXT.md` dizendo o que é e quem vai processar.
-- Estado em 02/09/2026: vazia. Os seis itens recebidos foram processados e estão em `fontes/`.
+- Estado em 14/09/2026: vazia. A transcrição da reunião de revisão de 14/09 foi processada e está em `fontes/`.

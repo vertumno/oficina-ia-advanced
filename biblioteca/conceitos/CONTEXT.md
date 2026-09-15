@@ -22,10 +22,12 @@ Os conceitos que sustentam nossas oficinas de IA. Cada arquivo segue o mesmo esq
 | `chatbot-copiloto-agente.md` | A progressão de autonomia e por que a pasta é um híbrido | 2 min |
 | `fabrica-vs-produto.md` | Resultado específico versus resultado genérico; configure a fábrica | 3 min |
 | `etapas-e-rastro.md` | Dividir a caixa-preta em caixinhas; saídas intermediárias; rastro auditável | 4 min |
+| `markdown-lingua-franca.md` | Texto com marcações que a pessoa e a IA leem bem; converter o PDF uma vez, em outra máquina | 2 min |
+| `modelo-por-etapa.md` | Modelo de fronteira onde se decide a direção, modelo simples onde se organiza | 1 min |
 
 ## Ordem sugerida em uma oficina curta
 
-janela-de-contexto → chatbot-copiloto-agente → pasta-como-agente → etapas-e-rastro → fabrica-vs-produto.
+janela-de-contexto → chatbot-copiloto-agente → pasta-como-agente → markdown-lingua-franca → etapas-e-rastro → fabrica-vs-produto → modelo-por-etapa.
 
 ## Regras
 

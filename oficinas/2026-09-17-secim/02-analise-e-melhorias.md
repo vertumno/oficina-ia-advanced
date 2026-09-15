@@ -2,6 +2,8 @@
 
 O que Marquito e Elton decidiram, o que deixaram aberto, o que os dados de outras fontes (Concefor, ICM, normas, Hugo, Meira) acrescentam, e o que propomos mudar. O plano resultante está em `01-plano-da-oficina.md`; este arquivo explica o porquê.
 
+**Atenção:** as seções 1 a 6 são a análise de 02/09 e ficam como registro. A reunião de revisão de 14/09 mudou várias decisões (mensagem aos inscritos, clínica às 15h15, folha de sobrevivência, ensaio, Gemini CLI como alternativa); o que vale agora está na **seção 7**.
+
 Fontes: `fontes/2026-09-02-transcricao-conversa-marquito-elton-secim.md`; `referencias/` (todas as fichas); `C:\dev\oficina-concefor-icm\oficina\v2\aprendizados.md`.
 
 ## 1. Resumo executivo
@@ -115,6 +117,7 @@ O Concefor colheu, sem artefatos, o caso da dupla de pesquisadores: "preparar ar
 6. **Lições aprendidas obrigatórias em `06-pos-oficina.md`**, e o que valer para todas sobe para `biblioteca/`. A edição congela; a próxima nasce em `v2/`.
 7. **Cada oficina alimenta o curso de extensão.** Os conceitos de `biblioteca/conceitos/` já são degraus da escada da ata. O kit de pesquisa vira modelo para os kits de plano de aula e de devolutivas.
 8. **Uma rodada com a IA do "mais simples e mais efetivo"** antes de cada oficina, como Marquito propôs. Esta é a primeira. A pergunta que vale repetir: "o que sai daqui se sobrar só 45 minutos?"
+9. **Automatizar a logística que se repete** (proposta de 14/09, para depois do Secim): uma pasta-agente que cria a pasta do Drive, o link curto, o QR e os documentos de preparação de cada oficina.
 
 ## 5. Riscos e decisões pendentes
 
@@ -137,3 +140,57 @@ O Concefor colheu, sem artefatos, o caso da dupla de pesquisadores: "preparar ar
 - Não corrigir o resultado de ninguém; mandar corrigir a instrução.
 - Não deixar a sala sem coletar: fichas, folhas, contatos de multiplicadores.
 - Não citar o Ofício-Circular da CAPES pelo número como se tivéssemos o documento; dizer "a CAPES orientou os programas a usar a Portaria como referência".
+- Não gastar os dias antes da oficina melhorando o visual dos slides (decisão de 14/09).
+
+## 7. Revisão de 14/09: os slides, a pré-oficina e as ferramentas
+
+Fonte: `fontes/2026-09-14-transcricao-reuniao-marquito-elton-revisao-secim.txt` (reunião de ~76 min, segunda à noite, D-3; não versionada porque cita terceiros). Marquito e Elton passaram os 31 slides, a pré-oficina e as ferramentas. Do minuto 42 em diante a conversa sai da oficina; o que interessa ao projeto foi para `futuro/comunidade.md`. Os números de slide abaixo são os do deck **novo** (35 slides), salvo quando indicado.
+
+### 7.1. Decisões e o que mudou
+
+| Tema | O que foi dito | O que mudou |
+|---|---|---|
+| Divulgação | "Já mandou pra eles? Já." | Marcada como enviada |
+| Instruções prévias | Instrução digital (página ou arquivo do Drive) com link curto e QR; "o link curto é melhor", porque no notebook ninguém lê QR; avisar a organização que pode espalhar | `preparacao-participantes.md`; slide 2 com o link; mensagem à organização em `03-divulgacao-para-a-organizacao.md` |
+| Mensagem aos inscritos | "Não vamos mandar mensagens aos inscritos" | Cancelada; o documento de preparação substitui |
+| Clínica | "A gente não vai estar lá mais cedo... no máximo 15h30" | Clínica das 15h30 às 16h |
+| Ferramenta | O Antigravity teria plano gratuito generoso com conta Google, sem GitHub; "a pessoa nem vai saber escolher entre VS Code e Antigravity", então a escolha tem que ficar clara pela conta; "esse é o recomendado, e quem for avançado tem essas opções"; "a gente já sabe que VS Code, por conta do GitHub, não vai funcionar" para a maioria | Slide 29, página, kit e preparação organizados por conta. Antigravity recomendado **se o teste de 15/09 confirmar**. Página oficial consultada em 14/09: plano individual gratuito, "basic weekly rate limits" sem número publicado, produto já fora da prévia |
+| Ferramentas que já trabalham no computador | Quem usa Claude Cowork ou o equivalente do ChatGPT trabalha a pasta do mesmo jeito; "a grande ideia é não estar vinculado a nenhuma IA" | Citadas no slide 29, na página e na preparação |
+| Slide inicial | "Precisa inserir um slide no começo" com o link | Slide 2 |
+| Manual de ética do Cefor | "Falta colocar aí"; o manual sugere como declarar; alinhamento com o CNPq incerto | Item no slide 9; *a confirmar* em `referencias/cefor-recursos-ia.md` |
+| Markdown | "Falta nos slides a questão do MD como língua franca" | Slide 21; `biblioteca/conceitos/markdown-lingua-franca.md` |
+| Contexto em camadas | É a diferença entre navegador e pasta: cada etapa só carrega o que precisa | Slide 22, mostrado enquanto a etapa 01 roda |
+| "Uma pasta que vocês sabem o que tem dentro" | Nem na web nem na pasta se sabe o que há no treino do modelo; o que se sabe é o caminho que se pediu | Slide 23 reescrito |
+| Onde chegamos | "É garantia de que a IA vai usar exatamente o que você escreveu? Não. Mas direciona muito melhor" | Quinto item no slide 24 |
+| Slide dos percentuais (antigo 24: 92%, 30%, 78%) | "Tem que ver a referência... dados interessantes, mas pra que serve nessa hora?" | Fonte confirmada (ICM: 30 de 33 praticantes). Os números viraram rodapé com fonte; o slide virou "Conheça a máquina que você cria" (27) |
+| Regras de segurança | Ler as permissões "sempre e toda vez" no começo; com o tempo, pedidos da mesma natureza podem ser liberados, desde que se saiba que não oferecem risco; aprovar um a um ensina como a máquina funciona | Regras 1 e 2 reescritas no slide 28 e na preparação |
+| Ferramentas (antigo 26) | "Tem que mudar bastante" | Refeito como tabela "você tem / use / custo" (slide 29) |
+| Modelos | Modelo de fronteira versus outros; tabela de custo; "sorvete de 50 centavos e de 10 reais"; "depende da etapa"; "a máquina são as pastas", então o modelo é um serviço | Slide 30; `biblioteca/conceitos/modelo-por-etapa.md`. Sem tabela de preços (mudam todo mês) |
+| O que você leva (antigo 28) | "Tem que rever"; os três são sucesso, "tem gente que vai travar" | Reescrito (slide 32) |
+| Onde continuar (antigo 29) | Tirar o e-mail (Elton); e-mail não é problema (Marquito); curso de extensão "com a expectativa de que saia" | E-mail só no slide final; curso como "previsto"; link curto da página |
+| Notas do apresentador | O HTML não tem notas; "com o que a gente sabe, para uma hora e meia, não tem por que" | Nada feito. As notas continuam no campo `nota` de cada slide em `build-slides.py` |
+| Visual dos slides | Elton sugeriu deixar mais visual; Marquito: "não gastaria tempo com isso" | Nada feito |
+| Prática na sala | "A gente não vai ficar esperando e fazendo com eles em formato de oficina... vamos chamar a pessoa pra sentar na máquina"; "um, dois, três exemplos" | Parte C da demonstração virou voluntário à máquina (`05-roteiro-demonstracao.md`) |
+| Prompt que cria pastas | "Eles precisam levar para casa um prompt, ou um passo a passo guiado por IA, para criar essa pasta"; "baseado no P.A.R.T.E. e no ICM, mais rápido que o questionário do ICM, menos industrial" | `biblioteca/prompts/prompt-guia-cria-pasta.md` (**não testado**) |
+| Qual kit usar ao vivo | Dúvida entre a pasta simples (só fichamento, da Parte A) e o kit de três etapas; "ele não parece tão complexo" | Mantido o kit de três etapas; dizer em voz alta que "não é sobre esta pasta" |
+| Pedido versus processo | Conversas não rodadas; "não é pra mostrar diferença no resultado, é a diferença no processo" | Opcionais; foco no processo (plano, bloco 3; nota do slide 14) |
+| Teste com pessoa leiga; ensaio cronometrado | "Não fizemos"; "ensaio cronometrado não vamos fazer" | Cancelados. O teste do kit fica, e a gravação dele vira reserva |
+| Impressos | Folha de tema, folha de sobrevivência, modelo de declaração e QR: "acho que não precisa, talvez só folha com QR" | Nenhum obrigatório |
+| Avaliação | "Ao final da avaliação vocês têm um link pra acessar o material... obriga a responder" | Tela final do formulário com o link (`06-pos-oficina.md`) |
+| Página de referências | "Vai ser o documento do Drive... ou uma página no Portal IA.IA, a gente já tem algumas de oficina"; "beleza, podemos" | Hospedagem: Portal IA.IA |
+| Prioridade | "Gastaria tempo com as coisas que precisam estar prontas pra quinta-feira" | Cronograma de 15 e 16/09 em `04-pre-oficina.md` |
+
+### 7.2. Insights novos
+
+1. **A metáfora da máquina ganhou peças.** Conheça a máquina (quem conhece sabe onde está o defeito pelo sorvete que sai); confira a máquina que a IA montou (o parafuso no lugar errado sai junto com o sorvete); manutenção não é só na crise; nem tudo merece máquina; a máquina de casquinha fica fora da de sorvete (encapsulamento: converter PDF é outra pasta). Tudo em `biblioteca/conceitos/fabrica-vs-produto.md`.
+2. **A pasta não é IA.** "As pastas e as sequências já são para humanos." Marquito contou o caso de alguém cujo computador não rodava o agente: a pessoa preencheu a estrutura de pastas à mão e, meses depois, quando conectou a IA, já tinha conteúdo pronto. Virou fala da Parte A da demonstração.
+3. **Para que fichar, se a IA lê tudo?** Reler cem artigos de 30 páginas são 3.000 páginas; reler as fichas é cerca de 1% disso, e cada ficha aponta a página. Fala da Parte B.
+4. **A oficina adianta descobertas que custam meses.** Quem usa IA sozinho só cuida da estrutura quando o resultado começa a dar errado, e só descobre que o PDF gasta demais depois de meses gastando. Markdown e camadas entram por isso.
+5. **Engenharia é tratar o erro, não evitá-lo.** Na digressão sobre software (o JPEG salvo cinquenta vezes vira borrão; o Wi-Fi perde pacotes e corrige; bits trocados por tempestade solar), a ideia útil para a oficina é: a IA erra como tudo erra, e a camada que mapeia onde errou é o que dá confiança. Na pasta, essa camada é o registro e a seção "Verificar". Não vira slide; é a resposta para "mas a IA não é determinística".
+6. **Tensão não resolvida: demonstrar cedo ou explicar antes.** Elton: "muita explicação para pouca demonstração; muito abstrato, melhor fazer acontecer e depois falar". Marquito: o resultado final da pasta é parecido com o da web; a diferença (controle das etapas, auditabilidade, poder mexer no meio) não aparece se a demonstração vier de cara. O caso de um professor que já tinha o próprio processo funcionou mostrando o resultado e depois o processo, mas ali o processo era dele. Proposta registrada em `CONTEXT.md`, decisões abertas.
+
+### 7.3. O que ficou para depois do Secim
+
+- **Uma pasta-agente que organiza oficinas:** criar a pasta no Drive, gerar o link curto e o QR, montar os documentos. "Isso vai ser lindo, mas agora a gente não precisa fazer esse ajuste na máquina, porque o sorvete é pra quinta-feira." Entra como melhoria nº 9 do nosso processo (seção 4).
+- **Comunidade própria e oficinas pagas:** `futuro/comunidade.md`.
+- **Pedido de um participante de oficina anterior** por exemplos de VS Code em tarefas administrativas: responder apontando a página da oficina quando publicada.

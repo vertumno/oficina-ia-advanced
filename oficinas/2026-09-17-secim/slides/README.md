@@ -2,7 +2,7 @@
 
 `apresentacao-secim.html` é a apresentação. Arquivo único, sem dependências: abre em qualquer navegador ou projetor, funciona **offline** (a fonte Open Sans vem embutida).
 
-31 slides, Versão B (Degradê) da identidade oficial do Cefor. Gerado com a skill [`cefor-slides`](https://github.com/) a partir do [plano da oficina](../01-plano-da-oficina.md).
+35 slides (31 na versão de 02/09; revisados em 14/09), Versão B (Degradê) da identidade oficial do Cefor. Gerado com a skill [`cefor-slides`](https://github.com/) a partir do [plano da oficina](../01-plano-da-oficina.md).
 
 ## No dia
 
@@ -24,17 +24,17 @@ Cada slide tem, no HTML, um comentário com o bloco do [`01-plano-da-oficina.md`
 
 | Slides | Bloco do plano | Tempo |
 |---|---|---|
-| 1–2 | Capa e a tese da oficina | — |
-| 3–5 | Bloco 1 · Abertura: 22.977 revisões em um dia | 5 min |
-| 6–10 | Bloco 2 · Declarar, não esconder | 12 min |
-| 11–14 | Bloco 3 · Pedir ou conduzir | 13 min |
-| 15–16 | Bloco 4 · Antes de ir ao computador | 5 min |
-| 17–20 | Bloco 5 · A pasta vira agente (demonstração) | 25 min |
-| 21 | Bloco 6 · Recapitulação | 5 min |
-| 22–27 | Bloco 7 · Método e cuidados | 10 min |
-| 28–31 | Bloco 8 · Fecho e encerramento | 10 min |
+| 1–3 | Capa, link curto do material (projetado desde a clínica) e a tese da oficina | — |
+| 4–6 | Bloco 1 · Abertura: 22.977 revisões em um dia | 5 min |
+| 7–11 | Bloco 2 · Declarar, não esconder (9 cita o manual do Cefor) | 12 min |
+| 12–15 | Bloco 3 · Pedir ou conduzir | 13 min |
+| 16–17 | Bloco 4 · Antes de ir ao computador | 5 min |
+| 18–23 | Bloco 5 · A pasta vira agente (21 e 22, Markdown e camadas, projetados enquanto a etapa 01 roda) | 25 min |
+| 24 | Bloco 6 · Recapitulação | 5 min |
+| 25–31 | Bloco 7 · Método e cuidados (27 conheça a máquina; 29 ferramenta pela conta; 30 modelo por etapa, primeiro corte) | 10 min |
+| 32–35 | Bloco 8 · Fecho e encerramento | 10 min |
 
-**Slide 15 (máquina de sorvete) não se corta**, em nenhuma hipótese. A ordem de corte está no plano.
+**Slide 16 (máquina de sorvete) não se corta**, em nenhuma hipótese. A ordem de corte está no plano.
 
 ## Como mudar o texto
 
@@ -50,7 +50,7 @@ python build-slides.py
 
 O conteúdo está lá em português, sem HTML: cada slide é uma chamada de função com o título e os itens. O script regenera `corpos.html` e `apresentacao-secim.html`.
 
-Precisa da skill instalada em `~/.claude/skills/cefor-slides`. Em outro caminho, aponte com a variável `CEFOR_SLIDES`.
+Precisa da skill instalada em `~/.claude/skills/cefor-slides`. Em outro caminho, aponte com a variável `CEFOR_SLIDES`. **Sem a skill**, o script avisa e troca só os slides dentro do `apresentacao-secim.html` já existente, preservando CSS e script: serve para mudar conteúdo, não para trocar de versão (A/B) nem o visual. Foi assim que a revisão de 14/09 foi gerada.
 
 ## Trocar para a Versão A (Cor Sólida)
 
@@ -78,9 +78,12 @@ O `.odp` e o `.pptx` levam o texto editável, as tabelas e as cores; os grafismo
 - Auditoria no Chrome, slide a slide: nada estoura o palco de 1920×1080 e nenhum texto fica cortado.
 - Sem a seta CEFOR desenhada (correto para a Versão B), sem emoji, rodapé e logo IFES presentes.
 - `h1` só na capa; títulos de conteúdo em `h2`; SVGs decorativos com `aria-hidden`.
+- **14/09:** deck remontado sem o scaffold; o diff confirmou que só os slides revisados mudaram. No Edge headless a 1920×1080, nenhum dos 35 slides tem lista, tabela ou título passando do limite, e os slides 2, 22, 24, 27 e 29 foram conferidos por captura de tela.
 
 ## O que ainda falta
 
-- Trocar os três QR codes por imagens reais no slide 29 (avaliação, página de referências, pasta compartilhada) quando os links existirem.
+- Trocar "[link curto a definir]" nos slides 2 e 33 pelo link real (no `DECK` de `build-slides.py`) e regenerar.
+- Conferir o slide 29 (ferramentas) depois do teste do Antigravity de 15/09.
 - Conferir a projeção na sala: o palco escala sozinho, mas vale testar com o projetor do campus.
-- Rodar o ensaio cronometrado de 14/09 com o deck aberto, na ordem do plano.
+- Gerar o PDF (Ctrl+P) para a pasta do Drive e para o notebook do Elton.
+- Não haverá ensaio cronometrado (decisão de 14/09).

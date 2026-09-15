@@ -18,7 +18,8 @@ Um envio só, de preferência junto do certificado (combinar com a organizadora;
 > - **Página de referências:** [link]. Tem a norma, o modelo de declaração, os prompts, o kit, o artigo do método e os links do Cefor.
 > - **Kit Pesquisa:** [link]. Em casa, o primeiro pedido é sempre: "Leia README.md e me explique o que esta pasta faz". A pasta responde; não precisa de nós.
 > - **Modelo de declaração de uso de IA:** [link]. Adapte ao seu programa; o piso é a Portaria CNPq 2.664/2026.
-> - **Folha de sobrevivência:** [link]. Créditos, Shift+Enter, as três regras.
+> - **Preparação e dicas:** [link]. Qual ferramenta usar pela conta que você tem, créditos, Shift+Enter, as três regras.
+> - **Prompt que guia a criação da sua pasta:** [link]. Para montar, com a IA, a pasta de uma tarefa da sua pesquisa. Depois de criar, confira a máquina: abra e leia cada instrução.
 > - **Se você gerou uma ficha e ainda não enviou,** mande para [pasta]. Queremos guardar os exemplos reais para a próxima turma.
 > - **Papo com IA.IÁ:** online, toda quinta, 15h às 15h45: [link do Meet]. Na quinta 24/09 o tema é "a pasta de pesquisa: dúvidas de quem foi ao Secim". Apareça.
 > - **Curso de extensão** "Inteligência de Contexto Pedagógica com IA", 90 h, a distância, em 2027: [informação ou "avisaremos"].
@@ -50,13 +51,15 @@ Enviar a quem deixou e-mail. Tabular em `fontes/2026-10-17-secim-formulario-30-d
 - [ ] Congelar esta edição; abrir `v2/` se houver próxima.
 - [ ] Atualizar `futuro/curso-extensao-2027.md` com o que o Secim ensinou sobre o público de pesquisa.
 
-## Formulário de avaliação do dia (para criar até 11/09)
+## Formulário de avaliação do dia (criar até 16/09)
 
 1. De 0 a 10, quanto você recomendaria esta oficina a um colega?
 2. Que pena que... (aberta)
 3. Que tal se... (aberta)
-4. Que nível você alcançou hoje? (0: assisti / 1: fiz no navegador / 2: fiz no computador)
+4. Até onde você foi hoje? (assisti / fiz no navegador / fiz no computador / sentei à máquina como voluntário)
 5. Quer ser multiplicador no seu programa ou participar do Papo com IA.IÁ? (sim, com e-mail / não)
+
+**Tela final do formulário (decisão de 14/09):** o link da página de referências e da pasta do Drive com o material. Quem responde a avaliação recebe o material na hora. Projetar o QR da avaliação no fecho dizendo isso.
 
 ## Lições aprendidas (preencher em 18/09)
 
@@ -69,7 +72,8 @@ Enviar a quem deixou e-mail. Tabular em `fontes/2026-10-17-secim-formulario-30-d
 | Métrica | Valor |
 |---|---|
 | Inscritos / presentes | |
-| Vieram à clínica das 15h15 | |
+| Vieram à clínica das 15h30 | |
+| Voluntários que sentaram à máquina | |
 | Instalaram antes (mão levantada) | |
 | Nível 0 / 1 / 2 (formulário) | |
 | Respostas da avaliação; média; NPS | |

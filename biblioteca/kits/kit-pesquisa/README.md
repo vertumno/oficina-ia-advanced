@@ -13,10 +13,11 @@ Feito pela CGTE/Cefor (Ifes) para a oficina "IA além do chat" (Secim, 17/09/202
 ## O que você precisa
 
 - Um computador com o **VS Code** instalado (https://code.visualstudio.com), ou outro editor que abra pastas.
-- Um **agente de IA que trabalhe em pastas**. Opções, em 02/09/2026 (confirme preços e limites, mudam com frequência):
+- Um **agente de IA que trabalhe em pastas**. Opções, em 14/09/2026 (confirme preços e limites, mudam com frequência). Na dúvida, escolha pela conta que você já tem: conta Google, Antigravity; conta no GitHub, Copilot.
 
 | Ferramenta | Como instalar | Custo |
 |---|---|---|
+| Google Antigravity | https://antigravity.google (editor com agente embutido; não precisa do VS Code) | Plano individual gratuito com conta Google, com limite de uso semanal |
 | Gemini CLI (Google) | https://github.com/google-gemini/gemini-cli | Gratuito com conta Google pessoal (cerca de 1.000 pedidos por dia) |
 | GitHub Copilot, modo agente no VS Code | Extensão "GitHub Copilot" no VS Code | Plano gratuito limitado; plano Student gratuito para estudantes verificados (GitHub Education) |
 | Claude Code (Anthropic) | https://claude.com/claude-code | Precisa de plano pago (Pro ou superior) |
@@ -28,7 +29,7 @@ Qualquer uma funciona com esta pasta. As instruções para a IA estão em `AGENT
 
 1. **Descompacte** o kit em um lugar que você encontre depois (ex.: `Documentos/pesquisa-ia/kit-pesquisa`).
 2. **Abra a pasta no VS Code:** Arquivo → Abrir Pasta → escolha `kit-pesquisa`.
-3. **Abra o seu agente de IA dentro dessa pasta** (no terminal do VS Code, digite o comando da ferramenta, ex.: `gemini`, `claude`, `codex`; ou abra o chat do Copilot e escolha o modo agente).
+3. **Abra o seu agente de IA dentro dessa pasta** (no terminal do VS Code, digite o comando da ferramenta, ex.: `gemini`, `claude`, `codex`; ou abra o chat do Copilot e escolha o modo agente). No Antigravity, abra a pasta direto nele e use o painel do agente.
 4. **Primeiro pedido, sempre este:**
    ```
    Leia README.md, CONTEXT.md e AGENTS.md desta pasta e me explique, em português, o que ela faz e como começar. Não execute nada ainda.

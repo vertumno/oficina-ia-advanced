@@ -49,3 +49,4 @@ Depois disso, o próximo passo natural é colocar um artigo em `00-entrada/` e d
 ## Histórico
 
 - 02/09/2026: escrito a partir da conversa Marquito e Elton (trechos 00:19 a 00:20, 00:33 a 00:34 e 00:53). Ainda não testado. Testar com Claude Code e com Gemini CLI antes de 10/09 e anotar o resultado aqui.
+- 14/09/2026: ainda não testado; teste remarcado para 15/09 (Claude Code e Antigravity). Para quem quer criar a pasta da *própria* tarefa, há agora a versão guiada: `prompt-guia-cria-pasta.md`.

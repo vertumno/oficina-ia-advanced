@@ -1,6 +1,6 @@
 # IA além do chat: usar bem, organizar e declarar na pós-graduação — referências
 
-Página que fica com os participantes da oficina do Secim (17/09/2026). Versão legível; a versão para Moodle ou publicação é `referencias-secim.html`. Links verificados em 02/09/2026. Itens marcados **[a definir]** precisam ser preenchidos antes de publicar.
+Página que fica com os participantes da oficina do Secim (17/09/2026). Versão legível; a versão para Moodle ou publicação é `referencias-secim.html`. Links verificados em 02/09/2026; ferramentas revisadas em 14/09/2026. Publicação: Portal IA.IA (decisão de 14/09). Itens marcados **[a definir]** precisam ser preenchidos antes de publicar.
 
 ---
 
@@ -13,7 +13,8 @@ Não é preciso dominar as ferramentas. Comece por uma tarefa concreta da sua pe
 - **Kit Pesquisa** (pasta para baixar e abrir com sua IA no computador): **[link a definir]**
 - **O prompt "processo com rastro"** (para usar em qualquer IA no navegador): **[link a definir]**
 - **Modelo de declaração de uso de IA**: **[link a definir]**
-- **Folha de sobrevivência** (instalação, créditos, regras): **[link a definir]**
+- **Preparação e dicas** (qual ferramenta usar pela conta que você tem, créditos, regras): **[link a definir]**
+- **Prompt que guia a criação da sua pasta** (para uma tarefa da sua pesquisa): **[link a definir]**
 - Ações de IA no Cefor: https://cefor.ifes.edu.br/index.php/component/content/article/2-uncategorised/17587-acoes-de-inteligencia-artificial-no-cefor
 - Base de Conhecimento do Cefor (busca por "inteligência artificial"): https://conhecimento.cefor.ifes.edu.br/buscar/?q=intelig%C3%AAncia+artificial
 
@@ -31,7 +32,7 @@ Não é preciso dominar as ferramentas. Comece por uma tarefa concreta da sua pe
 - Notícia oficial do CNPq: https://www.gov.br/cnpq/pt-br/assuntos/noticias/cnpq-em-acao/cnpq-publica-portaria-que-institui-politica-de-integridade-na-atividade-cientifica
 - Jornal da USP, "Portaria do CNPq detalha diretrizes de integridade na pesquisa com o uso de IA": https://jornal.usp.br/atualidades/portaria-do-cnpq-detalha-diretrizes-de-integridade-na-pesquisa-com-o-uso-de-inteligencia-artificial/
 - Modelo de declaração da UFRRJ (parte pré-textual, após os agradecimentos): https://portal.ufrrj.br/ufrrj-orienta-declaracao-de-uso-de-ia-em-trabalhos-academicos/
-- Manual Prático de Uso Ético de IA para a Educação (Cefor): https://bit.ly/manual-etica-IA
+- Manual Prático de Uso Ético de IA para a Educação (Cefor), que também sugere como declarar: https://bit.ly/manual-etica-IA
 - Protocolo de Atenção para Criação de Conteúdos Educacionais com IA Generativa (Rutinelli Fávero, Cefor), sete etapas, a sexta é a declaração: https://rpfweb.github.io/Protocolo-para-Uso-de-IA/
 - GUIDE-LLM, checklist de 14 itens para relatar uso de LLMs em pesquisa (Feuerriegel et al., *Nature Human Behaviour*, 2026): https://www.nature.com/articles/s41562-026-02492-7
 
@@ -43,6 +44,7 @@ Bons resultados não dependem só de um bom prompt. Conforme o trabalho cresce, 
 2. **Referências.** Ancore a IA nos seus artigos, normas e modelos. Não a use para descobrir fatos ou citações; use para trabalhar sobre o que você já verificou.
 3. **Continuidade.** Para tarefas recorrentes, escreva a instrução uma vez, em um arquivo, e deixe a pasta ler. Corrija a instrução, não o resultado.
 4. **Verificação.** Toda saída da IA termina com "o que você deve conferir". Confira. Registre o que conferiu.
+5. **Formato.** Trabalhe em Markdown, texto com marcações simples que você e a IA leem bem. Converta os PDFs uma vez, em vez de fazer a IA reler o PDF a cada tarefa.
 
 **Uma progressão possível:** conversa avulsa → contexto bem definido → projeto organizado → **pasta que vira agente**.
 
@@ -50,20 +52,24 @@ Bons resultados não dependem só de um bom prompt. Conforme o trabalho cresce, 
 - Repositório do ICM (MIT), com o workspace-builder: https://github.com/RinDig/Interpretable-Context-Methodology
 - Kit Pesquisa (o exemplo que usamos): **[link a definir]**
 - O prompt que cria uma pasta mínima: **[link a definir]**
+- O prompt que guia a criação da *sua* pasta (sete perguntas, etapas em P.A.R.T.E., e só então a pasta): **[link a definir]**. Depois de criar, confira a máquina: abra e leia cada instrução.
 - Sobre a janela de contexto: uma etapa bem delimitada usa 2 a 8 mil tokens; uma conversa que faz tudo chega a 30 a 50 mil, faixa em que os modelos perdem o fio. Conversas curtas por tarefa; projetos; pastas.
 
 ## Ferramentas
 
-**Para IA no computador (trabalhando em pastas).** Situação em 02/09/2026; confira, muda rápido.
+**Para IA no computador (trabalhando em pastas).** Situação em 14/09/2026; confira, muda rápido. Na dúvida, escolha pela conta que você já tem.
 
 | Ferramenta | Custo | Observação |
 |---|---|---|
-| VS Code + GitHub Copilot (modo Agent) | Gratuito com conta do GitHub (cerca de 50 interações por mês); plano Student gratuito para estudantes verificados no GitHub Education | Interface gráfica; caminho que usamos na oficina. Entrar com a conta do GitHub, não do Google |
+| Google Antigravity | Plano individual gratuito com conta Google, com limite de uso semanal | Para quem tem conta Google. Editor com agente embutido; não precisa do VS Code |
+| VS Code + GitHub Copilot (modo Agent) | Gratuito com conta do GitHub (cerca de 50 interações por mês); plano Student gratuito para estudantes verificados no GitHub Education | Para quem tem conta no GitHub. Interface gráfica. Entrar com a conta do GitHub, não do Google |
 | Gemini CLI (Google) | Gratuito com conta Google (cerca de 1.000 pedidos por dia) | Linha de comando; mais crédito |
 | Claude Code (Anthropic) | Pago (Pro ou superior) | Usado na demonstração |
 | Codex CLI (OpenAI) | Incluído em planos pagos do ChatGPT | |
 
-Links: https://code.visualstudio.com · https://github.com/features/copilot · https://github.com/google-gemini/gemini-cli · https://claude.com/claude-code · https://github.com/openai/codex
+Quem já usa o Claude Cowork ou outra IA que trabalha em pastas do computador pode usar o kit do mesmo jeito: a pasta não depende de nenhuma ferramenta.
+
+Links: https://antigravity.google · https://code.visualstudio.com · https://github.com/features/copilot · https://github.com/google-gemini/gemini-cli · https://claude.com/claude-code · https://github.com/openai/codex
 
 **Por etapa da pesquisa** (do "funil responsável" de Hugo Cristo, PPGP/UFES). Todas ajudam a achar e mapear; nenhuma substitui a leitura nem a seleção sistemática; todas erram.
 

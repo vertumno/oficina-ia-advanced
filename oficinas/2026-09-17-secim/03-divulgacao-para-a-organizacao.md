@@ -1,6 +1,8 @@
 # Divulgação: o que enviar à organização do Secim
 
-Prometido por Elton em 01/09 "até amanhã". Enviar em 02/09. Texto pronto para copiar. O que só a pessoa pode confirmar está entre colchetes.
+Prometido por Elton em 01/09 "até amanhã". **Enviado** (título, descrição e minibios; confirmado na reunião de 14/09). Texto pronto para copiar. O que só a pessoa pode confirmar está entre colchetes.
+
+A descrição enviada diz "as instruções de instalação serão enviadas antes". Em 14/09 decidimos **não** mandar mensagem aos inscritos: as instruções vão para um documento no Drive com link curto e QR, e pedimos à organização que divulgue. Mensagem pronta no fim deste arquivo.
 
 ## Título
 
@@ -82,3 +84,9 @@ Texto para copiar:
 ## Mensagem de envio (WhatsApp)
 
 > Oi [nome], bom dia! Segue o material da oficina: título, descrição, minibios e fotos. Precisamos de projetor com HDMI, Wi-Fi liberado para sites de IA e tomadas; os participantes trazem notebook. Se der, gostaríamos de usar a sala a partir das 15h15 para ajudar quem quiser instalar as ferramentas. Três perguntas: a rede do campus libera sites de IA? você consegue mandar uma mensagem nossa aos inscritos uma semana antes? e haverá certificado? Obrigado!
+
+## Mensagem de 15/09: o link de preparação (WhatsApp)
+
+Enviar assim que o documento de preparação (`preparacao-participantes.md`, publicado no Drive) tiver link curto e QR.
+
+> Oi [nome]! Preparamos uma página curta com as instruções para quem quiser se preparar para a oficina "IA além do chat": [link curto]. Segue também o QR code. Se vocês puderem repassar aos inscritos (e-mail, grupo ou um cartaz com o QR no credenciamento), ajuda muito. Ninguém precisa instalar nada para participar: dá para só assistir ou usar a IA no navegador. Estaremos na sala a partir das 15h30 para ajudar quem quiser instalar. Se ainda der tempo, só confirma para nós: qual é a sala, se tem projetor com HDMI e se a rede libera sites de IA. Obrigado!

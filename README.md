@@ -25,7 +25,7 @@ A oficina anterior, "IA além do chat" (VIII Concefor, 20/08/2026), vive em outr
 
 **Secim, 17/09/2026.** Tudo em [`oficinas/2026-09-17-secim/`](oficinas/2026-09-17-secim/). Comece pelo [`CONTEXT.md`](oficinas/2026-09-17-secim/CONTEXT.md) da pasta, depois pelo [plano](oficinas/2026-09-17-secim/01-plano-da-oficina.md) e pela [análise](oficinas/2026-09-17-secim/02-analise-e-melhorias.md).
 
-Pendência urgente: enviar à organizadora título, descrição, minibios e fotos (Elton prometeu "até amanhã" em 01/09). Texto, minibios completas e fotos prontos em [`03-divulgacao-para-a-organizacao.md`](oficinas/2026-09-17-secim/03-divulgacao-para-a-organizacao.md).
+Revisão de 14/09 aplicada (o que mudou e por quê: [`02-analise-e-melhorias.md`](oficinas/2026-09-17-secim/02-analise-e-melhorias.md), seção 7). Pendências até quinta em [`04-pre-oficina.md`](oficinas/2026-09-17-secim/04-pre-oficina.md).
 
 ## Como usar esta pasta
 
@@ -43,19 +43,20 @@ Pendência urgente: enviar à organizadora título, descrição, minibios e foto
 - Fontes com link e data de consulta. O que não foi verificado fica marcado como *a confirmar*.
 - A metodologia de pastas segue, de forma livre, o ICM (Van Clief e McDermott, 2026). Ficha em [`referencias/icm-van-clief-mcdermott-2026.md`](referencias/icm-van-clief-mcdermott-2026.md).
 
-## Estado atual (02/09/2026)
+## Estado atual (14/09/2026)
 
-- Seis fontes recebidas, fichadas e arquivadas em `fontes/`. Inbox vazia.
+- Sete fontes recebidas e arquivadas em `fontes/` (a transcrição da reunião de 14/09 fica só local). Inbox vazia.
 - Fichas escritas: ICM, Silvio Meira, Hugo Cristo, normas brasileiras sobre IA na pesquisa, recursos do Cefor, sala Moodle dos NTEs, oficina do Concefor, ata do curso de extensão.
-- Biblioteca: cinco conceitos, três prompts, um kit (Kit Pesquisa), um modelo de página e as fotos dos facilitadores (`biblioteca/fotos/`).
-- Secim: briefing, plano minuto a minuto, análise com insights e melhorias, divulgação, pré-oficina datada, roteiro da demonstração, pós-oficina, folha de tema, página de referências (HTML e Markdown) e **apresentação de 31 slides** na identidade do Cefor (`oficinas/2026-09-17-secim/slides/`).
-- Futuro: mapa do curso de extensão de 2027 e nota sobre o MOOC.
-- **Não testado:** o kit e os prompts. Testes previstos para 05/09 e 09/09.
+- Biblioteca: sete conceitos (novos em 14/09: Markdown como língua franca, modelo por etapa), quatro prompts (novo: o prompt que guia a criação da pasta), um kit (Kit Pesquisa), um modelo de página e as fotos dos facilitadores.
+- Secim: divulgação **enviada**; plano, roteiro, pré-oficina e página **revisados em 14/09**; documento de preparação para os participantes; **apresentação de 35 slides**.
+- Mudanças de rumo em 14/09: sem mensagem aos inscritos (link curto e QR divulgados pela organização); ferramenta escolhida pela conta (Antigravity com conta Google, Copilot com GitHub); voluntários à máquina em vez de todos fazendo; sem ensaio nem teste com leigo; página no Portal IA.IA.
+- Futuro: mapa do curso de extensão de 2027, nota sobre o MOOC e a ideia de uma comunidade (`futuro/comunidade.md`).
+- **Não testado:** o kit, os prompts e o Antigravity. Teste em 15/09.
 
 ## Próximos passos
 
 Lista completa e datada em [`oficinas/2026-09-17-secim/04-pre-oficina.md`](oficinas/2026-09-17-secim/04-pre-oficina.md). Os três mais urgentes:
 
-1. Enviar a divulgação à organizadora (02/09).
-2. Testar o kit com Claude Code, Copilot gratuito e Gemini CLI (05/09) e com uma pessoa leiga (09/09).
-3. Enviar a mensagem aos inscritos com as instruções de instalação (07/09).
+1. Testar o Antigravity, o kit e os prompts, e escolher os três artigos de exemplo (15/09).
+2. Montar a pasta do Drive, gerar o link curto e o QR e enviá-los à organização (15/09).
+3. Publicar a página no Portal IA.IA, criar o formulário de avaliação e pôr o link real nos slides (16/09).

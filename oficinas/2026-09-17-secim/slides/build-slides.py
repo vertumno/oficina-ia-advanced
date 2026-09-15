@@ -11,7 +11,8 @@ O conteudo dos slides esta na lista DECK, no fim do arquivo, em portugues e
 sem HTML: para mudar o texto da apresentacao, edite so essa lista.
 
 Requer a skill instalada em ~/.claude/skills/cefor-slides (ou informe o caminho
-em CEFOR_SLIDES).
+em CEFOR_SLIDES). Sem a skill, o script troca so os slides dentro do
+apresentacao-secim.html ja existente, preservando o CSS e o script do deck.
 """
 from __future__ import annotations
 
@@ -257,6 +258,14 @@ DECK = [
         subtitulo="17 de setembro de 2026 · Elton Vinícius Silva e Marcos Accioly<br>Coordenadoria-Geral de Tecnologias Educacionais · Cefor/Ifes",
     ),
 
+    destaque(
+        "Antes de começar: abra o material",
+        "[link curto a definir]",
+        "Digite no navegador do notebook ou do celular. Lá estão a preparação, o kit, o modelo de declaração e os prompts.",
+        nota="Chegada · projetar desde as 15h30 e durante a calibragem. Link curto é melhor que QR: notebook não lê QR. TROCAR pelo link real.",
+        tamanho=72,
+    ),
+
     lista(
         "A oficina inteira em quatro frases",
         [
@@ -324,10 +333,12 @@ DECK = [
         [
             "A <strong>CAPES</strong> ainda não tem norma própria e orientou os programas a usar a Portaria do CNPq como referência.",
             "Universidades já têm modelo. Na UFRRJ, a declaração fica na <strong>parte pré-textual, após os agradecimentos</strong>.",
+            "No Ifes, o <strong>Manual de Uso Ético de IA</strong> do Cefor também sugere como declarar.",
             "O piso é a norma nacional. <strong>Seu programa, sua banca e o periódico podem pedir mais.</strong> Pergunte.",
         ],
-        nota="Bloco 2 · dizer 'a CAPES orientou', sem citar número de ofício.",
-        top=400,
+        nota="Bloco 2 · dizer 'a CAPES orientou', sem citar número de ofício. Manual: conferir antes se a sugestão cobre ferramenta, finalidade e fase.",
+        top=370,
+        gap=32,
     ),
 
     lista(
@@ -376,7 +387,7 @@ DECK = [
             ["Dá para declarar?", "Só “usei IA”", "Ferramenta, finalidade e fase"],
             ["Serve na próxima vez?", "Não", "Vira arquivo; troque só os artigos"],
         ],
-        nota="Bloco 3 · projetar as duas conversas já rodadas no ensaio, lado a lado.",
+        nota="Bloco 3 · a diferença que importa é no PROCESSO, não no resultado: como você sabe o que a IA fez, de onde saiu cada frase, onde mexer.",
     ),
 
     indicadores(
@@ -387,7 +398,7 @@ DECK = [
         ],
         nota="Bloco 3 · janela de contexto. Falar, não demonstrar: encher a janela leva tempo demais.",
         top=360,
-        rodape_extra="É nessa segunda faixa que os modelos começam a perder o fio. E você não vê acontecer.",
+        rodape_extra="É nessa segunda faixa que os modelos começam a perder o fio, e você não vê acontecer. Quanto mais delimitada a etapa, menos ela gasta e melhor faz.",
     ),
 
     # ---------------------------------------------------------------- 03
@@ -433,14 +444,39 @@ DECK = [
             ("02", "Correlação", "As fichas cruzam com o seu tema: convergências, divergências e lacunas."),
             ("03", "Relatório e declaração", "O registro do que a IA fez vira o rascunho da sua declaração."),
         ],
-        nota="Bloco 5 · rodar a etapa 01 ao vivo; pular a 02; mostrar a 03 gerando a declaração.",
+        nota="Bloco 5 · rodar a etapa 01 ao vivo; pular a 02; mostrar a 03 gerando a declaração. Dizer: não é sobre esta pasta, é uma máquina para entender como a máquina funciona; 00-entrada é a única pasta que você alimenta.",
+    ),
+
+    lista(
+        "Markdown, a língua franca entre você e a IA",
+        [
+            "<strong>Língua franca</strong> é a que pessoas de línguas diferentes adotam para se entender.",
+            "<strong>Markdown</strong> é texto com poucas marcações (# título, - lista). Não é código.",
+            "Você lê bem, a IA lê bem, qualquer ferramenta abre. <strong>O PDF, não:</strong> cada um vem de um jeito e gasta muito mais.",
+            "Converta uma vez e trabalhe em texto. <strong>A conversão é outra máquina</strong>, separada da sua.",
+        ],
+        nota="Bloco 5 · mostrar enquanto a etapa 01 roda. Termo de Hugo Cristo. Conceito: biblioteca/conceitos/markdown-lingua-franca.md.",
+        top=380,
+        gap=32,
+    ),
+
+    tabela(
+        "Contexto em camadas: cada etapa leva só o que precisa",
+        ["", "Na janela do chat", "Na pasta com etapas"],
+        [
+            ["O que a IA carrega", "Tudo o que foi colado e conversado", "O contrato da etapa e a saída da anterior"],
+            ["Com o tempo", "A conversa cresce e a qualidade cai", "Cada etapa começa leve"],
+            ["Os artigos", "Dentro da conversa, o tempo todo", "Nos arquivos; ela abre quando precisa"],
+            ["Se ela se desviar", "Você nem percebe", "O registro mostra o que ela leu e fez"],
+        ],
+        nota="Bloco 5 · mostrar enquanto a etapa 01 roda. Ela às vezes sai da cerca e lê o que não foi indicado; ainda assim, é bem menos do que carregar tudo.",
     ),
 
     destaque(
         "A diferença que importa",
-        "Vocês não estão mais conversando com a web.<br>Estão conversando com uma pasta<br>que vocês sabem o que tem dentro.",
+        "Não dá para ver o que há dentro do modelo.<br>Mas dá para ver o caminho que você<br>pediu para ele seguir, e por onde ele passou.",
         "",
-        nota="Bloco 5 · fecho da demonstração.",
+        nota="Bloco 5 · fecho da demonstração. Na web também não se vê o treino do modelo; na pasta, o caminho fica visível.",
         tamanho=46,
     ),
 
@@ -451,9 +487,11 @@ DECK = [
             "O processo entrega as três, <strong>sem você ter que lembrar</strong> de nada.",
             "A pasta é <strong>o processo escrito</strong>, em texto que você controla.",
             "O registro é <strong>a sua declaração quase pronta</strong>.",
+            "<strong>Não é garantia:</strong> a IA ainda pode ignorar uma instrução. Mas direciona muito melhor, e você vê onde ela errou.",
         ],
-        nota="Bloco 6 · 5 min · recapitulação prevista, de pé, sem slide novo. Perguntar quem chegou a que nível.",
-        top=380,
+        nota="Bloco 6 · 5 min · recapitulação prevista, de pé. Perguntar quem chegou a que nível.",
+        top=350,
+        gap=28,
     ),
 
     # ---------------------------------------------------------------- 05
@@ -473,41 +511,54 @@ DECK = [
         gap=28,
     ),
 
-    indicadores(
-        "Onde as pessoas de fato gastam atenção",
+    lista(
+        "Conheça a máquina que você cria",
         [
-            ("92%", "Editam a primeira etapa — é onde se define a direção"),
-            ("30%", "Editam as etapas do meio — dá para confiar no processo"),
-            ("78%", "Editam a etapa final — é onde se verifica o alinhamento"),
+            "<strong>Confira a máquina que a IA montou.</strong> Se entrou um parafuso errado, sai metal junto com o sorvete.",
+            "Sorvete mole? <strong>Quem conhece a máquina sabe onde olhar.</strong> É tudo texto, e a IA explica o que você não entender.",
+            "<strong>Uma máquina, um trabalho.</strong> A de casquinha fica fora da de sorvete: converter PDF é outra pasta.",
+            "<strong>Nem tudo merece máquina.</strong> Com pressa, ou para algo que fará uma vez só, faça do jeito de sempre.",
         ],
-        nota="Bloco 7 · padrão em U, de 30 dos 33 praticantes ouvidos no estudo do ICM.",
-        colunas=3,
-        top=340,
-        rodape_extra="Capriche na entrada, confie no meio, verifique a saída.",
+        nota="Bloco 7 · substitui o slide dos percentuais (92%, 30%, 78%), que ficou só como rodapé com a fonte.",
+        top=370,
+        gap=30,
+        rodape_extra="Capriche na entrada, confie no meio, verifique a saída: 30 de 33 praticantes ouvidos no estudo do ICM (Van Clief e McDermott, 2026) editam mais a primeira e a última etapa.",
     ),
 
     lista(
         "Três regras, porque agora a IA mexe no seu computador",
         [
-            "<strong>Leia o que ela pede permissão para fazer.</strong> Sempre. Toda vez.",
-            "<strong>Não ative “aprovar tudo”</strong> enquanto não souber exatamente o que isso libera.",
+            "<strong>Leia o que ela pede permissão para fazer.</strong> No começo, toda vez: é assim que você aprende como a máquina funciona.",
+            "<strong>Só libere de vez</strong> um tipo de pedido quando souber o que ele faz e que não oferece risco.",
             "<strong>Não suba dados de participantes</strong> sem saber para onde eles vão.",
         ],
-        nota="Bloco 7 · dois minutos, sem lista de horrores. Isto amplia o poder e amplia o perigo.",
+        nota="Bloco 7 · dois minutos, sem lista de horrores. Isto amplia o poder e amplia o perigo. Com o tempo, pedidos da mesma natureza podem ser liberados.",
         top=400,
     ),
 
     tabela(
-        "Dá para fazer tudo isso de graça",
-        ["Ferramenta", "Custo", "Observação"],
+        "Qual ferramenta? Comece pela conta que você já tem",
+        ["Você tem", "Use", "Custo"],
         [
-            ["VS Code + GitHub Copilot", "Gratuito, ~50 interações por mês",
-             "Entre com a conta do <strong>GitHub</strong>, não com a do Google"],
-            ["Gemini CLI", "Gratuito, ~1.000 pedidos por dia", "Linha de comando; bem mais crédito"],
-            ["Claude Code", "Pago (plano Pro ou superior)", "É o da demonstração de hoje"],
-            ["Codex CLI", "Incluído em planos do ChatGPT", "Linha de comando"],
+            ["Conta Google pessoal", "<strong>Google Antigravity</strong> (recomendado)", "Gratuito, com limite semanal"],
+            ["Conta no GitHub", "VS Code + GitHub Copilot, modo Agent", "Gratuito, ~50 interações por mês"],
+            ["Assinatura de IA", "Claude Code, Claude Cowork, Codex", "Incluído no plano pago"],
+            ["Só o navegador", "Claude, ChatGPT ou Gemini, com o prompt do processo", "Gratuito"],
         ],
-        nota="Bloco 7 · está na folha de sobrevivência. Situação em setembro de 2026; confira, muda rápido.",
+        nota="Bloco 7 · hoje demonstramos com Claude Code, mas a pasta não depende de nenhuma IA: dá para trocar de ferramenta sem perder o processo. Antigravity: plano individual gratuito, limite semanal sem número publicado (página oficial, 14/09/2026). Conferir no teste de 15/09.",
+    ),
+
+    lista(
+        "Qual modelo? Depende da etapa",
+        [
+            "<strong>Modelos de fronteira</strong>, os mais capazes e caros: para pensar, planejar e dar direção.",
+            "<strong>Modelos menores</strong>, rápidos e baratos: para organizar, converter e formatar.",
+            "Organizar a bibliografia, o bolsista faz. <strong>Dar a direção é com quem orienta.</strong>",
+            "Modelo fraco na etapa da direção <strong>leva você longe, rápido, para o lugar errado</strong>.",
+        ],
+        nota="Bloco 7 · 1 min; primeiro corte do bloco. A máquina é a pasta; o modelo é quem você chama para cada etapa. Não misturar as metáforas.",
+        top=380,
+        gap=32,
     ),
 
     destaque(
@@ -522,12 +573,12 @@ DECK = [
     lista(
         "O que você leva daqui hoje",
         [
-            "<strong>Assisti:</strong> a página de referências, o modelo de declaração e o kit para baixar.",
-            "<strong>Fiz no navegador:</strong> o prompt que transforma pedido em processo, com um artigo seu.",
-            "<strong>Fiz no computador:</strong> a pasta funcionando, com registro do que a IA fez.",
-            "Os três são sucesso. <strong>Ninguém sai daqui operando sozinho</strong> — e isso é normal.",
+            "<strong>O que a norma pede</strong> e um modelo de declaração para adaptar.",
+            "<strong>Uma pasta que vira agente</strong>, e a certeza de que é só pasta e arquivo.",
+            "<strong>Um prompt que guia a criação da sua primeira pasta</strong>, e o kit para baixar.",
+            "Travou em algum ponto? Normal. <strong>Ninguém sai daqui operando sozinho</strong>, e todo passo dado vale.",
         ],
-        nota="Bloco 8 · 10 min · Elton. Perguntar em voz alta quem chegou a cada nível.",
+        nota="Bloco 8 · 10 min · Elton. Assistir, fazer no navegador, fazer no computador ou sentar à máquina: tudo vale. Tem gente que vai travar, e isso é normal.",
         top=370,
         gap=32,
     ),
@@ -536,11 +587,11 @@ DECK = [
         "Onde continuar depois de hoje",
         [
             "<strong>Papo com IA.IÁ</strong> — online, toda quinta, das 15h às 15h45. Leve o que travou.",
-            "<strong>Curso de extensão</strong> “Inteligência de Contexto Pedagógica com IA” — 90 h, a distância, em 2027.",
-            "<strong>A página com tudo</strong> — norma, modelo, prompts, kit e o artigo do método. QR na tela.",
-            "<strong>cgte.cefor@ifes.edu.br</strong> — e, em casa, o primeiro pedido é sempre “leia o README e me explique”.",
+            "<strong>Curso de extensão</strong> “Inteligência de Contexto Pedagógica com IA” — previsto para 2027, 90 h, a distância.",
+            "<strong>A página com tudo</strong> — norma, modelo, prompts e kit: [link curto a definir].",
+            "Em casa, o <strong>primeiro pedido</strong> é sempre: “leia o README e me explique o que esta pasta faz”.",
         ],
-        nota="Bloco 8 · projetar os dois QR juntos: avaliação e página. Coletar fichas e folhas ANTES de todo mundo levantar.",
+        nota="Bloco 8 · QR da avaliação: o link do material aparece no fim do formulário. Coletar fichas ANTES de todo mundo levantar. O e-mail de contato fica no último slide.",
         top=370,
         gap=32,
     ),
@@ -562,15 +613,38 @@ DECK = [
 ]
 
 
+def remontar_deck_existente() -> int:
+    """Sem a skill: troca só os slides do deck já gerado, preservando CSS e script.
+
+    Serve para ajustes de conteúdo. Trocar de versão (A/B) ou de CSS exige o scaffold.
+    """
+    html = SAIDA.read_bytes().decode("utf-8")
+    nl = "\r\n" if "\r\n" in html else "\n"
+    abre = html.find('<main class="deck-stage" id="deckStage">')
+    fecha = html.find("</main>", abre)
+    if abre < 0 or fecha < 0:
+        print(f"[ERRO] palco dos slides não encontrado em {SAIDA.name}.", file=sys.stderr)
+        return 1
+    inicio = html.find(nl, abre) + len(nl)
+    fim = html.rfind(nl, 0, fecha) + len(nl)
+    corpos = ("\n\n".join(DECK) + "\n").replace("\n", nl)
+    SAIDA.write_bytes((html[:inicio] + corpos + html[fim:]).encode("utf-8"))
+    print(f"[OK] deck em {SAIDA} ({len(DECK)} slides, sem o scaffold)")
+    return 0
+
+
 def main() -> int:
     scaffold = CEFOR_SLIDES / "scripts" / "new-deck.py"
+    CORPOS.write_text("\n\n".join(DECK) + "\n", encoding="utf-8")
+    print(f"[OK] {len(DECK)} corpos de slide em {CORPOS.name}")
+
     if not scaffold.exists():
+        if SAIDA.exists():
+            print(f"[AVISO] scaffold não encontrado em {scaffold}.")
+            return remontar_deck_existente()
         print(f"[ERRO] scaffold não encontrado em {scaffold}.\n"
               f"       Instale a skill ou defina CEFOR_SLIDES.", file=sys.stderr)
         return 1
-
-    CORPOS.write_text("\n\n".join(DECK) + "\n", encoding="utf-8")
-    print(f"[OK] {len(DECK)} corpos de slide em {CORPOS.name}")
 
     r = subprocess.run(
         [sys.executable, str(scaffold), "--version", "B", "--title", TITULO,

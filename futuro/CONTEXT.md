@@ -8,6 +8,7 @@ Notas para formações mais longas que as oficinas alimentam. Uso secundário de
 |---|---|
 | `curso-extensao-2027.md` | Como as oficinas (Concefor, Secim) e a biblioteca se encaixam na escada de competências do curso "Inteligência de Contexto Pedagógica com IA" (ata de 14/05/2026) |
 | `mooc.md` | O pedido de MOOC feito pelos participantes do Concefor, o que já existe no Cefor, e como diferenciar |
+| `comunidade.md` | Ideia (não decisão) de 14/09: comunidade própria, oficinas pagas além das gratuitas pelo Ifes |
 
 ## Regras
 
