@@ -1,0 +1,139 @@
+<style>
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.capa-meta{position:absolute;left:110px;top:84px;font-size:30px;line-height:1.38;font-weight:640}
+.capa-meta span{display:block;font-weight:460;color:var(--grafite)}
+svg .capa-ia{font-size:190px;font-weight:830;font-stretch:110%;letter-spacing:-.03em;fill:var(--papel)}
+svg .capa-titulo{font-size:190px;font-weight:830;font-stretch:110%;letter-spacing:-.035em}
+svg .capa-no{font-size:42px;font-weight:690}
+svg .capa-no.fim{font-weight:520;fill:var(--grafite)}
+.capa-autores{position:absolute;left:110px;top:936px;font-size:30px;font-weight:660;line-height:1.3}
+.capa-autores span{display:block;font-size:24px;font-weight:460;color:var(--grafite)}
+svg .url{font-family:var(--mono);font-size:80px;font-weight:600;letter-spacing:-.02em}
+svg .item-rot{font-size:36px;font-weight:700}
+svg .item-sub{font-size:26px;font-weight:460;fill:var(--grafite)}
+svg .laje{font-size:44px;font-weight:710;letter-spacing:-.01em}
+svg .elo{font-size:28px;font-weight:560;font-style:italic;fill:var(--grafite)}
+</style>
+
+<!-- 1 · Capa -->
+<section class="slide" data-grupo="abertura" data-hud="nao" data-titulo="IA além do chat (capa)">
+  <h1 class="sr">IA além do chat: usar bem, organizar e declarar na pós-graduação</h1>
+  <svg class="fig" viewBox="0 0 1920 1080" aria-hidden="true">
+    <defs>
+      <mask id="m-capa" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080">
+        <path class="desenho" pathLength="100" d="M172 626C172 700 236 742 330 742H1700" fill="none" stroke="#fff" stroke-width="44"/>
+      </mask>
+    </defs>
+    <!-- o chat: onde a IA costuma morar -->
+    <path class="f-tinta" d="M150 296H390A40 40 0 0 1 430 336V506A40 40 0 0 1 390 546H262L172 626V546H150A40 40 0 0 1 110 506V336A40 40 0 0 1 150 296Z"/>
+    <text class="capa-ia" x="270" y="490" text-anchor="middle">IA</text>
+    <text class="capa-titulo" x="474" y="490">além do chat</text>
+    <!-- o rastro: usar bem, organizar, declarar -->
+    <path class="rastro s-tinta" d="M172 626C172 700 236 742 330 742H1700" mask="url(#m-capa)" opacity=".5"/>
+    <use href="#i-arquivo" class="f-caneta k-papel" x="470" y="682" width="96" height="120"/>
+    <use href="#i-pasta" class="f-maq k-tinta" x="846" y="684" width="148" height="114"/>
+    <g>
+      <rect x="1272" y="682" width="96" height="120" rx="10" class="f-marca s-tinta w5"/>
+      <path d="M1320 708L1348 756H1292Z" class="f-none s-tinta w5 rd"/>
+      <path d="M1292 780c8-10 16-10 22 0s14 10 22 0 14-10 22 0" class="f-none s-caneta w4 rd"/>
+    </g>
+    <g class="f-tinta">
+      <path d="M1692 736V770Q1730 794 1768 770V736Z"/>
+      <path d="M1730 690L1806 722L1730 754L1654 722Z" class="s-papel w4"/>
+      <path d="M1730 722L1790 738V776" class="f-none s-tinta w5 rd"/>
+      <circle cx="1790" cy="782" r="9"/>
+    </g>
+    <text class="capa-no" x="518" y="870" text-anchor="middle">usar bem</text>
+    <text class="capa-no" x="920" y="870" text-anchor="middle">organizar</text>
+    <text class="capa-no" x="1320" y="870" text-anchor="middle">declarar</text>
+    <text class="capa-no fim" x="1810" y="870" text-anchor="end">na pós-graduação</text>
+  </svg>
+  <p class="capa-meta">Secim 2026<span>Ifes campus Vitória, 17 de setembro</span></p>
+  <p class="capa-autores">Elton Vinícius Silva e Marcos Accioly<span>Coordenadoria-Geral de Tecnologias Educacionais, Cefor/Ifes</span></p>
+  <aside class="nota" hidden>
+    <p><b>Capa.</b> O rastro que sai do balão do chat é o fio da oficina: usar bem, organizar, declarar.</p>
+    <p>Durante a clínica (15h30) e a calibragem, deixe projetado o slide 2, com o link do material.</p>
+  </aside>
+</section>
+
+<!-- 2 · Link do material -->
+<section class="slide" data-grupo="abertura" data-titulo="Antes de começar, abra o material">
+  <h2 class="titulo">Antes de começar, abra o material</h2>
+  <svg class="fig" viewBox="0 0 1920 1080" aria-hidden="true">
+    <rect x="110" y="292" width="1700" height="196" rx="98" class="f-branco s-tinta w6"/>
+    <circle cx="222" cy="390" r="38" class="f-none s-grafite w6"/>
+    <path d="M184 390H260M222 352C200 372 200 408 222 428M222 352C244 372 244 408 222 428" class="f-none s-grafite w5 rd"/>
+    <text class="url" x="300" y="418">[link curto a definir]</text>
+    <path d="M1340 342V438" class="s-caneta w8 rd"/>
+    <!-- o que tem lá -->
+    <use href="#i-arquivo" class="f-tinta k-papel" x="110" y="640" width="96" height="120"/>
+    <use href="#i-pasta" class="f-maq k-tinta" x="535" y="650" width="148" height="114"/>
+    <g>
+      <rect x="984" y="640" width="96" height="120" rx="10" class="f-marca s-tinta w5"/>
+      <path d="M1032 666L1060 714H1004Z" class="f-none s-tinta w5 rd"/>
+      <path d="M1004 738c8-10 16-10 22 0s14 10 22 0 14-10 22 0" class="f-none s-caneta w4 rd"/>
+    </g>
+    <use href="#i-arquivo" class="f-caneta k-papel" x="1410" y="640" width="96" height="120"/>
+    <text class="item-rot" x="110" y="830">Preparação</text>
+    <text class="item-sub" x="110" y="870">o que instalar, pela conta</text>
+    <text class="item-sub" x="110" y="904">que você já tem</text>
+    <text class="item-rot" x="535" y="830">Kit Pesquisa</text>
+    <text class="item-sub" x="535" y="870">a pasta de três etapas</text>
+    <text class="item-sub" x="535" y="904">que vira agente</text>
+    <text class="item-rot" x="984" y="830">Modelo de declaração</text>
+    <text class="item-sub" x="984" y="870">para adaptar ao seu</text>
+    <text class="item-sub" x="984" y="904">trabalho</text>
+    <text class="item-rot" x="1410" y="830">Os prompts</text>
+    <text class="item-sub" x="1410" y="870">pedido versus processo e</text>
+    <text class="item-sub" x="1410" y="904">criação da pasta</text>
+  </svg>
+  <p class="bloco corpo" style="left:110px;top:520px;font-size:38px">Digite no navegador do notebook ou do celular. Lá estão:</p>
+  <aside class="nota" hidden>
+    <p><b>Chegada.</b> Projetar desde as 15h30 (clínica) e durante a calibragem. Link curto é melhor que QR: notebook não lê QR. <b>Trocar pelo link real.</b></p>
+    <p>Calibragem, de mão levantada: quem usa IA toda semana na pesquisa? Quem já declarou o uso de IA em algum trabalho? Quem trouxe notebook e conseguiu instalar algo hoje? Anote os números no quadro.</p>
+  </aside>
+</section>
+
+<!-- 3 · A tese -->
+<section class="slide" data-grupo="abertura" data-titulo="A oficina inteira em quatro frases">
+  <h2 class="titulo">A oficina inteira em quatro frases</h2>
+  <svg class="fig" viewBox="0 0 1920 1080" aria-hidden="true">
+    <defs>
+      <marker id="seta-elo" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M0 0L10 5L0 10z" class="f-grafite"/>
+      </marker>
+    </defs>
+    <g>
+      <rect x="650" y="232" width="620" height="96" rx="16" class="f-marca"/>
+      <text class="laje" x="960" y="296" text-anchor="middle">Declarar bem</text>
+    </g>
+    <g data-step="1">
+      <path d="M960 338V366" class="s-grafite w5" marker-end="url(#seta-elo)"/>
+      <text class="elo" x="990" y="362">exige</text>
+      <rect x="530" y="378" width="860" height="96" rx="16" class="f-papel2"/>
+      <text class="laje" x="960" y="442" text-anchor="middle">saber o que a IA fez</text>
+    </g>
+    <g data-step="2">
+      <path d="M960 484V512" class="s-grafite w5" marker-end="url(#seta-elo)"/>
+      <text class="elo" x="990" y="508">exige</text>
+      <rect x="410" y="524" width="1100" height="96" rx="16" class="f-linha"/>
+      <text class="laje" x="960" y="588" text-anchor="middle">um processo visível</text>
+    </g>
+    <g data-step="3">
+      <path d="M960 630V658" class="s-grafite w5" marker-end="url(#seta-elo)"/>
+      <text class="elo" x="990" y="654">exige</text>
+      <rect x="290" y="670" width="1340" height="96" rx="16" class="f-nevoa"/>
+      <text class="laje" x="960" y="734" text-anchor="middle">organização</text>
+    </g>
+    <g data-step="4">
+      <path d="M960 776V804" class="s-grafite w5" marker-end="url(#seta-elo)"/>
+      <text class="elo" x="990" y="800">que, no computador, é</text>
+      <rect x="170" y="816" width="1580" height="96" rx="16" class="f-tinta"/>
+      <text class="laje" x="960" y="880" text-anchor="middle" style="fill:var(--papel)">pasta e arquivo com instrução em texto</text>
+    </g>
+  </svg>
+  <aside class="nota" hidden>
+    <p><b>Bloco 1, a tese.</b> Um clique por camada, lendo de cima para baixo: declarar bem exige saber o que a IA fez; isso exige um processo visível; isso exige organização; e organização, no computador, é pasta e arquivo com instrução em texto.</p>
+    <p>Voltamos a esta pilha na recapitulação (slide 24).</p>
+  </aside>
+</section>

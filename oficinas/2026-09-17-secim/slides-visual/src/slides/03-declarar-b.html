@@ -1,0 +1,171 @@
+<style>
+.quatro{position:absolute;left:110px;right:110px;top:690px;display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+.quatro p{font-size:30px;line-height:1.3;font-weight:440}
+.quatro strong{display:block;font-size:36px;line-height:1.15;margin-bottom:8px}
+svg .rot-peq{font-size:24px;font-weight:560;fill:var(--grafite)}
+svg .folha-rot{font-size:30px;font-weight:680}
+svg .andar{font-size:34px;font-weight:680}
+.piso-leg{position:absolute;left:110px;top:896px;width:760px;font-size:28px;line-height:1.3;color:var(--grafite)}
+.folhas-leg{position:absolute;left:1010px;top:808px;width:800px;font-size:30px;line-height:1.32}
+.pergunta{position:absolute;width:430px;font-size:30px;line-height:1.28;font-weight:440;text-align:center}
+.metodo-frase{position:absolute;left:110px;top:330px;width:1000px;font-size:80px;line-height:1.06;font-weight:760;letter-spacing:-.024em;text-wrap:balance}
+.metodo-frase span{display:block;margin-top:40px;color:var(--caneta)}
+svg .log-rot{font-size:30px;font-weight:640}
+</style>
+
+<!-- 8 · A Portaria em quatro pontos -->
+<section class="slide" data-grupo="s1" data-titulo="A Portaria, em quatro pontos">
+  <h2 class="titulo">A Portaria, em quatro pontos</h2>
+  <svg class="fig" viewBox="0 0 1920 1080" aria-hidden="true">
+    <path d="M512 290V900M947 290V900M1382 290V900" class="s-linha w3"/>
+    <!-- 1 · qualquer fase -->
+    <rect x="110" y="440" width="370" height="44" rx="22" class="f-marca"/>
+    <path d="M132 462H458" class="s-tinta w5 rd"/>
+    <g class="f-papel s-tinta w5">
+      <circle cx="132" cy="462" r="15"/><circle cx="213" cy="462" r="15"/><circle cx="295" cy="462" r="15"/><circle cx="376" cy="462" r="15"/><circle cx="458" cy="462" r="15"/>
+    </g>
+    <text class="rot-peq" x="110" y="536">concepção</text>
+    <text class="rot-peq" x="480" y="536" text-anchor="end">submissão</text>
+    <!-- 2 · não é autora -->
+    <rect x="570" y="330" width="320" height="300" rx="14" class="f-branco s-tinta w5"/>
+    <rect x="600" y="366" width="220" height="16" rx="8" class="f-tinta"/>
+    <rect x="600" y="394" width="160" height="16" rx="8" class="f-tinta"/>
+    <use href="#i-pessoa" class="f-caneta" x="604" y="446" width="42" height="70"/>
+    <use href="#i-pessoa" class="f-caneta" x="664" y="446" width="42" height="70"/>
+    <use href="#i-ia" class="f-maq k-papel" x="738" y="454" width="60" height="60"/>
+    <path d="M726 442L810 526M810 442L726 526" class="s-erro w8 rd"/>
+    <rect x="600" y="556" width="260" height="10" rx="5" class="f-nevoa"/>
+    <rect x="600" y="580" width="220" height="10" rx="5" class="f-nevoa"/>
+    <!-- 3 · não faz parecer -->
+    <rect x="1010" y="330" width="300" height="300" rx="14" class="f-branco s-tinta w5"/>
+    <text class="folha-rot" x="1040" y="384">Parecer</text>
+    <rect x="1040" y="412" width="230" height="10" rx="5" class="f-nevoa"/>
+    <rect x="1040" y="436" width="200" height="10" rx="5" class="f-nevoa"/>
+    <rect x="1040" y="460" width="220" height="10" rx="5" class="f-nevoa"/>
+    <use href="#i-ia" class="f-maq k-papel" x="1120" y="494" width="80" height="80"/>
+    <circle cx="1160" cy="534" r="70" class="f-none s-erro w10"/>
+    <path d="M1111 485L1209 583" class="s-erro w10 rd"/>
+    <!-- 4 · você responde -->
+    <use href="#i-pessoa" class="f-caneta" x="1420" y="420" width="96" height="160"/>
+    <rect x="1560" y="344" width="230" height="286" rx="14" class="f-branco s-tinta w5"/>
+    <rect x="1588" y="384" width="170" height="12" rx="6" class="f-nevoa"/>
+    <rect x="1588" y="412" width="150" height="12" rx="6" class="f-nevoa"/>
+    <rect x="1588" y="440" width="170" height="12" rx="6" class="f-nevoa"/>
+    <path d="M1588 476c10 10 20 10 30 0s20-10 30 0 20 10 30 0 20-10 30 0" class="f-none s-erro w5 rd"/>
+    <rect x="1588" y="510" width="160" height="12" rx="6" class="f-nevoa"/>
+    <use href="#i-ia" class="f-maq k-papel" x="1720" y="560" width="54" height="54"/>
+    <path d="M1540 330H1528V644H1540" class="f-none s-caneta w8 rd"/>
+  </svg>
+  <div class="quatro">
+    <p><strong>Declare em qualquer fase</strong>da concepção à submissão.</p>
+    <p><strong>A IA não é autora</strong>Apresentar conteúdo dela como humano é proibido.</p>
+    <p><strong>A IA não faz parecer</strong>O uso em revisão por pares é vedado.</p>
+    <p><strong>Você responde por tudo</strong>inclusive pelo erro que a ferramenta cometeu.</p>
+  </div>
+  <aside class="nota" hidden>
+    <p><b>Bloco 2.</b> O essencial da Portaria CNPq 2.664/2026, sem juridiquês (2 min).</p>
+    <p><b>Fala-chave:</b> "Assistir é diferente de substituir. A IA pode fichar, organizar, apontar. Interpretar e concluir é seu. É isso que a banca vai testar."</p>
+  </aside>
+</section>
+
+<!-- 9 · Onde entra na dissertação -->
+<section class="slide" data-grupo="s1" data-titulo="E na sua dissertação, onde isso entra?">
+  <h2 class="titulo">E na sua dissertação, onde isso entra?</h2>
+  <svg class="fig" viewBox="0 0 1920 1080" aria-hidden="true">
+    <!-- o piso e o que vem acima -->
+    <g class="f-none s-tinta w4 tracejado">
+      <rect x="110" y="330" width="720" height="104" rx="14"/>
+      <rect x="110" y="456" width="720" height="104" rx="14"/>
+      <rect x="110" y="582" width="720" height="104" rx="14"/>
+    </g>
+    <text class="andar" x="150" y="394">o periódico</text>
+    <text class="andar" x="150" y="520">sua banca</text>
+    <text class="andar" x="150" y="646">seu programa</text>
+    <path d="M846 334H866V682H846" class="f-none s-caneta w6 rd"/>
+    <text class="rot-peq" x="884" y="498" style="fill:var(--caneta);font-weight:680">podem</text>
+    <text class="rot-peq" x="884" y="528" style="fill:var(--caneta);font-weight:680">pedir</text>
+    <text class="rot-peq" x="884" y="558" style="fill:var(--caneta);font-weight:680">mais</text>
+    <rect x="110" y="708" width="720" height="164" rx="14" class="f-tinta"/>
+    <text class="andar" x="150" y="772" style="fill:var(--papel)">o piso: a norma nacional</text>
+    <text class="rot-peq" x="150" y="818" style="fill:var(--nevoa)">Portaria CNPq nº 2.664/2026</text>
+    <!-- as folhas da parte pré-textual -->
+    <g class="s-tinta w4">
+      <rect x="1010" y="300" width="560" height="330" rx="12" class="f-branco"/>
+      <rect x="1080" y="376" width="560" height="330" rx="12" class="f-branco"/>
+      <rect x="1150" y="452" width="560" height="330" rx="12" class="f-marca"/>
+      <rect x="1220" y="528" width="560" height="250" rx="12" class="f-branco"/>
+    </g>
+    <text class="folha-rot" x="1040" y="350">Folha de aprovação</text>
+    <text class="folha-rot" x="1110" y="426">Agradecimentos</text>
+    <text class="folha-rot" x="1180" y="502">Declaração de uso de IA</text>
+    <text class="folha-rot" x="1250" y="578">Resumo</text>
+  </svg>
+  <p class="piso-leg">A CAPES ainda não tem norma própria e orientou os programas a usar a Portaria do CNPq como referência. <strong style="color:var(--tinta)">Pergunte ao seu programa.</strong></p>
+  <p class="folhas-leg">Na UFRRJ, a declaração fica na <strong>parte pré-textual, após os agradecimentos</strong>. No Ifes, o <strong>Manual de Uso Ético de IA</strong> do Cefor também sugere como declarar.</p>
+  <aside class="nota" hidden>
+    <p><b>Bloco 2 (2 + 1 min).</b> Dizer "a CAPES orientou", sem citar número de ofício. O piso é a norma nacional; programa, banca e periódico podem pedir mais.</p>
+    <p>As folhas mostram a parte pré-textual sem os elementos opcionais (dedicatória, epígrafe). Manual do Cefor: conferir antes se a sugestão cobre ferramenta, finalidade e fase.</p>
+  </aside>
+</section>
+
+<!-- 10 · Quatro perguntas -->
+<section class="slide" data-grupo="s1" data-titulo="Antes de usar IA na pesquisa, quatro perguntas">
+  <h2 class="titulo">Antes de usar IA na pesquisa, quatro perguntas</h2>
+  <svg class="fig" viewBox="0 0 1920 1080" aria-hidden="true">
+    <path d="M110 590H1700" class="rastro s-tinta" opacity=".45"/>
+    <use href="#i-ia" class="f-maq k-papel" x="1720" y="550" width="80" height="80"/>
+    <g data-step="1">
+      <circle cx="380" cy="590" r="64" class="f-papel s-caneta w6"/>
+      <use href="#i-nuvem" class="f-caneta" x="338" y="562" width="84" height="54"/>
+      <path d="M380 612V578M366 590L380 576L394 590" class="f-none s-papel w5 rd"/>
+    </g>
+    <g data-step="2">
+      <circle cx="780" cy="590" r="64" class="f-papel s-caneta w6"/>
+      <use href="#i-lupa" class="k-caneta" x="744" y="554" width="72" height="72"/>
+    </g>
+    <g data-step="3">
+      <circle cx="1180" cy="590" r="64" class="f-papel s-caneta w6"/>
+      <use href="#i-pessoa" class="f-caneta" x="1136" y="566" width="26" height="44"/>
+      <use href="#i-pessoa" class="f-caneta" x="1167" y="560" width="26" height="44"/>
+      <use href="#i-pessoa" class="f-caneta" x="1198" y="566" width="26" height="44"/>
+      <rect x="1128" y="608" width="104" height="10" rx="5" class="f-caneta"/>
+    </g>
+    <g data-step="4">
+      <circle cx="1580" cy="590" r="64" class="f-papel s-caneta w6"/>
+      <use href="#i-check" class="k-caneta" x="1544" y="554" width="72" height="72"/>
+    </g>
+  </svg>
+  <p class="pergunta" data-step="1" style="left:165px;top:330px">Posso subir <strong>estes dados</strong> para uma ferramenta na nuvem?</p>
+  <p class="pergunta" data-step="2" style="left:565px;top:690px">Consigo <strong>verificar</strong> cada referência, página e número que ela me der?</p>
+  <p class="pergunta" data-step="3" style="left:965px;top:330px">Saberei dizer à banca <strong>o que a IA fez</strong> e o que eu fiz?</p>
+  <p class="pergunta" data-step="4" style="left:1365px;top:690px">A interpretação, as conclusões e a <strong>responsabilidade</strong> continuam minhas?</p>
+  <aside class="nota" hidden>
+    <p><b>Bloco 2 (2 min).</b> Um clique por pergunta. O caminho só chega à IA depois dos quatro postos.</p>
+    <p>As perguntas também estão na página de referências.</p>
+  </aside>
+</section>
+
+<!-- 11 · A declaração sai do rastro -->
+<section class="slide" data-grupo="s1" data-titulo="Por que isso vira método, e não só cuidado">
+  <h2 class="titulo">Por que isso vira método, e não só cuidado</h2>
+  <p class="metodo-frase">A declaração não sai da sua cabeça.<span>Ela sai do rastro do que você fez.</span></p>
+  <svg class="fig" viewBox="0 0 1920 1080" aria-hidden="true">
+    <defs>
+      <mask id="m-rastro-11" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080">
+        <path class="desenho" pathLength="100" d="M1480 240C1480 300 1330 290 1330 350S1480 400 1480 460 1330 510 1330 570 1480 620 1480 680 1405 700 1405 760" fill="none" stroke="#fff" stroke-width="40"/>
+      </mask>
+    </defs>
+    <path d="M1480 240C1480 300 1330 290 1330 350S1480 400 1480 460 1330 510 1330 570 1480 620 1480 680 1405 700 1405 760" class="rastro fino s-tinta" mask="url(#m-rastro-11)" opacity=".55"/>
+    <circle cx="1480" cy="240" r="17" class="f-maq"/><text class="log-rot" x="1514" y="251">Etapa 01</text>
+    <circle cx="1330" cy="350" r="17" class="f-caneta"/><text class="log-rot" x="1296" y="361" text-anchor="end">você revisa</text>
+    <circle cx="1480" cy="460" r="17" class="f-maq"/><text class="log-rot" x="1514" y="471">Etapa 02</text>
+    <circle cx="1330" cy="570" r="17" class="f-caneta"/><text class="log-rot" x="1296" y="581" text-anchor="end">você revisa</text>
+    <circle cx="1480" cy="680" r="17" class="f-maq"/><text class="log-rot" x="1514" y="691">Etapa 03</text>
+    <path d="M1405 760L1510 940H1300Z" class="f-marca s-tinta w6 rd"/>
+    <text class="log-rot" x="1540" y="918">declaração</text>
+  </svg>
+  <aside class="nota" hidden>
+    <p><b>Bloco 2, fecho (1 min).</b> "A declaração não sai da cabeça. Sai do rastro. E rastro é o que vamos construir agora."</p>
+    <p>Laranja é o que a IA fez; azul é o que você revisou. É a ponte para o bloco 3.</p>
+  </aside>
+</section>

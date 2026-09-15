@@ -1,0 +1,172 @@
+<style>
+.parte{position:absolute;left:110px;right:110px;top:236px;display:grid;grid-template-columns:repeat(5,1fr);gap:28px}
+.parte-col{display:flex;flex-direction:column}
+.parte-letra{font-size:272px;line-height:.86;font-weight:860;font-stretch:108%;letter-spacing:-.04em;color:var(--caneta)}
+.parte-nome{font-size:44px;line-height:1.1;font-weight:740;margin-top:26px}
+.parte-def{font-size:30px;line-height:1.28;font-weight:440;color:var(--grafite);margin-top:8px;min-height:78px}
+.parte-ex{font-family:var(--mono);font-size:25px;line-height:1.36;font-weight:500;background:var(--caneta-clara);border-radius:12px;padding:18px 20px;margin-top:24px}
+svg .lado{font-size:40px;font-weight:750;letter-spacing:-.01em}
+svg .caixa-rot{font-size:26px;font-weight:600}
+svg .interroga{font-size:120px;font-weight:800;fill:var(--papel)}
+.comp{position:absolute;left:110px;top:690px;width:1700px;display:grid;grid-template-columns:380px 530px 790px;font-size:30px;line-height:1.25}
+.comp span{padding:11px 0;border-top:2px solid var(--linha)}
+.comp .c-rot{font-size:26px;font-weight:560;color:var(--grafite);padding-top:14px}
+.comp .c-dir{font-weight:640}
+</style>
+
+<!-- 12 · Divisória 02 -->
+<section class="slide secao s2" data-grupo="s2" data-tom="escuro" data-titulo="02. Pedir ou conduzir">
+  <p class="sec-num">02</p>
+  <h2 class="sec-titulo">Pedir ou<br>conduzir</h2>
+  <svg class="fig" viewBox="0 0 1920 1080" aria-hidden="true">
+    <use href="#i-balao" x="1300" y="96" width="150" height="120" style="fill:none;stroke:#fff;stroke-width:6"/>
+    <path d="M1400 238C1420 300 1480 318 1540 318H1790" class="rastro s-branco" opacity=".8"/>
+    <rect x="1512" y="286" width="64" height="64" rx="10" style="fill:var(--caneta);stroke:#fff;stroke-width:6"/>
+    <rect x="1622" y="286" width="64" height="64" rx="10" style="fill:var(--caneta);stroke:#fff;stroke-width:6"/>
+    <rect x="1732" y="286" width="64" height="64" rx="10" style="fill:var(--caneta);stroke:#fff;stroke-width:6"/>
+  </svg>
+  <svg class="sec-mapa" viewBox="0 0 1700 120" aria-hidden="true">
+    <path d="M12 40H1688" stroke="currentColor" stroke-width="4" opacity=".3"/>
+    <path d="M12 40H580" stroke="currentColor" stroke-width="4"/>
+    <circle cx="12" cy="40" r="11" fill="currentColor"/>
+    <circle cx="580" cy="40" r="20" fill="currentColor"/>
+    <circle cx="1130" cy="40" r="11" fill="none" stroke="currentColor" stroke-width="4"/>
+    <circle cx="1688" cy="40" r="11" fill="none" stroke="currentColor" stroke-width="4"/>
+    <text class="mapa-rot" x="0" y="104" style="fill:currentColor">Declarar, não esconder</text>
+    <text class="mapa-rot aqui" x="580" y="104" text-anchor="middle" style="fill:currentColor">Pedir ou conduzir</text>
+    <text class="mapa-rot" x="1130" y="104" text-anchor="middle" style="fill:currentColor">A pasta vira agente</text>
+    <text class="mapa-rot" x="1700" y="104" text-anchor="end" style="fill:currentColor">Método e cuidados</text>
+  </svg>
+  <aside class="nota" hidden>
+    <p><b>Seção 02.</b> Bloco 3, pedido versus processo (13 min). Conduz: Marquito.</p>
+  </aside>
+</section>
+
+<!-- 13 · P.A.R.T.E. -->
+<section class="slide" data-grupo="s2" data-titulo="Um bom pedido tem cinco partes">
+  <h2 class="titulo">Um bom pedido tem cinco partes</h2>
+  <div class="parte">
+    <div class="parte-col">
+      <span class="parte-letra" aria-hidden="true">P</span>
+      <p class="parte-nome">Persona</p>
+      <p class="parte-def">quem a IA deve ser nesta tarefa</p>
+      <p class="parte-ex" data-step="1">Você é um assistente de revisão de literatura para pesquisa em Educação Matemática.</p>
+    </div>
+    <div class="parte-col">
+      <span class="parte-letra" aria-hidden="true">A</span>
+      <p class="parte-nome">Alvo</p>
+      <p class="parte-def">o que você quer obter, em uma frase</p>
+      <p class="parte-ex" data-step="2">Meu objetivo é entender como estes três artigos se relacionam com o meu tema.</p>
+    </div>
+    <div class="parte-col">
+      <span class="parte-letra" aria-hidden="true">R</span>
+      <p class="parte-nome">Recebedores</p>
+      <p class="parte-def">quem vai ler o resultado depois</p>
+      <p class="parte-ex" data-step="3">Será lido por mim e pela minha orientadora, que vai conferir cada afirmação.</p>
+    </div>
+    <div class="parte-col">
+      <span class="parte-letra" aria-hidden="true">T</span>
+      <p class="parte-nome">Tema</p>
+      <p class="parte-def">o assunto, com o seu contexto de pesquisa</p>
+      <p class="parte-ex" data-step="4">Uso de tecnologias digitais no ensino de matemática nos anos finais do fundamental.</p>
+    </div>
+    <div class="parte-col">
+      <span class="parte-letra" aria-hidden="true">E</span>
+      <p class="parte-nome">Estrutura</p>
+      <p class="parte-def">formato, etapas e o que verificar</p>
+      <p class="parte-ex" data-step="5">Faça em etapas: fichas, tabela, lacunas, o que você fez e um rascunho de declaração.</p>
+    </div>
+  </div>
+  <p class="fonte">Modelo P.A.R.T.E., de Hugo Cristo (PPGP/UFES). Os trechos vêm do prompt “processo com rastro”, que está no material.</p>
+  <aside class="nota" hidden>
+    <p><b>Bloco 3 (2 min).</b> Um clique por parte: aparece o trecho correspondente do prompt bom.</p>
+    <p>A palavra é literal: um pedido inteiro é feito de partes. Quem só escreve o Alvo recebe um resultado genérico.</p>
+  </aside>
+</section>
+
+<!-- 14 · Pedido solto versus processo com rastro -->
+<section class="slide" data-grupo="s2" data-titulo="O mesmo artigo, dois resultados">
+  <h2 class="titulo">O mesmo artigo, dois resultados</h2>
+  <svg class="fig" viewBox="0 0 1920 1080" aria-hidden="true">
+    <defs>
+      <marker id="seta-14" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M0 0L10 5L0 10z" class="f-tinta"/>
+      </marker>
+      <marker id="seta-14c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M0 0L10 5L0 10z" class="f-caneta"/>
+      </marker>
+    </defs>
+    <path d="M960 226V640" class="s-linha w3"/>
+    <!-- pedido solto -->
+    <text class="lado" x="110" y="262">Pedido solto</text>
+    <use href="#i-pdf" class="f-linha k-grafite" x="110" y="370" width="64" height="80"/>
+    <use href="#i-pdf" class="f-linha k-grafite" x="146" y="386" width="64" height="80"/>
+    <use href="#i-pdf" class="f-linha k-grafite" x="182" y="402" width="64" height="80"/>
+    <path d="M272 440H352" class="s-tinta w5" marker-end="url(#seta-14)"/>
+    <rect x="370" y="330" width="220" height="220" rx="12" class="f-tinta"/>
+    <text class="interroga" x="480" y="484" text-anchor="middle">?</text>
+    <path d="M608 440H668" class="s-tinta w5" marker-end="url(#seta-14)"/>
+    <rect x="684" y="310" width="226" height="262" rx="12" class="f-branco s-tinta w4"/>
+    <rect x="696" y="386" width="202" height="30" rx="4" class="f-marca"/>
+    <g class="f-nevoa">
+      <rect x="706" y="340" width="182" height="10" rx="5"/><rect x="706" y="366" width="160" height="10" rx="5"/>
+      <rect x="706" y="396" width="176" height="10" rx="5" class="f-tinta"/>
+      <rect x="706" y="426" width="182" height="10" rx="5"/><rect x="706" y="452" width="150" height="10" rx="5"/>
+      <rect x="706" y="478" width="182" height="10" rx="5"/><rect x="706" y="504" width="170" height="10" rx="5"/>
+      <rect x="706" y="530" width="120" height="10" rx="5"/>
+    </g>
+    <circle cx="912" cy="401" r="30" class="f-erro"/>
+    <text x="912" y="416" text-anchor="middle" style="font-size:42px;font-weight:800;fill:#fff">?</text>
+    <text class="caixa-rot" x="910" y="612" text-anchor="end">de onde saiu a 3ª frase?</text>
+    <!-- processo com rastro -->
+    <g data-step="1">
+      <text class="lado" x="1020" y="262">Processo com rastro</text>
+      <use href="#i-pdf" class="f-linha k-grafite" x="1020" y="380" width="56" height="70"/>
+      <use href="#i-pdf" class="f-linha k-grafite" x="1050" y="394" width="56" height="70"/>
+      <use href="#i-pdf" class="f-linha k-grafite" x="1080" y="408" width="56" height="70"/>
+      <path d="M1150 440H1192" class="s-tinta w5" marker-end="url(#seta-14)"/>
+      <g class="f-maq-c s-maq w5">
+        <rect x="1206" y="366" width="130" height="150" rx="12"/>
+        <rect x="1360" y="366" width="130" height="150" rx="12"/>
+        <rect x="1514" y="366" width="130" height="150" rx="12"/>
+      </g>
+      <path d="M1338 440H1356M1492 440H1510M1646 440H1682" class="s-tinta w5" marker-end="url(#seta-14)"/>
+      <!-- fichas -->
+      <rect x="1230" y="400" width="66" height="50" rx="6" class="f-branco s-tinta w3"/>
+      <rect x="1246" y="420" width="66" height="50" rx="6" class="f-branco s-tinta w3"/>
+      <path d="M1256 438H1300M1256 452H1290" class="s-grafite w4 rd"/>
+      <!-- tabela -->
+      <rect x="1388" y="404" width="74" height="74" rx="4" class="f-branco s-tinta w3"/>
+      <path d="M1388 429H1462M1388 453H1462M1413 404V478M1437 404V478" class="s-tinta w3"/>
+      <!-- lacunas -->
+      <path d="M1540 414H1616M1540 436H1580M1540 458H1616M1540 480H1570" class="s-tinta w5 rd"/>
+      <rect x="1590" y="428" width="28" height="16" rx="3" class="f-marca s-tinta w2"/>
+      <text class="caixa-rot" x="1271" y="552" text-anchor="middle">fichas</text>
+      <text class="caixa-rot" x="1425" y="552" text-anchor="middle">tabela</text>
+      <text class="caixa-rot" x="1579" y="552" text-anchor="middle">lacunas</text>
+      <path d="M1206 596H1644" class="rastro fino s-tinta" opacity=".5"/>
+      <text class="caixa-rot" x="1206" y="636" style="fill:var(--grafite)">registro do que a IA fez</text>
+      <rect x="1690" y="310" width="120" height="262" rx="12" class="f-branco s-tinta w4"/>
+      <rect x="1698" y="386" width="104" height="30" rx="4" class="f-marca"/>
+      <g class="f-nevoa">
+        <rect x="1708" y="340" width="86" height="10" rx="5"/><rect x="1708" y="366" width="70" height="10" rx="5"/>
+        <rect x="1708" y="396" width="84" height="10" rx="5" class="f-tinta"/>
+        <rect x="1708" y="426" width="86" height="10" rx="5"/><rect x="1708" y="452" width="66" height="10" rx="5"/>
+        <rect x="1708" y="478" width="86" height="10" rx="5"/><rect x="1708" y="504" width="78" height="10" rx="5"/>
+      </g>
+      <path d="M1750 380C1750 262 1271 250 1271 356" class="f-none s-caneta w5 rd" marker-end="url(#seta-14c)"/>
+      <text class="caixa-rot" x="1510" y="334" text-anchor="middle" style="fill:var(--caneta);font-weight:700">ficha 2, p. 7</text>
+    </g>
+  </svg>
+  <div class="comp" data-step="2">
+    <span class="c-rot">O que sai</span><span>Um texto corrido</span><span class="c-dir">Fichas, tabela e lacunas</span>
+    <span class="c-rot">Dá para verificar?</span><span>Difícil</span><span class="c-dir">Cada afirmação aponta ficha e página</span>
+    <span class="c-rot">Dá para declarar?</span><span>Só “usei IA”</span><span class="c-dir">Ferramenta, finalidade e fase</span>
+    <span class="c-rot">Serve na próxima vez?</span><span>Não</span><span class="c-dir">Vira arquivo; troque só os artigos</span>
+  </div>
+  <aside class="nota" hidden>
+    <p><b>Bloco 3 (6 min).</b> Primeiro o pedido solto; clique para o processo; clique para a comparação. O foco é a diferença no <b>processo</b>, não no resultado.</p>
+    <p>"Se o orientador perguntar de onde saiu a terceira frase, na primeira você não sabe; na segunda, está apontado." (O "ficha 2, p. 7" é ilustrativo.)</p>
+    <p><b>Nível 1 começa aqui:</b> lembrar o link do material (slide 2); quem tem IA na web já pode colar o prompt com um artigo próprio.</p>
+  </aside>
+</section>

@@ -1,0 +1,149 @@
+<style>
+svg .msg{font-size:24px;font-weight:560}
+svg .escala-rot{font-size:24px;font-weight:520;fill:var(--grafite)}
+svg .faixa-num{font-size:46px;font-weight:780;letter-spacing:-.01em}
+svg .faixa-rot{font-size:29px;font-weight:520}
+.enche{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(.12);transition:transform 2.6s var(--ease)}
+.slide.is-active .enche{transform:none}
+.apaga{transition:opacity 2.2s var(--ease) .8s}
+.slide.is-active .apaga{opacity:.2}
+html.static .enche,.deck.is-overview .enche,html.lista .enche{transform:none!important;transition:none!important}
+html.static .apaga,.deck.is-overview .apaga,html.lista .apaga{opacity:.2!important;transition:none!important}
+.sorvete-texto{position:absolute;left:110px;top:210px;width:960px}
+.sorvete-texto .frase{font-size:72px}
+.sorvete-texto .nao{font-size:150px;line-height:1;font-weight:860;font-stretch:108%;letter-spacing:-.04em;margin-top:34px}
+.sorvete-texto .volta{font-size:44px;line-height:1.2;font-weight:680;color:var(--caneta);margin-top:44px;text-wrap:balance}
+.erro1-fala{position:absolute;left:150px;top:268px;width:720px;font-size:50px;line-height:1.12;font-weight:740;letter-spacing:-.015em}
+.erro1-lado{position:absolute;left:1000px;top:262px;width:810px}
+.erro1-lado .grande{font-size:48px}
+.erro1-lado p+p{margin-top:26px}
+svg .cinquenta{font-size:32px;font-weight:660}
+</style>
+
+<!-- 15 · Janela de contexto -->
+<section class="slide" data-grupo="s2" data-titulo="Por que ela piora numa conversa longa">
+  <h2 class="titulo">Por que ela piora numa conversa longa</h2>
+  <svg class="fig" viewBox="0 0 1920 1080" aria-hidden="true">
+    <!-- a janela do chat, enchendo -->
+    <rect x="110" y="232" width="580" height="660" rx="26" class="f-branco s-tinta w5"/>
+    <path d="M110 300H690" class="s-linha w3"/>
+    <circle cx="148" cy="266" r="9" class="f-nevoa"/><circle cx="176" cy="266" r="9" class="f-nevoa"/><circle cx="204" cy="266" r="9" class="f-nevoa"/>
+    <g class="apaga">
+      <rect x="140" y="322" width="400" height="64" rx="14" class="f-caneta-c"/>
+      <text class="msg" x="162" y="362">colei os três artigos</text>
+      <rect x="260" y="402" width="400" height="84" rx="14" class="f-maq-c"/>
+      <text class="msg" x="282" y="452">resposta sobre o artigo 1</text>
+    </g>
+    <rect x="140" y="502" width="340" height="56" rx="14" class="f-caneta-c"/>
+    <text class="msg" x="162" y="538">compara com o 2</text>
+    <rect x="260" y="574" width="400" height="84" rx="14" class="f-maq-c"/>
+    <text class="msg" x="282" y="624">resposta comparando</text>
+    <rect x="140" y="674" width="260" height="56" rx="14" class="f-caneta-c"/>
+    <text class="msg" x="162" y="710">e o 3?</text>
+    <rect x="140" y="802" width="480" height="60" rx="14" class="f-caneta-c s-caneta w3"/>
+    <text class="msg" x="162" y="840">agora escreve a revisão</text>
+    <path d="M300 760h18m18 0h18m18 0h18" class="s-grafite w5 rd"/>
+    <!-- medidor da janela -->
+    <rect x="720" y="232" width="44" height="660" rx="22" class="f-papel2"/>
+    <rect x="720" y="300" width="44" height="592" rx="22" class="f-erro enche"/>
+    <text class="escala-rot" x="742" y="918" text-anchor="middle">janela</text>
+    <!-- a escala, desenhada em proporção -->
+    <g data-step="1">
+      <text class="faixa-rot" x="860" y="282" style="fill:var(--grafite)">Tokens que a IA carrega para trabalhar</text>
+      <rect x="1433" y="540" width="382" height="74" rx="8" style="fill:#FAD4D2" class="s-erro w4"/>
+      <text class="faixa-num" x="1433" y="520" style="fill:var(--erro)">30 a 50 mil</text>
+      <text class="faixa-rot" x="1413" y="588" text-anchor="end">uma conversa que tenta fazer tudo</text>
+      <rect x="898" y="400" width="115" height="74" rx="8" class="f-caneta"/>
+      <text class="faixa-num" x="898" y="380" style="fill:var(--caneta)">2 a 8 mil</text>
+      <text class="faixa-rot" x="1044" y="448">uma etapa bem delimitada</text>
+      <path d="M860 652H1815" class="s-tinta w4"/>
+      <g class="s-tinta w4">
+        <path d="M860 640V664M1051 640V664M1242 640V664M1433 640V664M1624 640V664M1815 640V664"/>
+      </g>
+      <g class="escala-rot" text-anchor="middle">
+        <text x="860" y="700">0</text><text x="1051" y="700">10 mil</text><text x="1242" y="700">20 mil</text>
+        <text x="1433" y="700">30 mil</text><text x="1624" y="700">40 mil</text><text x="1815" y="700" text-anchor="end">50 mil</text>
+      </g>
+      <text class="faixa-rot" x="860" y="800">É na segunda faixa que os modelos começam a perder o fio,</text>
+      <text class="faixa-rot" x="860" y="840">e você não vê acontecer. Quanto mais delimitada a etapa,</text>
+      <text class="faixa-rot" x="860" y="880">menos ela gasta e melhor faz.</text>
+    </g>
+  </svg>
+  <p class="fonte">Escala: Van Clief e McDermott (2026), ICM, que cita a degradação documentada por Liu et al. ("perdido no meio"). A conversa à esquerda é esquemática.</p>
+  <aside class="nota" hidden>
+    <p><b>Bloco 3 (3 min). Falar, não demonstrar:</b> encher a janela leva tempo demais.</p>
+    <p>"Tem uma coisa acontecendo por baixo dos panos que vocês não estão vendo." As mensagens do topo desbotam: ela deixa de ver o que importava. Clique para a escala, desenhada em proporção de 0 a 50 mil tokens.</p>
+    <p>Quem trabalha com muitos artigos precisa saber disso. Primeiro corte do bloco: a progressão chatbot, copiloto, agente fica só citada.</p>
+  </aside>
+</section>
+
+<!-- 16 · A máquina de sorvete (nunca cortar) -->
+<section class="slide" data-grupo="s2" data-titulo="Antes de irmos ao computador: a máquina de sorvete">
+  <h2 class="sr">Antes de irmos ao computador</h2>
+  <div class="sorvete-texto">
+    <p class="frase">A gente vai montar a máquina de sorvete.</p>
+    <p class="frase c-grafite" data-step="1" style="margin-top:30px">Vai dar vontade de pedir logo o sorvete.</p>
+    <p class="nao" data-step="2">Não peça.</p>
+    <p class="volta" data-step="3">Se o sorvete sair ruim, não conserte o sorvete: volte e conserte a máquina.</p>
+  </div>
+  <svg class="fig" viewBox="0 0 1920 1080" aria-hidden="true">
+    <defs>
+      <marker id="seta-16" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse">
+        <path d="M0 0L10 5L0 10z" class="f-caneta"/>
+      </marker>
+    </defs>
+    <use href="#i-maquina" x="1180" y="196" width="480" height="672"/>
+    <g data-step="1">
+      <use href="#i-casquinha" x="1384" y="716" width="72" height="120"/>
+    </g>
+    <g data-step="3">
+      <ellipse cx="1420" cy="776" rx="96" ry="84" class="f-none s-erro w6 tracejado"/>
+      <path d="M1300 700l44 44m0-44l-44 44" class="s-erro w8 rd"/>
+      <path d="M1520 790C1790 790 1810 440 1600 440" class="f-none s-caneta w8 rd" marker-end="url(#seta-16)"/>
+      <circle cx="1536" cy="398" r="30" class="f-caneta"/>
+      <use href="#i-check" class="k-branco" x="1514" y="376" width="44" height="44"/>
+    </g>
+  </svg>
+  <aside class="nota" hidden>
+    <p><b>Bloco 4 (5 min). Nunca cortar este slide.</b> A metáfora que funcionou no Concefor. Três cliques: a vontade, o "não peça", o conserto.</p>
+    <p>"A gente vai montar a máquina; vai dar vontade de pedir o sorvete. Não peça. Se o sorvete sair ruim, não conserte o sorvete; volte e conserte a máquina." O painel da máquina é texto: é a instrução.</p>
+  </aside>
+</section>
+
+<!-- 17 · O erro nº 1 -->
+<section class="slide" data-grupo="s2" data-titulo="O erro nº 1, e quem mais cai nele">
+  <h2 class="titulo">O erro nº 1, e quem mais cai nele</h2>
+  <svg class="fig" viewBox="0 0 1920 1080" aria-hidden="true">
+    <path d="M136 236H880A26 26 0 0 1 906 262V404A26 26 0 0 1 880 430H310L232 490V430H136A26 26 0 0 1 110 404V262A26 26 0 0 1 136 236Z" class="f-branco s-tinta w6"/>
+    <g data-step="1">
+      <use href="#i-casquinha" x="110" y="700" width="72" height="120"/>
+      <text class="cinquenta" x="110" y="900">o sorvete</text>
+      <text class="cinquenta" x="110" y="940">de hoje</text>
+      <path d="M330 640V960" class="s-linha w3"/>
+      <use href="#i-maquina" x="386" y="662" width="140" height="196"/>
+      <g>
+        <use href="#i-casquinha" x="570" y="668" width="42" height="70"/><use href="#i-casquinha" x="619" y="668" width="42" height="70"/><use href="#i-casquinha" x="668" y="668" width="42" height="70"/><use href="#i-casquinha" x="717" y="668" width="42" height="70"/><use href="#i-casquinha" x="766" y="668" width="42" height="70"/>
+        <use href="#i-casquinha" x="815" y="668" width="42" height="70"/><use href="#i-casquinha" x="864" y="668" width="42" height="70"/><use href="#i-casquinha" x="913" y="668" width="42" height="70"/><use href="#i-casquinha" x="962" y="668" width="42" height="70"/><use href="#i-casquinha" x="1011" y="668" width="42" height="70"/>
+        <use href="#i-casquinha" x="1060" y="668" width="42" height="70"/><use href="#i-casquinha" x="1109" y="668" width="42" height="70"/><use href="#i-casquinha" x="1158" y="668" width="42" height="70"/><use href="#i-casquinha" x="1207" y="668" width="42" height="70"/><use href="#i-casquinha" x="1256" y="668" width="42" height="70"/>
+        <use href="#i-casquinha" x="1305" y="668" width="42" height="70"/><use href="#i-casquinha" x="1354" y="668" width="42" height="70"/><use href="#i-casquinha" x="1403" y="668" width="42" height="70"/><use href="#i-casquinha" x="1452" y="668" width="42" height="70"/><use href="#i-casquinha" x="1501" y="668" width="42" height="70"/>
+        <use href="#i-casquinha" x="1550" y="668" width="42" height="70"/><use href="#i-casquinha" x="1599" y="668" width="42" height="70"/><use href="#i-casquinha" x="1648" y="668" width="42" height="70"/><use href="#i-casquinha" x="1697" y="668" width="42" height="70"/><use href="#i-casquinha" x="1746" y="668" width="42" height="70"/>
+        <use href="#i-casquinha" x="570" y="772" width="42" height="70"/><use href="#i-casquinha" x="619" y="772" width="42" height="70"/><use href="#i-casquinha" x="668" y="772" width="42" height="70"/><use href="#i-casquinha" x="717" y="772" width="42" height="70"/><use href="#i-casquinha" x="766" y="772" width="42" height="70"/>
+        <use href="#i-casquinha" x="815" y="772" width="42" height="70"/><use href="#i-casquinha" x="864" y="772" width="42" height="70"/><use href="#i-casquinha" x="913" y="772" width="42" height="70"/><use href="#i-casquinha" x="962" y="772" width="42" height="70"/><use href="#i-casquinha" x="1011" y="772" width="42" height="70"/>
+        <use href="#i-casquinha" x="1060" y="772" width="42" height="70"/><use href="#i-casquinha" x="1109" y="772" width="42" height="70"/><use href="#i-casquinha" x="1158" y="772" width="42" height="70"/><use href="#i-casquinha" x="1207" y="772" width="42" height="70"/><use href="#i-casquinha" x="1256" y="772" width="42" height="70"/>
+        <use href="#i-casquinha" x="1305" y="772" width="42" height="70"/><use href="#i-casquinha" x="1354" y="772" width="42" height="70"/><use href="#i-casquinha" x="1403" y="772" width="42" height="70"/><use href="#i-casquinha" x="1452" y="772" width="42" height="70"/><use href="#i-casquinha" x="1501" y="772" width="42" height="70"/>
+        <use href="#i-casquinha" x="1550" y="772" width="42" height="70"/><use href="#i-casquinha" x="1599" y="772" width="42" height="70"/><use href="#i-casquinha" x="1648" y="772" width="42" height="70"/><use href="#i-casquinha" x="1697" y="772" width="42" height="70"/><use href="#i-casquinha" x="1746" y="772" width="42" height="70"/>
+      </g>
+      <text class="cinquenta" x="570" y="900">O que interessa é a máquina que vai fazer</text>
+      <text class="cinquenta" x="570" y="940">os próximos cinquenta.</text>
+    </g>
+  </svg>
+  <p class="erro1-fala">“Me dá logo o texto da revisão de literatura.”</p>
+  <div class="erro1-lado">
+    <p class="grande">Isso é pedir o sorvete.</p>
+    <p class="corpo">Quem tem <strong>mais</strong> facilidade com computador cai mais nessa, não menos.</p>
+  </div>
+  <aside class="nota" hidden>
+    <p><b>Bloco 4.</b> Avisar antes do erro acontecer, não depois. Clique para mostrar a fileira: um sorvete hoje contra cinquenta da máquina.</p>
+    <p>Na sala, se alguém pedir "me dá logo a revisão", usar como exemplo, com gentileza: "é exatamente o sorvete".</p>
+  </aside>
+</section>

@@ -1,207 +1,2485 @@
-<title>Usar bem, organizar e declarar</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Orientações, materiais, prompts e referências da oficina IA além do chat, no Secim 2026.">
+<title>IA além do chat | Material da oficina no Secim 2026</title>
+
 <style>
-  /* Só para publicação fora do Moodle (prévia, GitHub Pages). No Moodle, remova este bloco e o <title>: tudo abaixo usa estilo inline. */
-  body { background: #ffffff; color: #23313f; margin: 0; }
-  .ref-page a { transition: background-color .15s ease; }
-  .ref-page a:hover { background-color: #f4f8fc; }
-  .ref-page a:focus-visible { outline: 3px solid #2e75b6; outline-offset: 2px; }
-  .ref-page table td, .ref-page table th { font-variant-numeric: tabular-nums; }
-  @media (prefers-reduced-motion: reduce) { .ref-page a { transition: none; } }
+  /*
+    Página dos participantes da oficina no Secim, 17/09/2026.
+    Formato embutível: estilos locais, sem JavaScript e sem dependências de rede.
+    Cor tem função: azul = ação humana; laranja = ação da IA;
+    amarelo = verificar ou declarar; pontilhado = rastro.
+  */
+  @font-face {
+    font-family: "Archivo";
+    src: url("slides-visual/src/fonts/archivo-normal.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Archivo";
+    src: url("slides-visual/src/fonts/archivo-italic.woff2") format("woff2");
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "JetBrains Mono";
+    src: url("slides-visual/src/fonts/jetbrains-normal.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+  }
+
+  body {
+    margin: 0;
+    background: #f5f6f8;
+  }
+
+  .secim-page {
+    --paper: #f5f6f8;
+    --paper-2: #e8ebf0;
+    --surface: #ffffff;
+    --ink: #151a26;
+    --graphite: #5b6474;
+    --mist: #b9c0cb;
+    --line: #d3d8e0;
+    --blue: #2350e6;
+    --blue-soft: #dce4ff;
+    --orange: #ff6b21;
+    --orange-dark: #c84a0c;
+    --orange-soft: #ffe2d1;
+    --yellow: #ffe14d;
+    --yellow-soft: #fff3b8;
+    --error: #c92724;
+    --on-blue: #ffffff;
+    --on-orange: #151a26;
+    --radius: 18px;
+    --radius-small: 12px;
+    --max: 1280px;
+    color-scheme: light;
+    min-width: 0;
+    overflow: clip;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Archivo", "Segoe UI", system-ui, -apple-system, sans-serif;
+    font-size: 18px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .secim-page *,
+  .secim-page *::before,
+  .secim-page *::after {
+    box-sizing: border-box;
+  }
+
+  .secim-page a {
+    color: inherit;
+  }
+
+  .secim-page img {
+    display: block;
+    max-width: 100%;
+  }
+
+  .secim-page h1,
+  .secim-page h2,
+  .secim-page h3,
+  .secim-page h4,
+  .secim-page p,
+  .secim-page ul,
+  .secim-page ol,
+  .secim-page dl,
+  .secim-page blockquote,
+  .secim-page figure {
+    margin-top: 0;
+  }
+
+  .secim-page h1,
+  .secim-page h2,
+  .secim-page h3,
+  .secim-page h4 {
+    text-wrap: balance;
+  }
+
+  .secim-page h1,
+  .secim-page h2 {
+    letter-spacing: -0.045em;
+  }
+
+  .secim-page h3,
+  .secim-page h4 {
+    letter-spacing: -0.02em;
+  }
+
+  .secim-page :focus-visible {
+    outline: 4px solid var(--yellow);
+    outline-offset: 4px;
+  }
+
+  .secim-page .shell {
+    width: min(calc(100% - 40px), var(--max));
+    margin-inline: auto;
+  }
+
+  .secim-page .skip-link {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 20;
+    transform: translateY(-160%);
+    border: 3px solid var(--ink);
+    border-radius: var(--radius-small);
+    background: var(--yellow);
+    color: var(--ink);
+    padding: 10px 14px;
+    font-weight: 750;
+    text-decoration: none;
+  }
+
+  .secim-page .skip-link:focus {
+    transform: none;
+  }
+
+  .secim-page .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid color-mix(in srgb, var(--line) 88%, transparent);
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: blur(16px) saturate(130%);
+    -webkit-backdrop-filter: blur(16px) saturate(130%);
+  }
+
+  .secim-page .topbar-inner {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .secim-page .brand {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+    font-weight: 840;
+    letter-spacing: -0.025em;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .secim-page .brand-mark {
+    display: grid;
+    width: 38px;
+    height: 34px;
+    place-items: center;
+    border-radius: 9px;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .secim-page .topnav {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: clamp(14px, 2vw, 28px);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .secim-page .topnav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .secim-page .topnav a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    color: var(--graphite);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 180ms ease;
+  }
+
+  .secim-page .topnav a:hover {
+    color: var(--blue);
+  }
+
+  .secim-page .hero {
+    min-height: calc(100dvh - 71px);
+    display: grid;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .secim-page .hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.06fr) minmax(420px, .94fr);
+    align-items: center;
+    gap: clamp(42px, 6vw, 92px);
+    padding-block: clamp(48px, 7vw, 88px);
+  }
+
+  .secim-page .event-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin-bottom: 22px;
+    color: var(--graphite);
+    font: 650 13px/1.35 "JetBrains Mono", ui-monospace, monospace;
+    letter-spacing: .02em;
+  }
+
+  .secim-page .event-meta span + span {
+    padding-left: 18px;
+    border-left: 1px solid var(--line);
+  }
+
+  .secim-page .hero h1 {
+    max-width: 11ch;
+    margin-bottom: 24px;
+    font-size: clamp(3.5rem, 6.5vw, 6.7rem);
+    font-weight: 870;
+    line-height: .92;
+  }
+
+  .secim-page .hero h1 em {
+    display: inline;
+    padding-bottom: .08em;
+    color: var(--blue);
+    font-family: inherit;
+    font-style: italic;
+    line-height: 1.1;
+  }
+
+  .secim-page .hero-copy > p {
+    max-width: 54ch;
+    margin-bottom: 28px;
+    color: var(--graphite);
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.48;
+  }
+
+  .secim-page .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .secim-page .button {
+    min-height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    padding: 11px 19px;
+    font-size: 15px;
+    font-weight: 780;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+  }
+
+  .secim-page .button:hover {
+    transform: translateY(-2px);
+  }
+
+  .secim-page .button:active {
+    transform: translateY(1px);
+  }
+
+  .secim-page .button-primary {
+    border-color: var(--blue);
+    background: var(--blue);
+    color: var(--on-blue);
+  }
+
+  .secim-page .button-secondary {
+    background: transparent;
+    color: var(--ink);
+  }
+
+  .secim-page .button-small {
+    min-height: 44px;
+    padding: 9px 15px;
+    font-size: 14px;
+  }
+
+  .secim-page .hero-diagram {
+    position: relative;
+    min-height: 520px;
+    isolation: isolate;
+  }
+
+  .secim-page .hero-diagram::before {
+    content: "";
+    position: absolute;
+    inset: 10% 2% 5% 6%;
+    border: 2px dashed var(--mist);
+    border-radius: 46% 54% 43% 57% / 38% 42% 58% 62%;
+    transform: rotate(-4deg);
+    z-index: -1;
+  }
+
+  .secim-page .speech {
+    position: absolute;
+    top: 3%;
+    left: 2%;
+    width: 190px;
+    height: 160px;
+    display: grid;
+    place-items: center;
+    border-radius: 30px;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 76px;
+    font-weight: 900;
+    letter-spacing: -0.08em;
+    transform: rotate(-3deg);
+  }
+
+  .secim-page .speech::after {
+    content: "";
+    position: absolute;
+    left: 28px;
+    bottom: -45px;
+    width: 0;
+    height: 0;
+    border-top: 58px solid var(--ink);
+    border-right: 58px solid transparent;
+  }
+
+  .secim-page .diagram-node {
+    position: absolute;
+    width: min(270px, 56%);
+    border: 4px solid var(--ink);
+    border-radius: var(--radius);
+    padding: 18px 20px 19px;
+    background: var(--surface);
+  }
+
+  .secim-page .diagram-node strong {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 22px;
+    line-height: 1.1;
+  }
+
+  .secim-page .diagram-node span {
+    display: block;
+    color: var(--graphite);
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .secim-page .diagram-node-human {
+    top: 8%;
+    right: 0;
+    border-color: var(--blue);
+    background: var(--blue-soft);
+    transform: rotate(2deg);
+  }
+
+  .secim-page .diagram-node-ai {
+    top: 47%;
+    left: 18%;
+    border-color: var(--orange-dark);
+    background: var(--orange-soft);
+    transform: rotate(-2deg);
+  }
+
+  .secim-page .diagram-node-check {
+    right: 2%;
+    bottom: 3%;
+    background: var(--yellow);
+    transform: rotate(1.5deg);
+  }
+
+  .secim-page .trace {
+    position: absolute;
+    height: 10px;
+    background-image: radial-gradient(circle, var(--graphite) 0 4px, transparent 4.5px);
+    background-size: 22px 10px;
+    background-repeat: repeat-x;
+    transform-origin: left center;
+    opacity: .78;
+  }
+
+  .secim-page .trace-one {
+    top: 36%;
+    left: 20%;
+    width: 58%;
+    transform: rotate(14deg);
+  }
+
+  .secim-page .trace-two {
+    top: 69%;
+    left: 39%;
+    width: 49%;
+    transform: rotate(12deg);
+  }
+
+  .secim-page .legend {
+    position: absolute;
+    left: 0;
+    bottom: 1%;
+    display: grid;
+    gap: 7px;
+    color: var(--graphite);
+    font: 600 12px/1.3 "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  .secim-page .legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .secim-page .legend i {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .secim-page .legend-human i { background: var(--blue); }
+  .secim-page .legend-ai i { background: var(--orange); }
+  .secim-page .legend-check i {
+    background: var(--yellow);
+    box-shadow: inset 0 0 0 2px var(--ink);
+  }
+
+  .secim-page .quick-strip {
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+  }
+
+  .secim-page .quick-strip-inner {
+    display: grid;
+    grid-template-columns: auto repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  .secim-page .quick-label,
+  .secim-page .quick-link {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid var(--line);
+    padding: 15px 20px;
+  }
+
+  .secim-page .quick-label {
+    padding-left: 0;
+    color: var(--graphite);
+    font: 650 12px/1.3 "JetBrains Mono", ui-monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+
+  .secim-page .quick-link {
+    justify-content: space-between;
+    gap: 12px;
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 760;
+    text-decoration: none;
+    transition: background-color 180ms ease, color 180ms ease;
+  }
+
+  .secim-page .quick-link:last-child {
+    border-right: 0;
+  }
+
+  .secim-page .quick-link:hover {
+    background: var(--blue-soft);
+    color: var(--blue);
+  }
+
+  .secim-page .quick-link span {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 18px;
+  }
+
+  .secim-page .section {
+    padding-block: clamp(76px, 9vw, 124px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .secim-page .section-muted {
+    background: var(--paper-2);
+  }
+
+  .secim-page .section-heading {
+    max-width: 790px;
+    margin-bottom: clamp(36px, 5vw, 62px);
+  }
+
+  .secim-page .eyebrow {
+    margin-bottom: 14px;
+    color: var(--blue);
+    font: 720 13px/1.2 "JetBrains Mono", ui-monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+  }
+
+  .secim-page .section h2 {
+    margin-bottom: 18px;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 850;
+    line-height: .98;
+  }
+
+  .secim-page .section-heading > p:last-child {
+    max-width: 64ch;
+    margin-bottom: 0;
+    color: var(--graphite);
+    font-size: clamp(18px, 1.6vw, 21px);
+  }
+
+  .secim-page .choice-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .secim-page .choice {
+    position: relative;
+    min-height: 250px;
+    overflow: hidden;
+    border: 3px solid var(--ink);
+    border-radius: var(--radius);
+    padding: 28px;
+    background: var(--surface);
+  }
+
+  .secim-page .choice:first-child {
+    grid-column: span 5;
+    grid-row: span 2;
+    min-height: 516px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: var(--yellow-soft);
+  }
+
+  .secim-page .choice:nth-child(2),
+  .secim-page .choice:nth-child(3) {
+    grid-column: span 7;
+  }
+
+  .secim-page .choice:nth-child(2) {
+    border-color: var(--blue);
+  }
+
+  .secim-page .choice:nth-child(3) {
+    border-color: var(--orange-dark);
+    background: var(--orange-soft);
+  }
+
+  .secim-page .choice-mark {
+    position: absolute;
+    top: 22px;
+    right: 24px;
+    color: color-mix(in srgb, var(--ink) 22%, transparent);
+    font: 860 clamp(56px, 8vw, 112px)/1 "Archivo", sans-serif;
+    letter-spacing: -0.08em;
+  }
+
+  .secim-page .choice:nth-child(2) .choice-mark { color: color-mix(in srgb, var(--blue) 28%, transparent); }
+  .secim-page .choice:nth-child(3) .choice-mark { color: color-mix(in srgb, var(--orange-dark) 28%, transparent); }
+
+  .secim-page .choice h3 {
+    position: relative;
+    max-width: 15ch;
+    margin-bottom: 10px;
+    font-size: clamp(26px, 3vw, 39px);
+    font-weight: 820;
+    line-height: 1.03;
+  }
+
+  .secim-page .choice p {
+    position: relative;
+    max-width: 48ch;
+    margin-bottom: 0;
+    color: var(--graphite);
+  }
+
+  .secim-page .choice ul {
+    position: relative;
+    margin: 18px 0 0;
+    padding-left: 20px;
+    color: var(--graphite);
+    font-size: 16px;
+  }
+
+  .secim-page .choice strong {
+    color: var(--ink);
+  }
+
+  .secim-page .prepare-layout {
+    display: grid;
+    grid-template-columns: minmax(0, .8fr) minmax(460px, 1.2fr);
+    gap: clamp(36px, 7vw, 96px);
+    align-items: start;
+  }
+
+  .secim-page .prepare-sticky {
+    position: sticky;
+    top: 104px;
+  }
+
+  .secim-page .prepare-sticky h2 {
+    max-width: 8ch;
+  }
+
+  .secim-page .notice {
+    margin-top: 28px;
+    border: 3px solid var(--blue);
+    border-radius: var(--radius);
+    padding: 22px;
+    background: var(--blue-soft);
+  }
+
+  .secim-page .notice strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 21px;
+  }
+
+  .secim-page .notice p {
+    margin-bottom: 0;
+    color: var(--graphite);
+    font-size: 15px;
+  }
+
+  .secim-page .prep-list {
+    display: grid;
+    gap: 18px;
+  }
+
+  .secim-page .prep-step {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 18px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .secim-page .prep-step:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .secim-page .step-number {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+    font: 760 15px/1 "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  .secim-page .prep-step h3 {
+    margin-bottom: 6px;
+    font-size: 24px;
+    font-weight: 800;
+  }
+
+  .secim-page .prep-step p,
+  .secim-page .prep-step ul {
+    margin-bottom: 0;
+    color: var(--graphite);
+  }
+
+  .secim-page .prep-step ul {
+    padding-left: 20px;
+  }
+
+  .secim-page .tools {
+    margin-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+
+  .secim-page details {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .secim-page summary {
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    cursor: pointer;
+    list-style: none;
+    color: var(--ink);
+    font-weight: 780;
+  }
+
+  .secim-page summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .secim-page summary::after {
+    content: "+";
+    flex: none;
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    font: 700 21px/1 "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  .secim-page details[open] summary::after {
+    content: "-";
+  }
+
+  .secim-page .details-body {
+    padding: 0 48px 26px 0;
+    color: var(--graphite);
+    font-size: 16px;
+  }
+
+  .secim-page .details-body p:last-child,
+  .secim-page .details-body ul:last-child,
+  .secim-page .details-body ol:last-child {
+    margin-bottom: 0;
+  }
+
+  .secim-page .details-body a,
+  .secim-page .text-link {
+    color: var(--blue);
+    font-weight: 720;
+    text-underline-offset: 3px;
+  }
+
+  .secim-page .command-box {
+    position: relative;
+    margin-top: 16px;
+    border: 3px solid var(--ink);
+    border-radius: var(--radius-small);
+    padding: 20px;
+    background: var(--surface);
+    color: var(--ink);
+    font: 560 14px/1.65 "JetBrains Mono", ui-monospace, monospace;
+    overflow-wrap: anywhere;
+  }
+
+  .secim-page .command-box::before {
+    content: "primeiro pedido";
+    display: block;
+    margin-bottom: 9px;
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+  }
+
+  .secim-page .small-note {
+    margin-top: 12px;
+    color: var(--graphite);
+    font-size: 14px;
+  }
+
+  .secim-page .agenda {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(150px, 1fr));
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .secim-page .agenda::before {
+    content: "";
+    position: absolute;
+    top: 27px;
+    right: 0;
+    left: 0;
+    height: 8px;
+    background-image: radial-gradient(circle, var(--mist) 0 3.5px, transparent 4px);
+    background-size: 22px 8px;
+    background-repeat: repeat-x;
+  }
+
+  .secim-page .agenda li {
+    position: relative;
+    padding: 58px 22px 0 0;
+  }
+
+  .secim-page .agenda li::before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    border: 5px solid var(--paper-2);
+    border-radius: 50%;
+    background: var(--ink);
+  }
+
+  .secim-page .agenda li:nth-child(2)::before,
+  .secim-page .agenda li:nth-child(5)::before { background: var(--yellow); box-shadow: inset 0 0 0 3px var(--ink); }
+  .secim-page .agenda li:nth-child(3)::before { background: var(--blue); }
+  .secim-page .agenda li:nth-child(4)::before { background: var(--orange); }
+
+  .secim-page .agenda time {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--graphite);
+    font: 700 13px/1.3 "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  .secim-page .agenda strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 17px;
+    line-height: 1.25;
+  }
+
+  .secim-page .agenda span {
+    display: block;
+    color: var(--graphite);
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .secim-page .deliveries {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .secim-page .delivery {
+    min-width: 0;
+    overflow: hidden;
+    border: 3px solid var(--ink);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .secim-page .delivery-kit {
+    grid-column: span 7;
+    grid-row: span 2;
+    border-color: var(--orange-dark);
+    background: var(--orange-soft);
+  }
+
+  .secim-page .delivery-process,
+  .secim-page .delivery-declaration {
+    grid-column: span 5;
+  }
+
+  .secim-page .delivery-declaration {
+    background: var(--yellow-soft);
+  }
+
+  .secim-page .delivery-guided {
+    grid-column: span 8;
+    border-color: var(--blue);
+    background: var(--blue-soft);
+  }
+
+  .secim-page .delivery-more {
+    grid-column: span 4;
+  }
+
+  .secim-page .delivery-content {
+    padding: clamp(24px, 3vw, 38px);
+  }
+
+  .secim-page .resource-type {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--graphite);
+    font: 700 12px/1.3 "JetBrains Mono", ui-monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+
+  .secim-page .delivery h3 {
+    margin-bottom: 10px;
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 840;
+    line-height: 1.02;
+  }
+
+  .secim-page .delivery p {
+    color: var(--graphite);
+  }
+
+  .secim-page .delivery .button {
+    margin-top: 6px;
+  }
+
+  .secim-page .kit-flow {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin: 28px 0;
+  }
+
+  .secim-page .kit-flow div {
+    position: relative;
+    min-height: 116px;
+    border: 2px solid var(--orange-dark);
+    border-radius: var(--radius-small);
+    padding: 14px;
+    background: color-mix(in srgb, var(--surface) 72%, transparent);
+  }
+
+  .secim-page .kit-flow div:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    top: 50%;
+    right: -18px;
+    z-index: 2;
+    width: 26px;
+    height: 26px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--orange-soft);
+    color: var(--ink);
+    font: 800 20px/1 "JetBrains Mono", ui-monospace, monospace;
+    transform: translateY(-50%);
+  }
+
+  .secim-page .kit-flow strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .secim-page .kit-flow span {
+    display: block;
+    color: var(--graphite);
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .secim-page .resource-details {
+    margin-top: 18px;
+    border-top: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  }
+
+  .secim-page .resource-details summary {
+    font-size: 15px;
+  }
+
+  .secim-page .prompt-wrap {
+    padding: 0 24px 28px;
+  }
+
+  .secim-page .copy-note {
+    margin: 0 0 8px;
+    color: var(--graphite);
+    font: 600 12px/1.45 "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  .secim-page .prompt-text {
+    width: 100%;
+    min-height: 390px;
+    resize: vertical;
+    border: 2px solid var(--ink);
+    border-radius: var(--radius-small);
+    background: var(--paper);
+    color: var(--ink);
+    padding: 18px;
+    font: 500 13px/1.6 "JetBrains Mono", ui-monospace, monospace;
+    tab-size: 2;
+  }
+
+  .secim-page .prompt-text.tall {
+    min-height: 560px;
+  }
+
+  .secim-page .resource-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .secim-page .responsibility-grid {
+    display: grid;
+    grid-template-columns: minmax(0, .95fr) minmax(460px, 1.05fr);
+    gap: clamp(32px, 6vw, 82px);
+    align-items: start;
+  }
+
+  .secim-page .question-path {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .secim-page .question-path li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 16px;
+    padding-bottom: 28px;
+  }
+
+  .secim-page .question-path li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 44px;
+    bottom: 0;
+    left: 20px;
+    width: 8px;
+    background-image: radial-gradient(circle, var(--graphite) 0 3px, transparent 3.5px);
+    background-size: 8px 19px;
+    background-repeat: repeat-y;
+    opacity: .65;
+  }
+
+  .secim-page .question-icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 3px solid var(--blue);
+    border-radius: 50%;
+    color: var(--blue);
+    font: 800 18px/1 "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  .secim-page .question-path p {
+    margin: 3px 0 0;
+    font-size: 19px;
+    font-weight: 650;
+    line-height: 1.35;
+  }
+
+  .secim-page .norm-box {
+    border: 4px solid var(--ink);
+    border-radius: var(--radius);
+    background: var(--yellow);
+    padding: clamp(26px, 4vw, 46px);
+  }
+
+  .secim-page .norm-box h3 {
+    max-width: 13ch;
+    margin-bottom: 18px;
+    font-size: clamp(31px, 4vw, 51px);
+    font-weight: 850;
+    line-height: .98;
+  }
+
+  .secim-page .norm-box > p {
+    color: color-mix(in srgb, var(--ink) 78%, transparent);
+  }
+
+  .secim-page .declaration-fields {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin: 28px 0;
+    padding: 22px 0;
+    border-top: 3px solid var(--ink);
+    border-bottom: 3px solid var(--ink);
+  }
+
+  .secim-page .declaration-fields dt {
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 820;
+  }
+
+  .secim-page .declaration-fields dd {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .secim-page .scope-note {
+    margin-top: 22px;
+    border-left: 5px solid var(--ink);
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  .secim-page .scope-note strong {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .secim-page .models {
+    margin-top: 48px;
+    border-top: 2px solid var(--ink);
+  }
+
+  .secim-page .models summary {
+    min-height: 74px;
+    font-size: 18px;
+  }
+
+  .secim-page .method-chain {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: clamp(54px, 7vw, 92px);
+  }
+
+  .secim-page .chain-item {
+    position: relative;
+    min-height: 154px;
+    border: 3px solid var(--ink);
+    border-radius: var(--radius);
+    padding: 22px;
+    background: var(--surface);
+  }
+
+  .secim-page .chain-item:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    top: 50%;
+    right: -23px;
+    z-index: 2;
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    background: var(--paper);
+    font: 800 19px/1 "JetBrains Mono", ui-monospace, monospace;
+    transform: translateY(-50%);
+  }
+
+  .secim-page .chain-item:last-child {
+    border-color: var(--blue);
+    background: var(--blue-soft);
+  }
+
+  .secim-page .chain-item strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 20px;
+    line-height: 1.15;
+  }
+
+  .secim-page .chain-item span {
+    display: block;
+    color: var(--graphite);
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .secim-page .method-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(36px, 6vw, 78px);
+  }
+
+  .secim-page .method-layout h3 {
+    margin-bottom: 20px;
+    font-size: clamp(29px, 3vw, 42px);
+    font-weight: 830;
+    line-height: 1.04;
+  }
+
+  .secim-page .parte {
+    margin: 0;
+    border-top: 2px solid var(--ink);
+  }
+
+  .secim-page .parte-row {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 18px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .secim-page .parte-row dt {
+    color: var(--blue);
+    font: 820 25px/1 "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  .secim-page .parte-row dd {
+    margin: 0;
+    color: var(--graphite);
+  }
+
+  .secim-page .parte-row strong {
+    color: var(--ink);
+  }
+
+  .secim-page .principles {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .secim-page .principles li {
+    border-left: 6px solid var(--orange);
+    padding: 4px 0 4px 18px;
+  }
+
+  .secim-page .principles strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 19px;
+  }
+
+  .secim-page .principles span {
+    display: block;
+    color: var(--graphite);
+    font-size: 15px;
+  }
+
+  .secim-page .reference-groups {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 68px;
+  }
+
+  .secim-page .reference-group {
+    border: 2px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px;
+    background: var(--surface);
+  }
+
+  .secim-page .reference-group h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+  }
+
+  .secim-page .reference-group ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .secim-page .reference-group li + li {
+    margin-top: 12px;
+  }
+
+  .secim-page .reference-group a {
+    color: var(--blue);
+    font-weight: 700;
+    text-underline-offset: 3px;
+  }
+
+  .secim-page .reference-group span {
+    display: block;
+    color: var(--graphite);
+    font-size: 13px;
+  }
+
+  .secim-page .safety-band {
+    margin-top: 68px;
+    border: 4px solid var(--ink);
+    border-radius: var(--radius);
+    padding: clamp(25px, 4vw, 42px);
+    background: var(--surface);
+  }
+
+  .secim-page .safety-band h3 {
+    max-width: 22ch;
+    margin-bottom: 28px;
+    font-size: clamp(29px, 3vw, 42px);
+    font-weight: 840;
+    line-height: 1.04;
+  }
+
+  .secim-page .safety-rules {
+    display: grid;
+    grid-template-columns: .85fr 1.15fr 1fr;
+    gap: 24px;
+  }
+
+  .secim-page .safety-rules article {
+    padding-top: 16px;
+    border-top: 5px solid var(--yellow);
+  }
+
+  .secim-page .safety-rules article:nth-child(2) { border-color: var(--blue); }
+  .secim-page .safety-rules article:nth-child(3) { border-color: var(--orange); }
+
+  .secim-page .safety-rules strong {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 18px;
+  }
+
+  .secim-page .safety-rules p {
+    margin-bottom: 0;
+    color: var(--graphite);
+    font-size: 14px;
+  }
+
+  .secim-page .continue-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(360px, .8fr);
+    gap: clamp(36px, 7vw, 92px);
+    align-items: start;
+  }
+
+  .secim-page .continue-links {
+    border-top: 2px solid var(--ink);
+  }
+
+  .secim-page .continue-link {
+    min-height: 98px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 18px;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 4px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .secim-page .continue-link:hover strong {
+    color: var(--blue);
+  }
+
+  .secim-page .continue-link strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 21px;
+    transition: color 180ms ease;
+  }
+
+  .secim-page .continue-link small {
+    display: block;
+    color: var(--graphite);
+    font-size: 14px;
+  }
+
+  .secim-page .continue-link > span:last-child {
+    color: var(--blue);
+    font: 800 22px/1 "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  .secim-page .course-note {
+    margin-top: 24px;
+    border: 2px dashed var(--mist);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+
+  .secim-page .course-note strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .secim-page .course-note p {
+    margin-bottom: 0;
+    color: var(--graphite);
+    font-size: 14px;
+  }
+
+  .secim-page .people {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .secim-page .person {
+    min-width: 0;
+  }
+
+  .secim-page .person img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border: 3px solid var(--ink);
+    border-radius: var(--radius);
+    object-fit: cover;
+    object-position: center top;
+    background: var(--paper-2);
+  }
+
+  .secim-page .person:first-child img { transform: rotate(-1.5deg); }
+  .secim-page .person:last-child img { transform: rotate(1.5deg); }
+
+  .secim-page .person strong {
+    display: block;
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .secim-page .person span {
+    display: block;
+    margin-top: 3px;
+    color: var(--graphite);
+    font-size: 13px;
+  }
+
+  .secim-page .footer {
+    padding-block: 42px 52px;
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .secim-page .footer-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 30px;
+    align-items: end;
+  }
+
+  .secim-page .footer strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 21px;
+  }
+
+  .secim-page .footer p {
+    max-width: 65ch;
+    margin-bottom: 0;
+    color: color-mix(in srgb, var(--paper) 72%, transparent);
+    font-size: 14px;
+  }
+
+  .secim-page .footer a {
+    color: var(--yellow);
+    font-weight: 700;
+    text-underline-offset: 3px;
+  }
+
+  .secim-page .footer-signature {
+    color: color-mix(in srgb, var(--paper) 68%, transparent);
+    font: 600 12px/1.5 "JetBrains Mono", ui-monospace, monospace;
+    text-align: right;
+  }
+
+  @media (max-width: 1080px) {
+    .secim-page .hero-inner {
+      grid-template-columns: minmax(0, 1fr) minmax(380px, .8fr);
+      gap: 34px;
+    }
+
+    .secim-page .quick-strip-inner {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .secim-page .quick-label {
+      display: none;
+    }
+
+    .secim-page .agenda {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px 0;
+    }
+
+    .secim-page .agenda::before {
+      display: none;
+    }
+
+    .secim-page .agenda li {
+      padding-top: 48px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .secim-page .topbar-inner {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0;
+      padding-top: 10px;
+    }
+
+    .secim-page .topnav {
+      width: 100%;
+      justify-content: flex-start;
+      gap: 22px;
+    }
+
+    .secim-page .hero {
+      min-height: auto;
+    }
+
+    .secim-page .hero-inner,
+    .secim-page .prepare-layout,
+    .secim-page .responsibility-grid,
+    .secim-page .method-layout,
+    .secim-page .continue-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .secim-page .hero-copy {
+      padding-top: 18px;
+    }
+
+    .secim-page .hero-diagram {
+      min-height: 480px;
+      max-width: 640px;
+      width: 100%;
+      margin-inline: auto;
+    }
+
+    .secim-page .choice:first-child,
+    .secim-page .choice:nth-child(2),
+    .secim-page .choice:nth-child(3) {
+      grid-column: 1 / -1;
+      grid-row: auto;
+      min-height: 250px;
+    }
+
+    .secim-page .prepare-sticky {
+      position: static;
+    }
+
+    .secim-page .prepare-sticky h2 {
+      max-width: 12ch;
+    }
+
+    .secim-page .delivery-kit,
+    .secim-page .delivery-process,
+    .secim-page .delivery-declaration,
+    .secim-page .delivery-guided,
+    .secim-page .delivery-more {
+      grid-column: 1 / -1;
+      grid-row: auto;
+    }
+
+    .secim-page .method-chain {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .secim-page .method-chain .chain-item::after {
+      display: none;
+    }
+
+    .secim-page .people {
+      max-width: 620px;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .secim-page {
+      font-size: 16px;
+    }
+
+    .secim-page .shell {
+      width: min(calc(100% - 32px), var(--max));
+    }
+
+    .secim-page .brand {
+      font-size: 15px;
+    }
+
+    .secim-page .topbar-inner {
+      min-height: 66px;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+      padding-top: 0;
+    }
+
+    .secim-page .brand > span:last-child,
+    .secim-page .topnav a {
+      display: none;
+    }
+
+    .secim-page .topnav {
+      width: auto;
+      justify-content: flex-end;
+      gap: 14px;
+      overflow: visible;
+    }
+
+    .secim-page .topnav a[href="#preparar"],
+    .secim-page .topnav a[href="#materiais"],
+    .secim-page .topnav a[href="#declarar"] {
+      display: inline-flex;
+      font-size: 13px;
+    }
+
+    .secim-page .hero h1 {
+      max-width: 10ch;
+      font-size: clamp(3.25rem, 16vw, 5rem);
+    }
+
+    .secim-page .hero-copy > p {
+      font-size: 18px;
+    }
+
+    .secim-page .event-meta span + span {
+      padding-left: 0;
+      border-left: 0;
+    }
+
+    .secim-page .actions {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .secim-page .button {
+      width: 100%;
+    }
+
+    .secim-page .hero-diagram {
+      min-height: 480px;
+    }
+
+    .secim-page .speech {
+      width: 130px;
+      height: 112px;
+      border-radius: 22px;
+      font-size: 52px;
+    }
+
+    .secim-page .speech::after {
+      left: 22px;
+      bottom: -34px;
+      border-top-width: 44px;
+      border-right-width: 44px;
+    }
+
+    .secim-page .diagram-node {
+      width: 62%;
+      padding: 14px;
+    }
+
+    .secim-page .diagram-node-human { top: 5%; }
+    .secim-page .diagram-node-ai { top: 43%; left: 7%; }
+    .secim-page .diagram-node-check { right: 0; bottom: 5%; }
+
+    .secim-page .legend {
+      display: none;
+    }
+
+    .secim-page .quick-strip-inner {
+      width: 100%;
+      grid-template-columns: repeat(4, minmax(160px, 1fr));
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
+
+    .secim-page .quick-link {
+      scroll-snap-align: start;
+    }
+
+    .secim-page .section {
+      padding-block: 72px;
+    }
+
+    .secim-page .section h2 {
+      font-size: clamp(2.55rem, 13vw, 4rem);
+    }
+
+    .secim-page .choice,
+    .secim-page .choice:first-child {
+      min-height: 280px;
+      padding: 24px;
+    }
+
+    .secim-page .prep-step {
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: 14px;
+    }
+
+    .secim-page .step-number {
+      width: 42px;
+      height: 42px;
+    }
+
+    .secim-page .agenda {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .secim-page .agenda li {
+      display: grid;
+      grid-template-columns: 86px minmax(0, 1fr);
+      gap: 12px;
+      padding: 0 0 26px 44px;
+    }
+
+    .secim-page .agenda li::before {
+      top: 0;
+      width: 24px;
+      height: 24px;
+    }
+
+    .secim-page .agenda li:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 25px;
+      bottom: 0;
+      left: 8px;
+      width: 8px;
+      background-image: radial-gradient(circle, var(--mist) 0 3px, transparent 3.5px);
+      background-size: 8px 18px;
+      background-repeat: repeat-y;
+    }
+
+    .secim-page .agenda time {
+      grid-row: span 2;
+      margin: 2px 0 0;
+    }
+
+    .secim-page .agenda strong,
+    .secim-page .agenda span {
+      grid-column: 2;
+    }
+
+    .secim-page .kit-flow {
+      grid-template-columns: 1fr;
+    }
+
+    .secim-page .kit-flow div {
+      min-height: auto;
+    }
+
+    .secim-page .kit-flow div:not(:last-child)::after {
+      top: auto;
+      right: 18px;
+      bottom: -19px;
+      transform: rotate(90deg);
+    }
+
+    .secim-page .prompt-wrap {
+      padding-inline: 16px;
+    }
+
+    .secim-page .prompt-text,
+    .secim-page .prompt-text.tall {
+      min-height: 480px;
+      font-size: 12px;
+    }
+
+    .secim-page .declaration-fields,
+    .secim-page .method-chain,
+    .secim-page .reference-groups,
+    .secim-page .safety-rules {
+      grid-template-columns: 1fr;
+    }
+
+    .secim-page .people {
+      grid-template-columns: 1fr;
+    }
+
+    .secim-page .person img {
+      max-height: 460px;
+      object-position: center 15%;
+    }
+
+    .secim-page .footer-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .secim-page .footer-signature {
+      text-align: left;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .secim-page .trace { animation: secim-trace 1.2s 500ms cubic-bezier(.16, 1, .3, 1) both; }
+  }
+
+  @keyframes secim-trace {
+    from { clip-path: inset(0 100% 0 0); }
+    to { clip-path: inset(0 0 0 0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .secim-page *,
+    .secim-page *::before,
+    .secim-page *::after {
+      scroll-behavior: auto !important;
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .01ms !important;
+    }
+  }
+
+  @media print {
+    body,
+    .secim-page {
+      background: #ffffff !important;
+      color: #151a26 !important;
+    }
+
+    .secim-page .topbar,
+    .secim-page .actions,
+    .secim-page .quick-strip {
+      display: none !important;
+    }
+
+    .secim-page .hero {
+      min-height: auto;
+    }
+
+    .secim-page .section {
+      break-inside: avoid;
+      padding-block: 44px;
+    }
+
+    .secim-page details:not([open]) > *:not(summary) {
+      display: block;
+    }
+  }
 </style>
+
 <!--
-  Página de referências da oficina "IA além do chat: usar bem, organizar e declarar na pós-graduação"
-  Secim, Ifes campus Vitória, 17/09/2026. CGTE/Cefor/Ifes.
-  Mesma linguagem visual da sala Moodle dos NTEs (biblioteca/paginas/modelo-blocos-moodle-ntes.html).
-  Itens marcados "a definir" precisam de link antes de publicar. Links verificados em 02/09/2026; ferramentas revisadas em 14/09/2026.
-  Publicação decidida em 14/09: Portal IA.IA.
+  Para publicar no Portal IA.IA, cole este fragmento inteiro.
+  Os conteúdos essenciais estão incorporados. Os links relativos abrem as fontes
+  no repositório local e devem ser trocados pelos URLs do Drive quando existirem.
+  Informações de ferramentas verificadas em páginas oficiais em 15/09/2026.
 -->
-<div class="ref-page" style="font-family: Arial, Helvetica, sans-serif; color: #23313f; line-height: 1.55; max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px; background: #ffffff; box-sizing: border-box;">
 
-  <!-- Cabeçalho: a tese da oficina -->
-  <div style="background: #173b63; color: #ffffff; border-radius: 10px; padding: 28px 28px 24px;">
-    <div style="font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: .1em; color: #bcd3ea; margin-bottom: 8px;">Secim · Ifes campus Vitória · quinta, 17/09/2026 · 16h às 17h30</div>
-    <h2 style="margin: 0 0 6px; font-size: 30px; line-height: 1.2; color: #ffffff; text-wrap: balance;">IA além do chat: usar bem, organizar e declarar na pós-graduação</h2>
-    <p style="margin: 0 0 22px; font-size: 16px; color: #dbe7f3; max-width: 70ch;">Referências da oficina, para ficar com você. Elton Vinícius Silva e Marcos Vinícius Forecchi Accioly, CGTE/Cefor/Ifes.</p>
-    <div style="font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: .08em; color: #bcd3ea; margin-bottom: 8px;">A cadeia que organiza tudo</div>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: stretch;">
-      <div style="flex: 1 1 200px; background: #1f4b7d; border-radius: 8px; padding: 12px 14px;"><span style="display: block; font-size: 12px; color: #bcd3ea; margin-bottom: 2px;">1</span><strong style="color: #ffffff;">Declarar bem</strong><span style="display: block; font-size: 14px; color: #dbe7f3;">exige saber o que a IA fez</span></div>
-      <div style="flex: 1 1 200px; background: #1f4b7d; border-radius: 8px; padding: 12px 14px;"><span style="display: block; font-size: 12px; color: #bcd3ea; margin-bottom: 2px;">2</span><strong style="color: #ffffff;">Saber o que a IA fez</strong><span style="display: block; font-size: 14px; color: #dbe7f3;">exige um processo visível</span></div>
-      <div style="flex: 1 1 200px; background: #1f4b7d; border-radius: 8px; padding: 12px 14px;"><span style="display: block; font-size: 12px; color: #bcd3ea; margin-bottom: 2px;">3</span><strong style="color: #ffffff;">Processo visível</strong><span style="display: block; font-size: 14px; color: #dbe7f3;">exige organização</span></div>
-      <div style="flex: 1 1 200px; background: #2e75b6; border-radius: 8px; padding: 12px 14px;"><span style="display: block; font-size: 12px; color: #dbe7f3; margin-bottom: 2px;">4</span><strong style="color: #ffffff;">Organização, no computador,</strong><span style="display: block; font-size: 14px; color: #ffffff;">é pastas e arquivos com instruções em texto</span></div>
-    </div>
-  </div>
+<div class="secim-page">
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-  <!-- Comece aqui -->
-  <div style="margin-top: 22px;">
-    <div style="border-left: 6px solid #2e75b6; background: #f4f8fc; padding: 18px 22px; border-radius: 8px;">
-      <div style="font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: .08em; color: #2e75b6; margin-bottom: 4px;">Pesquisa + IA</div>
-      <h3 style="margin: 0 0 8px; font-size: 24px; color: #173b63;">Comece aqui</h3>
-      <p style="margin: 0; max-width: 70ch;">Não é preciso dominar as ferramentas. Comece por uma tarefa concreta da sua pesquisa (fichar um artigo, relacionar leituras ao seu tema, revisar uma seção) e experimente a partir dela. O próximo passo depende de onde você parou na oficina:</p>
+  <header class="topbar" aria-label="Cabeçalho da página">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#inicio" aria-label="Voltar ao início">
+        <span class="brand-mark" aria-hidden="true">IA</span>
+        <span>Oficina Secim</span>
+      </a>
+      <nav class="topnav" aria-label="Navegação principal">
+        <a href="#participar">Participar</a>
+        <a href="#preparar">Preparar</a>
+        <a href="#materiais">Materiais</a>
+        <a href="#declarar">Declarar</a>
+        <a href="#metodo">Método</a>
+        <a href="#continuar">Continuar</a>
+      </nav>
     </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px;">
-      <div style="flex: 1 1 260px; border: 1px solid #cfdce8; border-radius: 8px; padding: 14px 16px; background: #fff;"><div style="font-size: 12px; font-weight: bold; letter-spacing: .06em; text-transform: uppercase; color: #2e75b6;">Nível 0 · assisti</div><strong style="color: #173b63;">Comece pelo prompt no navegador.</strong><p style="margin: 6px 0 0; font-size: 14px; color: #4b5b6a;">Abra sua IA (Claude, ChatGPT ou Gemini, gratuitos), cole o prompt "processo com rastro" com um artigo que você esteja lendo e compare com o que sairia de um pedido solto.</p></div>
-      <div style="flex: 1 1 260px; border: 1px solid #cfdce8; border-radius: 8px; padding: 14px 16px; background: #fff;"><div style="font-size: 12px; font-weight: bold; letter-spacing: .06em; text-transform: uppercase; color: #2e75b6;">Nível 1 · fiz no navegador</div><strong style="color: #173b63;">Baixe o kit e converse com a pasta.</strong><p style="margin: 6px 0 0; font-size: 14px; color: #4b5b6a;">Instale um agente gratuito pela conta que você já tem (Antigravity com conta Google; VS Code + Copilot com conta GitHub), abra o kit e peça: "Leia README.md e me explique o que esta pasta faz." Depois, a etapa 01 com um artigo seu.</p></div>
-      <div style="flex: 1 1 260px; border: 1px solid #cfdce8; border-radius: 8px; padding: 14px 16px; background: #fff;"><div style="font-size: 12px; font-weight: bold; letter-spacing: .06em; text-transform: uppercase; color: #2e75b6;">Nível 2 · fiz no computador</div><strong style="color: #173b63;">Duplique a pasta para outra tarefa.</strong><p style="margin: 6px 0 0; font-size: 14px; color: #4b5b6a;">Copie o kit, reescreva os CONTEXT.md para revisar referências, preparar uma submissão ou responder a um parecer. Se o resultado sair ruim, conserte a instrução, não o resultado.</p></div>
-    </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px;">
-      <a style="flex: 1 1 240px; text-decoration: none; color: #173b63; border: 1px solid #cfdce8; border-radius: 8px; padding: 14px 16px; background: #fff;" href="#" target="_blank" rel="noopener"><strong>Kit Pesquisa</strong> <span style="display: inline-block; font-size: 11px; font-weight: bold; letter-spacing: .06em; text-transform: uppercase; color: #7a3810; background: #fde8d3; border: 1px dashed #b5541c; border-radius: 4px; padding: 1px 6px; margin-left: 4px;">a definir</span><br><span style="font-size: 14px; color: #4b5b6a;">A pasta que usamos na demonstração: três etapas, registro de tudo que a IA faz, declaração gerada a partir do registro.</span></a>
-      <a style="flex: 1 1 240px; text-decoration: none; color: #173b63; border: 1px solid #cfdce8; border-radius: 8px; padding: 14px 16px; background: #fff;" href="#" target="_blank" rel="noopener"><strong>Prompt "processo com rastro"</strong> <span style="display: inline-block; font-size: 11px; font-weight: bold; letter-spacing: .06em; text-transform: uppercase; color: #7a3810; background: #fde8d3; border: 1px dashed #b5541c; border-radius: 4px; padding: 1px 6px; margin-left: 4px;">a definir</span><br><span style="font-size: 14px; color: #4b5b6a;">Para qualquer IA no navegador. Pede etapas, citações com página, resumo do que foi feito e rascunho de declaração.</span></a>
-      <a style="flex: 1 1 240px; text-decoration: none; color: #173b63; border: 1px solid #cfdce8; border-radius: 8px; padding: 14px 16px; background: #fff;" href="#" target="_blank" rel="noopener"><strong>Preparação e dicas</strong> <span style="display: inline-block; font-size: 11px; font-weight: bold; letter-spacing: .06em; text-transform: uppercase; color: #7a3810; background: #fde8d3; border: 1px dashed #b5541c; border-radius: 4px; padding: 1px 6px; margin-left: 4px;">a definir</span><br><span style="font-size: 14px; color: #4b5b6a;">Qual ferramenta usar pela conta que você tem, créditos gratuitos, Shift+Enter, as três regras de segurança.</span></a>
-      <a style="flex: 1 1 240px; text-decoration: none; color: #173b63; border: 1px solid #cfdce8; border-radius: 8px; padding: 14px 16px; background: #fff;" href="https://cefor.ifes.edu.br/index.php/component/content/article/2-uncategorised/17587-acoes-de-inteligencia-artificial-no-cefor" target="_blank" rel="noopener"><strong>Ações de IA no Cefor</strong><br><span style="font-size: 14px; color: #4b5b6a;">Formações, materiais, GPTs, podcasts e a Base de Conhecimento, em um só lugar.</span></a>
-    </div>
-  </div>
+  </header>
 
-  <!-- Declarar, não esconder -->
-  <div style="margin-top: 22px;">
-    <div style="border-left: 6px solid #f0bb14; background: #fffaf0; padding: 18px 22px; border-radius: 8px;">
-      <div style="font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: .08em; color: #927000; margin-bottom: 4px;">Pesquisa + IA</div>
-      <h3 style="margin: 0 0 8px; font-size: 24px; color: #5f4b00;">Declarar, não esconder</h3>
-      <p style="margin: 0; max-width: 70ch;">A pergunta que a banca, o orientador e o periódico fazem deixou de ser "quem escreveu?" e passou a ser "isso se sustenta? o que a IA fez? o que você verificou?". Responder exige saber, e saber exige registrar.</p>
-    </div>
-    <div style="margin-top: 16px; padding: 16px 18px; border: 1px solid #eadca6; border-radius: 8px; background: #fff;">
-      <h4 style="margin: 0 0 10px; color: #5f4b00;">Antes de usar IA na pesquisa, pergunte</h4>
-      <ul style="margin: 0; padding-left: 22px;">
-        <li>Posso subir estes dados (participantes, entrevistas, material sigiloso) para uma ferramenta na nuvem?</li>
-        <li>Consigo verificar cada referência, página e número que ela me der?</li>
-        <li>Saberei dizer à banca o que a IA fez e o que eu fiz?</li>
-        <li>A interpretação, as conclusões e a responsabilidade continuam minhas?</li>
-      </ul>
-    </div>
-    <div style="margin-top: 14px;">
-      <div style="font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: .08em; color: #927000; margin: 0 2px 8px;">O que a Portaria CNPq nº 2.664/2026 pede que você declare</div>
-      <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-        <div style="flex: 1 1 220px; border: 1px solid #eadca6; border-radius: 8px; padding: 14px 16px; background: #fff;"><strong style="color: #5f4b00; font-size: 18px;">Ferramenta</strong><p style="margin: 6px 0 0; font-size: 14px; color: #4b5b6a;">Qual IA, qual modelo ou versão, quando. "ChatGPT" não basta; "Claude Sonnet 4.6 via Claude Code, agosto de 2026" basta.</p></div>
-        <div style="flex: 1 1 220px; border: 1px solid #eadca6; border-radius: 8px; padding: 14px 16px; background: #fff;"><strong style="color: #5f4b00; font-size: 18px;">Finalidade</strong><p style="margin: 6px 0 0; font-size: 14px; color: #4b5b6a;">Para quê, concretamente: fichamento preliminar, revisão gramatical, tradução, geração de código, organização de referências.</p></div>
-        <div style="flex: 1 1 220px; border: 1px solid #eadca6; border-radius: 8px; padding: 14px 16px; background: #fff;"><strong style="color: #5f4b00; font-size: 18px;">Fase</strong><p style="margin: 6px 0 0; font-size: 14px; color: #4b5b6a;">Em que momento da pesquisa: concepção, levantamento bibliográfico, coleta, análise, redação, revisão, submissão.</p></div>
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="titulo-principal">
+      <div class="shell hero-inner">
+        <div class="hero-copy">
+          <h1 id="titulo-principal">IA além do <em>chat.</em></h1>
+          <p>Prepare-se, acompanhe a oficina e leve prompts, modelos e um método que deixa o uso de IA verificável.</p>
+          <div class="actions">
+            <a class="button button-primary" href="#preparar">Preparar agora</a>
+            <a class="button button-secondary" href="#materiais">Ver materiais</a>
+          </div>
+        </div>
+
+        <div class="hero-diagram" role="img" aria-label="Um rastro conecta a conversa com IA, a ação humana, o trabalho da IA e a verificação final.">
+          <div class="speech" aria-hidden="true">IA</div>
+          <div class="trace trace-one" aria-hidden="true"></div>
+          <div class="trace trace-two" aria-hidden="true"></div>
+          <div class="diagram-node diagram-node-human">
+            <strong>Você conduz</strong>
+            <span>define contexto, critérios e limites</span>
+          </div>
+          <div class="diagram-node diagram-node-ai">
+            <strong>A IA executa</strong>
+            <span>trabalha em etapas e registra o que fez</span>
+          </div>
+          <div class="diagram-node diagram-node-check">
+            <strong>Você verifica</strong>
+            <span>confere fontes, decide e declara</span>
+          </div>
+          <div class="legend" aria-hidden="true">
+            <span class="legend-human"><i></i> ação humana</span>
+            <span class="legend-ai"><i></i> ação da IA</span>
+            <span class="legend-check"><i></i> verificar e declarar</span>
+          </div>
+        </div>
       </div>
-      <p style="margin: 12px 2px 0; font-size: 14px; color: #566573; max-width: 80ch;">A Portaria proíbe apresentar conteúdo gerado por IA como de autoria humana e o uso de IA em pareceres; o pesquisador responde integralmente pelo conteúdo. A CAPES ainda não tem norma própria e orientou os programas a usar a Portaria como referência. O piso é a norma nacional; seu programa, sua banca e o periódico podem pedir mais. Pergunte.</p>
-    </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px;">
-      <a style="flex: 1 1 300px; text-decoration: none; color: #5f4b00; border: 1px solid #eadca6; border-radius: 8px; padding: 14px 16px; background: #fffaf0;" href="#" target="_blank" rel="noopener"><strong>Modelo de declaração de uso de IA</strong> <span style="display: inline-block; font-size: 11px; font-weight: bold; letter-spacing: .06em; text-transform: uppercase; color: #7a3810; background: #fde8d3; border: 1px dashed #b5541c; border-radius: 4px; padding: 1px 6px; margin-left: 4px;">a definir</span><br><span style="font-size: 14px; color: #665f45;">Três variantes (dissertação ou tese; artigo; trabalho de disciplina), com os campos ferramenta, finalidade e fase. Posição sugerida: parte pré-textual, após os agradecimentos.</span></a>
-      <a style="flex: 1 1 300px; text-decoration: none; color: #5f4b00; border: 1px solid #eadca6; border-radius: 8px; padding: 14px 16px; background: #fffaf0;" href="https://www.gov.br/cnpq/pt-br/assuntos/noticias/cnpq-em-acao/cnpq-publica-portaria-que-institui-politica-de-integridade-na-atividade-cientifica" target="_blank" rel="noopener"><strong>Portaria CNPq nº 2.664/2026</strong><br><span style="font-size: 14px; color: #665f45;">Política de Integridade na Atividade Científica, com as diretrizes sobre IA generativa. Notícia oficial do CNPq.</span></a>
-      <a style="flex: 1 1 300px; text-decoration: none; color: #5f4b00; border: 1px solid #eadca6; border-radius: 8px; padding: 14px 16px; background: #fffaf0;" href="https://jornal.usp.br/atualidades/portaria-do-cnpq-detalha-diretrizes-de-integridade-na-pesquisa-com-o-uso-de-inteligencia-artificial/" target="_blank" rel="noopener"><strong>O que a Portaria diz, explicado</strong><br><span style="font-size: 14px; color: #665f45;">Jornal da USP: "Portaria do CNPq detalha diretrizes de integridade na pesquisa com o uso de inteligência artificial".</span></a>
-      <a style="flex: 1 1 300px; text-decoration: none; color: #5f4b00; border: 1px solid #eadca6; border-radius: 8px; padding: 14px 16px; background: #fffaf0;" href="https://portal.ufrrj.br/ufrrj-orienta-declaracao-de-uso-de-ia-em-trabalhos-academicos/" target="_blank" rel="noopener"><strong>Modelo da UFRRJ</strong><br><span style="font-size: 14px; color: #665f45;">Como uma universidade já orienta a declaração em dissertações, teses, artigos e livros, e onde colocá-la.</span></a>
-      <a style="flex: 1 1 300px; text-decoration: none; color: #5f4b00; border: 1px solid #eadca6; border-radius: 8px; padding: 14px 16px; background: #fffaf0;" href="https://bit.ly/manual-etica-IA" target="_blank" rel="noopener"><strong>Manual Prático de Uso Ético de IA para a Educação</strong><br><span style="font-size: 14px; color: #665f45;">Material do Cefor sobre privacidade, transparência, responsabilidade docente e integridade acadêmica, com sugestão de como declarar.</span></a>
-      <a style="flex: 1 1 300px; text-decoration: none; color: #5f4b00; border: 1px solid #eadca6; border-radius: 8px; padding: 14px 16px; background: #fffaf0;" href="https://rpfweb.github.io/Protocolo-para-Uso-de-IA/" target="_blank" rel="noopener"><strong>Protocolo de Atenção para Criação de Conteúdos com IA Generativa</strong><br><span style="font-size: 14px; color: #665f45;">Rutinelli Fávero (Cefor). Sete etapas para uso ético e intencional; a sexta é a declaração.</span></a>
-      <a style="flex: 1 1 300px; text-decoration: none; color: #5f4b00; border: 1px solid #eadca6; border-radius: 8px; padding: 14px 16px; background: #fffaf0;" href="https://www.nature.com/articles/s41562-026-02492-7" target="_blank" rel="noopener"><strong>GUIDE-LLM: checklist de relato</strong><br><span style="font-size: 14px; color: #665f45;">Feuerriegel et al., Nature Human Behaviour, 2026. Catorze itens sobre o que registrar quando a pesquisa usa modelos de linguagem.</span></a>
-    </div>
-  </div>
+    </section>
 
-  <!-- Organize sua pesquisa com IA -->
-  <div style="margin-top: 22px;">
-    <div style="border-left: 6px solid #259b8a; background: #f2fbf9; padding: 18px 22px; border-radius: 8px;">
-      <div style="font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: .08em; color: #1b776b; margin-bottom: 4px;">Pesquisa + IA</div>
-      <h3 style="margin: 0 0 8px; font-size: 24px; color: #17584f;">Organize sua pesquisa com IA</h3>
-      <p style="margin: 0; max-width: 70ch;">Bons resultados não dependem só de um bom prompt. Conforme o trabalho cresce, vale organizar contexto, referências, instruções e verificação para que a IA colabore de forma consistente, e para que você saiba o que ela fez.</p>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 16px;">
-      <div style="border: 1px solid #cce5df; border-radius: 8px; padding: 14px; background: #fff;"><strong style="color: #17584f;">Contexto</strong><p style="margin: 6px 0 0; font-size: 14px;">Diga quem você é, o que quer, para quem, sobre o quê e em que formato. É o P.A.R.T.E. de Hugo Cristo: Persona, Alvo, Recebedores, Tema, Estrutura.</p></div>
-      <div style="border: 1px solid #cce5df; border-radius: 8px; padding: 14px; background: #fff;"><strong style="color: #17584f;">Referências</strong><p style="margin: 6px 0 0; font-size: 14px;">Ancore a IA nos seus artigos, normas e modelos. Não a use para descobrir fatos ou citações; use para trabalhar sobre o que você já verificou.</p></div>
-      <div style="border: 1px solid #cce5df; border-radius: 8px; padding: 14px; background: #fff;"><strong style="color: #17584f;">Continuidade</strong><p style="margin: 6px 0 0; font-size: 14px;">Para tarefas recorrentes, escreva a instrução uma vez, em um arquivo, e deixe a pasta ler. Corrija a instrução, não o resultado.</p></div>
-      <div style="border: 1px solid #cce5df; border-radius: 8px; padding: 14px; background: #fff;"><strong style="color: #17584f;">Verificação</strong><p style="margin: 6px 0 0; font-size: 14px;">Toda saída da IA termina com "o que você deve conferir". Confira. Registre o que conferiu: é isso que vira declaração.</p></div>
-      <div style="border: 1px solid #cce5df; border-radius: 8px; padding: 14px; background: #fff;"><strong style="color: #17584f;">Formato</strong><p style="margin: 6px 0 0; font-size: 14px;">Trabalhe em Markdown, texto com marcações simples que você e a IA leem bem. Converta os PDFs uma vez, em vez de fazer a IA reler o PDF a cada tarefa.</p></div>
-    </div>
-    <div style="margin-top: 14px; padding: 14px 16px; border-radius: 8px; background: #eef4f8;">
-      <strong style="color: #173b63;">Uma progressão possível</strong>
-      <p style="margin: 6px 0 0;">Conversa avulsa → contexto bem definido → projeto organizado → pasta que vira agente.</p>
-      <p style="margin: 8px 0 0; font-size: 14px; color: #566573; max-width: 80ch;">Sobre a janela de contexto: uma etapa bem delimitada usa de 2 a 8 mil tokens; uma conversa que faz tudo chega a 30 a 50 mil, faixa em que os modelos perdem o fio. Conversas curtas por tarefa, projetos, pastas.</p>
-    </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px;">
-      <a style="flex: 1 1 300px; text-decoration: none; color: #17584f; border: 1px solid #cce5df; border-radius: 8px; padding: 14px 16px; background: #fff;" href="https://arxiv.org/abs/2603.16021" target="_blank" rel="noopener"><strong>O artigo do método: Interpretable Context Methodology</strong><br><span style="font-size: 14px; color: #4f6863;">Van Clief e McDermott, 2026. "Folder structure as agent architecture": pastas numeradas como etapas, Markdown como instrução, toda saída intermediária editável. Leitura para pesquisadores.</span></a>
-      <a style="flex: 1 1 300px; text-decoration: none; color: #17584f; border: 1px solid #cce5df; border-radius: 8px; padding: 14px 16px; background: #fff;" href="https://github.com/RinDig/Interpretable-Context-Methodology" target="_blank" rel="noopener"><strong>Repositório do ICM (licença MIT)</strong><br><span style="font-size: 14px; color: #4f6863;">Inclui o workspace-builder, que entrevista você e monta uma pasta para o seu processo. Para quem quer ir além do kit.</span></a>
-      <a style="flex: 1 1 300px; text-decoration: none; color: #17584f; border: 1px solid #cce5df; border-radius: 8px; padding: 14px 16px; background: #fff;" href="#" target="_blank" rel="noopener"><strong>O prompt que cria uma pasta mínima</strong> <span style="display: inline-block; font-size: 11px; font-weight: bold; letter-spacing: .06em; text-transform: uppercase; color: #7a3810; background: #fde8d3; border: 1px dashed #b5541c; border-radius: 4px; padding: 1px 6px; margin-left: 4px;">a definir</span><br><span style="font-size: 14px; color: #4f6863;">O que rodamos ao vivo: uma pasta vazia vira README, CONTEXT, uma etapa e um registro. Abra o CONTEXT.md e leia: a instrução está lá, em texto.</span></a>
-      <a style="flex: 1 1 300px; text-decoration: none; color: #17584f; border: 1px solid #cce5df; border-radius: 8px; padding: 14px 16px; background: #fff;" href="#" target="_blank" rel="noopener"><strong>O prompt que guia a criação da sua pasta</strong> <span style="display: inline-block; font-size: 11px; font-weight: bold; letter-spacing: .06em; text-transform: uppercase; color: #7a3810; background: #fde8d3; border: 1px dashed #b5541c; border-radius: 4px; padding: 1px 6px; margin-left: 4px;">a definir</span><br><span style="font-size: 14px; color: #4f6863;">Para uma tarefa da sua pesquisa: a IA faz sete perguntas, propõe as etapas em P.A.R.T.E. e só então cria a pasta. Depois, confira a máquina: abra e leia cada instrução.</span></a>
-      <a style="flex: 1 1 300px; text-decoration: none; color: #17584f; border: 1px solid #cce5df; border-radius: 8px; padding: 14px 16px; background: #fff;" href="https://cefor.ifes.edu.br/index.php/component/content/article/2-uncategorised/17587-acoes-de-inteligencia-artificial-no-cefor?start=1" target="_blank" rel="noopener"><strong>GPTs do Cefor</strong><br><span style="font-size: 14px; color: #4f6863;">Exemplos de assistentes configurados para objetivos educacionais específicos. A mesma lógica, na web.</span></a>
-    </div>
-  </div>
-
-  <!-- Ferramentas -->
-  <div style="margin-top: 22px;">
-    <div style="border-left: 6px solid #b5541c; background: #fdf4ee; padding: 18px 22px; border-radius: 8px;">
-      <div style="font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: .08em; color: #8f3f12; margin-bottom: 4px;">Pesquisa + IA</div>
-      <h3 style="margin: 0 0 8px; font-size: 24px; color: #7a3810;">Ferramentas</h3>
-      <p style="margin: 0; max-width: 70ch;">Duas listas: as ferramentas que trabalham em pastas no seu computador, e as que ajudam em cada etapa da pesquisa. Situação em 14/09/2026; preços e limites mudam rápido, confira. Na dúvida, escolha pela conta que você já tem.</p>
-    </div>
-    <div style="margin-top: 16px; border: 1px solid #f0d5c2; border-radius: 8px; background: #fff; padding: 14px 16px;">
-      <h4 style="margin: 0 0 10px; color: #7a3810;">Para IA no computador, trabalhando em pastas</h4>
-      <div style="overflow-x: auto;">
-        <table style="border-collapse: collapse; width: 100%; min-width: 640px; font-size: 14px;">
-          <thead>
-            <tr style="background: #fdf4ee;">
-              <th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #f0d5c2; color: #7a3810;">Ferramenta</th>
-              <th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #f0d5c2; color: #7a3810;">Custo</th>
-              <th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #f0d5c2; color: #7a3810;">Observação</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;"><a href="https://antigravity.google" target="_blank" rel="noopener" style="color: #173b63;">Google Antigravity</a></td><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">Plano individual gratuito com conta Google, com limite de uso semanal.</td><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">Para quem tem conta Google. Editor com agente embutido; não precisa do VS Code.</td></tr>
-            <tr><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;"><a href="https://github.com/features/copilot" target="_blank" rel="noopener" style="color: #173b63;">VS Code + GitHub Copilot</a> (modo Agent)</td><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">Gratuito com conta do GitHub, cerca de 50 interações por mês. Plano Student gratuito para estudantes verificados no GitHub Education.</td><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">Para quem tem conta no GitHub. Interface gráfica. Entre com a conta do GitHub, não com a do Google: é ela que libera a IA.</td></tr>
-            <tr><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;"><a href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener" style="color: #173b63;">Gemini CLI</a> (Google)</td><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">Gratuito com conta Google, cerca de 1.000 pedidos por dia.</td><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">Linha de comando; mais crédito.</td></tr>
-            <tr><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;"><a href="https://claude.com/claude-code" target="_blank" rel="noopener" style="color: #173b63;">Claude Code</a> (Anthropic)</td><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">Pago (plano Pro ou superior).</td><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">Usado na demonstração.</td></tr>
-            <tr><td style="padding: 8px 10px; vertical-align: top;"><a href="https://github.com/openai/codex" target="_blank" rel="noopener" style="color: #173b63;">Codex CLI</a> (OpenAI)</td><td style="padding: 8px 10px; vertical-align: top;">Incluído em planos pagos do ChatGPT.</td><td style="padding: 8px 10px; vertical-align: top;">Linha de comando.</td></tr>
-          </tbody>
-        </table>
+    <aside class="quick-strip" aria-label="Acesso rápido aos principais materiais">
+      <div class="shell quick-strip-inner">
+        <div class="quick-label">Mais usados</div>
+        <a class="quick-link" href="#kit"><span>Kit Pesquisa</span><span aria-hidden="true">↓</span></a>
+        <a class="quick-link" href="#prompt-web"><span>Prompt para a web</span><span aria-hidden="true">↓</span></a>
+        <a class="quick-link" href="#modelos-declaracao"><span>Modelo de declaração</span><span aria-hidden="true">↓</span></a>
+        <a class="quick-link" href="#prompt-guiado"><span>Crie sua pasta</span><span aria-hidden="true">↓</span></a>
       </div>
-      <p style="margin: 10px 0 0; font-size: 14px; color: #566573;">Editor: <a href="https://code.visualstudio.com" target="_blank" rel="noopener" style="color: #173b63;">VS Code</a>, gratuito. O kit funciona com qualquer uma destas ferramentas, e também com o Claude Cowork ou outra IA que trabalhe em pastas do computador: a pasta não depende de nenhuma.</p>
-    </div>
-    <div style="margin-top: 12px; border: 1px solid #f0d5c2; border-radius: 8px; background: #fff; padding: 14px 16px;">
-      <h4 style="margin: 0 0 4px; color: #7a3810;">Por etapa da pesquisa</h4>
-      <p style="margin: 0 0 10px; font-size: 14px; color: #566573; max-width: 80ch;">Do "funil responsável" de Hugo Cristo (PPGP/UFES). Todas ajudam a achar e mapear; nenhuma substitui a leitura nem a seleção sistemática; todas erram.</p>
-      <div style="overflow-x: auto;">
-        <table style="border-collapse: collapse; width: 100%; min-width: 640px; font-size: 14px;">
-          <thead>
-            <tr style="background: #fdf4ee;">
-              <th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #f0d5c2; color: #7a3810;">Etapa</th>
-              <th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #f0d5c2; color: #7a3810;">Ferramentas</th>
-              <th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #f0d5c2; color: #7a3810;">Cuidado</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">Definir o problema</td><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">Elicit, Consensus, Scite.AI</td><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">Cobertura enviesada (inglês, biomédica); conferir cada dado extraído.</td></tr>
-            <tr><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">Mapear a literatura</td><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">Research Rabbit, Connected Papers</td><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">O grafo herda o viés dos artigos de partida.</td></tr>
-            <tr><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">Estudar a literatura</td><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">NotebookLM</td><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">Responde só com base nos seus PDFs, mas ainda erra; os dados vão para o Google.</td></tr>
-            <tr><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">Gerar e relatar</td><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">Gemini, ChatGPT, Claude</td><td style="padding: 8px 10px; border-bottom: 1px solid #f5e6da; vertical-align: top;">Inventam referências e DOIs; só para redigir sobre o que já foi verificado. Declarar.</td></tr>
-            <tr><td style="padding: 8px 10px; vertical-align: top;">Dados sensíveis (modelo local)</td><td style="padding: 8px 10px; vertical-align: top;">Ollama</td><td style="padding: 8px 10px; vertical-align: top;">Nada sai da máquina, mas modelos pequenos erram com confiança. Privacidade real, rigor igual.</td></tr>
-          </tbody>
-        </table>
+    </aside>
+
+    <section class="section" id="participar" aria-labelledby="titulo-participar">
+      <div class="shell">
+        <div class="section-heading">
+          <h2 id="titulo-participar">Participe do seu jeito.</h2>
+          <p>Não é uma régua de conhecimento. Escolha o caminho que cabe no seu dia e continue depois.</p>
+        </div>
+
+        <div class="choice-grid">
+          <article class="choice">
+            <span class="choice-mark" aria-hidden="true">A</span>
+            <h3>Só assistir já funciona.</h3>
+            <p>Você acompanha a demonstração e leva esta página, o modelo de declaração, os prompts e o kit para experimentar depois.</p>
+          </article>
+
+          <article class="choice">
+            <span class="choice-mark" aria-hidden="true">W</span>
+            <h3>Fazer no navegador.</h3>
+            <p>Traga notebook ou celular com Claude, ChatGPT ou Gemini já conectado e um artigo da sua pesquisa.</p>
+            <ul>
+              <li>Você usa o prompt “processo com rastro”.</li>
+              <li>Obtém uma ficha, pontos de verificação e um rascunho de declaração.</li>
+            </ul>
+          </article>
+
+          <article class="choice">
+            <span class="choice-mark" aria-hidden="true">PC</span>
+            <h3>Fazer no computador.</h3>
+            <p>Traga notebook carregado com um agente que trabalhe em pastas. Você abre o kit e roda uma etapa com um artigo.</p>
+            <ul>
+              <li>A pasta guarda instruções e contexto.</li>
+              <li>O registro mostra o que a IA leu, fez e deixou para conferir.</li>
+            </ul>
+          </article>
+        </div>
       </div>
-      <p style="margin: 10px 0 0; font-size: 14px; color: #566573;">Fonte: <a href="https://github.com/hugocristo/seminario-ia-2026" target="_blank" rel="noopener" style="color: #173b63;">seminário "Introdução à IA Generativa para Pesquisas em Psicologia"</a>, Hugo Cristo Sant'Anna, PPGP/UFES, 2026, com o funil, os prompts e dois projetos-exemplo em Claude Code e OpenCode. Repare: o próprio seminário é publicado como pastas e arquivos.</p>
-    </div>
-  </div>
+    </section>
 
-  <!-- Provocações -->
-  <div style="margin-top: 22px; background: #23313f; color: #ffffff; border-radius: 10px; padding: 22px 24px;">
-    <div style="font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: .08em; color: #aab7c4; margin-bottom: 4px;">Para levar</div>
-    <h3 style="margin: 0 0 14px; font-size: 24px; color: #ffffff;">Provocações</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px;">
-      <blockquote style="margin: 0; padding: 0 0 0 14px; border-left: 3px solid #f0bb14;"><p style="margin: 0; font-size: 16px; color: #ffffff;">"A pergunta deixa de ser <em>quem escreveu?</em> e passa a ser <em>isso se sustenta?</em>"</p><footer style="margin-top: 6px; font-size: 13px; color: #aab7c4;">Silvio Meira, "29.000 papers: o fim da ciência SEM IA", 2026. Na AAAI-26, 22.977 revisões escritas por IA em menos de um dia; os autores preferiram.</footer></blockquote>
-      <blockquote style="margin: 0; padding: 0 0 0 14px; border-left: 3px solid #f0bb14;"><p style="margin: 0; font-size: 16px; color: #ffffff;">"Plágio era detectável; fabricação é verificável. O pecado migra de copiar para inventar."</p><footer style="margin-top: 6px; font-size: 13px; color: #aab7c4;">Silvio Meira</footer></blockquote>
-      <blockquote style="margin: 0; padding: 0 0 0 14px; border-left: 3px solid #f0bb14;"><p style="margin: 0; font-size: 16px; color: #ffffff;">"O gargalo virou atenção, confiança e julgamento sobre o que importa. E nenhuma dessas três escala."</p><footer style="margin-top: 6px; font-size: 13px; color: #aab7c4;">Silvio Meira</footer></blockquote>
-      <blockquote style="margin: 0; padding: 0 0 0 14px; border-left: 3px solid #259b8a;"><p style="margin: 0; font-size: 16px; color: #ffffff;">A IA amplifica organização ou desorganização. Escolha.</p><footer style="margin-top: 6px; font-size: 13px; color: #aab7c4;">Da oficina</footer></blockquote>
-      <blockquote style="margin: 0; padding: 0 0 0 14px; border-left: 3px solid #259b8a;"><p style="margin: 0; font-size: 16px; color: #ffffff;">Se o resultado saiu ruim, não conserte o resultado. Volte e conserte a máquina.</p><footer style="margin-top: 6px; font-size: 13px; color: #aab7c4;">Da oficina</footer></blockquote>
-    </div>
-    <p style="margin: 14px 0 0; font-size: 14px;"><a href="https://silvio.meira.com/29-000-papers-o-fim-da-ciencia-sem-ia/" target="_blank" rel="noopener" style="color: #f0bb14;">Ler o texto de Silvio Meira</a></p>
-  </div>
+    <section class="section section-muted" id="preparar" aria-labelledby="titulo-preparar">
+      <div class="shell prepare-layout">
+        <div class="prepare-sticky">
+          <div class="section-heading">
+            <h2 id="titulo-preparar">Chegue como der.</h2>
+            <p>A instalação é opcional. Se quiser praticar no computador, reserve cerca de 20 minutos antes.</p>
+          </div>
+          <div class="notice">
+            <strong>Clínica de instalação prevista: 15h30.</strong>
+            <p>A confirmação depende do acesso antecipado à sala. Se não der, você participa normalmente pelo navegador ou só acompanha.</p>
+          </div>
+        </div>
 
-  <!-- Quero avançar -->
-  <div style="margin-top: 22px;">
-    <div style="border-left: 6px solid #7653b6; background: #f7f4fc; padding: 18px 22px; border-radius: 8px;">
-      <div style="font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: .08em; color: #6744a9; margin-bottom: 4px;">Pesquisa + IA</div>
-      <h3 style="margin: 0 0 8px; font-size: 24px; color: #493176;">Quero avançar</h3>
-      <p style="margin: 0; max-width: 70ch;">Ninguém sai de uma oficina de 90 minutos operando o método sozinho. É assim mesmo. O que garante que continue é ter onde perguntar.</p>
-    </div>
-    <div style="margin-top: 16px;">
-      <a style="display: block; margin-bottom: 10px; text-decoration: none; color: #493176; border: 1px solid #ddd3ef; border-radius: 8px; padding: 14px 16px; background: #fff;" href="https://meet.google.com/pzr-zadr-oej" target="_blank" rel="noopener"><strong>Papo com IA.IÁ</strong> <span style="display: inline-block; font-size: 11px; font-weight: bold; letter-spacing: .06em; text-transform: uppercase; color: #17584f; background: #e3f4f0; border-radius: 4px; padding: 1px 6px; margin-left: 4px;">online</span><br><span style="font-size: 14px; color: #655b72;">Toda quinta, das 15h às 15h45, no Google Meet. Aberto a iniciantes e experientes. Leve o que travou. Página do encontro: <span style="color: #493176; text-decoration: underline;">sites.google.com/view/iaia-educa/papo-com-ia-iá</span></span></a>
-      <a style="display: block; margin-bottom: 10px; text-decoration: none; color: #493176; border: 1px solid #ddd3ef; border-radius: 8px; padding: 14px 16px; background: #fff;" href="https://sites.google.com/view/iaia-educa" target="_blank" rel="noopener"><strong>Portal IA.IA</strong><br><span style="font-size: 14px; color: #655b72;">Conteúdos e iniciativas do Cefor sobre Inteligência Artificial aplicada à Educação.</span></a>
-      <a style="display: block; margin-bottom: 10px; text-decoration: none; color: #493176; border: 1px solid #ddd3ef; border-radius: 8px; padding: 14px 16px; background: #fff;" href="https://conhecimento.cefor.ifes.edu.br/buscar/?q=intelig%C3%AAncia+artificial" target="_blank" rel="noopener"><strong>Base de Conhecimento do Cefor</strong><br><span style="font-size: 14px; color: #655b72;">Tutoriais, referências e recursos sobre IA e tecnologias educacionais.</span></a>
-      <a style="display: block; margin-bottom: 10px; text-decoration: none; color: #493176; border: 1px solid #ddd3ef; border-radius: 8px; padding: 14px 16px; background: #fff;" href="https://cefor.ifes.edu.br/index.php/component/content/article/2-uncategorised/17587-acoes-de-inteligencia-artificial-no-cefor?start=3" target="_blank" rel="noopener"><strong>Podcasts, palestras e oficinas</strong><br><span style="font-size: 14px; color: #655b72;">Registros e formações produzidas pelo Cefor para continuar explorando o tema.</span></a>
-      <div style="display: block; margin-bottom: 10px; color: #493176; border: 1px solid #ddd3ef; border-radius: 8px; padding: 14px 16px; background: #fff;"><strong>Curso de extensão "Inteligência de Contexto Pedagógica com IA"</strong> <span style="display: inline-block; font-size: 11px; font-weight: bold; letter-spacing: .06em; text-transform: uppercase; color: #7a3810; background: #fde8d3; border: 1px dashed #b5541c; border-radius: 4px; padding: 1px 6px; margin-left: 4px;">a definir</span><br><span style="font-size: 14px; color: #655b72;">Cefor/UnAC, 90 horas, a distância, previsto para 2027. Do prompt ao sistema pessoal de pastas e agentes. Avisaremos quando abrir.</span></div>
-    </div>
-  </div>
+        <div class="prep-list">
+          <article class="prep-step">
+            <span class="step-number" aria-hidden="true">01</span>
+            <div>
+              <h3>Traga uma tarefa real</h3>
+              <p>Escolha um artigo que você esteja lendo ou uma tarefa repetida da pesquisa. Não use dados sigilosos no primeiro teste.</p>
+            </div>
+          </article>
 
-  <!-- Rodapé -->
-  <div style="margin-top: 28px; padding-top: 14px; border-top: 1px solid #cfdce8; font-size: 14px; color: #566573;">
-    <p style="margin: 0 0 4px;">CGTE/Cefor/Ifes · Elton Vinícius Silva e Marcos Vinícius Forecchi Accioly · Oficina no Secim, 17/09/2026 · Contato: <a href="mailto:cgte.cefor@ifes.edu.br" style="color: #173b63;">cgte.cefor@ifes.edu.br</a></p>
-    <p style="margin: 0;">Este material pode ser copiado e adaptado; cite a fonte. Links verificados em 02/09/2026; ferramentas revisadas em 14/09/2026.</p>
-  </div>
+          <article class="prep-step">
+            <span class="step-number" aria-hidden="true">02</span>
+            <div>
+              <h3>Escolha pela conta que você já tem</h3>
+              <p>As ferramentas mudam rápido. Os caminhos abaixo foram conferidos em 15/09/2026; confirme limites e disponibilidade no site oficial.</p>
+
+              <div class="tools">
+                <details>
+                  <summary>Tenho uma conta Google pessoal</summary>
+                  <div class="details-body">
+                    <p><strong>Google Antigravity:</strong> editor com agente embutido, plano individual de US$ 0 e limites semanais básicos. A documentação recomenda uma conta pessoal quando contas institucionais não autenticam.</p>
+                    <p><a href="https://antigravity.google/" target="_blank" rel="noopener">Baixar o Antigravity</a> e <a href="https://antigravity.google/pricing" target="_blank" rel="noopener">conferir os planos</a>.</p>
+                  </div>
+                </details>
+
+                <details>
+                  <summary>Tenho uma conta no GitHub</summary>
+                  <div class="details-body">
+                    <p><strong>VS Code + GitHub Copilot:</strong> instale o editor e a extensão GitHub Copilot. Entre com a conta do GitHub e escolha o modo <strong>Agent</strong>. O plano Free inclui acesso limitado por créditos de IA; estudantes verificados têm o plano Student gratuito.</p>
+                    <p><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Baixar o VS Code</a> e <a href="https://docs.github.com/en/copilot/get-started/plans" target="_blank" rel="noopener">conferir os planos do Copilot</a>.</p>
+                  </div>
+                </details>
+
+                <details>
+                  <summary>Quero usar o terminal</summary>
+                  <div class="details-body">
+                    <p><strong>Gemini CLI:</strong> opção gratuita com conta Google pessoal. A documentação registra até 1.000 solicitações de modelo por usuário ao dia, sujeitas ao modelo, à capacidade e a mudanças.</p>
+                    <p><a href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener">Abrir o Gemini CLI</a>.</p>
+                  </div>
+                </details>
+
+                <details>
+                  <summary>Já assino uma ferramenta</summary>
+                  <div class="details-body">
+                    <p>Claude Code, Claude Cowork, Codex e outras ferramentas que trabalham em pastas também servem. O kit é texto e não depende de uma marca.</p>
+                    <p><a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a> e <a href="https://github.com/openai/codex" target="_blank" rel="noopener">Codex</a>.</p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </article>
+
+          <article class="prep-step">
+            <span class="step-number" aria-hidden="true">03</span>
+            <div>
+              <h3>Abra o kit e faça o teste</h3>
+              <p>Descompacte a pasta, abra-a na ferramenta e envie este pedido. Se a IA explicar a pasta, você está pronto.</p>
+              <div class="command-box">Leia README.md, CONTEXT.md e AGENTS.md desta pasta e me explique, em português, o que ela faz e como começar. Não execute nada ainda.</div>
+              <p class="small-note"><strong>Dica:</strong> Shift+Enter quebra a linha. Enter envia. Uma mensagem completa costuma valer mais que várias curtas.</p>
+            </div>
+          </article>
+
+          <article class="prep-step">
+            <span class="step-number" aria-hidden="true">04</span>
+            <div>
+              <h3>Leve notebook e carregador</h3>
+              <p>Quem só acompanhar não precisa trazer nada. Quem for praticar deve chegar com a conta já conectada e, se puder, com o kit descompactado.</p>
+              <div class="resource-links">
+                <a class="button button-secondary button-small" href="preparacao-participantes.md" target="_blank" rel="noopener">Abrir preparação em texto</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="durante" aria-labelledby="titulo-durante">
+      <div class="shell">
+        <div class="section-heading">
+          <h2 id="titulo-durante">O caminho da oficina.</h2>
+          <p>Noventa minutos para ligar ética, processo e organização, com um plantão logo depois.</p>
+        </div>
+
+        <ol class="agenda">
+          <li>
+            <time datetime="2026-09-17T15:30">15h30</time>
+            <strong>Instalação opcional</strong>
+            <span>Ajuda individual, se a sala estiver disponível.</span>
+          </li>
+          <li>
+            <time datetime="2026-09-17T16:00">16h00</time>
+            <strong>Declarar</strong>
+            <span>Norma, responsabilidade e modelo concreto.</span>
+          </li>
+          <li>
+            <time datetime="2026-09-17T16:22">16h22</time>
+            <strong>Conduzir</strong>
+            <span>Pedido solto comparado a processo com rastro.</span>
+          </li>
+          <li>
+            <time datetime="2026-09-17T16:40">16h40</time>
+            <strong>Organizar</strong>
+            <span>A pasta vira agente na demonstração ao vivo.</span>
+          </li>
+          <li>
+            <time datetime="2026-09-17T17:10">17h10</time>
+            <strong>Verificar</strong>
+            <span>Método, permissões e próximos passos.</span>
+          </li>
+          <li>
+            <time datetime="2026-09-17T17:30">17h30</time>
+            <strong>Plantão</strong>
+            <span>Dúvidas individuais durante o coffee break.</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="materiais" aria-labelledby="titulo-materiais">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Entregas da oficina</p>
+          <h2 id="titulo-materiais">Tudo para usar de novo.</h2>
+          <p>Os textos completos ficam aqui. Abra, selecione e copie. Os links levam aos arquivos-fonte quando você estiver no repositório.</p>
+        </div>
+
+        <div class="deliveries">
+          <article class="delivery delivery-kit" id="kit">
+            <div class="delivery-content">
+              <span class="resource-type">Pasta pronta</span>
+              <h3>Kit Pesquisa</h3>
+              <p>Um assistente de revisão de literatura com três etapas e rastro auditável. Não é programa: são instruções em Markdown que qualquer agente pode ler.</p>
+
+              <div class="kit-flow" aria-label="Fluxo do Kit Pesquisa">
+                <div><strong>Entrada</strong><span>seu tema e os artigos</span></div>
+                <div><strong>Fichamento</strong><span>objetivo, método, achados e páginas</span></div>
+                <div><strong>Correlação</strong><span>convergências, divergências e lacunas</span></div>
+                <div><strong>Relatório</strong><span>rastro e rascunho da declaração</span></div>
+              </div>
+
+              <p><strong>Primeiro pedido:</strong> peça para a IA ler o README e explicar a pasta. Depois preencha <code>_referencias/minha-pesquisa.md</code>, coloque artigos em <code>00-entrada/</code> e execute uma etapa por vez.</p>
+              <a class="button button-secondary button-small" href="https://drive.google.com/drive/folders/1X1ETW7bLK-aYIDp0oTZQiahN6mrOThZy?usp=sharing" target="_blank" rel="noopener">Abrir guia completo</a>
+            </div>
+          </article>
+
+          <article class="delivery delivery-process" id="prompt-web">
+            <div class="delivery-content">
+              <span class="resource-type">Para qualquer IA na web</span>
+              <h3>Processo com rastro</h3>
+              <p>Use com dois ou três artigos. A resposta vem em etapas, aponta páginas, separa dúvidas e termina com o que você precisa conferir.</p>
+              <details class="resource-details">
+                <summary>Abrir prompt completo</summary>
+                <div class="prompt-wrap">
+                  <p class="copy-note">Clique dentro do texto. Use Ctrl+A e Ctrl+C para copiar.</p>
+                  <textarea class="prompt-text" readonly spellcheck="false" aria-label="Prompt processo com rastro">Você é um assistente de revisão de literatura para pesquisa em Educação Matemática. (Persona)
+
+Meu objetivo é entender como estes três artigos se relacionam com o meu tema e onde há lacunas que minha pesquisa pode ocupar. (Alvo)
+
+O resultado será lido por mim e, depois, pela minha orientadora, que vai conferir cada afirmação contra os artigos. (Recebedores)
+
+Tema da minha pesquisa: uso de tecnologias digitais no ensino de matemática nos anos finais do ensino fundamental, com foco em [completar]. (Tema)
+
+Faça em etapas, nesta ordem, e me mostre cada etapa antes de seguir: (Estrutura)
+1. Para cada artigo, uma ficha com: referência completa; objetivo; método; principais achados; duas citações literais com número de página; relação com meu tema (converge, diverge ou não trata).
+2. Uma tabela cruzando os três artigos com as dimensões do meu tema.
+3. Uma lista de convergências, divergências e lacunas, cada item apontando para a ficha de origem.
+4. Ao final, um resumo do que você fez, o que você leu de fato, o que não conseguiu ler e o que eu preciso conferir pessoalmente.
+5. Um rascunho de declaração de uso de IA com: ferramenta e versão, finalidade, etapa da pesquisa em que foi usada.
+
+Regras: não invente referências, autores, páginas ou dados. Se não tiver certeza, diga "não encontrei" ou "a confirmar". Não reescreva minha pergunta de pesquisa; só a relacione com os artigos.</textarea>
+                  <div class="resource-links">
+                    <a class="button button-secondary button-small" href="../../biblioteca/prompts/pedido-vs-processo.md" target="_blank" rel="noopener">Abrir arquivo-fonte</a>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <article class="delivery delivery-declaration">
+            <div class="delivery-content">
+              <span class="resource-type">Para adaptar ao seu trabalho</span>
+              <h3>Modelo de declaração</h3>
+              <p>Três variantes: dissertação ou tese, artigo ou evento e trabalho de disciplina. Os modelos completos estão na seção de responsabilidade.</p>
+              <a class="button button-secondary button-small" href="https://drive.google.com/drive/folders/1X1ETW7bLK-aYIDp0oTZQiahN6mrOThZy?usp=sharing" target="_blank" rel="noopener">Ver modelos</a>
+            </div>
+          </article>
+
+          <article class="delivery delivery-guided" id="prompt-guiado">
+            <div class="delivery-content">
+              <span class="resource-type">Para um agente no computador</span>
+              <h3>Crie a pasta da sua tarefa</h3>
+              <p>A IA faz sete perguntas, propõe de duas a quatro etapas em P.A.R.T.E. e espera sua aprovação antes de criar qualquer arquivo.</p>
+              <details class="resource-details">
+                <summary>Abrir prompt guiado completo</summary>
+                <div class="prompt-wrap">
+                  <p class="copy-note">Crie uma pasta vazia, abra-a no agente e cole todo o texto.</p>
+                  <textarea class="prompt-text tall" readonly spellcheck="false" aria-label="Prompt guiado para criar uma pasta de pesquisa">Você vai me ajudar a montar uma pasta de trabalho para uma tarefa que eu repito na minha pesquisa. Esta pasta será lida por uma IA (você ou outra) a cada etapa. Trabalhe em quatro fases e não pule nenhuma.
+
+FASE 1: ENTREVISTA. Faça as perguntas abaixo UMA DE CADA VEZ e espere a minha resposta antes da próxima. Se eu for vago, peça um exemplo concreto. Não crie nenhum arquivo nesta fase.
+  1. Que tarefa você quer transformar em processo? (ex.: fichar artigos, revisar referências na ABNT, preparar uma submissão a periódico)
+  2. O que você tem no começo? Que arquivos ou informações entram, e em que formato (PDF, Word, planilha, anotações)?
+  3. O que precisa existir no fim, e quem vai ler (você, orientador, banca, periódico)?
+  4. Como você faz essa tarefa hoje, passo a passo, mesmo sem IA?
+  5. Em que momento você mais precisa conferir o que foi feito?
+  6. Que referências fixas a IA deve seguir sempre? (seu tema e pergunta de pesquisa, normas, modelo do programa, seu jeito de escrever)
+  7. Há dados sensíveis envolvidos (participantes, entrevistas, material sigiloso)?
+
+FASE 2: PROPOSTA. Com as respostas, proponha de 2 a 4 etapas, com um único trabalho cada. Para cada etapa, mostre em formato P.A.R.T.E.:
+  - Persona: quem a IA deve ser nesta etapa.
+  - Alvo: o que a etapa entrega, em uma frase.
+  - Recebedores: quem usa essa saída (a etapa seguinte ou uma pessoa).
+  - Tema: o assunto e o contexto da minha pesquisa que importam aqui.
+  - Estrutura: entrada, processo, saída e o que eu devo verificar.
+Diga também qual etapa usa um modelo mais capaz (as que dão direção) e qual pode usar um modelo simples (as que organizam ou formatam). Se houver conversão de formato (por exemplo, PDF para texto), trate-a como etapa separada ou como preparação fora da pasta, não misture com as outras. Espere a minha aprovação ou as minhas correções antes de seguir.
+
+FASE 3: CRIAÇÃO. Só depois que eu aprovar, crie exatamente esta estrutura, sem scripts, programas ou arquivos extras:
+  README.md            o que a pasta faz e como usar, em até 15 linhas, para quem não programa
+  CONTEXT.md           regras para a IA: ler este arquivo e o CONTEXT.md da etapa antes de agir; não inventar referências, citações, páginas ou números; registrar toda ação em registro/LOG-IA.md; escrever só nas pastas saida/; perguntar antes de apagar qualquer coisa ou de ler fora desta pasta; (se houver dados sensíveis) não enviar esses dados sem confirmação explícita
+  _referencias/        um arquivo .md por referência fixa, com [colchetes] onde eu devo preencher
+  00-entrada/          a única pasta que eu alimento diretamente
+  01-<etapa>/          CONTEXT.md com as seções Entrada, Processo, Saída e Verificar, escritas a partir do P.A.R.T.E. aprovado; e uma subpasta saida/
+  (uma pasta numerada por etapa aprovada)
+  registro/LOG-IA.md   cabeçalho e formato de cada entrada: data; etapa; ferramenta e modelo; o que fez; arquivos lidos e escritos; o que o humano deve verificar
+Todos os arquivos em Markdown e em português.
+
+FASE 4: CONFERÊNCIA. Mostre a árvore de pastas e explique cada arquivo em uma frase. Depois, liste o que eu devo conferir antes de usar a pasta: instruções que não refletem o que eu disse, etapas faltando ou sobrando, regras que ficaram vagas. Não execute nenhuma etapa.</textarea>
+                  <div class="resource-links">
+                    <a class="button button-secondary button-small" href="../../biblioteca/prompts/prompt-guia-cria-pasta.md" target="_blank" rel="noopener">Abrir arquivo-fonte</a>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <article class="delivery delivery-more">
+            <div class="delivery-content">
+              <span class="resource-type">Demonstração e apoio</span>
+              <h3>Mais materiais</h3>
+              <p>Abra os slides, a folha para definir seu tema e o prompt curto que cria a pasta mínima da demonstração.</p>
+              <div class="resource-links">
+                <a class="button button-secondary button-small" href="https://claude.ai/artifact/1eEZQwW5wn7xDgCdxKJKpj" target="_blank" rel="noopener">Abrir slides</a>
+                <a class="button button-secondary button-small" href="folha-tema.md" target="_blank" rel="noopener">Folha de tema</a>
+              </div>
+              <details class="resource-details">
+                <summary>Abrir prompt da pasta mínima</summary>
+                <div class="prompt-wrap">
+                  <p class="copy-note">Use dentro de uma pasta vazia.</p>
+                  <textarea class="prompt-text tall" readonly spellcheck="false" aria-label="Prompt para criar uma pasta mínima">Estamos em uma pasta vazia. Crie nela uma estrutura mínima para um assistente de pesquisa com rastro auditável, exatamente assim, sem acrescentar nada além disto:
+
+minha-pesquisa-ia/
+  README.md                 (o que é esta pasta e como usar, em 10 linhas)
+  CONTEXT.md                (regras para a IA: ler antes de agir; não inventar referências; registrar toda ação em registro/LOG-IA.md; escrever só em pastas "saida"; perguntar antes de apagar qualquer coisa)
+  _referencias/
+    minha-pesquisa.md       (modelo em branco com: tema, pergunta de pesquisa, referencial teórico, público, o que já sei, o que quero descobrir)
+  01-fichamento/
+    CONTEXT.md              (contrato: entrada = artigos em 00-entrada; processo = ficha por artigo com referência, objetivo, método, achados, duas citações literais com página, relação com meu tema; saída = 01-fichamento/saida/ficha-<nome>.md; ao final, listar o que eu devo verificar)
+    saida/
+  00-entrada/               (onde eu coloco os artigos)
+  registro/
+    LOG-IA.md               (cabeçalho e formato: data, etapa, ferramenta e modelo, o que fez, arquivos lidos e escritos, o que o humano deve verificar)
+
+Escreva todos os arquivos em português. Depois de criar, me mostre a árvore de pastas e explique, em uma frase por arquivo, para que serve cada um. Não execute nenhuma etapa ainda.</textarea>
+                  <div class="resource-links">
+                    <a class="button button-secondary button-small" href="../../biblioteca/prompts/prompt-cria-pasta.md" target="_blank" rel="noopener">Abrir arquivo-fonte</a>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="declarar" aria-labelledby="titulo-declarar">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Uso responsável</p>
+          <h2 id="titulo-declarar">Declarar exige saber.</h2>
+          <p>O registro não é burocracia extra. É o que permite explicar a colaboração da IA sem esconder nem exagerar.</p>
+        </div>
+
+        <div class="responsibility-grid">
+          <div>
+            <h3>Antes de usar IA, pergunte</h3>
+            <ol class="question-path">
+              <li><span class="question-icon" aria-hidden="true">D</span><p>Posso enviar estes dados para uma ferramenta na nuvem?</p></li>
+              <li><span class="question-icon" aria-hidden="true">V</span><p>Consigo verificar cada referência, página e número?</p></li>
+              <li><span class="question-icon" aria-hidden="true">R</span><p>Saberei dizer à banca o que a IA fez e o que eu fiz?</p></li>
+              <li><span class="question-icon" aria-hidden="true">A</span><p>A interpretação, as conclusões e a responsabilidade continuam minhas?</p></li>
+            </ol>
+          </div>
+
+          <aside class="norm-box">
+            <h3>Registre três coisas.</h3>
+            <p>A Política de Integridade na Atividade Científica do CNPq prevê, em seu escopo, a declaração do uso de IA generativa.</p>
+            <dl class="declaration-fields">
+              <div><dt>Ferramenta</dt><dd>Nome, modelo ou versão e período de uso.</dd></div>
+              <div><dt>Finalidade</dt><dd>O trabalho concreto que a ferramenta apoiou.</dd></div>
+              <div><dt>Fase</dt><dd>O momento da pesquisa em que ela entrou.</dd></div>
+            </dl>
+            <a class="button button-secondary button-small" href="https://www.gov.br/cnpq/pt-br/composicao/comissao-de-integridade/documentos" target="_blank" rel="noopener">Consultar o CNPq</a>
+            <p class="scope-note"><strong>Confirme a regra que vale para você.</strong>A Portaria rege as atividades no escopo do CNPq. Seu programa, sua banca, o edital e o periódico podem exigir outro formato ou mais detalhes.</p>
+          </aside>
+        </div>
+
+        <div class="models" id="modelos-declaracao">
+          <details>
+            <summary>Modelo para dissertação ou tese</summary>
+            <div class="prompt-wrap">
+              <p class="copy-note">Substitua os campos entre colchetes e apague o que não se aplica.</p>
+              <textarea class="prompt-text tall" readonly spellcheck="false" aria-label="Modelo de declaração para dissertação ou tese">DECLARAÇÃO DE USO DE INTELIGÊNCIA ARTIFICIAL GENERATIVA
+
+Declaro que, na elaboração desta [dissertação/tese], utilizei ferramentas de inteligência artificial generativa nas seguintes fases e finalidades:
+
+- [Fase: levantamento bibliográfico]; [Ferramenta e versão, ex.: nome do modelo e da ferramenta, em agosto de 2026]; [Finalidade: fichamento preliminar de artigos e elaboração de matriz de correlação entre os artigos e o tema da pesquisa]. Todas as fichas foram conferidas por mim contra os textos originais.
+- [Fase: redação]; [Ferramenta]; [Finalidade: revisão gramatical e sugestões de clareza em trechos do capítulo 3]. As sugestões foram aceitas ou rejeitadas por mim, uma a uma.
+- [Fase: análise de dados]; [Ferramenta]; [Finalidade: geração de scripts em R para as análises descritas na seção 4.2]. Os scripts foram revisados e executados por mim; os resultados foram verificados [descrever como].
+
+Nenhuma ferramenta de IA foi usada para [ex.: gerar dados, produzir a interpretação dos resultados, redigir as conclusões], salvo o indicado acima. As ferramentas de IA não são autoras deste trabalho. Assumo integral responsabilidade pelo conteúdo, pela exatidão das referências e pela originalidade do texto.
+
+O registro detalhado das interações com IA está disponível em [ex.: apêndice X / repositório / arquivo registro/LOG-IA.md], e pode ser consultado pela banca.
+
+[Cidade], [data]. [Nome]</textarea>
+            </div>
+          </details>
+
+          <details>
+            <summary>Modelo para artigo ou trabalho de evento</summary>
+            <div class="prompt-wrap">
+              <p class="copy-note">Use a seção indicada pelo periódico ou evento. O modelo próprio do veículo prevalece.</p>
+              <textarea class="prompt-text" readonly spellcheck="false" aria-label="Modelo de declaração para artigo ou evento">Uso de inteligência artificial generativa. Os autores utilizaram [ferramenta e versão] para [finalidade(s)] na fase de [fase(s)]. Todo o conteúdo gerado foi revisado e editado pelos autores, que assumem integral responsabilidade pelo texto. A ferramenta não é autora e não foi usada para [o que não foi feito, se relevante].</textarea>
+            </div>
+          </details>
+
+          <details>
+            <summary>Modelo para trabalho de disciplina</summary>
+            <div class="prompt-wrap">
+              <p class="copy-note">Adapte também às orientações dadas pelo professor.</p>
+              <textarea class="prompt-text" readonly spellcheck="false" aria-label="Modelo de declaração para trabalho de disciplina">Declaro que usei [ferramenta] para [finalidade] neste trabalho, em [fase]. Revisei o conteúdo gerado e respondo por ele. Não usei IA para [o que não foi feito]. Registro das interações disponível em [onde], se o professor solicitar.</textarea>
+            </div>
+          </details>
+
+          <div class="resource-links">
+            <a class="button button-secondary button-small" href="../../biblioteca/prompts/modelo-declaracao-uso-ia.md" target="_blank" rel="noopener">Abrir arquivo-fonte</a>
+            <a class="button button-secondary button-small" href="https://portal.ufrrj.br/ufrrj-orienta-declaracao-de-uso-de-ia-em-trabalhos-academicos/" target="_blank" rel="noopener">Ver orientação da UFRRJ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="metodo" aria-labelledby="titulo-metodo">
+      <div class="shell">
+        <div class="section-heading">
+          <h2 id="titulo-metodo">Organização vira método.</h2>
+          <p>Um bom prompt ajuda. Um processo visível e reaproveitável ajuda de novo na tarefa seguinte.</p>
+        </div>
+
+        <div class="method-chain" aria-label="Cadeia que conecta organização e declaração">
+          <div class="chain-item"><strong>Declarar bem</strong><span>exige saber o que a IA fez.</span></div>
+          <div class="chain-item"><strong>Saber o que ela fez</strong><span>exige um processo visível.</span></div>
+          <div class="chain-item"><strong>Processo visível</strong><span>exige organização e registro.</span></div>
+          <div class="chain-item"><strong>Organização</strong><span>vira pastas, etapas e instruções em texto.</span></div>
+        </div>
+
+        <div class="method-layout">
+          <div>
+            <h3>Um pedido tem cinco partes.</h3>
+            <dl class="parte">
+              <div class="parte-row"><dt>P</dt><dd><strong>Persona:</strong> quem a IA deve ser nesta etapa.</dd></div>
+              <div class="parte-row"><dt>A</dt><dd><strong>Alvo:</strong> o resultado concreto que você busca.</dd></div>
+              <div class="parte-row"><dt>R</dt><dd><strong>Recebedores:</strong> quem vai ler ou usar a saída.</dd></div>
+              <div class="parte-row"><dt>T</dt><dd><strong>Tema:</strong> o assunto e o contexto necessários.</dd></div>
+              <div class="parte-row"><dt>E</dt><dd><strong>Estrutura:</strong> etapas, formato, regras e verificação.</dd></div>
+            </dl>
+          </div>
+
+          <div>
+            <h3>A pasta segue cinco princípios.</h3>
+            <ol class="principles">
+              <li><strong>Uma etapa, um trabalho.</strong><span>Quem pesquisa não escreve; quem escreve não formata.</span></li>
+              <li><strong>Texto simples como interface.</strong><span>Markdown, que você e qualquer ferramenta conseguem ler.</span></li>
+              <li><strong>Contexto em camadas.</strong><span>Cada etapa carrega apenas o que precisa.</span></li>
+              <li><strong>Toda saída é editável.</strong><span>Você confere antes de alimentar a etapa seguinte.</span></li>
+              <li><strong>Configure a fábrica.</strong><span>A pasta se configura uma vez; cada execução gera um novo resultado.</span></li>
+            </ol>
+          </div>
+        </div>
+
+        <aside class="safety-band" aria-labelledby="titulo-seguranca">
+          <h3 id="titulo-seguranca">Três regras, porque agora a IA mexe no computador.</h3>
+          <div class="safety-rules">
+            <article>
+              <strong>Leia cada permissão.</strong>
+              <p>No começo, toda vez. Autorize leitura e escrita apenas quando entender o pedido.</p>
+            </article>
+            <article>
+              <strong>Não use aprovação automática.</strong>
+              <p>Só libere de vez um tipo de ação quando souber o que ela faz e qual é o risco.</p>
+            </article>
+            <article>
+              <strong>Proteja dados sensíveis.</strong>
+              <p>Não envie entrevistas, dados de participantes ou material sigiloso sem saber o destino.</p>
+            </article>
+          </div>
+        </aside>
+
+        <div class="reference-groups" aria-label="Referências para aprofundar">
+          <section class="reference-group">
+            <h3>Método e pesquisa</h3>
+            <ul>
+              <li><a href="https://arxiv.org/abs/2603.16021" target="_blank" rel="noopener">Interpretable Context Methodology</a><span>Van Clief e McDermott, 2026.</span></li>
+              <li><a href="https://github.com/RinDig/Interpretable-Context-Methodology" target="_blank" rel="noopener">Repositório do ICM</a><span>Código, exemplos e workspace-builder.</span></li>
+              <li><a href="https://github.com/hugocristo/seminario-ia-2026" target="_blank" rel="noopener">IA generativa para pesquisa</a><span>Seminário de Hugo Cristo Sant'Anna, PPGP/UFES.</span></li>
+            </ul>
+          </section>
+
+          <section class="reference-group">
+            <h3>Ética e relato</h3>
+            <ul>
+              <li><a href="https://www.gov.br/cnpq/pt-br/composicao/comissao-de-integridade/documentos" target="_blank" rel="noopener">Política de Integridade do CNPq</a><span>Documento oficial e arcabouço legal.</span></li>
+              <li><a href="https://rpfweb.github.io/Protocolo-para-Uso-de-IA/" target="_blank" rel="noopener">Protocolo de Atenção</a><span>Rutinelli Fávero, Cefor.</span></li>
+              <li><a href="https://www.nature.com/articles/s41562-026-02492-7" target="_blank" rel="noopener">GUIDE-LLM</a><span>Checklist de relato em pesquisa com modelos de linguagem.</span></li>
+              <li><a href="https://bit.ly/manual-etica-IA" target="_blank" rel="noopener">Manual Prático de Uso Ético de IA</a><span>Material do Cefor para a educação.</span></li>
+            </ul>
+          </section>
+
+          <section class="reference-group">
+            <h3>Provocação</h3>
+            <ul>
+              <li><a href="https://silvio.meira.com/29-000-papers-o-fim-da-ciencia-sem-ia/" target="_blank" rel="noopener">29.000 papers: o fim da ciência sem IA</a><span>Silvio Meira, 2026.</span></li>
+            </ul>
+          </section>
+
+          <section class="reference-group">
+            <h3>Ferramentas por etapa</h3>
+            <ul>
+              <li><strong>Definir o problema:</strong><span>Elicit, Consensus e Scite. Conferir cada dado extraído.</span></li>
+              <li><strong>Mapear a literatura:</strong><span>Research Rabbit e Connected Papers. O grafo herda o viés das sementes.</span></li>
+              <li><strong>Estudar a literatura:</strong><span>NotebookLM. Responde sobre suas fontes, mas ainda pode errar.</span></li>
+              <li><strong>Dados sensíveis:</strong><span>Modelos locais, como Ollama, podem reduzir o envio à nuvem. O rigor continua necessário.</span></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="continuar" aria-labelledby="titulo-continuar">
+      <div class="shell continue-layout">
+        <div>
+          <div class="section-heading">
+            <h2 id="titulo-continuar">Depois, a pasta te guia.</h2>
+            <p>Volte ao primeiro pedido, execute uma etapa por vez e traga o que travou para a conversa seguinte.</p>
+          </div>
+
+          <div class="continue-links">
+            <a class="continue-link" href="https://chat.whatsapp.com/CCjfmOJ4mTx8FYMEu9Tp9a" target="_blank" rel="noopener">
+              <span><strong>Grupo de WhatsApp</strong><small>Tire dúvidas e acompanhe as próximas ações.</small></span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="continue-link" href="https://sites.google.com/view/iaia-educa/papo-com-ia-i%C3%A1" target="_blank" rel="noopener">
+              <span><strong>Papo com IA.IÁ</strong><small>Encontro online às quintas, das 15h às 15h45.</small></span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="continue-link" href="https://sites.google.com/view/iaia-educa" target="_blank" rel="noopener">
+              <span><strong>Portal IA.IA</strong><small>Conteúdos e iniciativas do Cefor sobre IA na educação.</small></span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="continue-link" href="https://conhecimento.cefor.ifes.edu.br/buscar/?q=intelig%C3%AAncia+artificial" target="_blank" rel="noopener">
+              <span><strong>Base de Conhecimento do Cefor</strong><small>Tutoriais, referências e recursos para seguir estudando.</small></span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="continue-link" href="https://cefor.ifes.edu.br/index.php/component/content/article/2-uncategorised/17587-acoes-de-inteligencia-artificial-no-cefor?start=3" target="_blank" rel="noopener">
+              <span><strong>Podcasts, palestras e oficinas</strong><small>Registros e formações produzidas pelo Cefor.</small></span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="course-note">
+            <strong>Em planejamento para 2027</strong>
+            <p>Curso de extensão “Inteligência de Contexto Pedagógica com IA”, do Cefor/UnAC, com proposta de 90 horas a distância. A oferta ainda depende de confirmação.</p>
+          </div>
+        </div>
+
+        <aside aria-label="Facilitadores da oficina">
+          <div class="people">
+            <div class="person">
+              <img src="biblioteca/fotos/silva-elton.png" alt="Retrato de Elton Vinícius Silva" width="1083" height="1452">
+              <strong>Elton Vinícius Silva</strong>
+              <span>CGTE/Cefor/Ifes</span>
+            </div>
+            <div class="person">
+              <img src="biblioteca/fotos/accioly-marcos.jpg" alt="Retrato de Marcos Accioly" width="1086" height="1448">
+              <strong>Marcos Accioly</strong>
+              <span>CGTE/Cefor/Ifes</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <div>
+        <strong>Ficou alguma dúvida?</strong>
+        <p>Escreva para <a href="mailto:cgte.cefor@ifes.edu.br" target="_blank" rel="noopener">cgte.cefor@ifes.edu.br</a>. Este material pode ser copiado e adaptado com citação da fonte.</p>
+      </div>
+      <div class="footer-signature">CGTE / Cefor / Ifes<br>Oficina no Secim, 17/09/2026</div>
+    </div>
+  </footer>
 </div>

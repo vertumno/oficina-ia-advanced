@@ -1,0 +1,157 @@
+/* =====================================================================
+   IA além do chat — apresentação visual (Secim, 17/09/2026)
+   Cor é papel, não enfeite:
+     laranja  = o que a IA faz
+     azul     = o que você faz, decide e confere
+     amarelo  = o que precisa ser visto, verificado ou declarado
+     tinta    = estrutura
+   ===================================================================== */
+:root{
+  --papel:#F5F6F8; --papel-2:#E8EBF0;
+  --tinta:#151A26; --grafite:#5B6474; --nevoa:#B9C0CB; --linha:#D3D8E0;
+  --caneta:#2350E6; --caneta-clara:#DCE4FF;
+  --maquina:#FF6B21; --maquina-escura:#C84A0C; --maquina-clara:#FFE2D1;
+  --marca:#FFE14D; --marca-clara:#FFF3B8;
+  --erro:#E0332F;
+  --moldura:#0D1119;
+  --sans:'Archivo',"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,"Cascadia Mono",Consolas,"Liberation Mono",monospace;
+  --ease:cubic-bezier(.3,.1,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--moldura);color:var(--tinta);font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow:hidden}
+
+/* ---------- palco ---------- */
+.viewport{position:fixed;inset:0;overflow:hidden}
+.deck{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;background:var(--papel);overflow:hidden;font-size:32px;line-height:1.3;counter-reset:sl}
+.slide{position:absolute;inset:0;width:1920px;height:1080px;background:var(--papel);color:var(--tinta);visibility:hidden;opacity:0;counter-increment:sl;
+  transition:opacity .4s var(--ease),visibility 0s linear .4s}
+.slide.is-active{visibility:visible;opacity:1;transition:opacity .4s var(--ease),visibility 0s}
+.slide h1,.slide h2,.slide h3,.slide p,.slide ul,.slide ol,.slide figure,.slide blockquote{margin:0}
+.slide ul,.slide ol{padding:0;list-style:none}
+.slide svg{display:block;overflow:visible}
+.slide .fig{position:absolute;left:0;top:0;width:1920px;height:1080px;pointer-events:none}
+.bloco{position:absolute}
+
+/* ---------- etapas (cliques) ---------- */
+.slide [data-step]{transition:opacity .5s var(--ease)}
+.slide [data-step]:not(.is-shown){opacity:0}
+.desenho{stroke-dasharray:100 100;stroke-dashoffset:100;transition:stroke-dashoffset 1.6s var(--ease)}
+.slide.is-active .desenho{stroke-dashoffset:0}
+.slide.is-active [data-step]:not(.is-shown) .desenho{stroke-dashoffset:100;transition:none}
+html.static .slide [data-step]{opacity:1!important}
+html.static .desenho{stroke-dashoffset:0!important;transition:none!important}
+html.static .slide{transition:none!important}
+
+/* ---------- tipografia ---------- */
+.titulo{position:absolute;left:110px;top:80px;max-width:1540px;font-size:64px;line-height:1.05;font-weight:760;letter-spacing:-.018em;text-wrap:balance}
+.frase{font-size:88px;line-height:1.04;font-weight:760;letter-spacing:-.024em;text-wrap:balance}
+.grande{font-size:46px;line-height:1.14;font-weight:680;letter-spacing:-.01em;text-wrap:balance}
+.corpo{font-size:32px;line-height:1.34;font-weight:430}
+.rotulo{font-size:32px;line-height:1.18;font-weight:660;letter-spacing:-.005em}
+.miudo{font-size:26px;line-height:1.3;font-weight:450;color:var(--grafite)}
+.fonte{position:absolute;left:110px;bottom:76px;max-width:1320px;font-size:24px;line-height:1.3;color:var(--grafite)}
+.mono{font-family:var(--mono);font-weight:500;letter-spacing:-.01em}
+.largo{font-stretch:118%}
+.condensado{font-stretch:80%}
+.slide strong{font-weight:730}
+.c-caneta{color:var(--caneta)}.c-maq{color:var(--maquina-escura)}.c-grafite{color:var(--grafite)}.c-erro{color:var(--erro)}
+.grifo{background:linear-gradient(transparent 10%,var(--marca) 10%,var(--marca) 90%,transparent 90%);padding:0 .1em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* legenda de papéis */
+.chaves{display:flex;gap:44px;align-items:center}
+.chave{display:inline-flex;align-items:center;gap:14px;font-size:28px;font-weight:620}
+.chave i{width:28px;height:28px;border-radius:50%;flex:none}
+.chave .ia{background:var(--maquina)}.chave .voce{background:var(--caneta)}.chave .ver{background:var(--marca);box-shadow:inset 0 0 0 3px var(--tinta)}
+
+/* ---------- SVG ---------- */
+svg text{font-family:var(--sans);fill:var(--tinta)}
+svg .tx-grande{font-size:46px;font-weight:720;letter-spacing:-.01em}
+svg .tx-rotulo{font-size:32px;font-weight:660}
+svg .tx-corpo{font-size:28px;font-weight:450}
+svg .tx-miudo{font-size:24px;font-weight:520;fill:var(--grafite)}
+svg .tx-mono{font-family:var(--mono);font-size:24px;font-weight:500}
+.f-tinta{fill:var(--tinta)}.f-papel{fill:var(--papel)}.f-papel2{fill:var(--papel-2)}.f-grafite{fill:var(--grafite)}.f-nevoa{fill:var(--nevoa)}.f-linha{fill:var(--linha)}
+.f-caneta{fill:var(--caneta)}.f-caneta-c{fill:var(--caneta-clara)}
+.f-maq{fill:var(--maquina)}.f-maq-e{fill:var(--maquina-escura)}.f-maq-c{fill:var(--maquina-clara)}
+.f-marca{fill:var(--marca)}.f-marca-c{fill:var(--marca-clara)}.f-erro{fill:var(--erro)}.f-branco{fill:#fff}.f-none{fill:none}
+.s-tinta{stroke:var(--tinta)}.s-papel{stroke:var(--papel)}.s-grafite{stroke:var(--grafite)}.s-nevoa{stroke:var(--nevoa)}.s-linha{stroke:var(--linha)}
+.s-caneta{stroke:var(--caneta)}.s-maq{stroke:var(--maquina)}.s-maq-e{stroke:var(--maquina-escura)}.s-marca{stroke:var(--marca)}.s-erro{stroke:var(--erro)}.s-branco{stroke:#fff}
+.k-tinta{color:var(--tinta)}.k-papel{color:var(--papel)}.k-grafite{color:var(--grafite)}.k-caneta{color:var(--caneta)}.k-maq{color:var(--maquina)}.k-marca{color:var(--marca)}.k-branco{color:#fff}
+.w2{stroke-width:2}.w3{stroke-width:3}.w4{stroke-width:4}.w5{stroke-width:5}.w6{stroke-width:6}.w8{stroke-width:8}.w10{stroke-width:10}.w14{stroke-width:14}
+.rd{stroke-linecap:round;stroke-linejoin:round}
+.tracejado{stroke-dasharray:16 14}
+.rastro{fill:none;stroke-linecap:round;stroke-dasharray:0 24;stroke-width:11}
+.rastro.fino{stroke-dasharray:0 17;stroke-width:7}
+
+/* ---------- divisórias de seção ---------- */
+.slide.secao.s1{background:var(--marca)}
+.slide.secao.s2{background:var(--caneta);color:#fff}
+.slide.secao.s3{background:var(--maquina)}
+.slide.secao.s4{background:var(--tinta);color:var(--papel)}
+.secao .sec-num{position:absolute;left:110px;top:92px;font-size:44px;font-weight:720;font-stretch:115%;font-variant-numeric:tabular-nums}
+.secao .sec-titulo{position:absolute;left:102px;top:300px;max-width:1500px;font-size:184px;line-height:.9;font-weight:850;font-stretch:112%;letter-spacing:-.04em;text-wrap:balance}
+.secao .sec-mapa{position:absolute;left:110px;bottom:150px;width:1700px;height:120px;color:inherit}
+.secao .sec-mapa text{fill:currentColor;font-size:28px;font-weight:600}
+.secao .sec-mapa .aqui{font-weight:780}
+
+/* ---------- trilha de progresso ---------- */
+.hud{position:absolute;left:110px;right:110px;bottom:30px;height:24px;display:flex;align-items:center;gap:30px;pointer-events:none;color:var(--tinta);z-index:5;transition:color .4s var(--ease),opacity .4s}
+.deck[data-tom="escuro"] .hud{color:#fff}
+.deck[data-hud="nao"] .hud{opacity:0}
+.hud .grupos{flex:1;display:flex;justify-content:space-between;align-items:center}
+.hud .grupo{display:flex;gap:30px;align-items:center}
+.hud .ponto{width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.2;flex:none}
+.hud .ponto.passou{opacity:.5}
+.hud .ponto.agora{width:18px;height:18px;opacity:1;margin:-5px}
+.hud .numero{font-size:22px;font-weight:650;font-variant-numeric:tabular-nums;opacity:.65;min-width:2.2ch;text-align:right}
+
+/* ---------- notas, aviso, breu, edição ---------- */
+.notas{position:fixed;left:0;right:0;bottom:0;max-height:40vh;overflow:auto;background:rgba(13,17,25,.95);color:#E6E9EF;font:17px/1.55 var(--sans);padding:18px 32px 24px;z-index:20;transform:translateY(105%);transition:transform .25s var(--ease)}
+.notas.is-open{transform:none}
+.notas h4{margin:0 0 6px;font-size:14px;font-weight:600;color:#9AA3B2;letter-spacing:.02em}
+.notas p{margin:0 0 8px;max-width:78ch}
+.notas b{color:#fff}
+.aviso{position:fixed;left:50%;top:22px;transform:translateX(-50%);background:var(--tinta);color:var(--papel);font:600 18px/1.3 var(--sans);padding:10px 18px;border-radius:10px;z-index:25;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
+.aviso.is-on{opacity:1}
+.breu{position:fixed;inset:0;background:#000;z-index:30;display:none}
+.breu.is-on{display:block}
+html.editando .slide [contenteditable="true"]{outline:3px dashed var(--caneta);outline-offset:6px;cursor:text}
+
+/* ---------- visão geral (O) ---------- */
+.viewport.is-overview{overflow:auto}
+.deck.is-overview{position:relative;transform:none!important;width:auto;height:auto;display:grid;grid-template-columns:repeat(var(--ov-cols),var(--ov-w));grid-auto-rows:var(--ov-h);gap:22px;padding:22px;background:transparent;overflow:visible}
+.deck.is-overview .slide{position:relative;inset:auto;visibility:visible;opacity:1;transform:scale(var(--ov-s));transform-origin:0 0;cursor:pointer;transition:none}
+.deck.is-overview .slide.is-active{outline:26px solid var(--marca)}
+.deck.is-overview .slide [data-step]{opacity:1}
+.deck.is-overview .desenho{stroke-dashoffset:0}
+.deck.is-overview .hud{display:none}
+
+/* ---------- lista (telas estreitas) ---------- */
+html.lista body{overflow:auto;background:var(--papel-2)}
+html.lista .viewport{position:static;overflow:hidden;padding:16px}
+html.lista .deck{position:static;transform:none!important;width:auto;height:auto;background:none;overflow:visible;display:flex;flex-direction:column;gap:16px}
+html.lista .slide{position:relative;inset:auto;flex:none;visibility:visible;opacity:1;transform:scale(var(--ls));transform-origin:0 0;
+  margin-bottom:calc(1080px * var(--ls) - 1080px);margin-right:calc(1920px * var(--ls) - 1920px);transition:none}
+html.lista .slide [data-step]{opacity:1}
+html.lista .desenho{stroke-dashoffset:0}
+html.lista .hud{display:none}
+
+/* ---------- impressão / PDF (Ctrl+P) ---------- */
+@page{size:1920px 1080px;margin:0}
+@media print{
+  html,body{height:auto;overflow:visible;background:var(--papel)}
+  .viewport{position:static;overflow:visible}
+  .deck{position:static;transform:none!important;width:1920px;height:auto;overflow:visible}
+  .slide{position:relative;inset:auto;visibility:visible!important;opacity:1!important;break-after:page;page-break-after:always;transition:none!important}
+  .slide [data-step]{opacity:1!important}
+  .desenho{stroke-dashoffset:0!important;transition:none!important}
+  .slide::after{content:counter(sl);position:absolute;right:110px;bottom:30px;font-size:22px;font-weight:650;color:currentColor;opacity:.6}
+  .hud,.notas,.aviso,.breu{display:none!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media (prefers-reduced-motion:reduce){
+  .slide,.slide [data-step],.hud,.notas{transition:none!important}
+  .desenho{stroke-dashoffset:0!important;transition:none!important}
+}

@@ -1,0 +1,129 @@
+<style>
+svg .col-cab{font-size:26px;font-weight:560;fill:var(--grafite)}
+svg .conta{font-size:34px;font-weight:720}
+svg .ferr{font-size:32px;font-weight:600}
+svg .custo{font-size:26px;font-weight:480;fill:var(--grafite)}
+svg .chip-txt{font-size:22px;font-weight:700}
+.ferr-rodape{position:absolute;left:110px;top:858px;width:1700px;font-size:34px;line-height:1.24;font-weight:560;text-wrap:balance}
+svg .ponto-rot{font-size:28px;font-weight:700}
+svg .desvio{font-size:26px;font-weight:520;fill:var(--grafite)}
+.quem{position:absolute;left:1270px;width:540px;font-size:30px;line-height:1.3;font-weight:440}
+.quem strong{display:block;font-size:40px;line-height:1.1;font-weight:760;margin-bottom:8px}
+.quem em{display:block;font-style:normal;font-weight:700;margin-top:12px;text-wrap:balance}
+.modelo-leg{position:absolute;left:110px;top:896px;width:1060px;font-size:34px;line-height:1.22;font-weight:700;text-wrap:balance}
+.provoca{position:absolute;left:110px;top:196px;width:1700px;font-size:72px;line-height:1.06;font-weight:780;letter-spacing:-.025em;text-wrap:balance}
+.provoca span{display:block;margin-top:18px;color:var(--caneta)}
+svg .amp-ia{font-size:34px;font-weight:800;fill:var(--papel)}
+svg .amp-rot{font-size:42px;font-weight:780}
+</style>
+
+<!-- 29 · Qual ferramenta -->
+<section class="slide" data-grupo="s4" data-titulo="Qual ferramenta? Comece pela conta que você já tem">
+  <h2 class="titulo">Qual ferramenta? Comece pela conta que você já tem</h2>
+  <svg class="fig" viewBox="0 0 1920 1080" aria-hidden="true">
+    <defs>
+      <marker id="seta-29" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M0 0L10 5L0 10z" class="f-tinta"/>
+      </marker>
+    </defs>
+    <text class="col-cab" x="110" y="290">Você tem</text>
+    <text class="col-cab" x="640" y="290">Use</text>
+    <text class="col-cab" x="1290" y="290">Custo</text>
+    <path d="M110 420H1560M110 560H1560M110 700H1560" class="s-linha w3"/>
+    <g class="s-tinta w4">
+      <path d="M520 352H600" marker-end="url(#seta-29)"/>
+      <path d="M520 492H600" marker-end="url(#seta-29)"/>
+      <path d="M520 632H600" marker-end="url(#seta-29)"/>
+      <path d="M520 772H600" marker-end="url(#seta-29)"/>
+    </g>
+    <text class="conta" x="110" y="364">Conta Google pessoal</text>
+    <text class="conta" x="110" y="504">Conta no GitHub</text>
+    <text class="conta" x="110" y="644">Assinatura de IA</text>
+    <text class="conta" x="110" y="784">Só o navegador</text>
+    <text class="ferr" x="640" y="364">Google Antigravity</text>
+    <rect x="970" y="330" width="176" height="42" rx="21" class="f-marca"/>
+    <text class="chip-txt" x="1058" y="359" text-anchor="middle">recomendado</text>
+    <text class="ferr" x="640" y="504">VS Code + GitHub Copilot, modo Agent</text>
+    <text class="ferr" x="640" y="644">Claude Code, Claude Cowork, Codex</text>
+    <text class="ferr" x="640" y="768">Claude, ChatGPT ou Gemini,</text>
+    <text class="ferr" x="640" y="806">com o prompt do processo</text>
+    <text class="custo" x="1290" y="346">gratuito, com</text><text class="custo" x="1290" y="380">limite semanal</text>
+    <text class="custo" x="1290" y="486">gratuito, ~50</text><text class="custo" x="1290" y="520">interações por mês</text>
+    <text class="custo" x="1290" y="626">incluído no</text><text class="custo" x="1290" y="660">plano pago</text>
+    <text class="custo" x="1290" y="780">gratuito</text>
+    <g class="f-none s-tinta w4" opacity=".45">
+      <path d="M1560 352C1610 352 1600 560 1644 560"/>
+      <path d="M1560 492C1604 492 1604 560 1644 560"/>
+      <path d="M1560 632C1604 632 1604 560 1644 560"/>
+      <path d="M1560 772C1610 772 1600 560 1644 560"/>
+    </g>
+    <use href="#i-pasta" class="f-maq k-tinta" x="1650" y="500" width="160" height="123"/>
+    <text class="conta" x="1650" y="672" style="font-size:30px">a mesma</text>
+    <text class="conta" x="1650" y="708" style="font-size:30px">pasta</text>
+  </svg>
+  <p class="ferr-rodape">Hoje demonstramos com Claude Code, mas a pasta não depende de nenhuma IA: dá para trocar de ferramenta sem perder o processo.</p>
+  <aside class="nota" hidden>
+    <p><b>Bloco 7 (2 min).</b> Escolha pela conta que a pessoa já tem. Preços e limites mudam com frequência. Antigravity: plano individual gratuito, limite semanal sem número publicado (página oficial, 14/09/2026). <b>Conferir este slide depois do teste do Antigravity de 15/09</b>; se o limite gratuito não aguentar a etapa 01, o Copilot volta a ser o primário.</p>
+  </aside>
+</section>
+
+<!-- 30 · Qual modelo -->
+<section class="slide" data-grupo="s4" data-titulo="Qual modelo? Depende da etapa">
+  <h2 class="titulo">Qual modelo? Depende da etapa</h2>
+  <svg class="fig" viewBox="0 0 1920 1080" aria-hidden="true">
+    <defs>
+      <marker id="seta-30c" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M0 0L10 5L0 10z" class="f-caneta"/>
+      </marker>
+      <marker id="seta-30m" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+        <path d="M0 0L10 5L0 10z" class="f-maq"/>
+      </marker>
+    </defs>
+    <path d="M1130 250V860" class="s-linha w3"/>
+    <path d="M140 800L842 410" class="s-caneta w8 rd" marker-end="url(#seta-30c)"/>
+    <path d="M140 800L910 564" class="s-maq w8 rd tracejado" marker-end="url(#seta-30m)"/>
+    <path d="M860 400L927 558" class="s-grafite w3 tracejado"/>
+    <path d="M264 762A130 130 0 0 0 254 737" class="f-none s-tinta w4"/>
+    <circle cx="140" cy="800" r="13" class="f-tinta"/>
+    <circle cx="860" cy="400" r="20" class="f-marca s-tinta w5"/>
+    <circle cx="927" cy="558" r="15" class="f-maq"/>
+    <text class="ponto-rot" x="860" y="356" text-anchor="middle" style="fill:var(--caneta)">onde você queria chegar</text>
+    <text class="ponto-rot" x="927" y="614" text-anchor="middle" style="fill:var(--maquina-escura)">lugar errado</text>
+    <text class="desvio" x="140" y="852">um pequeno desvio no começo</text>
+    <use href="#i-pessoa" class="f-caneta" x="1180" y="280" width="64" height="106" transform="translate(0 0)"/>
+    <use href="#i-pessoa" class="f-grafite" x="1192" y="612" width="44" height="74"/>
+  </svg>
+  <p class="quem" style="top:262px"><strong>Modelos de fronteira</strong>os mais capazes e caros: para pensar, planejar e dar direção.<em class="c-caneta">Dar a direção é com quem orienta.</em></p>
+  <p class="quem" style="top:592px"><strong>Modelos menores</strong>rápidos e baratos: para organizar, converter e formatar.<em>Organizar a bibliografia, o bolsista faz.</em></p>
+  <p class="modelo-leg">Modelo fraco na etapa da direção leva você longe, rápido, para o lugar errado.</p>
+  <aside class="nota" hidden>
+    <p><b>Bloco 7 (1 min); corte (d) da ordem de corte.</b> A máquina é a pasta; o modelo é quem você chama para cada etapa. Não misturar as metáforas.</p>
+    <p>O desenho é geometria: um desvio pequeno no ângulo, depois de muito caminho, vira uma distância grande.</p>
+  </aside>
+</section>
+
+<!-- 31 · A provocação -->
+<section class="slide" data-grupo="s4" data-titulo="A provocação que fica">
+  <h2 class="sr">A provocação que fica</h2>
+  <p class="provoca">A IA amplifica organização ou amplifica desorganização.<span>Vocês escolhem qual.</span></p>
+  <svg class="fig" viewBox="0 0 1920 1080" aria-hidden="true">
+    <path data-onda="ordem,110,600,330,20,3,0" class="f-none s-caneta w5 rd"/>
+    <path d="M450 600H520" class="s-tinta w4"/>
+    <path d="M520 530L690 600L520 670Z" class="f-tinta"/>
+    <text class="amp-ia" x="578" y="613" text-anchor="middle">IA</text>
+    <path d="M690 600H740" class="s-tinta w4"/>
+    <path data-onda="ordem,740,600,660,72,3,0" class="f-none s-caneta w6 rd"/>
+    <text class="amp-rot" x="1450" y="615" style="fill:var(--caneta)">organização</text>
+    <path data-onda="ruido,110,850,330,22,0,11" class="f-none s-erro w5 rd"/>
+    <path d="M450 850H520" class="s-tinta w4"/>
+    <path d="M520 780L690 850L520 920Z" class="f-tinta"/>
+    <text class="amp-ia" x="578" y="863" text-anchor="middle">IA</text>
+    <path d="M690 850H740" class="s-tinta w4"/>
+    <path data-onda="ruido,740,850,660,76,0,11" class="f-none s-erro w6 rd"/>
+    <text class="amp-rot" x="1450" y="865" style="fill:var(--erro)">desorganização</text>
+  </svg>
+  <aside class="nota" hidden>
+    <p><b>Bloco 7 (1 min).</b> "Vocês usam o computador de qualquer jeito e usam IA de qualquer jeito. Juntar as duas coisas potencializa a bagunça. A IA amplifica organização ou desorganização. Escolham."</p>
+    <p>O amplificador não escolhe o sinal: aumenta o que entra, com o mesmo formato.</p>
+  </aside>
+</section>

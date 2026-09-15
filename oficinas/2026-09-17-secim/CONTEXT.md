@@ -18,6 +18,7 @@ Em preparação. Divulgação **enviada**. Slides **revisados** na reunião de 1
 | Publicar as instruções de preparação (Drive, link curto, QR) | `preparacao-participantes.md` |
 | Ver ou editar a página que fica com os participantes | `referencias-secim.html` (para publicação) e `referencias-secim.md` (mesmo conteúdo, legível) |
 | Abrir, apresentar ou editar os slides | `slides/apresentacao-secim.html`; instruções em `slides/README.md` |
+| Ver a versão visual dos slides (mesmos 35 slides, visual novo, notas embutidas) | `slides-visual/apresentacao-secim-visual.html`; instruções em `slides-visual/README.md` |
 | Folha de tema (não será impressa; pode ir em PDF para o Drive) | `folha-tema.md` |
 
 Blocos reutilizáveis usados nesta oficina (não duplicar aqui; apontar):
@@ -53,6 +54,7 @@ Blocos reutilizáveis usados nesta oficina (não duplicar aqui; apontar):
 | Momento dos voluntários | **Proposta:** Parte C da demonstração, um voluntário garantido (8 min); segundo e terceiro no plantão. Alternativa: no fim, depois do fecho | ambos | 16/09 |
 | Explicar antes ou demonstrar antes | Elton achou "muita explicação para pouca demonstração" antes do slide 18; Marquito teme que o resultado mostrado cedo esconda a diferença, que está no processo. **Proposta:** manter a ordem, mas mostrar os slides de Markdown e de camadas *enquanto* a etapa 01 roda, e deixar a pasta de ensaio aberta um minuto no bloco 3 (árvore e registro, sem rodar nada) | ambos | 16/09 |
 | Vídeo de reserva | Gravação da tela do teste de 15/09, ou nenhum | Marquito | 15/09 |
+| Qual apresentação vai para o projetor | A original (identidade Cefor, `slides/`) ou a visual (`slides-visual/`, criada em 15/09); a ordem dos slides é a mesma | ambos | 16/09 |
 
 ## Convenções desta pasta
 
