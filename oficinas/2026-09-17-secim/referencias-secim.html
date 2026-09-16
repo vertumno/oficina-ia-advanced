@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Guia para continuar com IA na pesquisa: instalar o Antigravity, baixar o kit, executar etapas, conferir resultados e declarar o uso.">
+<meta name="description" content="Guia para continuar com IA na pesquisa: instalar o Antigravity ou o VS Code, baixar o kit, executar etapas, conferir resultados e declarar o uso.">
 <title>IA além do chat | Guia para continuar sua pesquisa</title>
 
 <style>
@@ -148,7 +148,7 @@
 
   .secim-page .topbar {
     position: sticky;
-    top: 0;
+    top: env(safe-area-inset-top, 0px);
     z-index: 10;
     border-bottom: 1px solid color-mix(in srgb, var(--line) 88%, transparent);
     background: color-mix(in srgb, var(--paper) 92%, transparent);
@@ -1415,6 +1415,7 @@
     min-width: 0;
   }
 
+  /* Sem height: auto, de propósito: a altura vem do atributo height e as fotos ficam grandes, recortadas na vertical. */
   .secim-page .person img {
     width: 100%;
     aspect-ratio: 3 / 4;
@@ -1921,7 +1922,44 @@
   }
   .secim-page .help-list { border-top: 2px solid var(--ink); }
   .secim-page .help-list summary { padding-block: 18px; line-height: 1.35; }
-  .secim-page .support-layout { max-width: 900px; }
+  /* Dois caminhos de instalação, um aberto por vez: conta Google ou conta no GitHub. */
+  .secim-page .path-list { display: grid; gap: 14px; }
+  .secim-page details.path {
+    border: 3px solid var(--ink);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+  .secim-page details.path[open] { border-color: var(--blue); }
+  .secim-page .path > summary { padding: 20px 22px; }
+  .secim-page .path > summary:hover strong { color: var(--blue); }
+  .secim-page .path-head { display: grid; gap: 4px; min-width: 0; }
+  .secim-page .path-account {
+    color: var(--blue);
+    font: 720 12px/1.3 "JetBrains Mono", ui-monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+  .secim-page .path-head strong {
+    font-size: clamp(24px, 2.4vw, 30px);
+    font-weight: 840;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .secim-page .path-desc { color: var(--graphite); font-size: 15px; font-weight: 500; line-height: 1.4; }
+  .secim-page .path-body { border-top: 1px solid var(--line); padding: 24px 22px 26px; }
+  /* Etapa em destaque: a pessoa escolhe o artigo que a IA vai ler. */
+  .secim-page .prep-step.prep-step-key {
+    border: 3px solid var(--blue);
+    border-radius: var(--radius);
+    padding: 22px;
+    background: var(--blue-soft);
+  }
+  .secim-page .prep-step-key .step-number {
+    border-color: var(--blue);
+    background: var(--blue);
+    color: var(--on-blue);
+  }
+  .secim-page .prompt-text.prompt-medium { min-height: 220px; height: 220px; }
   .secim-page .quick-link span:first-child { font: inherit; }
   .secim-page :focus-visible { outline-color: var(--blue); }
   .secim-page .footer :focus-visible { outline-color: var(--yellow); }
@@ -1951,6 +1989,10 @@
     .secim-page .details-body { padding-right: 0; }
     .secim-page .prompt-text.prompt-short { min-height: 180px; height: 180px; }
     .secim-page .folder-map { font-size: 12px; padding: 16px; }
+    .secim-page .path > summary { padding: 16px; }
+    .secim-page .path-body { padding: 20px 16px 22px; }
+    .secim-page .prep-step.prep-step-key { padding: 16px; }
+    .secim-page .prompt-text.prompt-medium { min-height: 290px; height: 290px; }
   }
 </style>
 
@@ -2023,7 +2065,6 @@
     <aside class="slides-band" aria-label="Slides da oficina">
       <div class="shell slides-band-inner">
         <div>
-          <span class="resource-type">Apresentação de 17 de setembro</span>
           <strong>Os slides da oficina</strong>
           <p>As telas que projetamos, na ordem, para rever o que foi dito ou mostrar a alguém que não estava lá.</p>
         </div>
@@ -2047,46 +2088,104 @@
           <div class="section-heading">
             <p class="eyebrow">01 / Instalar</p>
             <h2 id="titulo-instalar">Sua IA, com acesso à pasta.</h2>
-            <p>Este caminho usa o <strong>Google Antigravity IDE</strong>: o aplicativo com editor de arquivos e conversa com a IA.</p>
+            <p>Escolha um caminho pela conta que você já tem ou quer criar. Os dois instalam um editor de arquivos com conversa com a IA, e o kit funciona nos dois.</p>
           </div>
           <div class="notice">
             <strong>Você precisa de</strong>
-            <p>Um computador, internet, Chrome e uma conta Google pessoal. O kit funciona em Windows, macOS e Linux compatíveis com a ferramenta.</p>
+            <p>Um computador com internet. Para o Antigravity, uma conta Google pessoal e o Chrome. Para o VS Code, uma conta no GitHub, que é gratuita. O kit funciona em Windows, macOS e Linux compatíveis com a ferramenta.</p>
           </div>
           <p class="small-note">Já usa um agente que lê e escreve arquivos? Vá direto para <a class="text-link" href="#baixar">baixar o kit</a>. Só tem celular? Use o <a class="text-link" href="#prompt-web">prompt no navegador</a>.</p>
         </div>
-        <div class="prep-list">
-          <article class="prep-step">
-            <span class="step-number" aria-hidden="true">1</span>
-            <div>
-              <h3>Baixe o Antigravity IDE</h3>
-              <p>Abra a página oficial, clique em <strong>Download</strong> e vá até <strong>Antigravity for IDEs → Antigravity IDE (Standalone)</strong>. Escolha a versão para seu sistema. O primeiro bloco da página, Antigravity 2.0, é outro aplicativo.</p>
-              <div class="resource-links"><a class="button button-primary button-small" href="https://antigravity.google/product/antigravity-ide" target="_blank" rel="noopener">Baixar Antigravity IDE ↗</a></div>
+        <div class="path-list">
+          <details class="path" name="caminho">
+            <summary>
+              <span class="path-head">
+                <span class="path-account">Tenho conta Google</span>
+                <strong>Antigravity IDE</strong>
+                <span class="path-desc">Editor do Google com agente de IA.</span>
+              </span>
+            </summary>
+            <div class="path-body prep-list">
+              <article class="prep-step">
+                <span class="step-number" aria-hidden="true">1</span>
+                <div>
+                  <h3>Baixe o Antigravity IDE</h3>
+                  <p>Abra a página oficial, clique em <strong>Download</strong> e vá até <strong>Antigravity for IDEs → Antigravity IDE (Standalone)</strong>. Escolha a versão para seu sistema. O primeiro bloco da página, Antigravity 2.0, é outro aplicativo.</p>
+                  <div class="resource-links"><a class="button button-primary button-small" href="https://antigravity.google/product/antigravity-ide" target="_blank" rel="noopener">Baixar Antigravity IDE ↗</a></div>
+                </div>
+              </article>
+              <article class="prep-step">
+                <span class="step-number" aria-hidden="true">2</span>
+                <div>
+                  <h3>Instale e abra o aplicativo</h3>
+                  <p>No <strong>Windows</strong>, execute o instalador baixado. No <strong>macOS</strong>, abra o pacote e siga a instalação. No <strong>Linux</strong>, siga as instruções da página de download para sua distribuição.</p>
+                </div>
+              </article>
+              <article class="prep-step">
+                <span class="step-number" aria-hidden="true">3</span>
+                <div>
+                  <h3>Entre com sua conta Google</h3>
+                  <p>Conclua o login no navegador e volte ao aplicativo. Se a conta institucional não funcionar, tente uma conta pessoal.</p>
+                </div>
+              </article>
+              <article class="prep-step">
+                <span class="step-number" aria-hidden="true">4</span>
+                <div>
+                  <h3>Escolha revisar as ações</h3>
+                  <p>Na configuração do agente, escolha <strong>Review-driven development</strong>, se essa opção aparecer. Revise permissões antes de autorizar comandos. Para este tutorial, não é preciso instalar complementos.</p>
+                  <p class="checkpoint"><strong>Deu certo?</strong> O editor abre e você consegue localizar o painel de conversa do agente, à direita. O próximo passo é abrir o kit nele.</p>
+                  <p class="small-note">Telas conferidas na <a class="text-link" href="https://codelabs.developers.google.com/getting-started-agy-ide" target="_blank" rel="noopener">orientação oficial do Google</a>, em 16/09/2026. Confira <a class="text-link" href="https://antigravity.google/pricing" target="_blank" rel="noopener">disponibilidade e limites do plano</a> antes de começar.</p>
+                </div>
+              </article>
             </div>
-          </article>
-          <article class="prep-step">
-            <span class="step-number" aria-hidden="true">2</span>
-            <div>
-              <h3>Instale e abra o aplicativo</h3>
-              <p>No <strong>Windows</strong>, execute o instalador baixado. No <strong>macOS</strong>, abra o pacote e siga a instalação. No <strong>Linux</strong>, siga as instruções da página de download para sua distribuição.</p>
+          </details>
+
+          <details class="path" name="caminho">
+            <summary>
+              <span class="path-head">
+                <span class="path-account">Tenho ou quero criar conta no GitHub</span>
+                <strong>VS Code + GitHub Copilot</strong>
+                <span class="path-desc">Editor da Microsoft com o agente do GitHub Copilot.</span>
+              </span>
+            </summary>
+            <div class="path-body prep-list">
+              <article class="prep-step">
+                <span class="step-number" aria-hidden="true">1</span>
+                <div>
+                  <h3>Tenha uma conta no GitHub</h3>
+                  <p>Se ainda não tem, crie a conta com seu e-mail e confirme o endereço. A conta é gratuita. Já tem conta? Siga para o passo 2.</p>
+                  <div class="resource-links"><a class="button button-primary button-small" href="https://github.com/signup" target="_blank" rel="noopener">Criar conta no GitHub ↗</a></div>
+                  <p class="small-note"><strong>Estudante?</strong> Com a verificação do GitHub Education, você pode ativar o <a class="text-link" href="https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students" target="_blank" rel="noopener">Copilot Student</a>, gratuito. A aprovação pode levar alguns dias; enquanto isso, use o plano gratuito.</p>
+                </div>
+              </article>
+              <article class="prep-step">
+                <span class="step-number" aria-hidden="true">2</span>
+                <div>
+                  <h3>Baixe e instale o VS Code</h3>
+                  <p>Abra a página oficial e baixe a versão para seu sistema. No <strong>Windows</strong>, execute o instalador baixado. No <strong>macOS</strong>, abra o arquivo <code>.dmg</code> e arraste o Visual Studio Code para a pasta <strong>Aplicativos</strong>. No <strong>Linux</strong>, escolha o pacote da sua distribuição.</p>
+                  <div class="resource-links"><a class="button button-primary button-small" href="https://code.visualstudio.com/download" target="_blank" rel="noopener">Baixar VS Code ↗</a></div>
+                </div>
+              </article>
+              <article class="prep-step">
+                <span class="step-number" aria-hidden="true">3</span>
+                <div>
+                  <h3>Entre com sua conta do GitHub</h3>
+                  <p>Abra o VS Code. Na barra de status, embaixo, passe o mouse sobre o ícone do Copilot e escolha <strong>Use AI Features</strong>. Entre com a conta do GitHub e conclua a autorização no navegador.</p>
+                  <p>Se você não tem assinatura, o VS Code ativa o plano <strong>Copilot Free</strong>, com uma cota mensal de créditos de IA.</p>
+                </div>
+              </article>
+              <article class="prep-step">
+                <span class="step-number" aria-hidden="true">4</span>
+                <div>
+                  <h3>Abra o Chat no modo Agent</h3>
+                  <p>Abra o Chat com <strong>Ctrl+Alt+I</strong> (no Mac, <strong>⌃⌘I</strong>) e clique em <strong>+</strong> para começar uma conversa. Nos seletores da caixa de mensagem, escolha <strong>Copilot</strong> e <strong>Agent</strong> e mantenha <strong>Manual permissions</strong>.</p>
+                  <p>Não escolha <strong>Allow all</strong>: com essa opção, o agente edita arquivos e executa comandos sem pedir sua confirmação.</p>
+                  <p class="checkpoint"><strong>Deu certo?</strong> O Chat abre ao lado do editor, com Agent e Manual permissions selecionados. O próximo passo é abrir o kit nele.</p>
+                  <p class="small-note">Passos conferidos na <a class="text-link" href="https://code.visualstudio.com/docs/agents/quickstart" target="_blank" rel="noopener">documentação oficial do VS Code</a>, em 16/09/2026. Confira os <a class="text-link" href="https://docs.github.com/en/copilot/get-started/plans" target="_blank" rel="noopener">limites dos planos do Copilot</a> antes de começar.</p>
+                </div>
+              </article>
             </div>
-          </article>
-          <article class="prep-step">
-            <span class="step-number" aria-hidden="true">3</span>
-            <div>
-              <h3>Entre com sua conta Google</h3>
-              <p>Conclua o login no navegador e volte ao aplicativo. Se a conta institucional não funcionar, tente uma conta pessoal.</p>
-            </div>
-          </article>
-          <article class="prep-step">
-            <span class="step-number" aria-hidden="true">4</span>
-            <div>
-              <h3>Escolha revisar as ações</h3>
-              <p>Na configuração do agente, escolha <strong>Review-driven development</strong>, se essa opção aparecer. Revise permissões antes de autorizar comandos. Para este tutorial, não é preciso instalar complementos.</p>
-              <p class="checkpoint"><strong>Deu certo?</strong> O editor abre e você consegue localizar o painel de conversa do agente, à direita. O próximo passo é abrir o kit nele.</p>
-              <p class="small-note">Telas conferidas na <a class="text-link" href="https://codelabs.developers.google.com/getting-started-agy-ide" target="_blank" rel="noopener">orientação oficial do Google</a>, em 16/09/2026. Confira <a class="text-link" href="https://antigravity.google/pricing" target="_blank" rel="noopener">disponibilidade e limites do plano</a> antes de começar.</p>
-            </div>
-          </article>
+          </details>
         </div>
       </div>
     </section>
@@ -2134,8 +2233,9 @@
           <article class="prep-step">
             <span class="step-number" aria-hidden="true">3</span>
             <div>
-              <h3>Abra a pasta inteira no Antigravity</h3>
-              <p>No editor, use <strong>File → Open Folder</strong> (Arquivo → Abrir Pasta) e selecione <code>kit-pesquisa</code>. Abra a pasta extraída, não o ZIP nem apenas um arquivo.</p>
+              <h3>Abra a pasta inteira no editor</h3>
+              <p>No Antigravity ou no VS Code, use <strong>File → Open Folder</strong> (Arquivo → Abrir Pasta) e selecione <code>kit-pesquisa</code>. Abra a pasta extraída, não o ZIP nem apenas um arquivo.</p>
+              <p>Se o editor perguntar se você confia nos autores dos arquivos, confirme: o kit vem da oficina e só tem textos. No VS Code, sem essa confirmação, o agente fica desativado na pasta.</p>
               <pre class="folder-map" aria-label="Arquivos e pastas que você deve encontrar">kit-pesquisa/
 ├── README.md                  por onde começar
 ├── CONTEXT.md e AGENTS.md      instruções da pasta
@@ -2168,21 +2268,31 @@
             <span class="step-number" aria-hidden="true">1</span>
             <div>
               <h3>Peça para a IA reconhecer a pasta</h3>
-              <p>Envie no painel do agente, com o kit aberto:</p>
-              <textarea class="prompt-text prompt-short" readonly spellcheck="false" aria-label="Pedido para reconhecer o kit">Leia README.md, CONTEXT.md e AGENTS.md desta pasta e me explique, em português, o que ela faz e como começar. Não execute nada ainda.</textarea>
+              <p>Envie no painel do agente (no VS Code, o Chat no modo Agent), com o kit aberto:</p>
+              <textarea class="prompt-text prompt-short" readonly spellcheck="false" aria-label="Pedido para reconhecer o kit">Explique o que essa pasta faz e como começar. Não execute nada ainda.</textarea>
               <p class="checkpoint"><strong>Deu certo?</strong> A resposta descreve fichamento, correlação, relatório e registro. Se a IA disser que não vê os arquivos, consulte <a class="text-link" href="#ajuda">a solução abaixo</a>.</p>
             </div>
           </article>
           <article class="prep-step">
             <span class="step-number" aria-hidden="true">2</span>
             <div>
-              <h3>Informe seu tema e coloque um artigo</h3>
+              <h3>Informe seu tema</h3>
               <p>Abra <code>_referencias/minha-pesquisa.md</code>, preencha seu tema, pergunta e dimensões de análise e salve. Em <code>_referencias/normas-e-voz.md</code>, ajuste o formato de referências e as orientações do seu programa.</p>
+              <p>Se preferir, deixe a IA guiar: envie o pedido abaixo e responda a uma pergunta por vez.</p>
+              <textarea class="prompt-text prompt-short prompt-medium" readonly spellcheck="false" aria-label="Pedido para a IA guiar o preenchimento do tema e das normas">Me ajude a preencher _referencias/minha-pesquisa.md e _referencias/normas-e-voz.md. Pergunte um campo por vez. Use minhas palavras, sem inventar. Se eu não souber, marque "a definir". Antes de salvar, mostre o texto e espere minha confirmação. Altere só esses dois arquivos e registre a ação em registro/LOG-IA.md.</textarea>
+              <p class="checkpoint"><strong>Deu certo?</strong> Nos dois arquivos, suas respostas ocupam o lugar dos textos entre colchetes.</p>
+            </div>
+          </article>
+          <article class="prep-step prep-step-key">
+            <span class="step-number" aria-hidden="true">3</span>
+            <div>
+              <h3>Coloque um artigo em 00-entrada</h3>
               <p>Copie um artigo para <code>00-entrada/</code>. Comece com um PDF em que seja possível selecionar o texto. Um artigo público facilita o primeiro teste.</p>
+              <p>Nome sugerido: <code>sobrenome-ano-palavra-chave.pdf</code>, como <code>silva-2023-geogebra.pdf</code>. O nome ajuda a achar o artigo e a nomear a ficha.</p>
             </div>
           </article>
           <article class="prep-step">
-            <span class="step-number" aria-hidden="true">3</span>
+            <span class="step-number" aria-hidden="true">4</span>
             <div>
               <h3>Gere a primeira ficha</h3>
               <textarea class="prompt-text prompt-short" readonly spellcheck="false" aria-label="Pedido para executar o fichamento">Leia 01-fichamento/CONTEXT.md e execute a etapa para o artigo em 00-entrada/. Salve a ficha em 01-fichamento/saida/ e registre a ação em registro/LOG-IA.md. Não avance para a próxima etapa.</textarea>
@@ -2191,15 +2301,15 @@
             </div>
           </article>
           <article class="prep-step">
-            <span class="step-number" aria-hidden="true">4</span>
+            <span class="step-number" aria-hidden="true">5</span>
             <div>
               <h3>Confira antes de continuar</h3>
-              <p>Abra a ficha e o artigo lado a lado. Confira autores, ano, objetivo, método, achados e as duas citações com suas páginas. Corrija o que não corresponder ao original.</p>
+              <p>Abra a ficha e o artigo lado a lado. Confira autores, ano, objetivo, método, achados e as duas citações com suas páginas. Corrija o que não corresponder ao original. No VS Code, a ficha pode aparecer com os botões <strong>Keep</strong> (manter) e <strong>Undo</strong> (desfazer): escolha depois de conferir.</p>
               <p>Registre no <code>LOG-IA.md</code> o que você revisou e corrigiu. Para comparar leituras, acrescente outros artigos e repita o fichamento. Só use fichas já conferidas na etapa seguinte.</p>
             </div>
           </article>
           <article class="prep-step">
-            <span class="step-number" aria-hidden="true">5</span>
+            <span class="step-number" aria-hidden="true">6</span>
             <div>
               <h3>Relacione as leituras e gere o relato</h3>
               <p>Quando tiver duas ou mais fichas revisadas, envie:</p>
@@ -2224,12 +2334,12 @@
           <a class="text-link" href="#continuar">Preciso de ajuda de uma pessoa →</a>
         </div>
         <div class="help-list">
-          <details><summary>A instalação ou o login não funcionam</summary><div class="details-body"><p>Confira se baixou o Antigravity IDE para seu sistema. Termine o login no navegador e volte ao aplicativo. Se a conta institucional não entrar, tente uma conta pessoal. Persistindo, consulte a <a href="https://codelabs.developers.google.com/getting-started-agy-ide" target="_blank" rel="noopener">orientação oficial</a> ou experimente o <a href="#prompt-web">prompt no navegador</a>.</p></div></details>
-          <details><summary>A IA não encontra README.md ou meus artigos</summary><div class="details-body"><p>Confira a pasta selecionada. Você deve enxergar <code>README.md</code> e <code>00-entrada</code> no mesmo nível. Extraia o ZIP, abra essa pasta inteira e repita o primeiro pedido. Anexar o ZIP a um chat comum não dá ao agente acesso à pasta do computador.</p></div></details>
-          <details><summary>O painel do agente sumiu</summary><div class="details-body"><p>Confira se está no Antigravity IDE. Procure o controle de exibição do painel do agente. Se a tela mostra apenas um gerenciador de agentes, procure <strong>Open IDE</strong> ou <strong>Install IDE</strong>. Abra o kit no editor e use a conversa à direita.</p></div></details>
+          <details><summary>A instalação ou o login não funcionam</summary><div class="details-body"><p><strong>No Antigravity:</strong> confira se baixou o Antigravity IDE para seu sistema. Termine o login no navegador e volte ao aplicativo. Se a conta institucional não entrar, tente uma conta pessoal. Consulte a <a href="https://codelabs.developers.google.com/getting-started-agy-ide" target="_blank" rel="noopener">orientação oficial</a>.</p><p><strong>No VS Code:</strong> conclua a autorização do GitHub no navegador e volte ao editor. Confira se entrou com a conta certa e consulte a <a href="https://code.visualstudio.com/docs/setup/copilot" target="_blank" rel="noopener">configuração oficial do Copilot</a>.</p><p>Persistindo, experimente o <a href="#prompt-web">prompt no navegador</a>.</p></div></details>
+          <details><summary>A IA não encontra README.md ou meus artigos</summary><div class="details-body"><p>Confira a pasta selecionada. Você deve enxergar <code>README.md</code> e <code>00-entrada</code> no mesmo nível. Extraia o ZIP, abra essa pasta inteira e repita o primeiro pedido. Anexar o ZIP a um chat comum não dá ao agente acesso à pasta do computador.</p><p>No VS Code, confira também se o Chat está no modo <strong>Agent</strong> e se você confirmou que confia na pasta.</p></div></details>
+          <details><summary>O painel do agente sumiu</summary><div class="details-body"><p><strong>No Antigravity:</strong> confira se está no Antigravity IDE. Procure o controle de exibição do painel do agente. Se a tela mostra apenas um gerenciador de agentes, procure <strong>Open IDE</strong> ou <strong>Install IDE</strong>. Abra o kit no editor e use a conversa à direita.</p><p><strong>No VS Code:</strong> abra o Chat com <strong>Ctrl+Alt+I</strong> (no Mac, <strong>⌃⌘I</strong>) e confira se <strong>Agent</strong> está selecionado.</p></div></details>
           <details><summary>O PDF não foi lido ou está escaneado</summary><div class="details-body"><p>Abra o PDF e tente selecionar uma frase. Se só houver imagens, faça reconhecimento de texto (OCR) ou forneça uma versão em texto que você possa revisar. Preserve a paginação quando possível. Se ela se perder, marque as páginas para conferência no original.</p><p>Peça à IA que registre o arquivo não lido no <code>LOG-IA.md</code>. Não aceite uma ficha baseada apenas no título ou em suposições.</p></div></details>
           <details><summary>A IA inventou uma citação ou alterou instruções</summary><div class="details-body"><p>Pare a etapa. Compare com o original, corrija a ficha e registre o problema no log. Se instruções foram alteradas, compare com uma cópia limpa do kit e restaure apenas o que você confirmou. Preserve os artigos, as saídas e o histórico antes de qualquer mudança.</p></div></details>
-          <details><summary>Apareceu um limite de uso</summary><div class="details-body"><p>Salve os arquivos e veja no aplicativo quando o acesso será renovado. Os limites variam por plano e podem mudar. Você pode esperar, usar outro agente que trabalhe em pastas ou continuar com o <a href="#prompt-web">prompt no navegador</a>, salvando a resposta e o registro por conta própria.</p></div></details>
+          <details><summary>Apareceu um limite de uso</summary><div class="details-body"><p>Salve os arquivos e veja no aplicativo quando o acesso será renovado. Os limites variam por plano e podem mudar; no Copilot Free, a cota é mensal.Você pode esperar, usar outro agente que trabalhe em pastas ou continuar com o <a href="#prompt-web">prompt no navegador</a>, salvando a resposta e o registro por conta própria.</p></div></details>
           <details><summary>Quero retomar em outro dia</summary><div class="details-body"><p>Reabra a mesma pasta e envie o pedido abaixo. Confira a proposta antes de autorizar a próxima etapa.</p><textarea class="prompt-text prompt-short" readonly spellcheck="false" aria-label="Pedido para retomar a pesquisa">Leia README.md, CONTEXT.md, AGENTS.md e registro/LOG-IA.md. Diga onde paramos, quais saídas existem e o que ainda precisa da minha revisão. Não execute a próxima etapa antes de eu confirmar.</textarea></div></details>
           <details><summary>Quero começar outra pesquisa</summary><div class="details-body"><p>Extraia novamente o ZIP em uma pasta com outro nome. Preencha o novo tema e acrescente os novos artigos. Guarde a pasta anterior inteira: as fichas, o registro e a declaração pertencem àquela pesquisa.</p></div></details>
           <p class="small-note"><strong>Ao pedir ajuda:</strong> diga seu sistema, o passo em que parou e a mensagem de erro. Se enviar uma imagem, oculte e-mails, nomes de participantes e conteúdo de pesquisa sensível.</p>
@@ -2542,16 +2652,16 @@ O registro detalhado das interações com IA está disponível em [ex.: apêndic
     </section>
 
     <section class="section" id="continuar" aria-labelledby="titulo-continuar">
-      <div class="shell support-layout">
+      <div class="shell continue-layout">
         <div>
           <div class="section-heading">
             <h2 id="titulo-continuar">Você pode pedir ajuda.</h2>
-            <p>Use os canais do Cefor para tirar dúvidas, compartilhar uma dificuldade e continuar estudando.</p>
+            <p>Para tirar dúvidas, escreva para <a class="text-link" href="mailto:cgte.cefor@ifes.edu.br">cgte.cefor@ifes.edu.br</a>. Para acompanhar os encontros e continuar estudando, use os canais do Cefor.</p>
           </div>
 
           <div class="continue-links">
             <a class="continue-link" href="https://chat.whatsapp.com/CCjfmOJ4mTx8FYMEu9Tp9a" target="_blank" rel="noopener">
-              <span><strong>Grupo de WhatsApp</strong><small>Tire dúvidas e acompanhe as próximas ações.</small></span>
+              <span><strong>Grupo de WhatsApp</strong><small>Avisos e resumos dos encontros do Papo com IA.IÁ.</small></span>
               <span aria-hidden="true">↗</span>
             </a>
             <a class="continue-link" href="https://sites.google.com/view/iaia-educa/papo-com-ia-i%C3%A1" target="_blank" rel="noopener">
@@ -2571,10 +2681,22 @@ O registro detalhado das interações com IA está disponível em [ex.: apêndic
               <span aria-hidden="true">↗</span>
             </a>
           </div>
-
         </div>
 
-
+        <aside aria-label="Facilitadores da oficina">
+          <div class="people">
+            <div class="person">
+              <img src="biblioteca/fotos/silva-elton.png" alt="Retrato de Elton Vinícius Silva" width="1083" height="1452">
+              <strong>Elton Vinícius Silva</strong>
+              <span>CGTE/Cefor/Ifes</span>
+            </div>
+            <div class="person">
+              <img src="biblioteca/fotos/accioly-marcos.jpg" alt="Retrato de Marcos Accioly (Marquito)" width="1086" height="1448">
+              <strong>Marcos Accioly (Marquito)</strong>
+              <span>CGTE/Cefor/Ifes</span>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
   </main>
@@ -2585,7 +2707,7 @@ O registro detalhado das interações com IA está disponível em [ex.: apêndic
         <strong>Ficou alguma dúvida?</strong>
         <p>Escreva para <a href="mailto:cgte.cefor@ifes.edu.br" target="_blank" rel="noopener">cgte.cefor@ifes.edu.br</a>. Este material pode ser copiado e adaptado com citação da fonte.</p>
       </div>
-      <div class="footer-signature">Elton Vinícius Silva e Marcos Accioly<br>CGTE / Cefor / Ifes · Material de apoio do Secim</div>
+      <div class="footer-signature">Elton Vinícius Silva e Marcos Accioly (Marquito)<br>CGTE / Cefor / Ifes · Material de apoio do Secim</div>
     </div>
   </footer>
 </div>
