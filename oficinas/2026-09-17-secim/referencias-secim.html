@@ -285,6 +285,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 8px;
     border: 2px solid var(--ink);
     border-radius: 999px;
     padding: 11px 19px;
@@ -1848,6 +1849,36 @@
     }
   }
 
+  /* Faixa de destaque: os slides, logo abaixo da capa. */
+  .secim-page .slides-band {
+    border-bottom: 1px solid var(--line);
+    background: var(--blue-soft);
+  }
+
+  .secim-page .slides-band-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px 28px;
+    padding-block: 28px;
+  }
+
+  .secim-page .slides-band strong {
+    display: block;
+    font-size: clamp(25px, 2.6vw, 35px);
+    font-weight: 840;
+    letter-spacing: -0.03em;
+    line-height: 1.04;
+  }
+
+  .secim-page .slides-band p {
+    max-width: 58ch;
+    margin: 7px 0 0;
+    color: var(--graphite);
+    font-size: 16px;
+  }
+
   /* Tutoriais de consulta autônoma, com passos e confirmação do resultado. */
   .secim-page [id] { scroll-margin-top: 92px; }
   .secim-page .hero { min-height: 640px; }
@@ -1925,10 +1956,9 @@
 
 <!--
   Guia pós-oficina. Tutoriais conferidos em fontes oficiais em 16/09/2026.
-  Publicação: hospedar junto a downloads/kit-pesquisa.zip e aos assets relativos.
+  Publicação: o kit é baixado da pasta da oficina no Drive (https://drive.google.com/drive/folders/1gVcf7DP7OLB3b8HXofrvpT5-F5iClkhr);
+  a cópia local em downloads/kit-pesquisa.zip serve de origem para subir ao Drive.
   Se incorporar como código no Portal IA.IA, substituir URLs relativos por URLs públicos.
-  A pasta de materiais no Drive estava vazia na conferência de 16/09; não é destino de download ainda:
-  https://drive.google.com/drive/folders/1gVcf7DP7OLB3b8HXofrvpT5-F5iClkhr
   Os prompts e modelos essenciais estão incorporados nesta página.
 -->
 
@@ -1989,6 +2019,17 @@
         </div>
       </div>
     </section>
+
+    <aside class="slides-band" aria-label="Slides da oficina">
+      <div class="shell slides-band-inner">
+        <div>
+          <span class="resource-type">Apresentação de 17 de setembro</span>
+          <strong>Os slides da oficina</strong>
+          <p>As telas que projetamos, na ordem, para rever o que foi dito ou mostrar a alguém que não estava lá.</p>
+        </div>
+        <a class="button button-primary" href="https://claude.ai/artifact/1eEZQwW5wn7xDgCdxKJKpj" target="_blank" rel="noopener">Abrir os slides <span aria-hidden="true">↗</span></a>
+      </div>
+    </aside>
 
     <aside class="quick-strip" aria-label="Acesso rápido aos principais materiais">
       <div class="shell quick-strip-inner">
@@ -2058,15 +2099,15 @@
             <h2 id="titulo-baixar">Uma pasta. Seu ponto de partida.</h2>
             <p>O Kit Pesquisa reúne instruções para fichar artigos, relacioná-los ao seu tema e registrar o uso de IA.</p>
           </div>
-          <a class="button button-primary" href="downloads/kit-pesquisa.zip" download="kit-pesquisa.zip">Baixar Kit Pesquisa (.zip)</a>
-          <p class="small-note">Guarde uma cópia limpa do ZIP. Assim, cada nova pesquisa pode começar com uma pasta nova.</p>
+          <a class="button button-primary" href="https://drive.google.com/drive/folders/1gVcf7DP7OLB3b8HXofrvpT5-F5iClkhr" target="_blank" rel="noopener">Baixar Kit Pesquisa (.zip) <span aria-hidden="true">↗</span></a>
+          <p class="small-note">O arquivo <code>kit-pesquisa.zip</code> está na pasta da oficina no Google Drive. Guarde uma cópia limpa do ZIP. Assim, cada nova pesquisa pode começar com uma pasta nova.</p>
         </div>
         <div class="prep-list">
           <article class="prep-step">
             <span class="step-number" aria-hidden="true">1</span>
             <div>
               <h3>Salve o arquivo no computador</h3>
-              <p>Clique em <strong>Baixar Kit Pesquisa</strong>. O arquivo <code>kit-pesquisa.zip</code> costuma aparecer em <strong>Downloads</strong>. ZIP é uma pasta compactada: você precisa extraí-la antes de usar.</p>
+              <p>Clique em <strong>Baixar Kit Pesquisa</strong>. A pasta da oficina no Google Drive abre em outra aba: clique em <code>kit-pesquisa.zip</code> e depois em <strong>Fazer download</strong>. O arquivo costuma aparecer em <strong>Downloads</strong>. ZIP é uma pasta compactada: você precisa extraí-la antes de usar.</p>
             </div>
           </article>
           <article class="prep-step">
@@ -2308,13 +2349,9 @@ FASE 4: CONFERÊNCIA. Mostre a árvore de pastas e explique cada arquivo em uma 
 
           <article class="delivery delivery-more">
             <div class="delivery-content">
-              <span class="resource-type">Demonstração e apoio</span>
-              <h3>Mais materiais</h3>
-              <p>Abra os slides, a folha para definir seu tema e o prompt curto que cria a pasta mínima da demonstração.</p>
-              <div class="resource-links">
-                <a class="button button-secondary button-small" href="https://claude.ai/artifact/1eEZQwW5wn7xDgCdxKJKpj" target="_blank" rel="noopener">Abrir slides</a>
-                <a class="button button-secondary button-small" href="folha-tema.md" target="_blank" rel="noopener">Folha de tema</a>
-              </div>
+              <span class="resource-type">Demonstração do dia</span>
+              <h3>A pasta mínima</h3>
+              <p>O prompt curto que criou, ao vivo, a estrutura mínima que você viu na demonstração.</p>
               <details class="resource-details">
                 <summary>Abrir prompt da pasta mínima</summary>
                 <div class="prompt-wrap">
@@ -2498,16 +2535,6 @@ O registro detalhado das interações com IA está disponível em [ex.: apêndic
             <h3>Provocação</h3>
             <ul>
               <li><a href="https://silvio.meira.com/29-000-papers-o-fim-da-ciencia-sem-ia/" target="_blank" rel="noopener">29.000 papers: o fim da ciência sem IA</a><span>Silvio Meira, 2026.</span></li>
-            </ul>
-          </section>
-
-          <section class="reference-group">
-            <h3>Ferramentas por etapa</h3>
-            <ul>
-              <li><strong>Definir o problema:</strong><span>Elicit, Consensus e Scite. Conferir cada dado extraído.</span></li>
-              <li><strong>Mapear a literatura:</strong><span>Research Rabbit e Connected Papers. O grafo herda o viés das sementes.</span></li>
-              <li><strong>Estudar a literatura:</strong><span>NotebookLM. Responde sobre suas fontes, mas ainda pode errar.</span></li>
-              <li><strong>Dados sensíveis:</strong><span>Modelos locais, como Ollama, podem reduzir o envio à nuvem. O rigor continua necessário.</span></li>
             </ul>
           </section>
         </div>

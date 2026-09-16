@@ -60,7 +60,9 @@ Ctrl+P gera o PDF com um slide por página e todos os cliques já abertos. Para 
 
 ## O que ainda falta
 
-- Trocar `[link curto a definir]` nos slides 2 e 33 (`src/slides/01-abertura.html` e `10-fecho.html`) e rodar `build.py`.
+- Confirmar o link curto. Os slides 2 e 33 já trazem `links.ifes.edu.br/oficina-ia-pesquisa`, ajustado para caber
+  em cada campo: `svg .url` a 60px com o cursor em `M1620 356V430` (`src/slides/01-abertura.html`) e `svg .url-peq`
+  a 32px (`src/slides/10-fecho.html`). Se o link final for maior, reduza essas duas medidas e rode `build.py`.
 - Conferir o slide 29 depois do teste do Antigravity de 15/09.
 - Não há logotipo do Ifes ou do Cefor (visual feito do zero, a pedido). Se o evento exigir a marca, acrescentar na capa e no encerramento.
 - Decidir qual das duas apresentações vai para o projetor (decisão aberta no `CONTEXT.md` da oficina) e testar no projetor da sala.
