@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Orientações, materiais, prompts e referências da oficina IA além do chat, no Secim 2026.">
-<title>IA além do chat | Material da oficina no Secim 2026</title>
+<meta name="description" content="Guia para continuar com IA na pesquisa: instalar o Antigravity, baixar o kit, executar etapas, conferir resultados e declarar o uso.">
+<title>IA além do chat | Guia para continuar sua pesquisa</title>
 
 <style>
   /*
@@ -1847,31 +1847,107 @@
       display: block;
     }
   }
+
+  /* Tutoriais de consulta autônoma, com passos e confirmação do resultado. */
+  .secim-page [id] { scroll-margin-top: 92px; }
+  .secim-page .hero { min-height: 640px; }
+  .secim-page .hero-inner { padding-block: 56px; }
+  .secim-page .hero h1 { max-width: 12ch; }
+  .secim-page .hero-copy,
+  .secim-page .prepare-layout > *,
+  .secim-page .prep-step > *,
+  .secim-page .help-list { min-width: 0; }
+  .secim-page .hero-copy > .eyebrow { color: var(--blue); font-size: 13px; }
+  .secim-page .button { white-space: normal; line-height: 1.3; text-align: center; }
+  .secim-page code { overflow-wrap: anywhere; }
+  .secim-page .prep-step p + p { margin-top: 14px; }
+  .secim-page .small-note { margin-top: 20px; }
+  .secim-page .checkpoint {
+    margin-top: 20px;
+    border-left: 4px solid var(--blue);
+    padding: 12px 16px;
+    background: var(--blue-soft);
+    color: var(--ink);
+    font-size: 16px;
+  }
+  .secim-page .checkpoint strong { color: var(--blue); }
+  .secim-page .prompt-text.prompt-short {
+    min-height: 136px;
+    height: 136px;
+    width: 100%;
+    margin: 16px 0;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .secim-page .folder-map {
+    overflow-x: auto;
+    border-left: 4px solid var(--orange-dark);
+    background: var(--orange-soft);
+    padding: 20px;
+    margin: 22px 0;
+    font: 500 13px/1.8 "JetBrains Mono", monospace;
+    color: var(--ink);
+  }
+  .secim-page .help-list { border-top: 2px solid var(--ink); }
+  .secim-page .help-list summary { padding-block: 18px; line-height: 1.35; }
+  .secim-page .support-layout { max-width: 900px; }
+  .secim-page .quick-link span:first-child { font: inherit; }
+  .secim-page :focus-visible { outline-color: var(--blue); }
+  .secim-page .footer :focus-visible { outline-color: var(--yellow); }
+  @media (max-width: 900px) {
+    .secim-page .hero { min-height: auto; }
+    .secim-page .hero-inner { grid-template-columns: minmax(0, 1fr); }
+    .secim-page .prepare-layout { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 680px) {
+    .secim-page [id] { scroll-margin-top: 82px; }
+    .secim-page .topnav a { display: none; }
+    .secim-page .topnav a[href="#materiais"],
+    .secim-page .topnav a[href="#declarar"] { display: none; }
+    .secim-page .topnav a[href="#instalar"],
+    .secim-page .topnav a[href="#baixar"],
+    .secim-page .topnav a[href="#ajuda"] { display: inline-flex; font-size: 13px; }
+    .secim-page .hero-inner { gap: 32px; padding-block: 34px; }
+    .secim-page .hero-copy { padding-top: 0; }
+    .secim-page .hero-diagram { min-height: 390px; }
+    .secim-page .diagram-node { width: 61%; padding: 12px; }
+    .secim-page .diagram-node strong { font-size: 18px; }
+    .secim-page .diagram-node span { font-size: 13px; }
+    .secim-page .diagram-node-human { top: 3%; }
+    .secim-page .speech { width: 108px; height: 96px; font-size: 44px; }
+    .secim-page .prep-step { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+    .secim-page .prep-step h3 { font-size: 23px; }
+    .secim-page .details-body { padding-right: 0; }
+    .secim-page .prompt-text.prompt-short { min-height: 180px; height: 180px; }
+    .secim-page .folder-map { font-size: 12px; padding: 16px; }
+  }
 </style>
 
 <!--
-  Para publicar no Portal IA.IA, cole este fragmento inteiro.
-  Os conteúdos essenciais estão incorporados. Os links relativos abrem as fontes
-  no repositório local e devem ser trocados pelos URLs do Drive quando existirem.
-  Informações de ferramentas verificadas em páginas oficiais em 15/09/2026.
+  Guia pós-oficina. Tutoriais conferidos em fontes oficiais em 16/09/2026.
+  Publicação: hospedar junto a downloads/kit-pesquisa.zip e aos assets relativos.
+  Se incorporar como código no Portal IA.IA, substituir URLs relativos por URLs públicos.
+  A pasta de materiais no Drive estava vazia na conferência de 16/09; não é destino de download ainda:
+  https://drive.google.com/drive/folders/1gVcf7DP7OLB3b8HXofrvpT5-F5iClkhr
+  Os prompts e modelos essenciais estão incorporados nesta página.
 -->
 
-<div class="secim-page">
+<div class="secim-page" lang="pt-BR">
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
   <header class="topbar" aria-label="Cabeçalho da página">
     <div class="shell topbar-inner">
       <a class="brand" href="#inicio" aria-label="Voltar ao início">
         <span class="brand-mark" aria-hidden="true">IA</span>
-        <span>Oficina Secim</span>
+        <span>IA na pesquisa</span>
       </a>
       <nav class="topnav" aria-label="Navegação principal">
-        <a href="#participar">Participar</a>
-        <a href="#preparar">Preparar</a>
+        <a href="#instalar">Instalar</a>
+        <a href="#baixar">Baixar kit</a>
+        <a href="#primeira-tarefa">Usar</a>
+        <a href="#ajuda">Ajuda</a>
         <a href="#materiais">Materiais</a>
         <a href="#declarar">Declarar</a>
-        <a href="#metodo">Método</a>
-        <a href="#continuar">Continuar</a>
       </nav>
     </div>
   </header>
@@ -1880,11 +1956,12 @@
     <section class="hero" id="inicio" aria-labelledby="titulo-principal">
       <div class="shell hero-inner">
         <div class="hero-copy">
+          <p class="eyebrow">Seu guia para continuar</p>
           <h1 id="titulo-principal">IA além do <em>chat.</em></h1>
-          <p>Prepare-se, acompanhe a oficina e leve prompts, modelos e um método que deixa o uso de IA verificável.</p>
+          <p>Continue sua pesquisa: instale a ferramenta, abra o kit e faça uma tarefa por vez, com orientação e registro.</p>
           <div class="actions">
-            <a class="button button-primary" href="#preparar">Preparar agora</a>
-            <a class="button button-secondary" href="#materiais">Ver materiais</a>
+            <a class="button button-primary" href="#instalar">Começar pelo guia</a>
+            <a class="button button-secondary" href="#baixar">Já instalei: baixar kit</a>
           </div>
         </div>
 
@@ -1916,186 +1993,215 @@
     <aside class="quick-strip" aria-label="Acesso rápido aos principais materiais">
       <div class="shell quick-strip-inner">
         <div class="quick-label">Mais usados</div>
-        <a class="quick-link" href="#kit"><span>Kit Pesquisa</span><span aria-hidden="true">↓</span></a>
+        <a class="quick-link" href="#primeira-tarefa"><span>Primeira tarefa</span><span aria-hidden="true">↓</span></a>
         <a class="quick-link" href="#prompt-web"><span>Prompt para a web</span><span aria-hidden="true">↓</span></a>
         <a class="quick-link" href="#modelos-declaracao"><span>Modelo de declaração</span><span aria-hidden="true">↓</span></a>
         <a class="quick-link" href="#prompt-guiado"><span>Crie sua pasta</span><span aria-hidden="true">↓</span></a>
       </div>
     </aside>
 
-    <section class="section" id="participar" aria-labelledby="titulo-participar">
-      <div class="shell">
-        <div class="section-heading">
-          <h2 id="titulo-participar">Participe do seu jeito.</h2>
-          <p>Não é uma régua de conhecimento. Escolha o caminho que cabe no seu dia e continue depois.</p>
-        </div>
-
-        <div class="choice-grid">
-          <article class="choice">
-            <span class="choice-mark" aria-hidden="true">A</span>
-            <h3>Só assistir já funciona.</h3>
-            <p>Você acompanha a demonstração e leva esta página, o modelo de declaração, os prompts e o kit para experimentar depois.</p>
-          </article>
-
-          <article class="choice">
-            <span class="choice-mark" aria-hidden="true">W</span>
-            <h3>Fazer no navegador.</h3>
-            <p>Traga notebook ou celular com Claude, ChatGPT ou Gemini já conectado e um artigo da sua pesquisa.</p>
-            <ul>
-              <li>Você usa o prompt “processo com rastro”.</li>
-              <li>Obtém uma ficha, pontos de verificação e um rascunho de declaração.</li>
-            </ul>
-          </article>
-
-          <article class="choice">
-            <span class="choice-mark" aria-hidden="true">PC</span>
-            <h3>Fazer no computador.</h3>
-            <p>Traga notebook carregado com um agente que trabalhe em pastas. Você abre o kit e roda uma etapa com um artigo.</p>
-            <ul>
-              <li>A pasta guarda instruções e contexto.</li>
-              <li>O registro mostra o que a IA leu, fez e deixou para conferir.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-muted" id="preparar" aria-labelledby="titulo-preparar">
+    <section class="section section-muted" id="instalar" aria-labelledby="titulo-instalar">
       <div class="shell prepare-layout">
         <div class="prepare-sticky">
           <div class="section-heading">
-            <h2 id="titulo-preparar">Chegue como der.</h2>
-            <p>A instalação é opcional. Se quiser praticar no computador, reserve cerca de 20 minutos antes.</p>
+            <p class="eyebrow">01 / Instalar</p>
+            <h2 id="titulo-instalar">Sua IA, com acesso à pasta.</h2>
+            <p>Este caminho usa o <strong>Google Antigravity IDE</strong>: o aplicativo com editor de arquivos e conversa com a IA.</p>
           </div>
           <div class="notice">
-            <strong>Clínica de instalação prevista: 15h30.</strong>
-            <p>A confirmação depende do acesso antecipado à sala. Se não der, você participa normalmente pelo navegador ou só acompanha.</p>
+            <strong>Você precisa de</strong>
+            <p>Um computador, internet, Chrome e uma conta Google pessoal. O kit funciona em Windows, macOS e Linux compatíveis com a ferramenta.</p>
           </div>
+          <p class="small-note">Já usa um agente que lê e escreve arquivos? Vá direto para <a class="text-link" href="#baixar">baixar o kit</a>. Só tem celular? Use o <a class="text-link" href="#prompt-web">prompt no navegador</a>.</p>
         </div>
-
         <div class="prep-list">
           <article class="prep-step">
-            <span class="step-number" aria-hidden="true">01</span>
+            <span class="step-number" aria-hidden="true">1</span>
             <div>
-              <h3>Traga uma tarefa real</h3>
-              <p>Escolha um artigo que você esteja lendo ou uma tarefa repetida da pesquisa. Não use dados sigilosos no primeiro teste.</p>
+              <h3>Baixe o Antigravity IDE</h3>
+              <p>Abra a página oficial, clique em <strong>Download</strong> e vá até <strong>Antigravity for IDEs → Antigravity IDE (Standalone)</strong>. Escolha a versão para seu sistema. O primeiro bloco da página, Antigravity 2.0, é outro aplicativo.</p>
+              <div class="resource-links"><a class="button button-primary button-small" href="https://antigravity.google/product/antigravity-ide" target="_blank" rel="noopener">Baixar Antigravity IDE ↗</a></div>
             </div>
           </article>
-
           <article class="prep-step">
-            <span class="step-number" aria-hidden="true">02</span>
+            <span class="step-number" aria-hidden="true">2</span>
             <div>
-              <h3>Escolha pela conta que você já tem</h3>
-              <p>As ferramentas mudam rápido. Os caminhos abaixo foram conferidos em 15/09/2026; confirme limites e disponibilidade no site oficial.</p>
-
-              <div class="tools">
-                <details>
-                  <summary>Tenho uma conta Google pessoal</summary>
-                  <div class="details-body">
-                    <p><strong>Google Antigravity:</strong> editor com agente embutido, plano individual de US$ 0 e limites semanais básicos. A documentação recomenda uma conta pessoal quando contas institucionais não autenticam.</p>
-                    <p><a href="https://antigravity.google/" target="_blank" rel="noopener">Baixar o Antigravity</a> e <a href="https://antigravity.google/pricing" target="_blank" rel="noopener">conferir os planos</a>.</p>
-                  </div>
-                </details>
-
-                <details>
-                  <summary>Tenho uma conta no GitHub</summary>
-                  <div class="details-body">
-                    <p><strong>VS Code + GitHub Copilot:</strong> instale o editor e a extensão GitHub Copilot. Entre com a conta do GitHub e escolha o modo <strong>Agent</strong>. O plano Free inclui acesso limitado por créditos de IA; estudantes verificados têm o plano Student gratuito.</p>
-                    <p><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Baixar o VS Code</a> e <a href="https://docs.github.com/en/copilot/get-started/plans" target="_blank" rel="noopener">conferir os planos do Copilot</a>.</p>
-                  </div>
-                </details>
-
-                <details>
-                  <summary>Quero usar o terminal</summary>
-                  <div class="details-body">
-                    <p><strong>Gemini CLI:</strong> opção gratuita com conta Google pessoal. A documentação registra até 1.000 solicitações de modelo por usuário ao dia, sujeitas ao modelo, à capacidade e a mudanças.</p>
-                    <p><a href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener">Abrir o Gemini CLI</a>.</p>
-                  </div>
-                </details>
-
-                <details>
-                  <summary>Já assino uma ferramenta</summary>
-                  <div class="details-body">
-                    <p>Claude Code, Claude Cowork, Codex e outras ferramentas que trabalham em pastas também servem. O kit é texto e não depende de uma marca.</p>
-                    <p><a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a> e <a href="https://github.com/openai/codex" target="_blank" rel="noopener">Codex</a>.</p>
-                  </div>
-                </details>
-              </div>
+              <h3>Instale e abra o aplicativo</h3>
+              <p>No <strong>Windows</strong>, execute o instalador baixado. No <strong>macOS</strong>, abra o pacote e siga a instalação. No <strong>Linux</strong>, siga as instruções da página de download para sua distribuição.</p>
             </div>
           </article>
-
           <article class="prep-step">
-            <span class="step-number" aria-hidden="true">03</span>
+            <span class="step-number" aria-hidden="true">3</span>
             <div>
-              <h3>Abra o kit e faça o teste</h3>
-              <p>Descompacte a pasta, abra-a na ferramenta e envie este pedido. Se a IA explicar a pasta, você está pronto.</p>
-              <div class="command-box">Leia README.md, CONTEXT.md e AGENTS.md desta pasta e me explique, em português, o que ela faz e como começar. Não execute nada ainda.</div>
-              <p class="small-note"><strong>Dica:</strong> Shift+Enter quebra a linha. Enter envia. Uma mensagem completa costuma valer mais que várias curtas.</p>
+              <h3>Entre com sua conta Google</h3>
+              <p>Conclua o login no navegador e volte ao aplicativo. Se a conta institucional não funcionar, tente uma conta pessoal.</p>
             </div>
           </article>
-
           <article class="prep-step">
-            <span class="step-number" aria-hidden="true">04</span>
+            <span class="step-number" aria-hidden="true">4</span>
             <div>
-              <h3>Leve notebook e carregador</h3>
-              <p>Quem só acompanhar não precisa trazer nada. Quem for praticar deve chegar com a conta já conectada e, se puder, com o kit descompactado.</p>
-              <div class="resource-links">
-                <a class="button button-secondary button-small" href="preparacao-participantes.md" target="_blank" rel="noopener">Abrir preparação em texto</a>
-              </div>
+              <h3>Escolha revisar as ações</h3>
+              <p>Na configuração do agente, escolha <strong>Review-driven development</strong>, se essa opção aparecer. Revise permissões antes de autorizar comandos. Para este tutorial, não é preciso instalar complementos.</p>
+              <p class="checkpoint"><strong>Deu certo?</strong> O editor abre e você consegue localizar o painel de conversa do agente, à direita. O próximo passo é abrir o kit nele.</p>
+              <p class="small-note">Telas conferidas na <a class="text-link" href="https://codelabs.developers.google.com/getting-started-agy-ide" target="_blank" rel="noopener">orientação oficial do Google</a>, em 16/09/2026. Confira <a class="text-link" href="https://antigravity.google/pricing" target="_blank" rel="noopener">disponibilidade e limites do plano</a> antes de começar.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="durante" aria-labelledby="titulo-durante">
-      <div class="shell">
-        <div class="section-heading">
-          <h2 id="titulo-durante">O caminho da oficina.</h2>
-          <p>Noventa minutos para ligar ética, processo e organização, com um plantão logo depois.</p>
+    <section class="section" id="baixar" aria-labelledby="titulo-baixar">
+      <div class="shell prepare-layout">
+        <div class="prepare-sticky">
+          <div class="section-heading">
+            <p class="eyebrow">02 / Baixar e abrir</p>
+            <h2 id="titulo-baixar">Uma pasta. Seu ponto de partida.</h2>
+            <p>O Kit Pesquisa reúne instruções para fichar artigos, relacioná-los ao seu tema e registrar o uso de IA.</p>
+          </div>
+          <a class="button button-primary" href="downloads/kit-pesquisa.zip" download="kit-pesquisa.zip">Baixar Kit Pesquisa (.zip)</a>
+          <p class="small-note">Guarde uma cópia limpa do ZIP. Assim, cada nova pesquisa pode começar com uma pasta nova.</p>
         </div>
+        <div class="prep-list">
+          <article class="prep-step">
+            <span class="step-number" aria-hidden="true">1</span>
+            <div>
+              <h3>Salve o arquivo no computador</h3>
+              <p>Clique em <strong>Baixar Kit Pesquisa</strong>. O arquivo <code>kit-pesquisa.zip</code> costuma aparecer em <strong>Downloads</strong>. ZIP é uma pasta compactada: você precisa extraí-la antes de usar.</p>
+            </div>
+          </article>
+          <article class="prep-step">
+            <span class="step-number" aria-hidden="true">2</span>
+            <div>
+              <h3>Extraia a pasta</h3>
+              <div class="tools">
+                <details open>
+                  <summary>No Windows</summary>
+                  <div class="details-body"><p>No Explorador de Arquivos, abra <strong>Downloads</strong>. Clique com o botão direito no ZIP e escolha <strong>Extrair Tudo…</strong>. Escolha uma pasta em Documentos e confirme em <strong>Extrair</strong>.</p></div>
+                </details>
+                <details>
+                  <summary>No macOS</summary>
+                  <div class="details-body"><p>No Finder, abra <strong>Downloads</strong> e dê dois cliques no ZIP. Mova a pasta extraída para Documentos ou outro lugar fácil de encontrar.</p></div>
+                </details>
+                <details>
+                  <summary>No Linux</summary>
+                  <div class="details-body"><p>No gerenciador de arquivos, clique com o botão direito no ZIP e escolha a opção de extrair. Guarde a pasta extraída em Documentos.</p></div>
+                </details>
+              </div>
+              <p class="small-note">Abra a pasta extraída. Se houver outra <code>kit-pesquisa</code> dentro dela, entre nessa pasta. A pasta certa contém <code>README.md</code>, <code>CONTEXT.md</code> e <code>AGENTS.md</code>.</p>
+            </div>
+          </article>
+          <article class="prep-step">
+            <span class="step-number" aria-hidden="true">3</span>
+            <div>
+              <h3>Abra a pasta inteira no Antigravity</h3>
+              <p>No editor, use <strong>File → Open Folder</strong> (Arquivo → Abrir Pasta) e selecione <code>kit-pesquisa</code>. Abra a pasta extraída, não o ZIP nem apenas um arquivo.</p>
+              <pre class="folder-map" aria-label="Arquivos e pastas que você deve encontrar">kit-pesquisa/
+├── README.md                  por onde começar
+├── CONTEXT.md e AGENTS.md      instruções da pasta
+├── _referencias/              seu tema e suas regras
+├── 00-entrada/                artigos que você fornecer
+├── 01-fichamento/saida/        fichas de leitura
+├── 02-correlacao/saida/        relações entre os artigos
+├── 03-relatorio-e-declaracao/  relatório e declaração
+└── registro/LOG-IA.md          histórico das ações</pre>
+              <p class="checkpoint"><strong>Deu certo?</strong> Você vê esses nomes no painel de arquivos. Arquivos <code>.md</code> são textos: clique para ler. Arquivos <code>.gitkeep</code> podem ser ignorados.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <ol class="agenda">
-          <li>
-            <time datetime="2026-09-17T15:30">15h30</time>
-            <strong>Instalação opcional</strong>
-            <span>Ajuda individual, se a sala estiver disponível.</span>
-          </li>
-          <li>
-            <time datetime="2026-09-17T16:00">16h00</time>
-            <strong>Declarar</strong>
-            <span>Norma, responsabilidade e modelo concreto.</span>
-          </li>
-          <li>
-            <time datetime="2026-09-17T16:22">16h22</time>
-            <strong>Conduzir</strong>
-            <span>Pedido solto comparado a processo com rastro.</span>
-          </li>
-          <li>
-            <time datetime="2026-09-17T16:40">16h40</time>
-            <strong>Organizar</strong>
-            <span>A pasta vira agente na demonstração ao vivo.</span>
-          </li>
-          <li>
-            <time datetime="2026-09-17T17:10">17h10</time>
-            <strong>Verificar</strong>
-            <span>Método, permissões e próximos passos.</span>
-          </li>
-          <li>
-            <time datetime="2026-09-17T17:30">17h30</time>
-            <strong>Plantão</strong>
-            <span>Dúvidas individuais durante o coffee break.</span>
-          </li>
-        </ol>
+    <section class="section section-muted" id="primeira-tarefa" aria-labelledby="titulo-primeira-tarefa">
+      <div class="shell prepare-layout">
+        <div class="prepare-sticky">
+          <div class="section-heading">
+            <p class="eyebrow">03 / Usar e conferir</p>
+            <h2 id="titulo-primeira-tarefa">Comece com um artigo.</h2>
+            <p>Faça um teste pequeno. Confira a primeira ficha antes de incluir mais textos ou avançar.</p>
+          </div>
+          <div class="notice"><strong>O controle continua com você.</strong><p>A IA lê, propõe e registra. Você confere os textos, corrige as saídas e decide quando seguir.</p></div>
+          <p class="small-note">Para copiar um pedido: clique dentro da caixa, selecione tudo e copie. No Windows/Linux, Ctrl+A e Ctrl+C; no Mac, ⌘A e ⌘C. Cole na conversa do agente.</p>
+        </div>
+        <div class="prep-list">
+          <article class="prep-step">
+            <span class="step-number" aria-hidden="true">1</span>
+            <div>
+              <h3>Peça para a IA reconhecer a pasta</h3>
+              <p>Envie no painel do agente, com o kit aberto:</p>
+              <textarea class="prompt-text prompt-short" readonly spellcheck="false" aria-label="Pedido para reconhecer o kit">Leia README.md, CONTEXT.md e AGENTS.md desta pasta e me explique, em português, o que ela faz e como começar. Não execute nada ainda.</textarea>
+              <p class="checkpoint"><strong>Deu certo?</strong> A resposta descreve fichamento, correlação, relatório e registro. Se a IA disser que não vê os arquivos, consulte <a class="text-link" href="#ajuda">a solução abaixo</a>.</p>
+            </div>
+          </article>
+          <article class="prep-step">
+            <span class="step-number" aria-hidden="true">2</span>
+            <div>
+              <h3>Informe seu tema e coloque um artigo</h3>
+              <p>Abra <code>_referencias/minha-pesquisa.md</code>, preencha seu tema, pergunta e dimensões de análise e salve. Em <code>_referencias/normas-e-voz.md</code>, ajuste o formato de referências e as orientações do seu programa.</p>
+              <p>Copie um artigo para <code>00-entrada/</code>. Comece com um PDF em que seja possível selecionar o texto. Um artigo público facilita o primeiro teste.</p>
+            </div>
+          </article>
+          <article class="prep-step">
+            <span class="step-number" aria-hidden="true">3</span>
+            <div>
+              <h3>Gere a primeira ficha</h3>
+              <textarea class="prompt-text prompt-short" readonly spellcheck="false" aria-label="Pedido para executar o fichamento">Leia 01-fichamento/CONTEXT.md e execute a etapa para o artigo em 00-entrada/. Salve a ficha em 01-fichamento/saida/ e registre a ação em registro/LOG-IA.md. Não avance para a próxima etapa.</textarea>
+              <p>Leia cada pedido de permissão. Autorize apenas ações que você entende, nos arquivos desta tarefa.</p>
+              <p class="checkpoint"><strong>Deu certo?</strong> Há uma ficha em <code>01-fichamento/saida/</code> e uma nova entrada em <code>registro/LOG-IA.md</code>.</p>
+            </div>
+          </article>
+          <article class="prep-step">
+            <span class="step-number" aria-hidden="true">4</span>
+            <div>
+              <h3>Confira antes de continuar</h3>
+              <p>Abra a ficha e o artigo lado a lado. Confira autores, ano, objetivo, método, achados e as duas citações com suas páginas. Corrija o que não corresponder ao original.</p>
+              <p>Registre no <code>LOG-IA.md</code> o que você revisou e corrigiu. Para comparar leituras, acrescente outros artigos e repita o fichamento. Só use fichas já conferidas na etapa seguinte.</p>
+            </div>
+          </article>
+          <article class="prep-step">
+            <span class="step-number" aria-hidden="true">5</span>
+            <div>
+              <h3>Relacione as leituras e gere o relato</h3>
+              <p>Quando tiver duas ou mais fichas revisadas, envie:</p>
+              <textarea class="prompt-text prompt-short" readonly spellcheck="false" aria-label="Pedido para executar a correlação">Leia 02-correlacao/CONTEXT.md e execute a etapa usando as fichas revisadas. Registre a ação em registro/LOG-IA.md e pare para minha conferência.</textarea>
+              <p>Confira a saída em <code>02-correlacao/saida/</code>. Depois, envie:</p>
+              <textarea class="prompt-text prompt-short" readonly spellcheck="false" aria-label="Pedido para gerar relatório e declaração">Leia 03-relatorio-e-declaracao/CONTEXT.md e execute a etapa. Use o registro para gerar o relatório do processo e o rascunho da declaração de uso de IA. Não invente revisões que eu não registrei.</textarea>
+              <p class="checkpoint"><strong>Resultado esperado:</strong> <code>relatorio-do-processo.md</code> e <code>declaracao-uso-ia.md</code> em <code>03-relatorio-e-declaracao/saida/</code>. Revise o rascunho e adapte-o às <a class="text-link" href="#declarar">regras do seu trabalho</a>.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ajuda" aria-labelledby="titulo-ajuda">
+      <div class="shell prepare-layout">
+        <div>
+          <div class="section-heading">
+            <p class="eyebrow">04 / Retomar e destravar</p>
+            <h2 id="titulo-ajuda">Travou? Comece por aqui.</h2>
+            <p>Escolha o que aconteceu. Você pode retomar a tarefa sem recomeçar a pesquisa.</p>
+          </div>
+          <a class="text-link" href="#continuar">Preciso de ajuda de uma pessoa →</a>
+        </div>
+        <div class="help-list">
+          <details><summary>A instalação ou o login não funcionam</summary><div class="details-body"><p>Confira se baixou o Antigravity IDE para seu sistema. Termine o login no navegador e volte ao aplicativo. Se a conta institucional não entrar, tente uma conta pessoal. Persistindo, consulte a <a href="https://codelabs.developers.google.com/getting-started-agy-ide" target="_blank" rel="noopener">orientação oficial</a> ou experimente o <a href="#prompt-web">prompt no navegador</a>.</p></div></details>
+          <details><summary>A IA não encontra README.md ou meus artigos</summary><div class="details-body"><p>Confira a pasta selecionada. Você deve enxergar <code>README.md</code> e <code>00-entrada</code> no mesmo nível. Extraia o ZIP, abra essa pasta inteira e repita o primeiro pedido. Anexar o ZIP a um chat comum não dá ao agente acesso à pasta do computador.</p></div></details>
+          <details><summary>O painel do agente sumiu</summary><div class="details-body"><p>Confira se está no Antigravity IDE. Procure o controle de exibição do painel do agente. Se a tela mostra apenas um gerenciador de agentes, procure <strong>Open IDE</strong> ou <strong>Install IDE</strong>. Abra o kit no editor e use a conversa à direita.</p></div></details>
+          <details><summary>O PDF não foi lido ou está escaneado</summary><div class="details-body"><p>Abra o PDF e tente selecionar uma frase. Se só houver imagens, faça reconhecimento de texto (OCR) ou forneça uma versão em texto que você possa revisar. Preserve a paginação quando possível. Se ela se perder, marque as páginas para conferência no original.</p><p>Peça à IA que registre o arquivo não lido no <code>LOG-IA.md</code>. Não aceite uma ficha baseada apenas no título ou em suposições.</p></div></details>
+          <details><summary>A IA inventou uma citação ou alterou instruções</summary><div class="details-body"><p>Pare a etapa. Compare com o original, corrija a ficha e registre o problema no log. Se instruções foram alteradas, compare com uma cópia limpa do kit e restaure apenas o que você confirmou. Preserve os artigos, as saídas e o histórico antes de qualquer mudança.</p></div></details>
+          <details><summary>Apareceu um limite de uso</summary><div class="details-body"><p>Salve os arquivos e veja no aplicativo quando o acesso será renovado. Os limites variam por plano e podem mudar. Você pode esperar, usar outro agente que trabalhe em pastas ou continuar com o <a href="#prompt-web">prompt no navegador</a>, salvando a resposta e o registro por conta própria.</p></div></details>
+          <details><summary>Quero retomar em outro dia</summary><div class="details-body"><p>Reabra a mesma pasta e envie o pedido abaixo. Confira a proposta antes de autorizar a próxima etapa.</p><textarea class="prompt-text prompt-short" readonly spellcheck="false" aria-label="Pedido para retomar a pesquisa">Leia README.md, CONTEXT.md, AGENTS.md e registro/LOG-IA.md. Diga onde paramos, quais saídas existem e o que ainda precisa da minha revisão. Não execute a próxima etapa antes de eu confirmar.</textarea></div></details>
+          <details><summary>Quero começar outra pesquisa</summary><div class="details-body"><p>Extraia novamente o ZIP em uma pasta com outro nome. Preencha o novo tema e acrescente os novos artigos. Guarde a pasta anterior inteira: as fichas, o registro e a declaração pertencem àquela pesquisa.</p></div></details>
+          <p class="small-note"><strong>Ao pedir ajuda:</strong> diga seu sistema, o passo em que parou e a mensagem de erro. Se enviar uma imagem, oculte e-mails, nomes de participantes e conteúdo de pesquisa sensível.</p>
+        </div>
       </div>
     </section>
 
     <section class="section section-muted" id="materiais" aria-labelledby="titulo-materiais">
       <div class="shell">
         <div class="section-heading">
-          <p class="eyebrow">Entregas da oficina</p>
+          <p class="eyebrow">Biblioteca de apoio</p>
           <h2 id="titulo-materiais">Tudo para usar de novo.</h2>
-          <p>Os textos completos ficam aqui. Abra, selecione e copie. Os links levam aos arquivos-fonte quando você estiver no repositório.</p>
+          <p>Abra o recurso de que precisa e copie o texto. Adapte os exemplos à sua área e ao trabalho que está fazendo.</p>
         </div>
 
         <div class="deliveries">
@@ -2113,7 +2219,7 @@
               </div>
 
               <p><strong>Primeiro pedido:</strong> peça para a IA ler o README e explicar a pasta. Depois preencha <code>_referencias/minha-pesquisa.md</code>, coloque artigos em <code>00-entrada/</code> e execute uma etapa por vez.</p>
-              <a class="button button-secondary button-small" href="https://drive.google.com/drive/folders/1X1ETW7bLK-aYIDp0oTZQiahN6mrOThZy?usp=sharing" target="_blank" rel="noopener">Abrir guia completo</a>
+              <a class="button button-secondary button-small" href="#baixar">Baixar e abrir o kit</a>
             </div>
           </article>
 
@@ -2121,11 +2227,11 @@
             <div class="delivery-content">
               <span class="resource-type">Para qualquer IA na web</span>
               <h3>Processo com rastro</h3>
-              <p>Use com dois ou três artigos. A resposta vem em etapas, aponta páginas, separa dúvidas e termina com o que você precisa conferir.</p>
+              <p>No navegador, abra sua IA, anexe os artigos e cole o texto abaixo. Troque o tema de exemplo, a área e a quantidade de artigos pelos seus. Peça uma etapa por vez, confira a resposta e salve o resultado junto à pesquisa.</p>
               <details class="resource-details">
                 <summary>Abrir prompt completo</summary>
                 <div class="prompt-wrap">
-                  <p class="copy-note">Clique dentro do texto. Use Ctrl+A e Ctrl+C para copiar.</p>
+                  <p class="copy-note">Clique no texto, selecione tudo e copie. No Windows/Linux: Ctrl+A e Ctrl+C. No Mac: ⌘A e ⌘C.</p>
                   <textarea class="prompt-text" readonly spellcheck="false" aria-label="Prompt processo com rastro">Você é um assistente de revisão de literatura para pesquisa em Educação Matemática. (Persona)
 
 Meu objetivo é entender como estes três artigos se relacionam com o meu tema e onde há lacunas que minha pesquisa pode ocupar. (Alvo)
@@ -2142,9 +2248,6 @@ Faça em etapas, nesta ordem, e me mostre cada etapa antes de seguir: (Estrutura
 5. Um rascunho de declaração de uso de IA com: ferramenta e versão, finalidade, etapa da pesquisa em que foi usada.
 
 Regras: não invente referências, autores, páginas ou dados. Se não tiver certeza, diga "não encontrei" ou "a confirmar". Não reescreva minha pergunta de pesquisa; só a relacione com os artigos.</textarea>
-                  <div class="resource-links">
-                    <a class="button button-secondary button-small" href="../../biblioteca/prompts/pedido-vs-processo.md" target="_blank" rel="noopener">Abrir arquivo-fonte</a>
-                  </div>
                 </div>
               </details>
             </div>
@@ -2155,7 +2258,7 @@ Regras: não invente referências, autores, páginas ou dados. Se não tiver cer
               <span class="resource-type">Para adaptar ao seu trabalho</span>
               <h3>Modelo de declaração</h3>
               <p>Três variantes: dissertação ou tese, artigo ou evento e trabalho de disciplina. Os modelos completos estão na seção de responsabilidade.</p>
-              <a class="button button-secondary button-small" href="https://drive.google.com/drive/folders/1X1ETW7bLK-aYIDp0oTZQiahN6mrOThZy?usp=sharing" target="_blank" rel="noopener">Ver modelos</a>
+              <a class="button button-secondary button-small" href="#modelos-declaracao">Ver modelos</a>
             </div>
           </article>
 
@@ -2198,9 +2301,6 @@ FASE 3: CRIAÇÃO. Só depois que eu aprovar, crie exatamente esta estrutura, se
 Todos os arquivos em Markdown e em português.
 
 FASE 4: CONFERÊNCIA. Mostre a árvore de pastas e explique cada arquivo em uma frase. Depois, liste o que eu devo conferir antes de usar a pasta: instruções que não refletem o que eu disse, etapas faltando ou sobrando, regras que ficaram vagas. Não execute nenhuma etapa.</textarea>
-                  <div class="resource-links">
-                    <a class="button button-secondary button-small" href="../../biblioteca/prompts/prompt-guia-cria-pasta.md" target="_blank" rel="noopener">Abrir arquivo-fonte</a>
-                  </div>
                 </div>
               </details>
             </div>
@@ -2234,9 +2334,6 @@ minha-pesquisa-ia/
     LOG-IA.md               (cabeçalho e formato: data, etapa, ferramenta e modelo, o que fez, arquivos lidos e escritos, o que o humano deve verificar)
 
 Escreva todos os arquivos em português. Depois de criar, me mostre a árvore de pastas e explique, em uma frase por arquivo, para que serve cada um. Não execute nenhuma etapa ainda.</textarea>
-                  <div class="resource-links">
-                    <a class="button button-secondary button-small" href="../../biblioteca/prompts/prompt-cria-pasta.md" target="_blank" rel="noopener">Abrir arquivo-fonte</a>
-                  </div>
                 </div>
               </details>
             </div>
@@ -2315,7 +2412,6 @@ O registro detalhado das interações com IA está disponível em [ex.: apêndic
           </details>
 
           <div class="resource-links">
-            <a class="button button-secondary button-small" href="../../biblioteca/prompts/modelo-declaracao-uso-ia.md" target="_blank" rel="noopener">Abrir arquivo-fonte</a>
             <a class="button button-secondary button-small" href="https://portal.ufrrj.br/ufrrj-orienta-declaracao-de-uso-de-ia-em-trabalhos-academicos/" target="_blank" rel="noopener">Ver orientação da UFRRJ</a>
           </div>
         </div>
@@ -2419,11 +2515,11 @@ O registro detalhado das interações com IA está disponível em [ex.: apêndic
     </section>
 
     <section class="section" id="continuar" aria-labelledby="titulo-continuar">
-      <div class="shell continue-layout">
+      <div class="shell support-layout">
         <div>
           <div class="section-heading">
-            <h2 id="titulo-continuar">Depois, a pasta te guia.</h2>
-            <p>Volte ao primeiro pedido, execute uma etapa por vez e traga o que travou para a conversa seguinte.</p>
+            <h2 id="titulo-continuar">Você pode pedir ajuda.</h2>
+            <p>Use os canais do Cefor para tirar dúvidas, compartilhar uma dificuldade e continuar estudando.</p>
           </div>
 
           <div class="continue-links">
@@ -2432,7 +2528,7 @@ O registro detalhado das interações com IA está disponível em [ex.: apêndic
               <span aria-hidden="true">↗</span>
             </a>
             <a class="continue-link" href="https://sites.google.com/view/iaia-educa/papo-com-ia-i%C3%A1" target="_blank" rel="noopener">
-              <span><strong>Papo com IA.IÁ</strong><small>Encontro online às quintas, das 15h às 15h45.</small></span>
+              <span><strong>Papo com IA.IÁ</strong><small>Consulte a agenda e as orientações para participar dos encontros.</small></span>
               <span aria-hidden="true">↗</span>
             </a>
             <a class="continue-link" href="https://sites.google.com/view/iaia-educa" target="_blank" rel="noopener">
@@ -2449,26 +2545,9 @@ O registro detalhado das interações com IA está disponível em [ex.: apêndic
             </a>
           </div>
 
-          <div class="course-note">
-            <strong>Em planejamento para 2027</strong>
-            <p>Curso de extensão “Inteligência de Contexto Pedagógica com IA”, do Cefor/UnAC, com proposta de 90 horas a distância. A oferta ainda depende de confirmação.</p>
-          </div>
         </div>
 
-        <aside aria-label="Facilitadores da oficina">
-          <div class="people">
-            <div class="person">
-              <img src="biblioteca/fotos/silva-elton.png" alt="Retrato de Elton Vinícius Silva" width="1083" height="1452">
-              <strong>Elton Vinícius Silva</strong>
-              <span>CGTE/Cefor/Ifes</span>
-            </div>
-            <div class="person">
-              <img src="biblioteca/fotos/accioly-marcos.jpg" alt="Retrato de Marcos Accioly" width="1086" height="1448">
-              <strong>Marcos Accioly</strong>
-              <span>CGTE/Cefor/Ifes</span>
-            </div>
-          </div>
-        </aside>
+
       </div>
     </section>
   </main>
@@ -2479,7 +2558,7 @@ O registro detalhado das interações com IA está disponível em [ex.: apêndic
         <strong>Ficou alguma dúvida?</strong>
         <p>Escreva para <a href="mailto:cgte.cefor@ifes.edu.br" target="_blank" rel="noopener">cgte.cefor@ifes.edu.br</a>. Este material pode ser copiado e adaptado com citação da fonte.</p>
       </div>
-      <div class="footer-signature">CGTE / Cefor / Ifes<br>Oficina no Secim, 17/09/2026</div>
+      <div class="footer-signature">Elton Vinícius Silva e Marcos Accioly<br>CGTE / Cefor / Ifes · Material de apoio do Secim</div>
     </div>
   </footer>
 </div>
