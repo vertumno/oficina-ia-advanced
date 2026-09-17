@@ -24,6 +24,9 @@ sessão — não deixe a página só salva localmente.
    - `biblioteca/fotos/silva-elton.png` (publicado como `biblioteca/fotos/silva-elton.png`)
    - `biblioteca/fotos/accioly-marcos.jpg` (publicado como `biblioteca/fotos/accioly-marcos.jpg`)
 
+   Arquivos .zip (kit e skill de integridade) não vão no Artifact, que não serve esse tipo: ficam na
+   pasta da oficina no Google Drive, com origem local em `oficinas/2026-09-17-secim/downloads/`.
+
    Republicar sem `url` cria um artifact novo e separado — sempre passe o
    `url` acima para atualizar o mesmo link.
 

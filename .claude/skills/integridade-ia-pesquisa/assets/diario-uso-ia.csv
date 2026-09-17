@@ -1,0 +1,4 @@
+﻿data;fase;ferramenta;finalidade;onde_aparece_no_trabalho;o_que_fiz_com_o_resultado;como_conferi;tipo_de_dado_inserido
+03/04/2026;Revisão de literatura;Elicit;Triagem inicial de artigos sobre microlearning na EPT;Cap. 2, seleção de estudos;Usei a lista para decidir o que ler;Li no original os artigos citados;Nenhum, só termos de busca
+20/05/2026;Análise de dados;Claude (Anthropic);Primeira versão do script em R para estatística descritiva;Cap. 4, tabelas 3 e 4;Modifiquei o script;Rodei no RStudio e conferi os totais;Nenhum dado, só nomes das variáveis
+12/06/2026;Redação;ChatGPT (OpenAI);Revisão de clareza da introdução;Introdução;Aceitei parte das sugestões;Reli e ajustei com a orientadora;Texto próprio, sem dados de participantes

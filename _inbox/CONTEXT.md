@@ -15,4 +15,5 @@ Caixa de entrada. Tudo que chega (transcrição, conversa, PDF, HTML, ata, artig
 
 - Nada aqui é editado. Se precisar de versão processada, ela nasce em `referencias/` ou `oficinas/`.
 - Um item não fica aqui mais de uma sessão de trabalho sem ao menos uma linha de registro em `fontes/CONTEXT.md` dizendo o que é e quem vai processar.
-- Estado em 14/09/2026: vazia. A transcrição da reunião de revisão de 14/09 foi processada e está em `fontes/`.
+- Estado em 17/09/2026: vazia. O zip da skill "Integridade IA Pesquisa CNPQ" foi processado: instalado em
+  `.claude/skills/integridade-ia-pesquisa/`, arquivado em `fontes/` e fichado em `referencias/`.

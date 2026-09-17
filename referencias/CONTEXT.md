@@ -14,6 +14,7 @@ Fichas curadas das fontes que sustentam nossas oficinas. Cada ficha responde: o 
 | `sala-moodle-ntes-blocos-html.md` | Blocos HTML da sala Moodle dos NTEs | Modelo visual e estrutural da página de referências |
 | `oficina-concefor-2026-08-20.md` | Oficina "IA além do chat", VIII Concefor (repositório `oficina-concefor-icm`) | Aprendizados práticos: Bloco 0, créditos, máquina de sorvete, erro nº 1, níveis de sucesso, coleta e continuidade |
 | `ata-curso-extensao-2027.md` | Ata CGTE de 14/05/2026, proposta ao Edital 50/2026 | Escada de competências do curso de extensão; equipe; como oficinas alimentam o curso |
+| `skill-integridade-ia-pesquisa-cnpq.md` | Skill de Claude "Integridade e IA na Pesquisa" (Cefor/Ifes), v1.0 | Skill instalada em `.claude/skills/integridade-ia-pesquisa/`; opera o semáforo, o diário e a declaração de uso de IA da Portaria CNPq 2.664/2026 |
 
 ## Modelo de ficha
 

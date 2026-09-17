@@ -1,6 +1,7 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Guia para continuar com IA na pesquisa: instalar o Antigravity ou o VS Code, baixar o kit, executar etapas, conferir resultados e declarar o uso.">
+<meta name="description" content="Guia para continuar com IA na pesquisa: instalar o Antigravity ou o VS Code, baixar o kit, executar etapas, conferir resultados, declarar o uso e instalar a skill de integridade no Claude.">
 <title>IA além do chat | Guia para continuar sua pesquisa</title>
 
 <style>
@@ -472,7 +473,7 @@
 
   .secim-page .quick-strip-inner {
     display: grid;
-    grid-template-columns: auto repeat(4, minmax(0, 1fr));
+    grid-template-columns: auto repeat(5, minmax(0, 1fr));
     align-items: stretch;
   }
 
@@ -1994,12 +1995,113 @@
     .secim-page .prep-step.prep-step-key { padding: 16px; }
     .secim-page .prompt-text.prompt-medium { min-height: 290px; height: 290px; }
   }
+
+  /* Skill de integridade: perguntas, instalação, exemplos e limites. Amarelo = declarar. */
+  .secim-page .skill-body { display: grid; gap: clamp(48px, 6vw, 72px); min-width: 0; }
+  .secim-page .skill-title {
+    margin-bottom: 20px;
+    font-size: clamp(27px, 2.8vw, 38px);
+    font-weight: 840;
+    line-height: 1.04;
+  }
+  .secim-page .skill-lead { margin: -8px 0 20px; color: var(--graphite); font-size: 16px; }
+  .secim-page .skill-download { display: grid; gap: 10px; margin-top: 4px; }
+  .secim-page .skill-download .button { justify-self: start; }
+  .secim-page .skill-meta {
+    margin: 0;
+    color: var(--graphite);
+    font: 600 12px/1.5 "JetBrains Mono", ui-monospace, monospace;
+  }
+  .secim-page .skill-questions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .secim-page .skill-questions li {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 14px;
+    min-width: 0;
+    border: 3px solid var(--ink);
+    border-radius: var(--radius-small);
+    background: var(--surface);
+    padding: 18px;
+  }
+  .secim-page .skill-questions li.skill-sos { grid-column: 1 / -1; background: var(--yellow-soft); }
+  .secim-page .skill-q-num {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+    background: var(--yellow);
+    font: 800 15px/1 "JetBrains Mono", ui-monospace, monospace;
+  }
+  .secim-page .skill-questions strong { display: block; margin-bottom: 4px; font-size: 19px; line-height: 1.25; }
+  .secim-page .skill-questions p { margin: 0; color: var(--graphite); font-size: 15px; line-height: 1.45; }
+  .secim-page .signal { display: inline-flex; gap: 4px; margin-left: 8px; vertical-align: 1px; }
+  .secim-page .signal i { width: 12px; height: 12px; border: 2px solid var(--ink); border-radius: 50%; }
+  .secim-page .signal i:nth-child(1) { background: #2e9d52; }
+  .secim-page .signal i:nth-child(2) { background: var(--yellow); }
+  .secim-page .signal i:nth-child(3) { background: var(--error); }
+  .secim-page .skill-examples {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .secim-page .skill-examples li { min-width: 0; }
+  .secim-page .skill-examples li.skill-example-kit { grid-column: 1 / -1; }
+  .secim-page .skill-examples strong {
+    display: block;
+    color: var(--graphite);
+    font: 700 12px/1.3 "JetBrains Mono", ui-monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+  .secim-page .prompt-text.prompt-short.prompt-line { min-height: 92px; height: 92px; margin: 8px 0 0; }
+  .secim-page .skill-examples li.skill-example-kit .prompt-text.prompt-line { min-height: 112px; height: 112px; }
+  .secim-page .skill-limits { margin-top: 0; }
+  .secim-page .skill-example-note { margin-top: 10px; }
+  .secim-page .skill-limits .safety-rules article:nth-child(1) { border-color: var(--orange); }
+  .secim-page .skill-limits .safety-rules article:nth-child(3) { border-color: var(--yellow); }
+  .secim-page .delivery-skill { grid-column: 1 / -1; border-color: var(--ink); background: var(--yellow); }
+  .secim-page .delivery-skill .delivery-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) auto;
+    gap: 18px 40px;
+    align-items: end;
+  }
+  .secim-page .delivery-skill p { margin-bottom: 0; color: color-mix(in srgb, var(--ink) 78%, transparent); }
+  .secim-page .delivery-skill .resource-links { margin-top: 0; }
+  @media (max-width: 1080px) {
+    .secim-page .quick-strip-inner { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  }
+  @media (max-width: 900px) {
+    .secim-page .delivery-skill .delivery-content { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 680px) {
+    .secim-page .quick-strip-inner { grid-template-columns: repeat(5, minmax(160px, 1fr)); }
+    .secim-page .skill-questions,
+    .secim-page .skill-examples { grid-template-columns: minmax(0, 1fr); }
+    .secim-page .skill-questions li { padding: 16px; }
+    .secim-page .skill-download .button { justify-self: stretch; }
+  }
 </style>
 
 <!--
   Guia pós-oficina. Tutoriais conferidos em fontes oficiais em 16/09/2026.
   Publicação: o kit é baixado da pasta da oficina no Drive (https://drive.google.com/drive/folders/1gVcf7DP7OLB3b8HXofrvpT5-F5iClkhr);
   a cópia local em downloads/kit-pesquisa.zip serve de origem para subir ao Drive.
+  A skill de integridade também fica na mesma pasta do Drive (o Artifact não serve .zip); a origem é
+  downloads/integridade-ia-pesquisa.zip (cópia fiel do pacote em fontes/2026-09-17-skill-integridade-ia-pesquisa-cnpq.zip).
+  Passos de instalação conferidos na central de ajuda do Claude em 17/09/2026.
   Se incorporar como código no Portal IA.IA, substituir URLs relativos por URLs públicos.
   Os prompts e modelos essenciais estão incorporados nesta página.
 -->
@@ -2020,6 +2122,7 @@
         <a href="#ajuda">Ajuda</a>
         <a href="#materiais">Materiais</a>
         <a href="#declarar">Declarar</a>
+        <a href="#skill">Skill</a>
       </nav>
     </div>
   </header>
@@ -2079,6 +2182,7 @@
         <a class="quick-link" href="#prompt-web"><span>Prompt para a web</span><span aria-hidden="true">↓</span></a>
         <a class="quick-link" href="#modelos-declaracao"><span>Modelo de declaração</span><span aria-hidden="true">↓</span></a>
         <a class="quick-link" href="#prompt-guiado"><span>Crie sua pasta</span><span aria-hidden="true">↓</span></a>
+        <a class="quick-link" href="#skill"><span>Skill de integridade</span><span aria-hidden="true">↓</span></a>
       </div>
     </aside>
 
@@ -2316,7 +2420,7 @@
               <textarea class="prompt-text prompt-short" readonly spellcheck="false" aria-label="Pedido para executar a correlação">Leia 02-correlacao/CONTEXT.md e execute a etapa usando as fichas revisadas. Registre a ação em registro/LOG-IA.md e pare para minha conferência.</textarea>
               <p>Confira a saída em <code>02-correlacao/saida/</code>. Depois, envie:</p>
               <textarea class="prompt-text prompt-short" readonly spellcheck="false" aria-label="Pedido para gerar relatório e declaração">Leia 03-relatorio-e-declaracao/CONTEXT.md e execute a etapa. Use o registro para gerar o relatório do processo e o rascunho da declaração de uso de IA. Não invente revisões que eu não registrei.</textarea>
-              <p class="checkpoint"><strong>Resultado esperado:</strong> <code>relatorio-do-processo.md</code> e <code>declaracao-uso-ia.md</code> em <code>03-relatorio-e-declaracao/saida/</code>. Revise o rascunho e adapte-o às <a class="text-link" href="#declarar">regras do seu trabalho</a>.</p>
+              <p class="checkpoint"><strong>Resultado esperado:</strong> <code>relatorio-do-processo.md</code> e <code>declaracao-uso-ia.md</code> em <code>03-relatorio-e-declaracao/saida/</code>. Revise o rascunho e adapte-o às <a class="text-link" href="#declarar">regras do seu trabalho</a>. Para fechar a declaração da pesquisa inteira, incluindo o que você usou fora do kit, leve esses dois arquivos à <a class="text-link" href="#skill">skill de integridade</a>.</p>
             </div>
           </article>
         </div>
@@ -2485,6 +2589,20 @@ Escreva todos os arquivos em português. Depois de criar, me mostre a árvore de
               </details>
             </div>
           </article>
+
+          <article class="delivery delivery-skill">
+            <div class="delivery-content">
+              <div>
+                <span class="resource-type">Para instalar no Claude</span>
+                <h3>Skill de integridade</h3>
+                <p>Responde se você pode usar IA em algo, registra o que usou, escreve a declaração e checa o trabalho antes de entregar, com base na Portaria CNPq nº 2.664/2026.</p>
+              </div>
+              <div class="resource-links">
+                <a class="button button-primary button-small" href="https://drive.google.com/drive/folders/1gVcf7DP7OLB3b8HXofrvpT5-F5iClkhr" target="_blank" rel="noopener">Baixar skill (.zip) <span aria-hidden="true">↗</span></a>
+                <a class="button button-secondary button-small" href="#skill">Como instalar</a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -2559,13 +2677,204 @@ O registro detalhado das interações com IA está disponível em [ex.: apêndic
           </details>
 
           <div class="resource-links">
+            <a class="button button-primary button-small" href="#skill">Montar a declaração com a skill</a>
             <a class="button button-secondary button-small" href="https://portal.ufrrj.br/ufrrj-orienta-declaracao-de-uso-de-ia-em-trabalhos-academicos/" target="_blank" rel="noopener">Ver orientação da UFRRJ</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-muted" id="metodo" aria-labelledby="titulo-metodo">
+    <section class="section section-muted" id="skill" aria-labelledby="titulo-skill">
+      <div class="shell prepare-layout">
+        <div class="prepare-sticky">
+          <div class="section-heading">
+            <p class="eyebrow">Skill de integridade</p>
+            <h2 id="titulo-skill">Declare sem medo.</h2>
+            <p>Uma skill do Cefor/Ifes para o Claude. Ela ajuda você a usar IA na pesquisa sem medo e sem atalho, de acordo com a Portaria CNPq nº 2.664/2026. Serve para a pesquisa inteira, não só para o kit.</p>
+          </div>
+          <div class="skill-download">
+            <a class="button button-primary" href="https://drive.google.com/drive/folders/1gVcf7DP7OLB3b8HXofrvpT5-F5iClkhr" target="_blank" rel="noopener">Baixar a skill (.zip) <span aria-hidden="true">↗</span></a>
+            <p class="skill-meta">integridade-ia-pesquisa.zip · 49 KB · versão 1.0 · base verificada em 15/09/2026 · na pasta da oficina no Google Drive</p>
+          </div>
+          <div class="notice">
+            <strong>Não descompacte.</strong>
+            <p>O Claude recebe o arquivo .zip fechado. Se o computador abrir o arquivo sozinho, comum no Mac, compacte a pasta de novo antes de enviar.</p>
+          </div>
+        </div>
+
+        <div class="skill-body">
+          <div>
+            <h3 class="skill-title">Quatro perguntas, respostas prontas.</h3>
+            <ol class="skill-questions" aria-label="O que a skill responde">
+              <li>
+                <span class="skill-q-num" aria-hidden="true">1</span>
+                <div><strong>Posso usar IA nisso?<span class="signal" aria-hidden="true"><i></i><i></i><i></i></span></strong><p>Um semáforo: pode, pode com cuidados ou não faça. Com o artigo da portaria e o jeito certo de fazer.</p></div>
+              </li>
+              <li>
+                <span class="skill-q-num" aria-hidden="true">2</span>
+                <div><strong>Como registro o que usei?</strong><p>Um diário de 5 campos, em texto ou planilha, que fica com você.</p></div>
+              </li>
+              <li>
+                <span class="skill-q-num" aria-hidden="true">3</span>
+                <div><strong>Como declaro?</strong><p>A declaração pronta, feita a partir do diário, para dissertação, tese, artigo, relatório ou slides.</p></div>
+              </li>
+              <li>
+                <span class="skill-q-num" aria-hidden="true">4</span>
+                <div><strong>Posso entregar tranquilo?</strong><p>Uma checagem de citações, referências, dados e autoria, com o que resolver primeiro.</p></div>
+              </li>
+              <li class="skill-sos">
+                <span class="skill-q-num" aria-hidden="true">!</span>
+                <div><strong>Socorro: usei IA e não declarei.</strong><p>O caminho para corrigir, conforme a etapa em que você está, sem pânico.</p></div>
+              </li>
+            </ol>
+          </div>
+
+          <div>
+            <h3 class="skill-title">Instale uma vez, pelo computador.</h3>
+            <p class="skill-lead">Escolha onde você usa IA.</p>
+            <div class="path-list">
+              <details class="path" name="skill-caminho" open>
+                <summary>
+                  <span class="path-head">
+                    <span class="path-account">Recomendado · funciona na conta gratuita</span>
+                    <strong>Claude no navegador ou no aplicativo</strong>
+                    <span class="path-desc">Em claude.ai ou no aplicativo do Claude para computador.</span>
+                  </span>
+                </summary>
+                <div class="path-body prep-list">
+                  <article class="prep-step">
+                    <span class="step-number" aria-hidden="true">1</span>
+                    <div>
+                      <h3>Baixe o arquivo</h3>
+                      <p>Clique em <strong>Baixar a skill</strong>. A pasta da oficina no Google Drive abre em outra aba: clique em <code>integridade-ia-pesquisa.zip</code> e depois em <strong>Fazer download</strong>. Guarde o arquivo sem descompactar.</p>
+                    </div>
+                  </article>
+                  <article class="prep-step">
+                    <span class="step-number" aria-hidden="true">2</span>
+                    <div>
+                      <h3>Ative a execução de código</h3>
+                      <p>Entre em <a class="text-link" href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a>. Em <strong>Configurações → Capacidades</strong> (Settings → Capabilities), confirme que a <strong>execução de código</strong> está ativada. As skills dependem dela.</p>
+                    </div>
+                  </article>
+                  <article class="prep-step">
+                    <span class="step-number" aria-hidden="true">3</span>
+                    <div>
+                      <h3>Envie a skill</h3>
+                      <p>Vá em <strong>Personalizar → Skills</strong> (Customize → Skills), clique em <strong>+</strong>, escolha <strong>criar skill</strong> (Create skill) e envie o arquivo .zip.</p>
+                      <p class="checkpoint"><strong>Deu certo?</strong> A skill <code>integridade-ia-pesquisa</code> aparece ativada na lista. Abra uma conversa nova e teste com um dos pedidos abaixo.</p>
+                      <p class="small-note">Passos conferidos na <a class="text-link" href="https://support.claude.com/en/articles/12512180-use-skills-in-claude" target="_blank" rel="noopener">central de ajuda do Claude</a> em 17/09/2026. Os nomes dos menus podem mudar. Em conta de organização (Team ou Enterprise), o administrador precisa liberar as skills.</p>
+                    </div>
+                  </article>
+                </div>
+              </details>
+
+              <details class="path" name="skill-caminho">
+                <summary>
+                  <span class="path-head">
+                    <span class="path-account">Já uso o Claude Code</span>
+                    <strong>Claude Code</strong>
+                    <span class="path-desc">Vale para todas as suas pastas, inclusive o Kit Pesquisa.</span>
+                  </span>
+                </summary>
+                <div class="path-body prep-list">
+                  <article class="prep-step">
+                    <span class="step-number" aria-hidden="true">1</span>
+                    <div>
+                      <h3>Extraia e copie a pasta</h3>
+                      <p>Aqui é o contrário: <strong>extraia</strong> o .zip e copie a pasta <code>integridade-ia-pesquisa</code> para <code>~/.claude/skills/</code>. No Windows, o caminho é <code>C:\Users\seu-usuario\.claude\skills\</code>. Crie a pasta <code>skills</code> se ela não existir.</p>
+                    </div>
+                  </article>
+                  <article class="prep-step">
+                    <span class="step-number" aria-hidden="true">2</span>
+                    <div>
+                      <h3>Abra uma sessão nova</h3>
+                      <p>Feche e abra o Claude Code. A pasta certa tem <code>SKILL.md</code> logo dentro de <code>integridade-ia-pesquisa/</code>.</p>
+                      <p class="checkpoint"><strong>Deu certo?</strong> Pergunte "quais skills você tem disponíveis?" e confira se a de integridade aparece.</p>
+                    </div>
+                  </article>
+                </div>
+              </details>
+
+              <details class="path" name="skill-caminho">
+                <summary>
+                  <span class="path-head">
+                    <span class="path-account">Não uso o Claude</span>
+                    <strong>Só os modelos</strong>
+                    <span class="path-desc">Para usar com qualquer IA, editor ou planilha.</span>
+                  </span>
+                </summary>
+                <div class="path-body prep-list">
+                  <article class="prep-step">
+                    <span class="step-number" aria-hidden="true">1</span>
+                    <div>
+                      <h3>Abra a pasta assets</h3>
+                      <p>Extraia o .zip e abra <code>integridade-ia-pesquisa/assets/</code>. Lá estão o <strong>Diário de Uso de IA</strong>, em texto e em planilha (abre no Excel, no LibreOffice e no Google Planilhas), e o <strong>Plano de Uso de IA</strong>, para combinar com o orientador.</p>
+                      <p>Em <code>references/</code> ficam os modelos de declaração, o checklist antes de entregar e a portaria explicada em linguagem simples.</p>
+                    </div>
+                  </article>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="skill-title">Teste agora. Copie e cole no Claude.</h3>
+            <p class="skill-lead">Não precisa chamar a skill pelo nome: basta falar de IA na sua pesquisa. Para garantir, comece com "Use a skill de integridade e IA na pesquisa".</p>
+            <ul class="skill-examples">
+              <li>
+                <strong>Posso usar?</strong>
+                <textarea class="prompt-text prompt-short prompt-line" readonly spellcheck="false" aria-label="Exemplo: posso usar IA para transcrever entrevistas">Posso usar IA para transcrever as entrevistas da minha pesquisa?</textarea>
+              </li>
+              <li>
+                <strong>Registrar</strong>
+                <textarea class="prompt-text prompt-short prompt-line" readonly spellcheck="false" aria-label="Exemplo: registrar um uso no diário">Ontem usei o ChatGPT para revisar o resumo da minha dissertação. Registra isso no meu diário.</textarea>
+              </li>
+              <li>
+                <strong>Declarar</strong>
+                <textarea class="prompt-text prompt-short prompt-line" readonly spellcheck="false" aria-label="Exemplo: pedir a declaração">Quero minha declaração de uso de IA para a dissertação.</textarea>
+              </li>
+              <li>
+                <strong>Entregar</strong>
+                <textarea class="prompt-text prompt-short prompt-line" readonly spellcheck="false" aria-label="Exemplo: checagem antes de submeter">Vou submeter um artigo semana que vem. Faz a checagem de integridade comigo.</textarea>
+              </li>
+              <li>
+                <strong>Vale para mim?</strong>
+                <textarea class="prompt-text prompt-short prompt-line" readonly spellcheck="false" aria-label="Exemplo: a portaria vale sem bolsa">A portaria do CNPq vale para mim se eu não tenho bolsa?</textarea>
+              </li>
+              <li>
+                <strong>Socorro</strong>
+                <textarea class="prompt-text prompt-short prompt-line" readonly spellcheck="false" aria-label="Exemplo: uso não declarado">Usei IA na minha qualificação e não declarei. O que eu faço agora?</textarea>
+              </li>
+              <li class="skill-example-kit">
+                <strong>Com o Kit Pesquisa (anexe os dois arquivos da etapa 03)</strong>
+                <textarea class="prompt-text prompt-short prompt-line" readonly spellcheck="false" aria-label="Exemplo: declaração a partir do Kit Pesquisa">Anexei o relatorio-do-processo.md e a declaracao-uso-ia.md do Kit Pesquisa. Use os dois para montar a declaração de uso de IA da minha dissertação e me pergunte, fase por fase, o que usei de IA fora do kit.</textarea>
+                <p class="skill-meta skill-example-note">Kit e skill se completam: o kit registra o que a IA fez em uma tarefa; a skill junta esse registro ao que você usou fora dele.</p>
+              </li>
+            </ul>
+          </div>
+
+          <aside class="safety-band skill-limits" aria-labelledby="titulo-skill-limites">
+            <h3 id="titulo-skill-limites">Uma bússola, não um tribunal.</h3>
+            <div class="safety-rules">
+              <article>
+                <strong>Não faz atalho.</strong>
+                <p>Não escreve o trabalho para esconder o uso de IA, não "humaniza" texto e não diz se um texto foi feito por IA.</p>
+              </article>
+              <article>
+                <strong>Não substitui pessoas.</strong>
+                <p>Orientador, coordenação, CEP e PRPPG continuam decidindo. Na dúvida, registre, declare e converse com quem orienta.</p>
+              </article>
+              <article>
+                <strong>Não cole dados de participantes.</strong>
+                <p>Nem na skill. Anonimize antes, e só com amparo no TCLE. A skill não guarda nada: o diário fica com você.</p>
+              </article>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="metodo" aria-labelledby="titulo-metodo">
       <div class="shell">
         <div class="section-heading">
           <h2 id="titulo-metodo">Organização vira método.</h2>
@@ -2651,7 +2960,7 @@ O registro detalhado das interações com IA está disponível em [ex.: apêndic
       </div>
     </section>
 
-    <section class="section" id="continuar" aria-labelledby="titulo-continuar">
+    <section class="section section-muted" id="continuar" aria-labelledby="titulo-continuar">
       <div class="shell continue-layout">
         <div>
           <div class="section-heading">
@@ -2706,8 +3015,11 @@ O registro detalhado das interações com IA está disponível em [ex.: apêndic
       <div>
         <strong>Ficou alguma dúvida?</strong>
         <p>Escreva para <a href="mailto:cgte.cefor@ifes.edu.br" target="_blank" rel="noopener">cgte.cefor@ifes.edu.br</a>. Este material pode ser copiado e adaptado com citação da fonte.</p>
+        <p>Como este material foi feito: em coerência com o que esta página ensina, declaramos o uso de Claude Code (Anthropic) para pesquisar e organizar referências, montar o roteiro da oficina, gerar os slides e produzir o kit e esta página. Conteúdo revisado por nós, que assumimos responsabilidade integral por ele.</p>
       </div>
       <div class="footer-signature">Elton Vinícius Silva e Marcos Accioly (Marquito)<br>CGTE / Cefor / Ifes · Material de apoio do Secim</div>
     </div>
   </footer>
 </div>
+
+</body></html>

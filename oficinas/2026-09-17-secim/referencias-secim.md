@@ -36,6 +36,34 @@ Não é preciso dominar as ferramentas. Comece por uma tarefa concreta da sua pe
 - Protocolo de Atenção para Criação de Conteúdos Educacionais com IA Generativa (Rutinelli Fávero, Cefor), sete etapas, a sexta é a declaração: https://rpfweb.github.io/Protocolo-para-Uso-de-IA/
 - GUIDE-LLM, checklist de 14 itens para relatar uso de LLMs em pesquisa (Feuerriegel et al., *Nature Human Behaviour*, 2026): https://www.nature.com/articles/s41562-026-02492-7
 
+## Skill de integridade (para o Claude)
+
+Uma skill do Cefor/Ifes que ajuda a usar IA na pesquisa sem medo e sem atalho, de acordo com a Portaria CNPq nº 2.664/2026. Serve para a pesquisa inteira, não só para o kit. Download: `integridade-ia-pesquisa.zip` na pasta da oficina no Google Drive, https://drive.google.com/drive/folders/1gVcf7DP7OLB3b8HXofrvpT5-F5iClkhr (49 KB, versão 1.0, base verificada em 15/09/2026; origem local em `downloads/`).
+
+**Responde a quatro perguntas:** (1) posso usar IA nisso? (semáforo com o artigo da portaria); (2) como registro o que usei? (diário de 5 campos); (3) como declaro? (declaração para dissertação, tese, artigo, relatório ou slides); (4) posso entregar tranquilo? (checagem de citações, referências, dados e autoria). E um caminho de socorro para quem usou IA e não declarou.
+
+**Instalar no Claude (navegador ou aplicativo, funciona na conta gratuita):**
+
+1. Baixe o .zip e **não descompacte** (no Mac, se abrir sozinho, compacte a pasta de novo).
+2. Em claude.ai, **Configurações → Capacidades**: confirme a execução de código ativada.
+3. **Personalizar → Skills**, clique em **+**, **criar skill** e envie o .zip. Confira se aparece ativada.
+
+Passos conferidos em https://support.claude.com/en/articles/12512180-use-skills-in-claude (17/09/2026). Em conta de organização, o administrador precisa liberar as skills.
+
+**No Claude Code:** extraia o .zip e copie a pasta `integridade-ia-pesquisa` para `~/.claude/skills/`. **Sem Claude:** os modelos (diário, plano de uso com orientador, declarações, checklist) estão nas pastas `assets/` e `references/` do .zip.
+
+**Teste agora:**
+
+- "Posso usar IA para transcrever as entrevistas da minha pesquisa?"
+- "Ontem usei o ChatGPT para revisar o resumo da minha dissertação. Registra isso no meu diário."
+- "Quero minha declaração de uso de IA para a dissertação."
+- "Vou submeter um artigo semana que vem. Faz a checagem de integridade comigo."
+- "A portaria do CNPq vale para mim se eu não tenho bolsa?"
+- "Usei IA na minha qualificação e não declarei. O que eu faço agora?"
+- Com o Kit Pesquisa: "Anexei o relatorio-do-processo.md e a declaracao-uso-ia.md do Kit Pesquisa. Use os dois para montar a declaração de uso de IA da minha dissertação e me pergunte, fase por fase, o que usei de IA fora do kit."
+
+**Limites:** não escreve o trabalho para esconder o uso de IA, não "humaniza" texto, não diz se um texto foi feito por IA, não substitui orientador, coordenação, CEP ou PRPPG. Nunca cole dados de participantes, nem na skill.
+
 ## Organize sua pesquisa com IA
 
 Bons resultados não dependem só de um bom prompt. Conforme o trabalho cresce, vale organizar:
@@ -98,6 +126,10 @@ Links: https://antigravity.google · https://code.visualstudio.com · https://gi
 - **Podcasts, palestras e oficinas do Cefor**: https://cefor.ifes.edu.br/index.php/component/content/article/2-uncategorised/17587-acoes-de-inteligencia-artificial-no-cefor?start=3
 - **Curso de extensão "Inteligência de Contexto Pedagógica com IA"** (Cefor/UnAC, 90 h, a distância, 2027): informações **[a definir]**
 - **Contato**: cgte.cefor@ifes.edu.br
+
+## Como este material foi feito
+
+Em coerência com o que esta página ensina, declaramos: usamos Claude Code (Anthropic) para pesquisar e organizar referências, montar o roteiro da oficina, gerar os slides em HTML e produzir o kit de pesquisa e esta página. Todo o conteúdo foi revisado por nós, que assumimos responsabilidade integral por ele.
 
 ---
 
