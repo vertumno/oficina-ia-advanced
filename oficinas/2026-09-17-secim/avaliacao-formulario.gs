@@ -10,8 +10,10 @@
  *   4. Veja os dois links no Registro de execução (Ctrl+Enter):
  *      o de edição, para você, e o de resposta, que vira o QR do slide 34.
  *
- * O formulário é anônimo: não coleta e-mail, não exige login e não limita
- * uma resposta por pessoa. São cinco perguntas; só a nota é obrigatória.
+ * São sete perguntas; obrigatórias apenas a nota e o nível alcançado (ambas
+ * de um clique). O formulário não coleta e-mail automaticamente, não exige
+ * login e não limita uma resposta por pessoa: quem não preencher o campo de
+ * contato no fim responde de forma anônima.
  */
 
 var TITULO = 'IA além do chat — avaliação da oficina';
@@ -19,11 +21,14 @@ var TITULO = 'IA além do chat — avaliação da oficina';
 var DESCRICAO = [
   'Oficina do Secim, 17 de setembro de 2026. Leva dois minutos.',
   '',
-  'É anônimo: não pedimos seu nome nem seu e-mail. Responda com franqueza —',
-  'é o que nos ajuda a melhorar a próxima edição.'
+  'Não pedimos seu nome nem seu e-mail: só no fim, se você quiser continuar',
+  'conosco, há um campo opcional de contato. Deixando-o em branco, sua',
+  'resposta é anônima. Responda com franqueza — é o que nos ajuda a melhorar',
+  'a próxima edição.'
 ].join('\n');
 
 // A página final do formulário leva ao material da oficina.
+// Se a página do Portal IA.IA entrar no ar com link curto, troque aqui.
 var LINK_MATERIAL = 'https://claude.ai/artifact/LXwpGNo9FbotQ4Pp8CkaWN';
 
 function criarFormulario() {
@@ -55,7 +60,21 @@ function criarFormulario() {
     .setLabels('Não recomendaria', 'Recomendaria com certeza')
     .setRequired(true);
 
-  // 2 a 5. Quatro perguntas abertas, todas opcionais.
+  // 2. Nível alcançado. Mede o entregável em três níveis (01-plano, 3.4):
+  // todos são sucesso, e é isto que preenche a linha "Nível 0 / 1 / 2" da
+  // retrospectiva. Um clique, por isso obrigatória.
+  form.addMultipleChoiceItem()
+    .setTitle('Até onde você foi hoje?')
+    .setHelpText('Não existe resposta certa: assistir já era um dos caminhos previstos.')
+    .setChoiceValues([
+      'Assisti (levo a página, o modelo de declaração e o kit)',
+      'Fiz no navegador (rodei o prompt com um artigo meu)',
+      'Fiz no computador (criei a pasta com a ferramenta instalada)',
+      'Sentei à máquina como voluntário'
+    ])
+    .setRequired(true);
+
+  // 3 a 6. Quatro perguntas abertas, todas opcionais.
   var abertas = [
     {
       titulo: 'O que você mais gostou?',
@@ -81,6 +100,37 @@ function criarFormulario() {
       .setHelpText(pergunta.ajuda)
       .setRequired(false);
   });
+
+  // 7. Continuidade. Fica no fim, depois de tudo o que é anônimo, e o aviso
+  // deixa explícito que preencher o contato identifica a resposta.
+  form.addSectionHeaderItem()
+    .setTitle('Quer continuar depois de hoje?')
+    .setHelpText(
+      'Esta parte é opcional. Se você escrever seu e-mail, ele chega junto ' +
+      'com as respostas acima e elas deixam de ser anônimas. Prefere manter ' +
+      'o anonimato? Deixe em branco e escreva seu contato na folha de tema ' +
+      'ou fale com a gente no coffee break.'
+    );
+
+  form.addCheckboxItem()
+    .setTitle('Tenho interesse em:')
+    .setChoiceValues([
+      'Ser multiplicador de IA no meu programa',
+      'Participar do Papo com IA.IÁ (quintas, 15h às 15h45, online)',
+      'Saber do curso de extensão "Inteligência de Contexto Pedagógica com IA" (2027)'
+    ])
+    .setRequired(false);
+
+  form.addTextItem()
+    .setTitle('Seu e-mail (só se você marcou algo acima)')
+    .setHelpText('Usamos apenas para o convite combinado. Nada além disso.')
+    .setValidation(
+      FormApp.createTextValidation()
+        .setHelpText('Escreva um e-mail válido ou deixe o campo em branco.')
+        .requireTextIsEmail()
+        .build()
+    )
+    .setRequired(false);
 
   Logger.log('Formulário criado: ' + TITULO);
   Logger.log('Editar:    ' + form.getEditUrl());

@@ -36,7 +36,7 @@ Checklist datado. Escrito em 02/09 (D-15); **revisado em 14/09 (D-3)** na reuni�
 | 15/09 | -2 | **Pasta no Drive:** `kit-pesquisa.zip`, slides em PDF, modelo de declaração, links dos artigos, os prompts em `.txt`, o documento de preparação e uma subpasta "envie aqui" com permissão de upload | Elton | [ ] |
 | 15/09 | -2 | **Link curto e QR** do documento de preparação (ou da pasta); enviar à organização com a mensagem de `03-divulgacao-para-a-organizacao.md` | Marquito | [ ] |
 | **16/09 (qua)** | -1 | Publicar a página de referências no **Portal IA.IA** a partir de `referencias-secim.md`; link curto | Elton | [ ] |
-| 16/09 | -1 | **Formulário de avaliação** com o link do material na tela final (`06-pos-oficina.md`); QR | Elton | [ ] |
+| 16/09 | -1 | **Formulário de avaliação** com o link do material na tela final (`06-pos-oficina.md`); QR | Elton | [x] criado 17/09 15h49; links em `06-pos-oficina.md`. Falta o QR |
 | 16/09 | -1 | Slides: trocar "[link curto a definir]" nos slides 2 e 33, rodar `slides/build-slides.py` e gerar o PDF (Ctrl+P) | Marquito | [ ] |
 | 16/09 | -1 | Reconferir Antigravity e Copilot gratuitos (regras mudam); ajustar o slide 29, a página e o documento de preparação | Elton | [ ] |
 | 16/09 | -1 | Opcional: imprimir uma folha A4 com o link curto e o QR, para a porta e as mesas | Elton | [ ] |
@@ -52,7 +52,7 @@ O formulário de 30 dias pode ser criado depois da oficina, até 17/10.
 - [ ] Hotspot 4G testado.
 - [ ] Pendrive: kit zipado, slides, gravação do teste.
 - [ ] Link curto da preparação e da página funcionando; pasta "envie aqui" aceitando upload de qualquer pessoa com o link.
-- [ ] Formulário de avaliação aberto, com o link do material na tela final.
+- [x] Formulário de avaliação aberto, com o link do material na tela final. Falta gerar o QR do link de resposta.
 - [ ] Confirmação da sala e da hora com a organizadora.
 - [ ] Combinado quem chega primeiro e quem traz o quê.
 

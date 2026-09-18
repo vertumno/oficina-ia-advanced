@@ -51,13 +51,24 @@ Enviar a quem deixou e-mail. Tabular em `fontes/2026-10-17-secim-formulario-30-d
 - [ ] Congelar esta edição; abrir `v2/` se houver próxima.
 - [ ] Atualizar `futuro/curso-extensao-2027.md` com o que o Secim ensinou sobre o público de pesquisa.
 
-## Formulário de avaliação do dia (criar até 16/09)
+## Formulário de avaliação do dia
 
-1. De 0 a 10, quanto você recomendaria esta oficina a um colega?
-2. Que pena que... (aberta)
-3. Que tal se... (aberta)
-4. Até onde você foi hoje? (assisti / fiz no navegador / fiz no computador / sentei à máquina como voluntário)
-5. Quer ser multiplicador no seu programa ou participar do Papo com IA.IÁ? (sim, com e-mail / não)
+**Criado em 17/09/2026, 15h49.** Gerado por `avaliacao-formulario.gs` (Google Apps Script). Sete perguntas; só a nota e o nível são obrigatórios, ambos de um clique.
+
+| | Link |
+|---|---|
+| **Responder** (vira o QR do fecho) | https://docs.google.com/forms/d/e/1FAIpQLSdDa6AuBAqiTsBw1ijEMX6AAPlGgzdpwwLhXaAQc6NSheEiHw/viewform |
+| **Editar / ver respostas** | https://docs.google.com/forms/d/1Z9ox4tAxp_W3hWdIvKkA1DMyYetJCa-o-1IwZZlQPYY/edit |
+
+1. De 0 a 10, quanto você recomendaria esta oficina a um colega? (obrigatória)
+2. Até onde você foi hoje? (assisti / fiz no navegador / fiz no computador / sentei à máquina como voluntário) — obrigatória; é a linha "Nível 0 / 1 / 2" da tabela acima
+3. O que você mais gostou? (aberta)
+4. O que você tiraria da oficina? (aberta — o "que pena que")
+5. O que você acrescentaria? (aberta — o "que tal se")
+6. O que melhoraria na próxima edição? (aberta)
+7. Continuidade, em seção própria no fim: interesse em multiplicar, no Papo com IA.IÁ e no curso de extensão (múltipla), mais e-mail opcional
+
+**Anonimato e contato:** o formulário não coleta e-mail nem exige login. O campo de contato da pergunta 7 é opcional, fica depois de todas as perguntas anônimas e avisa que preenchê-lo identifica a resposta. Quem quiser continuar sem se identificar escreve o contato na folha de tema ou fala no plantão — combinar com o Elton para reforçar isso no fecho.
 
 **Tela final do formulário (decisão de 14/09):** o link da página de referências e da pasta do Drive com o material. Quem responde a avaliação recebe o material na hora. Projetar o QR da avaliação no fecho dizendo isso.
 

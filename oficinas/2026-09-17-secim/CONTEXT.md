@@ -2,7 +2,7 @@
 
 ## Estado (14/09/2026, D-3)
 
-Em preparação. Divulgação **enviada**. Slides **revisados** na reunião de 14/09 (35 slides). Documento de preparação para os participantes e prompt que guia a criação da pasta **escritos**. Kit e prompts **ainda não testados** (teste em 15/09). Faltam: Drive com link curto e QR, página publicada, formulário de avaliação. Cronograma em `04-pre-oficina.md`.
+Em preparação. Divulgação **enviada**. Slides **revisados** na reunião de 14/09 (35 slides). Documento de preparação para os participantes e prompt que guia a criação da pasta **escritos**. Kit e prompts **ainda não testados** (teste em 15/09). Formulário de avaliação **criado** em 17/09 15h49 (links em `06-pos-oficina.md`). Faltam: Drive com link curto e QR, página publicada, QR da avaliação. Cronograma em `04-pre-oficina.md`.
 
 ## Roteamento
 
