@@ -16,6 +16,7 @@ Esta pasta é, ela mesma, um exemplo do que ensinamos: pastas com instruções c
 | `biblioteca/` | Blocos reutilizáveis: conceitos, prompts, kits para participantes, modelos de página. | Ao construir o conteúdo de uma oficina. |
 | `oficinas/` | Uma pasta por evento: briefing, plano, análise, divulgação, pré, demonstração, pós, página e slides. | Ao preparar e registrar uma oficina. |
 | `futuro/` | Notas para o curso de extensão de 2027 e o MOOC. Uso secundário. | Ao planejar formações longas. |
+| `portal-iaia/` | Plano e textos das páginas do Portal IA.IÁ (Google Sites da CGTE). O portal é a vitrine; esta pasta é a fonte. | Ao publicar uma oficina ou um recurso no portal. |
 
 Cada pasta tem um `CONTEXT.md` que explica o que ela contém, de onde vem, para que serve e o que uma IA pode fazer ali.
 
@@ -52,6 +53,7 @@ Revisão de 14/09 aplicada (o que mudou e por quê: [`02-analise-e-melhorias.md`
 - Mudanças de rumo em 14/09: sem mensagem aos inscritos (link curto e QR divulgados pela organização); ferramenta escolhida pela conta (Antigravity com conta Google, Copilot com GitHub); voluntários à máquina em vez de todos fazendo; sem ensaio nem teste com leigo; página no Portal IA.IA.
 - Futuro: mapa do curso de extensão de 2027, nota sobre o MOOC e a ideia de uma comunidade (`futuro/comunidade.md`).
 - **Não testado:** o kit, os prompts e o Antigravity. Teste em 15/09.
+- **07/10:** nova pasta `portal-iaia/` com o plano de atualização do Portal IA.IÁ (as oficinas de 2025 e 2026 não estão lá; a página do Secim precisa sair antes do formulário de 30 dias, em 17/10).
 
 ## Próximos passos
 

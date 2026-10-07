@@ -26,6 +26,7 @@ Objetivo secundário: acumular blocos reutilizáveis para o curso de extensão d
 | Buscar um conceito, prompt, kit ou modelo de página | `biblioteca/` |
 | Preparar, dar ou registrar uma oficina | `oficinas/<evento>/` |
 | Pensar o curso de extensão ou o MOOC | `futuro/` |
+| Atualizar o Portal IA.IÁ (páginas de oficinas, ferramentas, links) | `portal-iaia/` |
 | Consultar o material original | `fontes/` (somente leitura; índice em `fontes/CONTEXT.md`) |
 | Depositar algo que acabou de chegar | `_inbox/` (e processar: ficha em `referencias/`, original para `fontes/`) |
 
